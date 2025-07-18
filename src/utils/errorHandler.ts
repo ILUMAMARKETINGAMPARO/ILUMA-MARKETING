@@ -4,7 +4,7 @@ export class IlumaErrorHandler {
     private maxErrors = 50;
 
     private constructor() {
-        this.setupGlobalErrorHandler();
+        this.setupGlobalErrorHandlers();
     }
 
       public static getInstance(): IlumaErrorHandler {
@@ -31,25 +31,27 @@ export class IlumaErrorHandler {
 
   private setupWebGLErrorHandler() {
     // Intercepter les erreurs spécifiques à WebGL/Three.js
-    const originalGetContext = HTMLCanvasElement.prototype.getContext;
-    HTMLCanvasElement.prototype.getContext = function(type: string, options?: any) {
-      try {
-        const context = originalGetContext.call(this, type, options);
-        if (type.includes('webgl') && !context) {
+    if (typeof window !== 'undefined' && typeof HTMLCanvasElement !== 'undefined') {
+      const originalGetContext = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function(type: string, options?: any) {
+        try {
+          const context = originalGetContext.call(this, type, options);
+          if (type.includes('webgl') && !context) {
+            IlumaErrorHandler.getInstance().handleError(
+              new Error('WebGL context creation failed'),
+              'WebGL Error Handler'
+            );
+          }
+          return context;
+        } catch (error) {
           IlumaErrorHandler.getInstance().handleError(
-            new Error('WebGL context creation failed'),
-            'WebGL Error Handler'
+            error as Error,
+            'WebGL Context Error'
           );
+          return null;
         }
-        return context;
-      } catch (error) {
-        IlumaErrorHandler.getInstance().handleError(
-          error as Error,
-          'WebGL Context Error'
-        );
-        return null;
-      }
-    };
+      };
+    }
   }
 
   public handleError(error: Error, context?: string) {

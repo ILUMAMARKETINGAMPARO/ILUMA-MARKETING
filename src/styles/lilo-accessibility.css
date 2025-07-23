@@ -1,0 +1,82 @@
+/* Styles d'accessibilité pour LILO™ */
+
+/* Mode animations réduites */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Focus visible pour navigation clavier */
+.lilo-focusable:focus {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Indicateurs de contraste élevé */
+@media (prefers-contrast: high) {
+  .lilo-card {
+    border-width: 2px;
+    border-color: hsl(var(--foreground));
+  }
+  
+  .lilo-text {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+  }
+}
+
+/* Mode sombre forcé pour accessibilité */
+@media (prefers-color-scheme: dark) {
+  .lilo-adaptive {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Responsive pour appareils spécialisés */
+@media (max-width: 320px) {
+  .lilo-mobile-compact {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Amélioration pour lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Zones de toucher élargies pour mobile */
+.lilo-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px;
+}
+
+/* Indicateur de mode LILO™ désactivé */
+.lilo-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+
+/* Animation respect du prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .lilo-animated {
+    animation: none !important;
+    transition: none !important;
+  }
+}

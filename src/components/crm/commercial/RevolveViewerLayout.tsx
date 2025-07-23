@@ -14,7 +14,7 @@ import {
   Settings,
   Filter
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { generateRivalMockData } from '@/utils/rivalviewsDataParser';
 import MapView from './views/MapView';
 import CityView from './views/CityView';

@@ -1,0 +1,359 @@
+{
+  "pages": {
+    "home": {
+      "title": "Iluma™ – La visibilité locale réinventée par l'IA",
+      "description": "Être visible au bon moment, au bon endroit. Grâce à notre méthode unique mêlant intelligence artificielle, design stratégique et référencement local, nous aidons les entreprises à capter l'attention et générer des résultats mesurables.",
+      "focusKeywords": ["visibilité locale IA", "SEO intelligent", "automatisation marketing", "Iluma", "référencement local"],
+      "content": {
+        "hero": {
+          "title": "Iluma™ – La visibilité locale réinventée par l'IA",
+          "subtitle": "Être visible au bon moment, au bon endroit. Grâce à notre méthode unique mêlant intelligence artificielle, design stratégique et référencement local, nous aidons les entreprises à capter l'attention et générer des résultats mesurables.",
+          "cta": "Obtenez votre analyse IA gratuite"
+        },
+        "sections": [
+          {
+            "title": "Pourquoi Iluma ?",
+            "content": "Parce que votre entreprise mérite plus qu'un simple site web. Elle mérite une visibilité intelligente. Chez Iluma, nous combinons performance technique, contenus ciblés, IA générative et visibilité croisée pour vous propulser en tête des recherches locales et IA."
+          },
+          {
+            "title": "Une méthodologie unique en 3 forces",
+            "content": "Visibilité locale + SEO IA • Intelligence de contenu (LLM, prompts, structuration) • Visibilité croisée entre partenaires stratégiques"
+          },
+          {
+            "title": "Des preuves concrètes, pas des promesses",
+            "content": "+410 visiteurs en 30 jours via visibilité croisée • +8 avis Google générés en 3 semaines • +260 clics Maps depuis landing pages locales • +140 followers organiques via contenu IA"
+          }
+        ]
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Iluma – Visibilité locale & IA optimisée",
+        "mainEntity": [
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Qu'est-ce que la visibilité croisée ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Une méthode sans frais mensuels qui permet à deux entreprises de s'exposer mutuellement auprès de leurs audiences."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "Déploiement Iluma en 5 étapes",
+            "step": [
+              { "@type": "HowToStep", "name": "Étape 1", "text": "Remplissez notre court questionnaire IA" },
+              { "@type": "HowToStep", "name": "Étape 2", "text": "Recevez une analyse SEO + recommandations IA" },
+              { "@type": "HowToStep", "name": "Étape 3", "text": "Déployez votre site ou page optimisée" },
+              { "@type": "HowToStep", "name": "Étape 4", "text": "Connectez-vous à notre réseau de partenaires" },
+              { "@type": "HowToStep", "name": "Étape 5", "text": "Suivez vos résultats dans votre tableau de bord IA" }
+            ]
+          }
+        ]
+      },
+      "status": "optimized"
+    },
+    "modules": {
+      "adluma": {
+        "title": "Estimez l'impact de vos campagnes Google Ads avec ADLUMA™",
+        "description": "ADLUMA™ est notre simulateur IA exclusif, conçu pour prédire les performances publicitaires, ajuster les budgets, et fournir des recommandations personnalisées basées sur l'intelligence artificielle.",
+        "focusKeywords": ["simulateur Google Ads IA", "IA prédictive", "ROI publicitaire", "ADLUMA", "budget Google Ads"],
+        "content": {
+          "hero": {
+            "title": "Estimez l'impact de vos campagnes Google Ads avec ADLUMA™",
+            "subtitle": "ADLUMA™ est notre simulateur IA exclusif, conçu pour prédire les performances publicitaires, ajuster les budgets, et fournir des recommandations personnalisées basées sur l'intelligence artificielle. Directement intégré au CRM Iluma™, il agit comme un copilote stratégique, précis et évolutif.",
+            "cta": "Lancer ma simulation maintenant"
+          },
+          "sections": [
+            {
+              "title": "À quoi sert ADLUMA™ ?",
+              "content": "Évaluer le retour potentiel d'un budget donné • Cibler les mots-clés à fort potentiel local • Comparer vos options : Search, Display, YouTube, Performance Max • Recevoir des recommandations IA"
+            },
+            {
+              "title": "Comment ça fonctionne ?",
+              "content": "Vous entrez votre budget, secteur, localisation. L'IA sélectionne les mots-clés pertinents + volumes de recherche. Elle estime les impressions, clics et conversions possibles. Vous recevez un rapport clair avec scénarios + conseils IA"
+            }
+          ]
+        },
+        "structuredData": {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "ADLUMA Iluma – Simulateur IA pour Google Ads",
+          "mainEntity": [
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Est-ce que le simulateur est fiable ?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Il s'appuie sur les données réelles de Google Ads, croisée avec notre base IA sectorielle."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "status": "optimized"
+      },
+      "ila": {
+        "title": "Mesurez votre présence locale avec l'ILA™",
+        "description": "L'ILA™, c'est votre score de visibilité locale IA. Il évalue votre présence sur Google, votre réputation, votre performance SEO, vos signaux sociaux et votre cohérence technique. En quelques secondes, vous savez où agir.",
+        "focusKeywords": ["score visibilité locale", "ILA", "SEO local", "Google Maps", "diagnostic IA"],
+        "content": {
+          "hero": {
+            "title": "Mesurez votre présence locale avec l'ILA™",
+            "subtitle": "L'ILA™, c'est votre score de visibilité locale IA. Il évalue votre présence sur Google, votre réputation, votre performance SEO, vos signaux sociaux et votre cohérence technique. En quelques secondes, vous savez où agir.",
+            "cta": "Lancer l'analyse gratuite"
+          },
+          "sections": [
+            {
+              "title": "Qu'est-ce que l'ILA™ ?",
+              "content": "Un score sur 100 calculé en temps réel par notre IA, à partir de 5 facteurs clés : SEO local (fiches, balises, positions) • Présence sur Google Maps / Local Pack • Réputation (avis Google, fréquence, moyenne) • Réseaux sociaux (pertinence + cohérence) • Données techniques (site, performance, accessibilité)"
+            },
+            {
+              "title": "Pourquoi c'est stratégique ?",
+              "content": "Vous découvrez votre position réelle sur le marché local • Vous identifiez vos faiblesses SEO sans jargon • Vous recevez des recommandations IA concrètes et actionnables • Vous êtes automatiquement éligible à la visibilité croisée Iluma"
+            }
+          ]
+        },
+        "structuredData": {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "ILA Iluma – Score de visibilité locale IA",
+          "mainEntity": [
+            {
+              "@type": "HowTo",
+              "name": "Utiliser l'ILA™ en 4 étapes",
+              "step": [
+                { "@type": "HowToStep", "name": "Étape 1", "text": "Entrez votre domaine ou nom d'entreprise" },
+                { "@type": "HowToStep", "name": "Étape 2", "text": "L'IA récupère les données SEO, Maps, réseaux" },
+                { "@type": "HowToStep", "name": "Étape 3", "text": "Le score est calculé selon 5 axes pondérés" },
+                { "@type": "HowToStep", "name": "Étape 4", "text": "Vous recevez un rapport + plan d'action IA" }
+              ]
+            }
+          ]
+        },
+        "status": "optimized"
+      },
+      "blogia": {
+        "title": "BlogIA™ - Génération Contenu SEO | Rédaction IA Automatisée",
+        "description": "BlogIA™ : Génération automatique de contenu SEO avec IA. Rédaction optimisée, publication automatique, analytics contenu avancées.",
+        "focusKeywords": ["génération contenu IA", "rédaction automatique", "SEO contenu", "BlogIA"],
+        "status": "optimized"
+      },
+      "hub": {
+        "title": "Nos expertises, réunies dans un HUB centralisé",
+        "description": "Bienvenue dans votre espace stratégique. Ici, vous découvrez l'ensemble des services Iluma™, conçus pour augmenter votre visibilité, votre performance, et votre impact local grâce à l'IA.",
+        "focusKeywords": ["services Iluma", "HUB centralisé", "visibilité locale IA", "marketing IA"],
+        "content": {
+          "hero": {
+            "title": "Nos expertises, réunies dans un HUB centralisé",
+            "subtitle": "Bienvenue dans votre espace stratégique. Ici, vous découvrez l'ensemble des services Iluma™, conçus pour augmenter votre visibilité, votre performance, et votre impact local grâce à l'IA.",
+            "cta": "Accéder au simulateur ADLUMA™"
+          },
+          "sections": [
+            {
+              "title": "Choisissez ce dont vous avez besoin",
+              "content": "Landing Page Intelligente → Conversion rapide dès le premier clic • Page de Fidélisation Intelligente → Renforcement de la rétention client • ILA™ (Indice Local d'Activation) → Diagnostic de votre visibilité actuelle • ADLUMA™ → Simulateur Google Ads IA pour budget & impact"
+            },
+            {
+              "title": "Comment naviguer ?",
+              "content": "Notre HUB fonctionne comme une carte stratégique. Choisissez votre levier de visibilité (SEO, Ads, IA, etc.). Explorez chaque module à votre rythme. Utilisez Lilo pour poser des questions personnalisées. Lancez un audit ou une simulation en 1 clic"
+            }
+          ]
+        },
+        "status": "optimized"
+      },
+      "crm": {
+        "title": "Le cœur intelligent de votre croissance – CRM ILUMA™",
+        "description": "Le CRM ILUMA™ n'est pas un simple tableau de suivi. C'est une centrale IA stratégique qui orchestre vos projets, vos équipes et vos résultats avec précision. Connecté à tous nos modules (SEO, Ads, IA, Lilo), il permet une gestion fluide, performante et prédictive.",
+        "focusKeywords": ["CRM IA", "gestion projets IA", "centrale stratégique", "CRM Iluma"],
+        "content": {
+          "hero": {
+            "title": "Le cœur intelligent de votre croissance – CRM ILUMA™",
+            "subtitle": "Le CRM ILUMA™ n'est pas un simple tableau de suivi. C'est une centrale IA stratégique qui orchestre vos projets, vos équipes et vos résultats avec précision. Connecté à tous nos modules (SEO, Ads, IA, Lilo), il permet une gestion fluide, performante et prédictive.",
+            "cta": "Explorer le cerveau Iluma"
+          },
+          "sections": [
+            {
+              "title": "Fonctionnalités principales",
+              "content": "Suivi des projets en temps réel • Tableaux de bord intelligents • Assignation automatique aux membres de l'équipe • Modules IA intégrés : FlowGuide™, IA Miroir™, IA EmotionNet™ • Intégration calendrier + échéances dynamiques"
+            },
+            {
+              "title": "Suivi des performances IA-first",
+              "content": "Tracking SEO + SGE • Données croisées Google Analytics / Search Console / Ahrefs • Exportations PDF intelligentes pour les clients • Alertes IA personnalisées"
+            }
+          ]
+        },
+        "status": "optimized"
+      },
+      "ilumatch": {
+        "title": "ILUMATCH™ - Mise en Relation IA | Connexion Entreprises-Prospects",
+        "description": "ILUMATCH™ : Mise en relation intelligente entreprises-prospects avec IA avancée. Matching automatique, score compatibilité, CRM intégré.",
+        "focusKeywords": ["mise en relation IA", "matching entreprises", "prospects qualifiés", "ILUMATCH"],
+        "status": "optimized"
+      }
+    },
+    "services": {
+      "seo-ia": {
+        "title": "SEO IA - Référencement Intelligence Artificielle | Position #1 Garantie",
+        "description": "Service SEO IA Iluma™ : Référencement naturel boosté par intelligence artificielle. Position #1 Google, trafic +300%, contenu optimisé IA.",
+        "focusKeywords": ["SEO IA", "référencement intelligence artificielle", "position Google", "trafic organique"],
+        "status": "optimized"
+      },
+      "landing-pages": {
+        "title": "Attirez plus de clients avec une Landing Page Intelligente",
+        "description": "Conçue pour capter l'intention et maximiser la conversion, notre Landing Page Intelligente s'adapte automatiquement à votre audience, au canal d'acquisition et aux meilleures pratiques IA-first.",
+        "focusKeywords": ["landing page intelligente", "conversion IA", "pages performantes", "optimisation conversion"],
+        "content": {
+          "hero": {
+            "title": "Attirez plus de clients avec une Landing Page Intelligente",
+            "subtitle": "Conçue pour capter l'intention et maximiser la conversion, notre Landing Page Intelligente s'adapte automatiquement à votre audience, au canal d'acquisition et aux meilleures pratiques IA-first.",
+            "cta": "Voir un exemple de Landing IA"
+          },
+          "sections": [
+            {
+              "title": "Objectif d'une Landing IA",
+              "content": "Transformer un clic en client avec fluidité • Répondre exactement à l'intention de recherche • Optimisée pour mobile + vitesse + SEO local • Adaptée à Google SGE et aux réponses IA génératives"
+            },
+            {
+              "title": "Structure recommandée",
+              "content": "Hook clair (titre H1 + promesse directe) • Blocs visuels courts avec bénéfices / preuves sociales • Appels à l'action stratégiques (CTA visibles à chaque écran) • Formulaire intelligent IA + contextualisation automatique"
+            }
+          ]
+        },
+        "structuredData": {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Landing Page Intelligente – Iluma",
+          "mainEntity": [
+            {
+              "@type": "HowTo",
+              "name": "Créer une Landing Page IA Iluma efficace",
+              "step": [
+                { "@type": "HowToStep", "name": "Étape 1", "text": "Définir l'intention et le message principal" },
+                { "@type": "HowToStep", "name": "Étape 2", "text": "Structurer les blocs selon notre schéma IA-first" },
+                { "@type": "HowToStep", "name": "Étape 3", "text": "Ajouter formulaire, FAQ et CTA stratégiques" },
+                { "@type": "HowToStep", "name": "Étape 4", "text": "Connecter à ADLUMA™, ILA™ ou votre CRM" }
+              ]
+            }
+          ]
+        },
+        "status": "optimized"
+      },
+      "youtube-seo": {
+        "title": "YouTube SEO IA - Optimisation Vidéo Intelligence | Visibilité Maximale",
+        "description": "YouTube SEO IA : Optimisation vidéo YouTube avec stratégie IA avancée. Visibilité maximale, engagement +400%, monétisation optimisée.",
+        "focusKeywords": ["YouTube SEO", "optimisation vidéo IA", "visibilité YouTube", "engagement vidéo"],
+        "status": "optimized"
+      },
+      "visibilite-locale": {
+        "title": "Visibilité Locale IA - Domination Géographique | Top 3 Local Garanti",
+        "description": "Visibilité Locale IA : Domination locale avec géo-ciblage IA et optimisation GMB. Top 3 local garanti, avis clients +500%, trafic qualifié.",
+        "focusKeywords": ["visibilité locale", "géo-ciblage IA", "Google My Business", "domination locale"],
+        "status": "optimized"
+      }
+    },
+    "blog": {
+      "title": "Blog Iluma™ - Insights IA Marketing | Stratégies Avancées SEO",
+      "description": "Blog Iluma™ : analyses, stratégies et tendances IA marketing. Conseils d'experts, cas d'usage, optimisation continue, insights exclusifs.",
+      "focusKeywords": ["blog IA marketing", "stratégies SEO", "insights marketing", "tendances IA"],
+      "status": "optimized"
+    },
+    "faq": {
+      "title": "FAQ – Réponses à vos questions les plus courantes sur Iluma",
+      "description": "Retrouvez ici les réponses aux questions les plus posées par nos clients, partenaires et visiteurs. Chaque réponse a été rédigée pour être compatible avec les algorithmes de recherche SGE et favoriser l'indexation IA-friendly.",
+      "focusKeywords": ["FAQ Iluma", "questions fréquentes", "SEO SGE", "agence IA"],
+      "content": {
+        "hero": {
+          "title": "FAQ – Réponses à vos questions les plus courantes sur Iluma",
+          "subtitle": "Retrouvez ici les réponses aux questions les plus posées par nos clients, partenaires et visiteurs. Chaque réponse a été rédigée pour être compatible avec les algorithmes de recherche SGE et favoriser l'indexation IA-friendly.",
+          "cta": "Poser une question à Lilo™"
+        },
+        "sections": [
+          {
+            "title": "Questions générales sur Iluma",
+            "content": "Qu'est-ce qu'Iluma ? • Quelle différence avec une agence traditionnelle ? • Compatible avec Shopify/WordPress ? • Contenus optimisés fournis ?"
+          },
+          {
+            "title": "Questions SEO / SGE",
+            "content": "Comment apparaître dans les blocs SGE ? • Mesurer ma visibilité SGE ? • Optimisation pour IA générative • Structure IA-friendly"
+          },
+          {
+            "title": "Questions IA & modules Iluma",
+            "content": "Qui est Lilo™ notre mascotte IA ? • C'est quoi FlowGuide™ ? • Modules ADLUMA™ et ILA™ • CRM intelligent intégré"
+          }
+        ]
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce qu'Iluma ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Iluma™ est une agence numérique augmentée par IA, spécialisée en SEO, branding et UX. Nous construisons des écosystèmes stratégiques vivants, interconnectés avec votre audience, vos données, vos émotions et vos objectifs."
+            }
+          },
+          {
+            "@type": "Question", 
+            "name": "Comment Iluma aide-t-il à apparaître dans les blocs SGE ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Par une combinaison de contenus experts, données structurées JSON-LD, prompts ciblés et signaux de confiance (autorité, engagement, backlinks)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qui est Lilo™ ?", 
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lilo™ est notre mascotte et guide émotionnel IA. Il accompagne les visiteurs à travers le site avec un comportement adaptatif et une présence bienveillante."
+            }
+          }
+        ]
+      },
+      "status": "optimized"
+    },
+    "contact": {
+      "title": "Contact Iluma™ - Consultation IA Marketing | Experts Disponibles",
+      "description": "Contactez les experts Iluma™ pour votre transformation IA marketing. Consultation gratuite, stratégie personnalisée, accompagnement expert.",
+      "focusKeywords": ["contact Iluma", "consultation IA marketing", "experts marketing", "stratégie personnalisée"],
+      "status": "optimized"
+    }
+  },
+  "globalSEO": {
+    "siteName": "Iluma™ - Intelligence Artificielle Marketing",
+    "defaultImage": "/iluma-og-image.jpg",
+    "twitterHandle": "@IlumaMarketing",
+    "companySchema": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Iluma Marketing",
+      "description": "Intelligence Artificielle Marketing & SEO",
+      "url": "https://ilumamarketing.com",
+      "logo": "https://ilumamarketing.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-514-123-4567",
+        "contactType": "Customer Service",
+        "availableLanguage": ["French", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Montréal",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      }
+    }
+  }
+}

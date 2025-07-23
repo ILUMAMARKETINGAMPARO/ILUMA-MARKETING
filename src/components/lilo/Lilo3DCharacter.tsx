@@ -2,7 +2,7 @@ import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, Box, Cylinder, Torus } from '@react-three/drei';
 import * as THREE from 'three';
-import { LiloMood } from '@/hooks/useLiloUX';
+import { LiloMood } from '@/hooks/useLiloUX.ts';
 
 interface Lilo3DCharacterProps {
   mood: LiloMood;

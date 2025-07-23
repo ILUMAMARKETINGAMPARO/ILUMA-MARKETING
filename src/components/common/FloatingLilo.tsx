@@ -2,7 +2,7 @@ import React from 'react';
 import Lilo3D from '@/components/lilo/Lilo3D';
 import LiloFullBodyCharacter from '@/components/lilo/LiloFullBodyCharacter';
 import { LiloModule } from '@/types/lilo';
-import { useLiloContextual } from '@/hooks/useLiloContextual';
+import { useLiloContextual } from '@/hooks/useLiloContextual.ts';
 
 interface FloatingLiloProps {
   currentPage?: string;

@@ -25,8 +25,8 @@ import {
   Bot,
   TrendingUp
 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 
 interface OperationalAPIManagerProps {
   onDataEnriched: (data: any[]) => void;
@@ -638,3 +638,5 @@ export const OperationalAPIManager: React.FC<OperationalAPIManagerProps> = ({
     </div>
   );
 };
+
+export default OperationalAPIManager;

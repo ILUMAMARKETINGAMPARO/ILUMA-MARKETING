@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { RivalBusiness } from '@/types/rivalviews';
-import { supabase } from '@/integrations/supabase/client';
+import { RivalBusiness } from '@/types/rivalviews.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 import { 
   Users, 
   Download, 

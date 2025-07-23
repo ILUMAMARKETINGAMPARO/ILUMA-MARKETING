@@ -8,7 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { TrendingUp, Plus, Users, Calculator, Gift } from 'lucide-react';
 import { useCRM } from '@/contexts/CRMContext';
-import { QuarterlyBonus } from '@/types/crm';
+import { QuarterlyBonus } from '@/types/crm.ts';
 import { getCollaboratorColor } from '@/utils/collaboratorColors';
 
 const QuarterlyBonusManager: React.FC = () => {

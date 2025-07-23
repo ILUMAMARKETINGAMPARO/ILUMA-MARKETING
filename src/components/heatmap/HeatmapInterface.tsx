@@ -22,7 +22,7 @@ import {
   Plus,
   Eye
 } from 'lucide-react';
-import { BusinessData, HeatmapFilters } from '@/types/heatmap';
+import { BusinessData, HeatmapFilters } from '@/types/heatmap.ts';
 import { parseBusinessData } from '@/utils/heatmapDataParser';
 
 interface HeatmapInterfaceProps {

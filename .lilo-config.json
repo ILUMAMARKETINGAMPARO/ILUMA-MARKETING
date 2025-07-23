@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "name": "LILO™ Universal Assistant System",
+  "description": "Configuration globale pour le système LILO™ intégré Iluma™",
+  "modules": {
+    "adluma": {
+      "enabled": true,
+      "priority": "high",
+      "autoActivate": true,
+      "features": ["targeting", "budget-optimization", "network-selection", "roi-prediction"]
+    },
+    "ila": {
+      "enabled": true,
+      "priority": "high", 
+      "autoActivate": true,
+      "features": ["score-analysis", "recommendations", "improvement-suggestions", "competitor-analysis"]
+    },
+    "crm-iluma": {
+      "enabled": true,
+      "priority": "medium",
+      "autoActivate": false,
+      "features": ["client-insights", "task-management", "revenue-tracking", "smart-reminders"]
+    },
+    "hub-iluma": {
+      "enabled": true,
+      "priority": "high",
+      "autoActivate": true,
+      "features": ["navigation", "search", "recommendations", "quick-access"]
+    },
+    "contact": {
+      "enabled": true,
+      "priority": "high",
+      "autoActivate": true,
+      "features": ["appointment-booking", "form-assistance", "contact-info", "support"]
+    },
+    "simulator": {
+      "enabled": true,
+      "priority": "high",
+      "autoActivate": true,
+      "features": ["context-guidance", "step-by-step", "optimization-tips", "result-explanation"]
+    },
+    "performance": {
+      "enabled": true,
+      "priority": "medium",
+      "autoActivate": false,
+      "features": ["speed-analysis", "optimization-tips", "monitoring", "reporting"]
+    },
+    "home": {
+      "enabled": true,
+      "priority": "high",
+      "autoActivate": true,
+      "features": ["welcome", "navigation", "overview", "getting-started"]
+    }
+  },
+  "accessibility": {
+    "wcag_level": "AA",
+    "keyboard_navigation": true,
+    "screen_reader_support": true,
+    "reduced_motion_respect": true,
+    "high_contrast_mode": true,
+    "focus_indicators": true,
+    "disable_option": true
+  },
+  "ui": {
+    "theme": "galactic",
+    "colors": {
+      "primary": "#8E44FF",
+      "secondary": "#F5D06F", 
+      "background": "#0B0B0E"
+    },
+    "animations": {
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "respect_prefers_reduced_motion": true
+    }
+  },
+  "behavior": {
+    "auto_activate_delay_ms": 2000,
+    "session_memory": true,
+    "cross_module_context": true,
+    "intelligent_suggestions": true
+  },
+  "integrations": {
+    "google_calendar": true,
+    "supabase": true,
+    "analytics": true
+  },
+  "replaced_components": [
+    "NLPAssistant",
+    "SmartIntegrationButton", 
+    "GenericChatbot",
+    "DefaultAssistant"
+  ],
+  "deployment": {
+    "version": "1.0.0",
+    "last_updated": "2024-12-19",
+    "rollout_status": "active",
+    "performance_impact": "minimal"
+  }
+}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { Star, TrendingUp, Globe, MapPin, Phone, Mail } from 'lucide-react';
 
 interface TooltipStatsBoxProps {

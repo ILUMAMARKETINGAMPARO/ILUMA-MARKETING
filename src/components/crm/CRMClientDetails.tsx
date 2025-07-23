@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Globe, Calendar, TrendingUp } from 'lucide-react';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 
 interface CRMClientDetailsProps {
   client: ClientFiche | null;

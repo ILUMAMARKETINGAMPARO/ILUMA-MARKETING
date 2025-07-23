@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { useEmotionalIntelligence } from '@/hooks/useEmotionalIntelligence';
+import { useEmotionalIntelligence } from '@/hooks/useEmotionalIntelligence.ts';
 import { Brain, Zap, Target, Lightbulb, Eye, Heart } from 'lucide-react';
 
 interface NeuroflowStep {

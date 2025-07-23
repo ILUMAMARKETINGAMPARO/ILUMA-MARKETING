@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { Copy, Sparkles, Brain, Target, Zap, Users, TrendingUp, Globe, MessageSquare, Settings, Database, Download, BarChart3, Lock, Eye, MapPin } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 
 interface PromptData {
   id: number;

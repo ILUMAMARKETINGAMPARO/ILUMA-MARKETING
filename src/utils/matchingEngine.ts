@@ -1,4 +1,4 @@
-import { BusinessProfile, ILUMATCHResult } from '@/types/ilumatch';
+import { BusinessProfile, ILUMATCHResult } from '@/types/ilumatch.ts';
 
 export const findBusinessMatches = async (
   targetBusiness: BusinessProfile,

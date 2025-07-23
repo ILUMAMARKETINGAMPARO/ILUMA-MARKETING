@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import { Shield, Mail, Phone, MapPin } from 'lucide-react';
 
 const LegalFooter = () => {

@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Brain, Sparkles, MessageCircle, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useLiloUniversal } from '@/hooks/useLiloUniversal';
+import { useLiloUniversal } from '@/hooks/useLiloUniversal.ts';
 import { LiloModule } from '@/types/lilo';
 
 interface LiloUniversalReplacerProps {

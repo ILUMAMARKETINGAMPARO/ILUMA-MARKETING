@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, MapPin, Globe, Star, TrendingUp } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface QRVisibiliteCardProps {
   business: RivalBusiness;

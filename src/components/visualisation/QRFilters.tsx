@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import { Filter, Search, RotateCcw, MapPin } from 'lucide-react';
-import { RivalFilters as RivalFiltersType } from '@/types/rivalviews';
+import { RivalFilters as RivalFiltersType } from '@/types/rivalviews.ts';
 
 interface QRFiltersProps {
   filters: RivalFiltersType;

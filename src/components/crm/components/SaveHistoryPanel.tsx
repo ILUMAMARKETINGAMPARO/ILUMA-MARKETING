@@ -23,7 +23,7 @@ import {
   CheckSquare
 } from 'lucide-react';
 import { useSave } from '@/contexts/SaveContext';
-import { SaveAction } from '@/types/save';
+import { SaveAction } from '@/types/save.ts';
 
 interface SaveHistoryPanelProps {
   isOpen: boolean;

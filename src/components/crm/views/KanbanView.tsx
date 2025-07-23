@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 import { useCRM } from '@/contexts/CRMContext';
 import DynamicCard from '../foundation/DynamicCard';
 import FloatingAddButton from '../foundation/FloatingAddButton';

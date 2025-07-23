@@ -25,7 +25,7 @@ import {
   Globe,
   MessageCircle
 } from 'lucide-react';
-import { BusinessData } from '@/types/heatmap';
+import { BusinessData } from '@/types/heatmap.ts';
 
 interface LocalBusinessAnalysis {
   name: string;

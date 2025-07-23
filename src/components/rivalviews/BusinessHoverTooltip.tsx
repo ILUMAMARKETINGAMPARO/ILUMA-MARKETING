@@ -1,5 +1,5 @@
 import React from 'react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface BusinessHoverTooltipProps {
   business: RivalBusiness | null;

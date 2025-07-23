@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Sparkles, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useScrollDirection } from '@/hooks/useScrollDirection';
+import { useScrollDirection } from '@/hooks/useScrollDirection.ts';
 import Lilo3DCharacter from './Lilo3DCharacter';
-import { LiloMood } from '@/hooks/useLiloUX';
+import { LiloMood } from '@/hooks/useLiloUX.ts';
 
 interface Lilo3DFollowerProps {
   mood?: LiloMood;

@@ -11,7 +11,7 @@ import {
   MapPin,
   X
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import MobileBusinessCard from './MobileBusinessCard';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 

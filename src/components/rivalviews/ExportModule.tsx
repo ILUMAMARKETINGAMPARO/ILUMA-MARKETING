@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useExport } from '@/contexts/ExportContext';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 import { 
   Download, 
   FileText, 
@@ -21,7 +21,7 @@ import {
   XCircle,
   Loader2
 } from 'lucide-react';
-import { RivalBusiness, RivalExportData } from '@/types/rivalviews';
+import { RivalBusiness, RivalExportData } from '@/types/rivalviews.ts';
 
 interface ExportModuleProps {
   businesses: RivalBusiness[];

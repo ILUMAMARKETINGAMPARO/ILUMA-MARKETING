@@ -48,7 +48,7 @@ import ProjectsSection from './sections/ProjectsSection';
 import LiloIntegration from '../lilo/LiloIntegration';
 import SaveButton from '@/components/ui/save-button';
 import SaveHistoryPanel from './components/SaveHistoryPanel';
-import useAutoSave from '@/hooks/useAutoSave';
+import useAutoSave from '@/hooks/useAutoSave.ts';
 import SaveIndicator from '@/components/ui/save-indicator';
 import DataPersistenceManager from './components/DataPersistenceManager';
 

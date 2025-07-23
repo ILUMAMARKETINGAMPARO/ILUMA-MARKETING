@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Sparkles, Zap, Heart, Star, Wifi, Battery, Sun } from 'lucide-react';
 import { LiloModule, LiloMood } from '@/types/lilo';
-import { useLiloUniversal } from '@/hooks/useLiloUniversal';
+import { useLiloUniversal } from '@/hooks/useLiloUniversal.ts';
 import LiloEnhancedChat from './LiloEnhancedChat';
 
 interface Lilo3DProps {

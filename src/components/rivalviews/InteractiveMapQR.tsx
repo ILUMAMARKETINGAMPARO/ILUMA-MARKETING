@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import TooltipStatsBox from './TooltipStatsBox';
 import { MapPin, Zap, TrendingUp, Search, Filter } from 'lucide-react';
 

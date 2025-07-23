@@ -2,7 +2,7 @@ import React from 'react';
 import { Search, FileText, Play, Mic, Target, Users, ArrowRight, ShoppingCart, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 const ServicesPreview = () => {
   const { t } = useLanguage();

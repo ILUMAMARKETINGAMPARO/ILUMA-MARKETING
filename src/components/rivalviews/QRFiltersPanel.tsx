@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { RivalFilters } from '@/types/rivalviews';
+import { RivalFilters } from '@/types/rivalviews.ts';
 import { Filter, X, RotateCcw, Search } from 'lucide-react';
 
 interface RivalFiltersPanelProps {

@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Accessibility, Eye, Volume2, Type, Contrast, MousePointer, X, Settings } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 interface AccessibilitySettings {
   fontSize: number;
   contrast: 'normal' | 'high' | 'inverted';

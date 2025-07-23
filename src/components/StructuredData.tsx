@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 interface StructuredDataProps {
   type: 'Organization' | 'LocalBusiness' | 'FAQPage' | 'Article' | 'HowTo' | 'Review' | 'BreadcrumbList';

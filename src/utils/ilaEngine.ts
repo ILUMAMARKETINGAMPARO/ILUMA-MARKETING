@@ -1,4 +1,4 @@
-import { ILACalculation, ILAMetrics, BusinessProfile } from '@/types/ilumatch';
+import { ILACalculation, ILAMetrics, BusinessProfile } from '@/types/ilumatch.ts';
 
 // Poids pour chaque métrique dans le calcul ILA
 const WEIGHTS = {

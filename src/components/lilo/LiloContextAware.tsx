@@ -26,8 +26,8 @@ import {
   Download,
   Settings
 } from 'lucide-react';
-import { useLiloEmotion } from '@/hooks/useLiloEmotion';
-import { useModuleAnalytics } from '@/hooks/useModuleAnalytics';
+import { useLiloEmotion } from '@/hooks/useLiloEmotion.ts';
+import { useModuleAnalytics } from '@/hooks/useModuleAnalytics.ts';
 
 interface LiloContextAwareProps {
   isOpen: boolean;

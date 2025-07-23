@@ -16,9 +16,9 @@ import {
   Eye,
   Loader2
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { useDebounce } from '@/hooks/use-debounce';
-import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer.ts';
 
 // Lazy load des composants lourds
 const MobileBusinessList = lazy(() => import('./MobileBusinessList'));

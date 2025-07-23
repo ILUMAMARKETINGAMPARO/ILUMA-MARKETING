@@ -22,8 +22,8 @@ import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Progress } from '@/components/ui/progress';
-import { useAPISecrets } from '@/hooks/useAPISecrets';
-import { SERVICE_CONFIGS } from '@/types/api-secrets';
+import { useAPISecrets } from '@/hooks/useAPISecrets.ts';
+import { SERVICE_CONFIGS } from '@/types/api-secrets.ts';
 
 const APITokenManager = () => {
   const {

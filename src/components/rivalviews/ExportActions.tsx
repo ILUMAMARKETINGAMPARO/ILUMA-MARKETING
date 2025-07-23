@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { Download, MessageSquare, Eye, Copy } from 'lucide-react';
 
 interface ExportActionsProps {

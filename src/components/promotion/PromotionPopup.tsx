@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 import PromotionContainer from './PromotionContainer';
 import PromotionStepRenderer from './PromotionStepRenderer';
-import { usePromotionFlow } from '@/hooks/usePromotionFlow';
-import { useABTesting } from '@/hooks/useABTesting';
-import { usePredictiveOptimization } from '@/hooks/usePredictiveOptimization';
+import { usePromotionFlow } from '@/hooks/usePromotionFlow.ts';
+import { useABTesting } from '@/hooks/useABTesting.ts';
+import { usePredictiveOptimization } from '@/hooks/usePredictiveOptimization.ts';
 
 interface PromotionPopupProps {
   isOpen: boolean;

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 import { useCRM } from '@/contexts/CRMContext';
 import { ChevronLeft, ChevronRight, TrendingUp, DollarSign } from 'lucide-react';
 

@@ -16,7 +16,7 @@ import {
   Target,
   Users
 } from 'lucide-react';
-import { BusinessProfile } from '@/types/ilumatch';
+import { BusinessProfile } from '@/types/ilumatch.ts';
 
 interface ILAScoreCardProps {
   business: BusinessProfile;

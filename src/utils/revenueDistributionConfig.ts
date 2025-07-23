@@ -1,5 +1,5 @@
 // Configuration de distribution des revenus Iluma™
-import { RoleAssignment, IlumaRole } from '@/types/crm';
+import { RoleAssignment, IlumaRole } from '@/types/crm.ts';
 import { getIlumaRoleColor } from './collaboratorColors';
 
 export const defaultIlumaDistribution: RoleAssignment[] = [

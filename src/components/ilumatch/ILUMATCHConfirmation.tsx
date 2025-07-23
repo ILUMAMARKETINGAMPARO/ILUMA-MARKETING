@@ -22,7 +22,7 @@ import {
   Calendar
 } from 'lucide-react';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import { Link } from 'react-router-dom';
 
 interface QuestionnaireData {

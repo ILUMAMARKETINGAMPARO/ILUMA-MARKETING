@@ -10,7 +10,7 @@ import {
   Users, Phone, Globe, Clock, Download, Calendar,
   Timer, AlertCircle, CheckCircle, Mail
 } from 'lucide-react';
-import { BusinessData } from '@/types/heatmap';
+import { BusinessData } from '@/types/heatmap.ts';
 
 import SpectateurIA from './SpectateurIA';
 import FlowAnalyticsAI from './FlowAnalyticsAI';

@@ -22,7 +22,7 @@ import {
   TrendingUp,
   Star
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import MobileBusinessList from './MobileBusinessList';
 import MobileBusinessCard from './MobileBusinessCard';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';

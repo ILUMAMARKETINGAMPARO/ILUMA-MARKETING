@@ -41,7 +41,7 @@ import EditClientModal from './modals/EditClientModal';
 import LiloIntegration from '../lilo/LiloIntegration';
 import SaveButton from '@/components/ui/save-button';
 import SaveHistoryPanel from './components/SaveHistoryPanel';
-import useAutoSave from '@/hooks/useAutoSave';
+import useAutoSave from '@/hooks/useAutoSave.ts';
 import SaveIndicator from '@/components/ui/save-indicator';
 
 interface CRMCommercialDashboardProps {

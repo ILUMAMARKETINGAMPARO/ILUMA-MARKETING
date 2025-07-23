@@ -1,4 +1,4 @@
-import { RivalBusiness, RivalStats, RivalFilters } from '@/types/rivalviews';
+import { RivalBusiness, RivalStats, RivalFilters } from '@/types/rivalviews.ts';
 
 export const parseRivalCSVData = (csvString: string): RivalBusiness[] => {
   const lines = csvString.trim().split('\n');

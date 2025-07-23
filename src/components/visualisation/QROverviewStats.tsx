@@ -13,7 +13,7 @@ import {
   Building,
   Percent
 } from 'lucide-react';
-import { RivalStats } from '@/types/rivalviews';
+import { RivalStats } from '@/types/rivalviews.ts';
 
 interface QROverviewStatsProps {
   stats: RivalStats;

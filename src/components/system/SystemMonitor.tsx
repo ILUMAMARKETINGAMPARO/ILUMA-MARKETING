@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSystemMonitoring } from '@/hooks/useSystemMonitoring';
+import { useSystemMonitoring } from '@/hooks/useSystemMonitoring.ts';
 import { useSystem } from '@/contexts/SystemContext';
 import { AlertTriangle, CheckCircle, Activity } from 'lucide-react';
 import { Card } from '@/components/ui/card';

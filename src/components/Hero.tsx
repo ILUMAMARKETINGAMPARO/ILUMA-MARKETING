@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 const Hero = () => {
   const { t } = useLanguage();

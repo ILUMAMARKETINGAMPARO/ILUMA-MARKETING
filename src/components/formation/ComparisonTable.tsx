@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, X, Star, Zap, Target, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 interface ComparisonItem {
   criterion: Record<string, string>;

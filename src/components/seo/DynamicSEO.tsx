@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import { getMultilingualSEOData, getSGEOptimizedContent } from '@/utils/seoMultilingualEngine';
 import SGEOptimizedSEO from './SGEOptimizedSEO';
 

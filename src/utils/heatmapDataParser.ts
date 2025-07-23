@@ -1,4 +1,4 @@
-import { BusinessData } from '@/types/heatmap';
+import { BusinessData } from '@/types/heatmap.ts';
 
 // Coordonnées approximatives pour les villes du Québec
 const CITY_COORDINATES = {

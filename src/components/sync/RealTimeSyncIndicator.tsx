@@ -13,8 +13,8 @@ import {
   Brain,
   MessageCircle
 } from 'lucide-react';
-import { useRealTimeSync } from '@/hooks/useRealTimeSync';
-import { useToast } from '@/hooks/use-toast';
+import { useRealTimeSync } from '@/hooks/useRealTimeSync.ts';
+import { useToast } from '@/hooks/use-toast.ts';
 
 const RealTimeSyncIndicator: React.FC = () => {
   const { isConnected, events, syncNow, clearOldEvents } = useRealTimeSync();

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Mic, MicOff, Volume2, VolumeX, Sparkles, Zap, Brain, Settings } from 'lucide-react';
 import { LiloModule, LiloMood } from '@/types/lilo';
-import { useLiloAI } from '@/hooks/useLiloAI';
+import { useLiloAI } from '@/hooks/useLiloAI.ts';
 
 interface LiloEnhancedChatProps {
   isOpen: boolean;

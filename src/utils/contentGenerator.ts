@@ -1,4 +1,4 @@
-import { ILUMATCHResult } from '@/types/ilumatch';
+import { ILUMATCHResult } from '@/types/ilumatch.ts';
 
 export const generateMatchContent = async (match: ILUMATCHResult): Promise<Partial<ILUMATCHResult>> => {
   // Simulation de l'appel GPT-4 pour générer le contenu

@@ -18,8 +18,8 @@ import {
   Zap,
   Target
 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 
 interface APIIntegrationManagerProps {
   onDataExtracted: (data: any[]) => void;

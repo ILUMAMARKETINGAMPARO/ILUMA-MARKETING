@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Navigation, Target } from 'lucide-react';
-import { BusinessProfile, ILUMATCHResult } from '@/types/ilumatch';
+import { BusinessProfile, ILUMATCHResult } from '@/types/ilumatch.ts';
 
 interface MatchesMapProps {
   businesses: BusinessProfile[];

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Building2, MapPin, Star, TrendingUp, Search, Target, Plus, Eye } from 'lucide-react';
 
-import { RivalBusiness as ImportedRivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness as ImportedRivalBusiness } from '@/types/rivalviews.ts';
 
 // Interface adaptée pour la carte
 interface MapBusiness {

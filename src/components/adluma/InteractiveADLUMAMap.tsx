@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MapPin, Circle, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useMapLogging } from '@/hooks/useMapLogging';
+import { useMapLogging } from '@/hooks/useMapLogging.ts';
 
 interface InteractiveADLUMAMapProps {
   selectedLocation: string;

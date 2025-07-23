@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { LanguageContext } from '@/contexts/LanguageContext';
-import { useLiloUX } from '@/hooks/useLiloUX';
+import { useLiloUX } from '@/hooks/useLiloUX.ts';
 import { MessageCircle, X, Sparkles, TrendingUp, Search, Lightbulb } from 'lucide-react';
 
 interface LILOOverlayProps {

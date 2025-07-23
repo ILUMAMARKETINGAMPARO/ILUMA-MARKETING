@@ -13,7 +13,7 @@ import {
   Target,
   Eye
 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '@/integrations/supabase/client.ts';
 
 interface Business {
   id: string;

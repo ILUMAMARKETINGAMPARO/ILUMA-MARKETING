@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 import { Database, RefreshCw, CheckCircle, AlertCircle, Clock, Users, TrendingUp, Zap, ChevronDown, ChevronUp } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
-import { supabase } from '@/integrations/supabase/client';
+import { RivalBusiness } from '@/types/rivalviews.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 interface CRMSyncManagerProps {
   businesses: RivalBusiness[];
   onSyncComplete: (syncedCount: number) => void;

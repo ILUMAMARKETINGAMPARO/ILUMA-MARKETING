@@ -16,7 +16,7 @@ import {
   Save,
   RotateCw
 } from 'lucide-react';
-import { RivalBusiness, RivalFilters } from '@/types/rivalviews';
+import { RivalBusiness, RivalFilters } from '@/types/rivalviews.ts';
 import { generateRivalMockData, filterRivalBusinesses } from '@/utils/rivalviewsDataParser';
 import SectionWrapper from '../foundation/SectionWrapper';
 

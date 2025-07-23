@@ -2,7 +2,7 @@ import React from 'react';
 import { TrendingUp, Users, Play, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 const CaseStudies = () => {
   const { t } = useLanguage();

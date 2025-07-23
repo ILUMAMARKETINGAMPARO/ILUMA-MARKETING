@@ -1,4 +1,4 @@
-import { ILAMetrics, ILAAnalysis } from '@/types/ila';
+import { ILAMetrics, ILAAnalysis } from '@/types/ila.ts';
 
 export const calculateILAScore = async (metrics: Partial<ILAMetrics>): Promise<ILAAnalysis> => {
   // Algorithme de scoring ILA avancé

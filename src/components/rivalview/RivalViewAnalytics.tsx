@@ -26,7 +26,7 @@ import {
   Download,
   RefreshCw
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface RivalViewAnalyticsProps {
   data: {

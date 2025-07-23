@@ -99,4 +99,4 @@ const NurturingInterface = () => {
   );
 };
 
-export default NurturingInterfac
+export default NurturingInterface;

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { MapPin, Filter, Search, TrendingUp, Star, Globe, Users } from 'lucide-react';
 
 // Configuration Mapbox - Utiliser une clé publique temporaire pour la démo

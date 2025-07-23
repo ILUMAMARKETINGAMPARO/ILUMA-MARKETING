@@ -18,8 +18,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client.ts';
+import { toast } from '@/hooks/use-toast.ts';
 
 interface ModuleStatus {
   id: string;

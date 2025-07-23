@@ -13,8 +13,8 @@ import {
   AlertCircle,
   Clock
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
-import { supabase } from "@/integrations/supabase/client";
+import { RivalBusiness } from '@/types/rivalviews.ts';
+import { supabase } from "@/integrations/supabase/client.ts";
 
 interface ClientEntryFormProps {
   onBusinessFound: (business: RivalBusiness) => void;

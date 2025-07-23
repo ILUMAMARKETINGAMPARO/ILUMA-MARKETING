@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useAuth } from '@/contexts/AuthContext';
-import { useIsMobile, useDeviceInfo } from '@/hooks/use-mobile';
+import { useIsMobile, useDeviceInfo } from '@/hooks/use-mobile.ts';
 import { useDebounce } from '@/hooks/use-debounce';
 import EmployeeAuth from './EmployeeAuth';
 import EmployeeSection from './EmployeeSection';
@@ -47,7 +47,7 @@ import {
   Crown
 } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '@/integrations/supabase/client.ts';
 
 // Lazy load des composants lourds pour optimiser le bundle
 const ProfileSelector = lazy(() => import('./ProfileSelector'));
@@ -60,7 +60,7 @@ const InternationalizationModule = lazy(() => import('./InternationalizationModu
 const MapListToggle = lazy(() => import('./MapListToggle'));
 const OptimizedMobileInterface = lazy(() => import('./OptimizedMobileInterface'));
 
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import { useGlobalEvent, emitBusinessDataRefresh } from '@/utils/globalEvents';
 import { toast } from 'sonner';
 

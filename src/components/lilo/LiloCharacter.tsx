@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LiloMood } from '@/hooks/useLiloUX';
+import { LiloMood } from '@/hooks/useLiloUX.ts';
 
 interface LiloCharacterProps {
   mood: LiloMood;

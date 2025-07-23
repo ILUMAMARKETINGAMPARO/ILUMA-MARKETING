@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Brain, TrendingUp, TrendingDown, ArrowUp, ArrowDown, Equal } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface BusinessComparisonProps {
   businessA: RivalBusiness;

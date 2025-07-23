@@ -5,8 +5,8 @@ import { Rocket, Sparkles, X, Send, HelpCircle, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { useScrollDirection } from '@/hooks/useScrollDirection';
-import { useLiloUX } from '@/hooks/useLiloUX';
+import { useScrollDirection } from '@/hooks/useScrollDirection.ts';
+import { useLiloUX } from '@/hooks/useLiloUX.ts';
 import Lilo3DCharacter from './Lilo3DCharacter';
 import LiloErrorBoundary from './LiloErrorBoundary';
 import LiloFallback2D from './LiloFallback2D';
@@ -17,7 +17,7 @@ import {
   getQuickStats,
   ilumaInfo
 } from '@/utils/LiloKnowledgeBase';
-import { LiloMood } from '@/hooks/useLiloUX';
+import { LiloMood } from '@/hooks/useLiloUX.ts';
 
 interface Message {
   id: string;

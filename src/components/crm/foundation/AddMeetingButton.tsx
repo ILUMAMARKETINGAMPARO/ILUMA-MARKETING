@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Plus, Calendar, Clock, User, Target } from 'lucide-react';
 import { useMeeting } from '@/contexts/MeetingContext';
 import { useCRM } from '@/contexts/CRMContext';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 
 interface AddMeetingButtonProps {
   compact?: boolean;

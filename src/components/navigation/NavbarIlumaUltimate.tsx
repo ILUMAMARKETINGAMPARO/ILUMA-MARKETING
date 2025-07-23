@@ -4,9 +4,9 @@ import { Rocket, X, Menu, User, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import SecretShipButton from '@/components/common/SecretShipButton';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile.ts';
 import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 const NavbarIlumaUltimate: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);

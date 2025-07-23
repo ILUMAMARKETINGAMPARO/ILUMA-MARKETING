@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { TrendingUp, TrendingDown, AlertTriangle, Download, RefreshCw } from 'lucide-react';
-import { usePromotionMonitoring } from '@/hooks/usePromotionMonitoring';
+import { usePromotionMonitoring } from '@/hooks/usePromotionMonitoring.ts';
 
 const PerformanceMonitor: React.FC = memo(() => {
   const { 

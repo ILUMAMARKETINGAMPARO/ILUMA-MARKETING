@@ -18,7 +18,7 @@ import {
   ArrowUp,
   ArrowDown
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface CityViewProps {
   businesses: RivalBusiness[];

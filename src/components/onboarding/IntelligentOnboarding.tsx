@@ -17,8 +17,8 @@ import {
   Star,
   X
 } from 'lucide-react';
-import { useModuleAnalytics } from '@/hooks/useModuleAnalytics';
-import { supabase } from '@/integrations/supabase/client';
+import { useModuleAnalytics } from '@/hooks/useModuleAnalytics.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 
 interface OnboardingStep {
   id: string;

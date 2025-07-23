@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import ClientEntryForm from './ClientEntryForm';
 import ClientMetricsDisplay from './ClientMetricsDisplay';
 import { 

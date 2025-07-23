@@ -16,7 +16,7 @@ import {
   MapPin,
   Building
 } from 'lucide-react';
-import { RivalBusiness, RivalFilters } from '@/types/rivalviews';
+import { RivalBusiness, RivalFilters } from '@/types/rivalviews.ts';
 import { filterRivalBusinesses } from '@/utils/rivalviewsDataParser';
 import RivalViewMapbox from '@/components/rivalview/RivalViewMapbox';
 

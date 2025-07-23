@@ -25,7 +25,7 @@ import {
   Users,
   Globe
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface RivalViewsAIProps {
   selectedBusiness: RivalBusiness | null;

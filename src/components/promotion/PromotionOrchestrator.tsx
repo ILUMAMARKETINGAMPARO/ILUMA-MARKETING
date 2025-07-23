@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { usePromotionAnalytics } from '@/hooks/usePromotionAnalytics';
+import { usePromotionAnalytics } from '@/hooks/usePromotionAnalytics.ts';
 import PromotionPopup from './PromotionPopup';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast.ts';
+import { supabase } from '@/integrations/supabase/client.ts';
 interface PromotionOrchestratorProps {
   children: React.ReactNode;
 }

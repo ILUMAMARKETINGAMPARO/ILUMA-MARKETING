@@ -28,7 +28,7 @@ import {
 import { useProject } from '@/contexts/ProjectContext';
 import { useCRM } from '@/contexts/CRMContext';
 import { useSave } from '@/contexts/SaveContext';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast.ts';
 import SaveButton from '@/components/ui/save-button';
 import SaveHistoryPanel from '../components/SaveHistoryPanel';
 

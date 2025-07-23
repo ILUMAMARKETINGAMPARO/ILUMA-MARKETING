@@ -18,7 +18,7 @@ import {
   Network
 } from 'lucide-react';
 import { useCRM } from '@/contexts/CRMContext';
-import { ProspectionQuery } from '@/types/crm';
+import { ProspectionQuery } from '@/types/crm.ts';
 
 const ProspectionModule = () => {
   const { performProspection, isLoading } = useCRM();

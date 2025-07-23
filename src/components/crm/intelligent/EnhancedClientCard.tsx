@@ -23,7 +23,7 @@ import {
   BarChart3,
   Sparkles
 } from 'lucide-react';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 
 interface EnhancedClientCardProps {
   client: ClientFiche;

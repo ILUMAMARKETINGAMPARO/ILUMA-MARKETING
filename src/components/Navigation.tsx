@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Rocket, Phone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import MobileNavigation from './navigation/MobileNavigation';
 import OrbitalDropdown from './navigation/OrbitalDropdown';
 import GridDropdown from './navigation/GridDropdown';

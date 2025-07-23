@@ -14,7 +14,7 @@ import {
   TrendingUp, Globe, MessageCircle, Plus, Target,
   Zap, Eye, BarChart3, Download, Share2
 } from 'lucide-react';
-import { BusinessData } from '@/types/heatmap';
+import { BusinessData } from '@/types/heatmap.ts';
 
 interface InteractiveMapEnhanceProps {
   onBusinessSelect?: (business: BusinessData) => void;

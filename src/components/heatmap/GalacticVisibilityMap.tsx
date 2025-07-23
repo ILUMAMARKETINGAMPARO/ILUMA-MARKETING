@@ -21,7 +21,7 @@ import {
   Share2,
   Lightbulb
 } from 'lucide-react';
-import { BusinessData } from '@/types/heatmap';
+import { BusinessData } from '@/types/heatmap.ts';
 
 interface GalacticVisibilityMapProps {
   businesses: BusinessData[];

@@ -17,7 +17,7 @@ import {
   AlertTriangle,
   Lightbulb
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
 
 interface ILAIntroductionProps {

@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/hooks/useLanguage';
-import { useSEOData } from '@/hooks/useSEOData';
+import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useSEOData } from '@/hooks/useSEOData.ts';
 
 interface SEOHeadProps {
   title?: string;

@@ -4,7 +4,7 @@ import { X, Sparkles, Heart, Star, Trophy, Clock, Rocket, Zap, Target, Crown, Sh
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 interface PopupLiloPromoProps {
   isOpen?: boolean;
   onClose?: () => void;

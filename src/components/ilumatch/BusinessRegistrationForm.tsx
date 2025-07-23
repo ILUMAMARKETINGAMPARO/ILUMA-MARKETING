@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { Building2, MapPin, Globe, Phone, Mail } from 'lucide-react';
 import { useILUMATCH } from '@/contexts/ILUMATCHContext';
-import { BusinessProfile } from '@/types/ilumatch';
+import { BusinessProfile } from '@/types/ilumatch.ts';
 
 const BusinessRegistrationForm = () => {
   const { addBusiness, isCalculating } = useILUMATCH();

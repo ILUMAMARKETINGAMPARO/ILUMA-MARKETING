@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Rocket, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Calculator, Brain, Zap, Target, Globe, Star, PenTool, Bot, Users, BarChart3, Shield, Settings, Network, Award, Monitor } from 'lucide-react';
 import LegalFooter from './LegalFooter';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 
 interface FooterTool {
   name?: string;

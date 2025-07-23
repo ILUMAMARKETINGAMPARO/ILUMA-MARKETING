@@ -16,7 +16,7 @@ import {
   RefreshCw,
   Download
 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { supabase } from '@/integrations/supabase/client.ts';
 import { toast } from 'sonner';
 
 const ProspectionDashboard = () => {

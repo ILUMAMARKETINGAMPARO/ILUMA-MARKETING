@@ -19,7 +19,7 @@ import {
   Zap,
   ArrowRight
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface Market {
   id: string;

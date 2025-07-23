@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PieChart, Users, DollarSign } from 'lucide-react';
-import { RoleAssignment } from '@/types/crm';
+import { RoleAssignment } from '@/types/crm.ts';
 import { getRoleIcon, getRoleDisplayName } from '@/utils/revenueDistributionConfig';
 import { getIlumaRoleColor } from '@/utils/collaboratorColors';
 

@@ -4,7 +4,7 @@ import { Brain, TrendingUp, Target, Zap, AlertCircle, CheckCircle } from 'lucide
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { useCollectiveIntelligence } from '@/hooks/useCollectiveIntelligence';
+import { useCollectiveIntelligence } from '@/hooks/useCollectiveIntelligence.ts';
 
 const IntelligenceDashboard: React.FC = () => {
   const { insights, metrics, isOptimizing } = useCollectiveIntelligence();

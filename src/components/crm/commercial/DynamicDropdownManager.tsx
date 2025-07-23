@@ -15,7 +15,7 @@ import {
   Save,
   RotateCw
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 
 interface DynamicDropdownManagerProps {
   isOpen: boolean;

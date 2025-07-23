@@ -22,7 +22,7 @@ import {
   Clock,
   Sparkles
 } from 'lucide-react';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 
 interface AIInsightsSidebarProps {
   clients: ClientFiche[];

@@ -17,7 +17,7 @@ import {
   MapPin,
   Eye
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/hooks/useLanguage.ts';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
 
 // Safe LILO component that won't crash

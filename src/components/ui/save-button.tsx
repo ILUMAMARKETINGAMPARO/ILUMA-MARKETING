@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Save, Check, X, Loader2, Download } from 'lucide-react';
 import { useSave } from '@/contexts/SaveContext';
-import { SaveButtonProps } from '@/types/save';
+import { SaveButtonProps } from '@/types/save.ts';
 import { cn } from '@/lib/utils';
 
 export const SaveButton: React.FC<SaveButtonProps> = ({

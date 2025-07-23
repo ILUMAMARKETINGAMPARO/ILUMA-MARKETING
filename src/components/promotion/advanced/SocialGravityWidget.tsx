@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useSocialGravity } from '@/hooks/useSocialGravity';
+import { useSocialGravity } from '@/hooks/useSocialGravity.ts';
 import { MapPin, Users, Star, TrendingUp, Clock, Shield } from 'lucide-react';
 
 interface SocialGravityWidgetProps {

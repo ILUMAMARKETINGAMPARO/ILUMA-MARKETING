@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import ProspectionModule from './ProspectionModule';
 import BusinessTable from './BusinessTable';
-import { RivalBusiness } from '@/types/rivalviews';
+import { RivalBusiness } from '@/types/rivalviews.ts';
 import BusinessComparison from './BusinessComparison';
 import CollaborativeNotes from './CollaborativeNotes';
 import MapListToggle from './MapListToggle';

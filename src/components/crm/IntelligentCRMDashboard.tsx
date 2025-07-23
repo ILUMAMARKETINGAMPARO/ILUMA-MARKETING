@@ -23,7 +23,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useCRM } from '@/contexts/CRMContext';
-import { ClientFiche } from '@/types/crm';
+import { ClientFiche } from '@/types/crm.ts';
 import EnhancedClientCard from './intelligent/EnhancedClientCard';
 import AIInsightsSidebar from './intelligent/AIInsightsSidebar';
 import LiloIntegration from '../lilo/LiloIntegration';

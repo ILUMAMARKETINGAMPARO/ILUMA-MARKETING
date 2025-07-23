@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection';
+import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection.ts';
 import MultilingualRouter from './MultilingualRouter';
 
 const GeoLanguageRouter: React.FC = () => {

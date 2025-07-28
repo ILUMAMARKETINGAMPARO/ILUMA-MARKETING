@@ -1,0 +1,53 @@
+project_id = "tgtoykxksohyalgifcdi"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[auth]
+enabled = true
+port = 54324
+external_url = "http://localhost:54324"
+jwt_expiry = 3600
+refresh_token_rotation_enabled = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+
+[functions.lilo-ai-assistant]
+verify_jwt = false
+
+[functions.ila-score-calculator]
+verify_jwt = false
+
+[functions.revalviews-mapbox]
+verify_jwt = false
+
+[functions.mail-suite]
+verify_jwt = false
+
+[functions.serp-data-collector]
+verify_jwt = false
+
+[functions.api-enrichment-engine]
+verify_jwt = false
+
+[functions.gmail-enricher]
+verify_jwt = false
+
+[functions.geo-prospector]
+verify_jwt = false
+
+[functions.business-enricher]
+verify_jwt = false
+
+[functions.ila-calculator]
+verify_jwt = false
+
+[functions.data-synchronizer]
+verify_jwt = false
+
+[functions.lilo-ai-engine]
+verify_jwt = false

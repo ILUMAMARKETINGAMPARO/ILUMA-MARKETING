@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection.ts';
+import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection';
 import { Language } from '@/types/language';
 
 // Import all page components

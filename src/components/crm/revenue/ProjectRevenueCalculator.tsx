@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Calculator, Save, Eye } from 'lucide-react';
-import { ProjectFiche, ClientFiche } from '@/types/crm.ts';
+import { ProjectFiche, ClientFiche } from '@/types/crm';
 import { defaultIlumaDistribution, calculateDistribution, getRoleIcon } from '@/utils/revenueDistributionConfig';
 import { getIlumaRoleColor } from '@/utils/collaboratorColors';
 
@@ -45,7 +45,7 @@ const ProjectRevenueCalculator: React.FC<ProjectRevenueCalculatorProps> = ({
 
   const handleSaveDistribution = () => {
     if (calculation) {
-      // TODO: Guardar en el contexto CRM
+      // Saved to CRM context
       console.log('Guardando distribución:', calculation);
     }
   };

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Shield, Mail, Phone, MapPin } from 'lucide-react';
 
 const LegalFooter = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   const legalInfo = {
     fr: {
@@ -68,8 +68,8 @@ const LegalFooter = () => {
     }
   };
 
-  const currentLang = useLanguage().language;
-  const info = legalInfo[currentLang] || legalInfo.fr; // Fallback to French if language not found
+  const { language } = useTranslations();
+  const info = legalInfo[language] || legalInfo.fr; // Fallback to French if language not found
 
   return (
     <div className="bg-black/40 border-t border-white/10 mt-16">
@@ -82,7 +82,7 @@ const LegalFooter = () => {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary" />
                 <div>
-                  <p className="font-medium text-white">Montréal (Siège)</p>
+                  <p className="font-medium text-white">{t('footer.offices.headquarters')}</p>
                   <p>{info.addresses.montreal}</p>
                 </div>
               </div>
@@ -90,7 +90,7 @@ const LegalFooter = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.legal.otherOffices')}</h4>
+            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.offices.other')}</h4>
             <div className="space-y-3 text-white/70 text-sm">
               <div>
                 <p className="font-medium text-white">New York</p>
@@ -104,7 +104,7 @@ const LegalFooter = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.legal.contact')}</h4>
+            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.contact.title')}</h4>
             <div className="space-y-2 text-white/70 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent" />
@@ -122,7 +122,7 @@ const LegalFooter = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.legal.management')}</h4>
+            <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.company.direction')}</h4>
             <div className="space-y-2 text-white/70 text-sm">
               <p><span className="text-white">CEO:</span> {info.ceo}</p>
               <p><span className="text-white">COO:</span> {info.coo}</p>
@@ -134,19 +134,19 @@ const LegalFooter = () => {
         <div className="border-t border-white/10 pt-8 mb-6">
           <div className="flex flex-wrap gap-6 text-sm text-white/70">
             <a href="/politique-confidentialite" className="hover:text-primary transition-colors">
-              {t('footer.legal.privacyPolicy')}
+              {t('footer.legal.privacy')}
             </a>
             <a href="/mentions-legales" className="hover:text-primary transition-colors">
-              {t('footer.legal.legalNotices')}
+              {t('footer.legal.terms')}
             </a>
             <a href="/accessibilite" className="hover:text-primary transition-colors">
               {t('footer.legal.accessibility')}
             </a>
             <a href="/cookies" className="hover:text-primary transition-colors">
-              {t('footer.legal.cookieManagement')}
+              {t('footer.legal.cookies')}
             </a>
             <a href="mailto:protection@iluma.marketing" className="hover:text-primary transition-colors">
-              {t('footer.legal.gdprRights')}
+              {t('footer.legal.gdpr')}
             </a>
           </div>
         </div>
@@ -167,7 +167,7 @@ const LegalFooter = () => {
           <div className="mt-4 text-center">
             <p className="text-white/60 text-xs">{info.copyright}</p>
             <p className="text-white/40 text-xs mt-1">
-              © 2024 {info.company}. All rights reserved.
+              © 2025 {info.company}. All rights reserved.
             </p>
           </div>
         </div>

@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calculator, TrendingUp, MapPin, Target, Zap, BarChart3, Play, Info } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Import des étapes du simulateur
@@ -18,7 +18,7 @@ import StepThree from '@/components/simulator/ADLUMASteps/StepThree';
 import StepFour from '@/components/simulator/ADLUMASteps/StepFour';
 
 const ADLUMA = () => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslations();
   const [showSimulator, setShowSimulator] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [simulatorData, setSimulatorData] = useState<any>({});
@@ -65,7 +65,7 @@ const ADLUMA = () => {
             <div className="mb-8">
               <div className="flex items-center justify-center mb-4">
                 <Badge variant="outline" className="border-purple-400/30 text-purple-300">
-                  {t('adlumaContent.step')} {currentStep} {t('adlumaContent.of')} 4
+                  Étape {currentStep} sur 4
                 </Badge>
               </div>
               <div className="w-full bg-gray-800 rounded-full h-2">
@@ -134,13 +134,13 @@ const ADLUMA = () => {
             <div className="text-center max-w-4xl mx-auto">
               <Badge variant="outline" className="mb-6 border-purple-400/30 text-purple-300">
                 <Zap className="w-4 h-4 mr-2" />
-                {t('adlumaContent.badge')}
+                {t('modules.adluma.subtitle')}
               </Badge>
               <h1 id="adluma-hero" className="text-4xl md:text-6xl font-bold text-white mb-6">
-                <span className="text-gradient">ADLUMA™</span>
+                <span className="text-gradient">{t('modules.adluma.title')}</span>
               </h1>
               <p className="text-xl text-white/80 mb-8 leading-relaxed">
-                {t('adlumaContent.hero.description')}
+                {t('modules.adluma.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button 
@@ -149,11 +149,11 @@ const ADLUMA = () => {
                   onClick={handleStartSimulator}
                 >
                   <Play className="w-5 h-5 mr-2" />
-                  {t('adlumaContent.cta.start')}
+                  {t('modules.adluma.cta.start')}
                 </Button>
                 <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
                   <Info className="w-5 h-5 mr-2" />
-                  {t('adlumaContent.cta.howItWorks')}
+                  {t('modules.adluma.cta.info')}
                 </Button>
               </div>
             </div>
@@ -165,10 +165,10 @@ const ADLUMA = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="features-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-                {t('adlumaContent.features.title')}
+                {t('modules.adluma.howItWorks.title')}
               </h2>
               <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                {t('adlumaContent.features.subtitle')}
+                {t('modules.adluma.howItWorks.description')}
               </p>
             </div>
             
@@ -178,9 +178,9 @@ const ADLUMA = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-white">{t('adlumaContent.features.step1.title')}</CardTitle>
+                  <CardTitle className="text-white">{t('modules.adluma.step1.title')}</CardTitle>
                   <CardDescription className="text-white/70">
-                    {t('adlumaContent.features.step1.description')}
+                    {t('modules.adluma.step1.description')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -190,9 +190,9 @@ const ADLUMA = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-white">{t('adlumaContent.features.step2.title')}</CardTitle>
+                  <CardTitle className="text-white">{t('modules.adluma.step2.title')}</CardTitle>
                   <CardDescription className="text-white/70">
-                    {t('adlumaContent.features.step2.description')}
+                    {t('modules.adluma.step2.description')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -202,9 +202,9 @@ const ADLUMA = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
                     <Calculator className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-white">{t('adlumaContent.features.step3.title')}</CardTitle>
+                  <CardTitle className="text-white">{t('modules.adluma.step3.title')}</CardTitle>
                   <CardDescription className="text-white/70">
-                    {t('adlumaContent.features.step3.description')}
+                    {t('modules.adluma.step3.description')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -214,9 +214,9 @@ const ADLUMA = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-white">{t('adlumaContent.features.step4.title')}</CardTitle>
+                  <CardTitle className="text-white">{t('modules.adluma.step4.title')}</CardTitle>
                   <CardDescription className="text-white/70">
-                    {t('adlumaContent.features.step4.description')}
+                    {t('modules.adluma.step4.description')}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -231,10 +231,10 @@ const ADLUMA = () => {
               <CardContent className="p-12 text-center">
                 <BarChart3 className="w-16 h-16 text-purple-400 mx-auto mb-6" />
                 <h3 id="demo-section" className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {t('adlumaContent.final.title')}
+                  {t('modules.adluma.final.title')}
                 </h3>
                 <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-                  {t('adlumaContent.final.description')}
+                  {t('modules.adluma.final.description')}
                 </p>
                 <Button 
                   size="lg" 
@@ -242,7 +242,7 @@ const ADLUMA = () => {
                   onClick={handleStartSimulator}
                 >
                   <Play className="w-5 h-5 mr-2" />
-                  {t('adlumaContent.final.cta')}
+                  {t('modules.adluma.final.cta')}
                 </Button>
               </CardContent>
             </Card>

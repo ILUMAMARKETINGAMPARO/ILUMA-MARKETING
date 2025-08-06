@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["deno.ns"]
+  },
+  "importMap": "import_map.json",
+  "lint": true,
+  "fmt": true
+}

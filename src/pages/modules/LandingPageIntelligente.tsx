@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Zap, Target, BarChart3, Sparkles, Play, Settings, TrendingUp, Users, Clock, ArrowRight, ExternalLink, Brain, CheckCircle, Rocket, Star, Shield, Globe } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -11,44 +10,41 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SEOManager from '@/components/seo/SEOManager';
 import DynamicSEO from '@/components/seo/DynamicSEO';
 import PerformanceOptimizer from '@/components/performance/PerformanceOptimizer';
-import { translations } from '@/data/translations';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const LandingPageIntelligente = () => {
-  const { t, language } = useLanguage();
   const [builderStep, setBuilderStep] = useState(1);
   const [activeDemo, setActiveDemo] = useState('preview');
-
-  // Get current language translations
-  const currentTranslations = translations[language];
+  const { t } = useTranslations();
 
   const features = [
     {
       icon: Brain,
-      title: t('landingPage.features.aiAdaptive.title'),
-      description: t('landingPage.features.aiAdaptive.description')
+      title: 'IA Adaptative Avancée',
+      description: 'Intelligence artificielle qui personnalise le contenu en temps réel selon le profil visiteur'
     },
     {
       icon: Target,
-      title: t('landingPage.features.preciseTesting.title'),
-      description: t('landingPage.features.preciseTesting.description')
+      title: 'Tests A/B Précis',
+      description: 'Optimisation continue basée sur des données de performance en temps réel'
     },
     {
       icon: Users,
-      title: t('landingPage.features.uxOptimized.title'),
-      description: t('landingPage.features.uxOptimized.description')
+      title: 'UX Optimisée',
+      description: 'Interface utilisateur conçue pour maximiser les conversions et l\'engagement'
     },
     {
       icon: TrendingUp,
-      title: t('landingPage.features.conversionMax.title'),
-      description: t('landingPage.features.conversionMax.description')
+      title: 'Conversion Maximale',
+      description: 'Chaque élément est optimisé pour transformer vos visiteurs en clients'
     }
   ];
 
   const builderSteps = [
-    t('landingPage.steps.defineIntention'),
-    t('landingPage.steps.structureBlocks'),
-    t('landingPage.steps.addFormFaq'),
-    t('landingPage.steps.connectCRM')
+    t('landingPageIntelligente.builder.step1'),
+    t('landingPageIntelligente.builder.step2'),
+    t('landingPageIntelligente.builder.step3'),
+    t('landingPageIntelligente.builder.step4')
   ];
 
   const nextStep = () => {
@@ -90,37 +86,36 @@ const LandingPageIntelligente = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full flex items-center justify-center">
                   <Rocket className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-violet-300 font-medium text-lg tracking-wider">{t('landingPage.title').toUpperCase()}</span>
+                <span className="text-violet-300 font-medium text-lg tracking-wider">{t('landingPageIntelligente.hero.badge')}</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
+               <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                  Site Web Complet
+                  {t('landingPageIntelligente.hero.title1')}
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                  & Optimisé IA
+                  {t('landingPageIntelligente.hero.title2')}
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Une <strong className="text-yellow-400">solution complète</strong> pour transformer votre présence digitale : 
-                <br />Landing intelligente + SEO + CRM + Automatisation IA
+                {t('landingPageIntelligente.hero.subtitle')}
               </p>
               
               {/* Stats rapides */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-yellow-400 mb-2">+300%</div>
-                  <div className="text-white/80">Conversion moyenne</div>
+                  <div className="text-white/80">{t('landingPageIntelligente.stats.conversion')}</div>
                 </div>
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-violet-400 mb-2">48h</div>
-                  <div className="text-white/80">Livraison site</div>
+                  <div className="text-white/80">{t('landingPageIntelligente.stats.delivery')}</div>
                 </div>
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-orange-400 mb-2">100%</div>
-                  <div className="text-white/80">Optimisé mobile</div>
+                  <div className="text-white/80">{t('landingPageIntelligente.stats.mobile')}</div>
                 </div>
               </div>
               
@@ -130,7 +125,7 @@ const LandingPageIntelligente = () => {
                   className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-10 py-6 text-xl font-bold shadow-2xl shadow-violet-500/25"
                 >
                   <Sparkles className="w-6 h-6 mr-3" />
-                  Voir Demo Live
+                  {t('landingPageIntelligente.cta.demo')}
                   <ArrowRight className="w-6 h-6 ml-3" />
                 </Button>
                 <Button 
@@ -139,7 +134,7 @@ const LandingPageIntelligente = () => {
                   className="border-2 border-violet-400/50 text-white hover:bg-violet-500/10 px-10 py-6 text-xl font-bold"
                 >
                   <Brain className="w-6 h-6 mr-3" />
-                  Créer avec l'IA
+                  {t('landingPageIntelligente.cta.create')}
                 </Button>
               </div>
             </motion.div>
@@ -157,10 +152,10 @@ const LandingPageIntelligente = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Site Web <span className="text-violet-400">Complet & Optimisé</span>
+                {t('landingPageIntelligente.features.title')}
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
-                Bien plus qu'une simple landing page - une solution digitale complète
+                {t('landingPageIntelligente.features.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -343,7 +338,7 @@ const LandingPageIntelligente = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-['Montserrat']">
-                {t('landingPage.buttons.createBuilderTitle')}
+                Créer Votre Landing Page IA
               </h2>
               <Card className="glass-effect border-white/20 p-8">
                 <div className="flex items-center justify-between mb-8">
@@ -377,11 +372,11 @@ const LandingPageIntelligente = () => {
                   >
                     {builderStep < 4 ? (
                       <>
-                        {t('landingPage.buttons.nextStep')}
+                        Étape suivante
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </>
                     ) : (
-                      t('landingPage.buttons.processComplete')
+                      'Processus terminé'
                     )}
                   </Button>
                 </div>
@@ -400,10 +395,27 @@ const LandingPageIntelligente = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center font-['Montserrat']">
-                {t('landingPage.faq.title')}
+                FAQ - Questions Fréquentes
               </h2>
               <div className="space-y-6">
-                {currentTranslations.landingPage.faq.items.map((faq: any, index: number) => (
+                {[
+                  {
+                    question: "Combien de temps pour créer ma landing page ?",
+                    answer: "Votre landing page complète est livrée en 48h maximum. Cela inclut le design, l'intégration IA, le SEO et la configuration CRM."
+                  },
+                  {
+                    question: "Qu'est-ce qui est inclus dans l'offre ?",
+                    answer: "Tout est inclus : design personnalisé, IA comportementale, SEO avancé, CRM intégré, analytics, support 6 mois et formation équipe."
+                  },
+                  {
+                    question: "Comment fonctionne l'IA comportementale ?",
+                    answer: "Notre IA analyse le comportement de chaque visiteur en temps réel et adapte le contenu pour maximiser les conversions selon leur profil."
+                  },
+                  {
+                    question: "Y a-t-il une garantie de résultats ?",
+                    answer: "Oui, nous garantissons une amélioration de vos conversions ou nous vous remboursons. Notre taux de satisfaction client est de 98%."
+                  }
+                ].map((faq: any, index: number) => (
                   <Card key={index} className="glass-effect border-white/20 p-6">
                     <h3 className="text-lg font-bold text-white mb-3 font-['Montserrat']">
                       {faq.question}
@@ -465,8 +477,8 @@ const LandingPageIntelligente = () => {
                     </Button>
                     
                     <div className="text-center">
-                      <div className="text-2xl font-black text-white mb-1">2,997€</div>
-                      <div className="text-sm text-white/60">Site complet • Tout inclus</div>
+                      <div className="text-2xl font-black text-white mb-1">Consultation gratuite</div>
+                      <div className="text-sm text-white/60">Découvrez votre potentiel</div>
                     </div>
                   </div>
                   

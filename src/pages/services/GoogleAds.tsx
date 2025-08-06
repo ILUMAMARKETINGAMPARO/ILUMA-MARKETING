@@ -1,247 +1,138 @@
 import React from 'react';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import SEOManager from '@/components/seo/SEOManager';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
+import { SEOHead } from '@/components/SEOHead';
+import { Target, TrendingUp, Zap, DollarSign, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Search, 
-  MapPin, 
-  BarChart3, 
-  CheckCircle, 
-  ArrowRight,
-  Target,
-  Zap,
-  TrendingUp
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const GoogleAds = () => {
-  const { t } = useLanguage();
-  
-  const seoData = {
-    title: t('services.googleAds.title') + ' | Iluma™',
-    description: t('services.googleAds.description'),
-    keywords: ['google ads', 'publicité google', 'adwords', 'campagnes intelligentes', 'ROI']
-  };
+  const { t } = useTranslations();
+  const benefits = [
+    t('services.googleAds.benefits.campaigns'),
+    t('services.googleAds.benefits.targeting'),
+    t('services.googleAds.benefits.bidding'),
+    t('services.googleAds.benefits.testing'),
+    t('services.googleAds.benefits.budget'),
+    t('services.googleAds.benefits.roi')
+  ];
 
   const features = [
     {
-      icon: Search,
-      title: t('services.googleAds.features.keywordResearch.title'),
-      description: t('services.googleAds.features.keywordResearch.description')
-    },
-    {
-      icon: MapPin,
-      title: t('services.googleAds.features.geoTargeting.title'),
-      description: t('services.googleAds.features.geoTargeting.description')
-    },
-    {
-      icon: BarChart3,
-      title: t('services.googleAds.features.realTimeOptimization.title'),
-      description: t('services.googleAds.features.realTimeOptimization.description')
+      icon: Target,
+      title: t('services.googleAds.features.aiTargeting'),
+      description: t('services.googleAds.features.aiTargeting.description')
     },
     {
       icon: Zap,
-      title: t('services.googleAds.features.performanceMax.title'),
-      description: t('services.googleAds.features.performanceMax.description')
+      title: t('services.googleAds.features.realTimeOptimization'),
+      description: t('services.googleAds.features.realTimeOptimization.description')
+    },
+    {
+      icon: TrendingUp,
+      title: t('services.googleAds.features.performanceTracking'),
+      description: t('services.googleAds.features.performanceTracking.description')
+    },
+    {
+      icon: DollarSign,
+      title: t('services.googleAds.features.maximizedROI'),
+      description: t('services.googleAds.features.maximizedROI.description')
     }
   ];
 
   return (
-    <>
-      <SEOManager seoData={seoData} path="/services/google-ads" />
+    <div className="min-h-screen">
+      <SEOHead
+        title={t('services.googleAds.title')}
+        description={t('services.googleAds.description')}
+        keywords="Google Ads IA, publicité Google, campagnes optimisées, Google AdWords, PPC"
+      />
       <Navigation />
-      
-      <div className="min-h-screen bg-gradient-to-br from-[#0B0B0E] via-[#1A1A2E] to-[#16213E]">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4">
-          <div className="container mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Badge className="mb-6 bg-gradient-to-r from-blue-500/20 to-green-500/20 text-blue-400 border-blue-500/30">
-                <Target className="w-4 h-4 mr-2" />
-                Expert Google Certifié
-              </Badge>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-400 via-green-500 to-yellow-500 bg-clip-text text-transparent">
-                  {t('services.googleAds.title')}
-                </span>
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-green-600 flex items-center justify-center mb-6">
+                <Target className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up font-['Montserrat']">
+                <span className="text-gradient">{t('services.googleAds.title')}</span>
               </h1>
-              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-                {t('services.googleAds.subtitle')}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <p className="text-lg text-white/70 mb-8 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up font-['Montserrat']" style={{ animationDelay: '0.2s' }}>
                 {t('services.googleAds.description')}
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-green-500 hover:to-blue-500 text-white">
-                <Link to="/contact">
-                  <Search className="mr-2 h-5 w-5" />
-                  Lancer une Campagne
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                <Link to="/modules/adluma">
-                  <BarChart3 className="mr-2 h-5 w-5" />
-                  Calculer mon ROI
-                </Link>
-              </Button>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Excellence Google Ads IA
-              </h2>
-              <p className="text-white/70 max-w-2xl mx-auto">
-                Expertise technique combinée à l'intelligence artificielle pour des campagnes Google Ads performantes
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                <Card 
+                  key={feature.title}
+                  className="glass-effect border-white/20 hover:border-white/30 transition-all duration-500 hover-glow animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 h-full">
-                    <CardContent className="p-6">
-                      <feature.icon className="w-10 h-10 text-blue-400 mb-4" />
-                      <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                      <p className="text-white/70">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-green-600 flex items-center justify-center mb-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-white">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-white/70">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               ))}
+            </div>
+
+            {/* Benefits Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  {t('services.googleAds.whyChoose')}
+                </h2>
+                <div className="space-y-4">
+                  {benefits.map((benefit, index) => (
+                    <div 
+                      key={benefit}
+                      className="flex items-center space-x-3 animate-fade-in-up"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-white/80">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="glass-effect rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                  {t('services.googleAds.cta')}
+                </h3>
+                <div className="text-center space-y-4">
+                  <Button 
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-500 to-green-600 hover:from-blue-600 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-semibold hover-glow w-full"
+                  >
+                    {t('services.seoIA.consultation')}
+                  </Button>
+                  <p className="text-white/60 text-sm">
+                    {t('services.googleAds.audit')}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-blue-500/10 to-green-500/10">
-          <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Pourquoi Google Ads ?
-              </h2>
-              <p className="text-white/70 max-w-2xl mx-auto">
-                La plateforme publicitaire la plus puissante au monde
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "8.5 Milliards de Recherches/Jour",
-                  description: "Accès à l'intention d'achat la plus forte",
-                  icon: Search
-                },
-                {
-                  title: "Ciblage Ultra-Précis",
-                  description: "Mots-clés, localisation, audiences personnalisées",
-                  icon: Target
-                },
-                {
-                  title: "ROI Mesurable",
-                  description: "Tracking précis et attribution multi-canal",
-                  icon: TrendingUp
-                }
-              ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm text-center p-6 h-full">
-                    <CardContent className="p-0">
-                      <benefit.icon className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                      <p className="text-white/70">{benefit.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Prêt à Dominer Google ?
-              </h2>
-              <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-                Lancez vos premières campagnes Google Ads optimisées IA dès aujourd'hui
-              </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-green-500 hover:shadow-xl hover:shadow-blue-500/30 text-lg px-8">
-                <Link to="/contact">
-                  <Zap className="mr-2 h-5 w-5" />
-                  Démarrer Maintenant
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-      
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

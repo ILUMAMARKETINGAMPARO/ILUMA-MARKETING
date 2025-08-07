@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 import ILUMATCHSEO from '@/components/seo/ILUMATCHSEO';
 import { useLiloUX } from '@/hooks/useLiloUX';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +17,7 @@ import { Brain, Target, Zap, ArrowRight, CheckCircle, Users, TrendingUp, Star, M
 import { Link } from 'react-router-dom';
 
 const Illumatch = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -63,11 +63,11 @@ const Illumatch = () => {
   };
 
   const steps = [
-    { title: t('ilumatch.steps.company'), icon: Users },
-    { title: t('ilumatch.steps.goals'), icon: Target },
-    { title: t('ilumatch.steps.challenges'), icon: TrendingUp },
-    { title: t('ilumatch.steps.strategy'), icon: Brain },
-    { title: t('ilumatch.steps.results'), icon: Star }
+    { title: t('ilumatch.steps.company') || 'Votre Entreprise', icon: Users },
+    { title: t('ilumatch.steps.goals') || 'Vos Objectifs', icon: Target },
+    { title: t('ilumatch.form.challenges.title') || 'Vos Défis', icon: TrendingUp },
+    { title: t('ilumatch.form.strategy.title') || 'Stratégie IA', icon: Brain },
+    { title: t('ilumatch.results.title') || 'Résultats', icon: Star }
   ];
 
   const goalsList = [
@@ -97,13 +97,13 @@ const Illumatch = () => {
           >
             <div className="flex items-center justify-center gap-2 mb-4">
               <Brain className="w-8 h-8 text-indigo-400" />
-              <span className="text-indigo-300 font-medium text-lg font-['Montserrat']">{t('ilumatch.title')}</span>
+              <span className="text-indigo-300 font-medium text-lg font-['Montserrat']">{t('ilumatch.hero.badge') || 'ILUMATCH™ - Matching IA'}</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-indigo-100 to-cyan-100 bg-clip-text text-transparent mb-6 font-['Montserrat'] leading-tight">
-              {t('ilumatch.subtitle')}
+              {t('ilumatch.subtitle') || 'Trouvez votre client idéal avec l\'intelligence artificielle'}
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-['Montserrat']">
-              {t('ilumatch.description')}
+              {t('ilumatch.description') || 'Notre IA analyse et met en relation les entreprises avec leurs prospects parfaits'}
             </p>
           </motion.div>
 
@@ -153,62 +153,62 @@ const Illumatch = () => {
             <Card className="glass-effect border-white/20 p-8">
               {currentStep === 1 && (
                 <div className="space-y-6">
-                  <h2 className="text-3xl font-bold text-white mb-6 font-['Montserrat']">{t('ilumatch.form.company.title')}</h2>
+                  <h2 className="text-3xl font-bold text-white mb-6 font-['Montserrat']">{t('ilumatch.form.company.title') || 'Informations Entreprise'}</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.name')}</label>
+                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.name') || 'Nom de l\'entreprise'}</label>
                       <Input
-                        placeholder={t('ilumatch.form.company.name_placeholder')}
+                        placeholder={t('ilumatch.form.company.name') || 'Ex: Mon Entreprise'}
                         value={formData.company}
                         onChange={(e) => setFormData({...formData, company: e.target.value})}
                         className="bg-black/20 border-white/20 text-white"
                       />
                     </div>
                     <div>
-                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.industry')}</label>
+                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.industry') || 'Secteur d\'activité'}</label>
                       <Select onValueChange={(value) => setFormData({...formData, industry: value})}>
                         <SelectTrigger className="bg-black/20 border-white/20 text-white">
-                          <SelectValue placeholder={t('ilumatch.form.company.industry_placeholder')} />
+                          <SelectValue placeholder={t('ilumatch.form.company.industry') || 'Sélectionnez votre secteur'} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="ecommerce">{t('ilumatch.options.industry.ecommerce')}</SelectItem>
-                          <SelectItem value="saas">{t('ilumatch.options.industry.saas')}</SelectItem>
-                          <SelectItem value="services">{t('ilumatch.options.industry.services')}</SelectItem>
-                          <SelectItem value="retail">{t('ilumatch.options.industry.retail')}</SelectItem>
-                          <SelectItem value="healthcare">{t('ilumatch.options.industry.healthcare')}</SelectItem>
-                          <SelectItem value="finance">{t('ilumatch.options.industry.finance')}</SelectItem>
-                          <SelectItem value="education">{t('ilumatch.options.industry.education')}</SelectItem>
-                          <SelectItem value="other">{t('ilumatch.options.industry.other')}</SelectItem>
+                          <SelectItem value="ecommerce">E-commerce</SelectItem>
+                          <SelectItem value="saas">SaaS / Logiciel</SelectItem>
+                          <SelectItem value="services">Services</SelectItem>
+                          <SelectItem value="retail">Commerce de détail</SelectItem>
+                          <SelectItem value="healthcare">Santé</SelectItem>
+                          <SelectItem value="finance">Finance</SelectItem>
+                          <SelectItem value="education">Éducation</SelectItem>
+                          <SelectItem value="other">Autre</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div>
-                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.size')}</label>
+                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.size') || 'Taille de l\'entreprise'}</label>
                       <Select onValueChange={(value) => setFormData({...formData, size: value})}>
                         <SelectTrigger className="bg-black/20 border-white/20 text-white">
-                          <SelectValue placeholder={t('ilumatch.form.company.size_placeholder')} />
+                          <SelectValue placeholder={t('ilumatch.form.company.size') || 'Nombre d\'employés'} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="solo">{t('ilumatch.options.size.solo')}</SelectItem>
-                          <SelectItem value="small">{t('ilumatch.options.size.small')}</SelectItem>
-                          <SelectItem value="medium">{t('ilumatch.options.size.medium')}</SelectItem>
-                          <SelectItem value="large">{t('ilumatch.options.size.large')}</SelectItem>
-                          <SelectItem value="enterprise">{t('ilumatch.options.size.enterprise')}</SelectItem>
+                          <SelectItem value="solo">Solo (1 personne)</SelectItem>
+                          <SelectItem value="small">Petite (2-10)</SelectItem>
+                          <SelectItem value="medium">Moyenne (11-50)</SelectItem>
+                          <SelectItem value="large">Grande (51-200)</SelectItem>
+                          <SelectItem value="enterprise">Entreprise (200+)</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div>
-                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.budget')}</label>
+                      <label className="block text-white/80 mb-2 font-['Montserrat']">{t('ilumatch.form.company.budget') || 'Budget marketing mensuel'}</label>
                       <Select onValueChange={(value) => setFormData({...formData, budget: value})}>
                         <SelectTrigger className="bg-black/20 border-white/20 text-white">
-                          <SelectValue placeholder={t('ilumatch.form.company.budget_placeholder')} />
+                          <SelectValue placeholder={t('ilumatch.form.company.budget') || 'Sélectionnez votre budget'} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="under1k">{t('ilumatch.options.budget.under1k')}</SelectItem>
-                          <SelectItem value="1k-5k">{t('ilumatch.options.budget.1k-5k')}</SelectItem>
-                          <SelectItem value="5k-10k">{t('ilumatch.options.budget.5k-10k')}</SelectItem>
-                          <SelectItem value="10k-25k">{t('ilumatch.options.budget.10k-25k')}</SelectItem>
-                          <SelectItem value="over25k">{t('ilumatch.options.budget.over25k')}</SelectItem>
+                          <SelectItem value="under1k">Moins de 1 000€</SelectItem>
+                          <SelectItem value="1k-5k">1 000€ - 5 000€</SelectItem>
+                          <SelectItem value="5k-10k">5 000€ - 10 000€</SelectItem>
+                          <SelectItem value="10k-25k">10 000€ - 25 000€</SelectItem>
+                          <SelectItem value="over25k">Plus de 25 000€</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

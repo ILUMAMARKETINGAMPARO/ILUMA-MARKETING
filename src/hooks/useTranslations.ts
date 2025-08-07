@@ -1,4 +1,4 @@
-import { useLanguage } from './useLanguage.ts';
+import { useLanguage } from './useLanguage';
 import { pageTranslations } from '@/data/pageTranslations';
 
 // Traductions manquantes temporaires

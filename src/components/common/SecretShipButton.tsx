@@ -11,15 +11,15 @@ const SecretShipButton = () => {
 
   return (
     <motion.div
-      className="fixed bottom-6 left-6 z-50 cursor-pointer"
+      className="fixed bottom-6 left-20 z-50 cursor-pointer"
       initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 0.7 }}
+      animate={{ scale: 0.5, opacity: 0.7 }}
       transition={{ delay: 2, duration: 0.8, ease: "easeOut" }}
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.1, opacity: 1 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 0.55, opacity: 1 }}
+      whileTap={{ scale: 0.475 }}
     >
       {/* Halo Effect */}
       <motion.div

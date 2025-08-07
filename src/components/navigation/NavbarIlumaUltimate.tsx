@@ -4,9 +4,9 @@ import { Rocket, X, Menu, User, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
 import SecretShipButton from '@/components/common/SecretShipButton';
-import { useIsMobile } from '@/hooks/use-mobile.ts';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const NavbarIlumaUltimate: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -15,7 +15,7 @@ const NavbarIlumaUltimate: React.FC = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const { user, profile, signOut } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   
   // Référence pour gérer les timeouts des dropdowns
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -29,56 +29,56 @@ const NavbarIlumaUltimate: React.FC = () => {
   // Données des menus avec liens fonctionnels et traductions
   const menuItems = [
     { 
-      label: t('navMenu.method'), 
+      label: t('nav.methode'), 
       path: '/methode-iluma'
     },
     { 
-      label: t('navMenu.products'), 
+      label: t('nav.products'), 
       path: '/services',
       subItems: [
-        { label: t('navMenu.subItems.completeWebsite'), path: '/site-web-complet' },
-        { label: t('navMenu.subItems.smartLanding'), path: '/landing-page-intelligente' },
-        { label: t('navMenu.subItems.loyaltyPage'), path: '/page-fidelisation-intelligente' }
+        { label: t('nav.websiteComplete'), path: '/site-web-complet' },
+        { label: t('nav.landingPages'), path: '/landing-page-intelligente' },
+        { label: t('nav.loyaltyPage'), path: '/page-fidelisation-intelligente' }
       ]
     },
     { 
-      label: t('navMenu.solutions'), 
+      label: t('nav.solutions'), 
       path: '/presentation-outils',
       subItems: [
-        { label: t('navMenu.subItems.ilumatch'), path: '/ilumatch' },
-        { label: t('navMenu.subItems.adluma'), path: '/adluma' },
-        { label: t('navMenu.subItems.blogia'), path: '/blogia' },
-        { label: t('navMenu.subItems.rivalViews'), path: '/rival-views' },
-        { label: t('navMenu.subItems.ila'), path: '/ila' }
+        { label: t('nav.ilumatch'), path: '/ilumatch' },
+        { label: t('nav.adluma'), path: '/adluma' },
+        { label: t('nav.blogia'), path: '/blogia' },
+        { label: t('nav.rivalviews'), path: '/rival-views' },
+        { label: t('nav.ila'), path: '/ila' }
       ]
     },
     { 
-      label: t('navMenu.services'), 
+      label: t('nav.services'), 
       path: '/services',
       subItems: [
-        { label: t('navMenu.subItems.googleSeo'), path: '/services/seo-ia' },
-        { label: t('navMenu.subItems.bingSeo'), path: '/services/bing-seo' },
-        { label: t('navMenu.subItems.googleAds'), path: '/services/google-ads' },
-        { label: t('navMenu.subItems.metaAds'), path: '/services/meta-ads' },
-        { label: t('navMenu.subItems.contentCreation'), path: '/services/blogs-intersites' },
-        { label: t('navMenu.subItems.pocketBluePartnership'), path: '/services/partenariat-poche-bleue' }
+        { label: t('nav.seoGoogle'), path: '/services/seo-ia' },
+        { label: t('nav.seoBing'), path: '/services/bing-seo' },
+        { label: t('nav.googleAds'), path: '/services/google-ads' },
+        { label: t('nav.metaAds'), path: '/services/meta-ads' },
+        { label: t('nav.contentCreation'), path: '/services/blogs-intersites' },
+        { label: t('nav.partnership'), path: '/services/partenariat-poche-bleue' }
       ]
     },
     { 
-      label: t('navMenu.explanations'), 
+      label: t('nav.howItWorks'), 
       path: '/presentation-outils',
       subItems: [
-        { label: t('navMenu.subItems.toolsPresentation'), path: '/hub' }
+        { label: t('nav.toolsPresentation'), path: '/hub' }
       ]
     },
     { 
-      label: t('navMenu.contact'), 
+      label: t('nav.contact'), 
       path: '/contact',
       subItems: [
-        { label: t('navMenu.subItems.contactForm'), path: '/contact' },
-        { label: t('navMenu.subItems.caseStudies'), path: '/etudes-de-cas' },
-        { label: t('navMenu.subItems.portfolio'), path: '/portfolio' },
-        { label: t('navMenu.subItems.faq'), path: '/faq' }
+        { label: t('nav.contactForm'), path: '/contact' },
+        { label: t('nav.caseStudies'), path: '/etudes-de-cas' },
+        { label: t('nav.portfolio'), path: '/portfolio' },
+        { label: t('nav.faq'), path: '/faq' }
       ]
     }
   ];
@@ -189,7 +189,7 @@ const NavbarIlumaUltimate: React.FC = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="w-full bg-gradient-to-r from-iluma-gold-500 to-iluma-purple-500 hover:from-iluma-purple-500 hover:to-iluma-gold-500 text-white py-3 text-lg font-semibold font-['Montserrat']"
                     >
-                      {t('navMenu.cta.bookDemo')}
+                      Réserver Démo
                     </Button>
                   </Link>
                 </div>
@@ -339,7 +339,7 @@ const NavbarIlumaUltimate: React.FC = () => {
                     className="w-full text-xs text-white/70 hover:text-white hover:bg-white/10"
                   >
                     <LogOut className="w-3 h-3 mr-1" />
-                    {t('navMenu.cta.disconnect')}
+                    Déconnexion
                   </Button>
                 </div>
               )}
@@ -350,13 +350,13 @@ const NavbarIlumaUltimate: React.FC = () => {
                 {user ? (
                   <Link to="/crm-iluma">
                     <Button className="bg-gradient-to-r from-iluma-gold-500 to-iluma-purple-500 hover:from-iluma-purple-500 hover:to-iluma-gold-500 text-white px-3 py-2 rounded-full font-semibold text-xs hover:scale-105 transition-all duration-300 font-['Montserrat'] shadow-lg">
-                      {t('navMenu.cta.crm')}
+                      CRM Iluma
                     </Button>
                   </Link>
                 ) : (
                   <Link to="/auth">
                     <Button className="bg-gradient-to-r from-iluma-gold-500 to-iluma-purple-500 hover:from-iluma-purple-500 hover:to-iluma-gold-500 text-white px-3 py-2 rounded-full font-semibold text-xs hover:scale-105 transition-all duration-300 font-['Montserrat'] shadow-lg">
-                      {t('navMenu.cta.login')}
+                      Connexion
                     </Button>
                   </Link>
                 )}

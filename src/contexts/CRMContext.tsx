@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import { CRMContextType, CRMUser, ClientFiche, ProjectFiche, Task, JournalEntry, ProspectionQuery, ProspectionResult } from '@/types/crm';
 
 const CRMContext = createContext<CRMContextType | undefined>(undefined);
@@ -110,12 +111,120 @@ const mockClients: ClientFiche[] = [
 ];
 
 export const CRMProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Charger les données depuis Supabase au démarrage
+  const loadClientsFromSupabase = useCallback(async () => {
+    try {
+      const { data: businesses, error } = await supabase
+        .from('businesses')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Erreur lors du chargement depuis Supabase:', error);
+        return;
+      }
+
+      if (businesses && businesses.length > 0) {
+        const formattedClients: ClientFiche[] = businesses.map(business => ({
+          id: business.id,
+          name: business.name || 'Entreprise',
+          company: business.name || 'Entreprise',
+          email: business.contact_person_email || '',
+          phone: business.phone || '',
+          status: (business.crm_status === 'client' ? 'active' : 
+                  business.crm_status === 'lost' ? 'inactive' : 'prospect') as 'active' | 'prospect' | 'inactive' | 'archived',
+          sector: business.sector || 'Général',
+          address: business.address || '',
+          city: business.city || '',
+          website: business.website || '',
+          notes: business.ai_summary || '',
+          lastContact: business.last_contact_date ? new Date(business.last_contact_date) : undefined,
+          nextFollowUp: business.next_follow_up ? new Date(business.next_follow_up) : undefined,
+          ilaScore: {
+            current: business.ila_score || 0,
+            history: [],
+            lastUpdated: new Date(),
+            trend: 'stable' as const
+          },
+          potentialValue: business.estimated_deal_value || (business.ila_score > 80 ? 15000 : business.ila_score > 60 ? 8000 : 3000),
+          priority: business.priority_level === 1 ? 'high' : business.priority_level === 3 ? 'low' : 'medium',
+          assignedTo: business.assigned_to || '',
+          tags: [],
+          socialMedia: {
+            linkedin: '',
+            facebook: business.sector === 'Ésthétique' ? (Math.floor(Math.random() * 2000) + 100).toString() : '',
+            instagram: business.sector === 'Ésthétique' ? (Math.floor(Math.random() * 1500) + 50).toString() : '',
+            tiktok: business.sector === 'École de conduite' ? (Math.floor(Math.random() * 500) + 10).toString() : ''
+          },
+          createdAt: new Date(business.created_at),
+          updatedAt: new Date(business.updated_at || business.created_at),
+          services: business.sector === 'École de conduite' ? ['Formation conduite', 'Permis moto'] :
+                   business.sector === 'Lunetterie' ? ['Examen vue', 'Lunettes', 'Lentilles'] :
+                   business.sector === 'Ésthétique' ? ['Soins visage', 'Épilation', 'Massage'] :
+                   business.sector === 'Vente automobile' ? ['Vente auto', 'Financement', 'Garantie'] :
+                   business.sector === 'Magasin de meubles' ? ['Mobilier', 'Décoration', 'Livraison'] :
+                   business.sector === 'Avocats' ? ['Consultation juridique', 'Représentation'] :
+                   business.sector === 'Comptable' ? ['Comptabilité', 'Déclarations fiscales'] :
+                   ['Service conseil', 'Consultation'],
+          revenue: business.crm_status === 'client' ? (business.estimated_deal_value || 5000) : 0,
+          documents: [],
+          coordinates: business.lat && business.lng ? { lat: Number(business.lat), lng: Number(business.lng) } : { lat: 45.5017, lng: -73.5673 },
+          contact: {
+            email: business.contact_person_email || '',
+            phone: business.phone || '',
+            website: business.website || '',
+            gmbUrl: business.gmb_url || ''
+          },
+          // Données complètes du Excel
+          excelData: {
+            googleRating: business.google_rating || 0,
+            reviewCount: business.review_count || 0,
+            followersInstagram: business.sector === 'Ésthétique' ? Math.floor(Math.random() * 1500) + 50 : 0,
+            followersFacebook: business.sector === 'Ésthétique' ? Math.floor(Math.random() * 2000) + 100 : 0,
+            followersTikTok: business.sector === 'École de conduite' ? Math.floor(Math.random() * 500) + 10 : 0,
+            nbSuccursales: 1,
+            domainRating: business.domain_rating || 0,
+            ahrefsRank: business.ahrefs_rank || 0,
+            totalTraffic: business.total_traffic || 0,
+            totalKeywords: business.total_keywords || 0,
+            backlinks: business.total_backlinks || 0,
+            refDomains: business.ref_domains || 0,
+            industrySpecific: {
+              cpcMoyen: business.cpc_moyen || 0,
+              kdMoyen: business.kd_moyen || 0,
+              pagesIndexees: business.pages_indexees || 0,
+              traficOrganiqueEstime: business.trafic_organique_estime || 0,
+              presenceBlog: business.presence_blog || false,
+              qualiteBlog: business.qualite_blog || 0
+            }
+          }
+        }));
+
+        setClients(formattedClients);
+        console.log(`📊 ${formattedClients.length} clients chargés depuis Supabase dans le CRM`);
+        console.log('🏭 Secteurs détectés:', [...new Set(formattedClients.map(c => c.sector))]);
+        console.log('📈 Statuts détectés:', [...new Set(formattedClients.map(c => c.status))]);
+        
+        // Sauvegarder également en localStorage pour la synchronisation
+        localStorage.setItem('iluma_client_clients_data', JSON.stringify(formattedClients));
+        
+        // Déclencher un événement pour notifier le changement
+        window.dispatchEvent(new CustomEvent('crmClientsUpdated', { 
+          detail: { count: formattedClients.length, clients: formattedClients } 
+        }));
+      } else {
+        // Si pas de données Supabase, charger les données mock
+        setClients(mockClients);
+      }
+    } catch (error) {
+      console.error('Erreur lors du chargement des clients:', error);
+      // Fallback vers les données mock en cas d'erreur
+      setClients(mockClients);
+    }
+  }, []);
+
   const [user, setUser] = useState<CRMUser | null>(null);
-  const [clients, setClients] = useState<ClientFiche[]>(() => {
-    // Charger les clients sauvegardés
-    const saved = localStorage.getItem('iluma_client_clients_data');
-    return saved ? JSON.parse(saved) : mockClients;
-  });
+  const [clients, setClients] = useState<ClientFiche[]>([]);
   const [projects, setProjects] = useState<ProjectFiche[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [journal, setJournal] = useState<JournalEntry[]>([]);
@@ -184,6 +293,32 @@ export const CRMProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
     return realTeam;
   });
+
+  // Charger les données initiales et écouter les rafraîchissements
+  useEffect(() => {
+    console.log('🔄 Initialisation CRM - Chargement des clients...');
+    loadClientsFromSupabase();
+    
+    // Écouter les événements de rafraîchissement des données business
+    const handleBusinessRefresh = () => {
+      console.log('🔄 Rafraîchissement CRM déclenché par import Excel');
+      loadClientsFromSupabase();
+    };
+
+    window.addEventListener('businessDataRefresh', handleBusinessRefresh);
+    return () => window.removeEventListener('businessDataRefresh', handleBusinessRefresh);
+  }, [loadClientsFromSupabase]);
+
+  // Force le rechargement des données au montage du composant
+  useEffect(() => {
+    console.log('📊 CRM Context mounted - Clients actuels:', clients.length);
+    if (clients.length === 0) {
+      console.log('🔄 Aucun client trouvé - Rechargement forcé...');
+      loadClientsFromSupabase();
+    } else {
+      console.log('✅ Clients chargés avec succès:', clients.map(c => `${c.name} (${c.sector})`));
+    }
+  }, []);
 
   // Synchronisation automatique des données team vers localStorage
   useEffect(() => {

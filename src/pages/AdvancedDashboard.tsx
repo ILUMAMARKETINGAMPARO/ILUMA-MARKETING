@@ -9,7 +9,7 @@ import ModuleMetricsDashboard from '@/components/analytics/ModuleMetricsDashboar
 import SmartWorkflowEngine from '@/components/automation/SmartWorkflowEngine';
 import RealTimeSyncIndicator from '@/components/sync/RealTimeSyncIndicator';
 import SEOHead from '@/components/seo/SEOHead';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -27,7 +27,7 @@ import {
 
 const AdvancedDashboard = () => {
   const [activeTab, setActiveTab] = useState('analytics');
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   const dashboardStats = {
     totalUsers: 2847,
@@ -38,11 +38,7 @@ const AdvancedDashboard = () => {
 
   return (
     <>
-      <SEOHead
-        title={t('dashboard.title') + " - Analytics & IA"}
-        description={t('dashboard.subtitle')}
-        keywords="dashboard analytics, IA analytics, gamification, export intelligent, métriques temps réel"
-      />
+      <SEOHead />
       
       <div className="min-h-screen bg-gradient-to-b from-black via-primary/10 to-black">
         <Navigation />
@@ -56,7 +52,7 @@ const AdvancedDashboard = () => {
               className="text-center mb-12"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-white font-['Montserrat'] mb-4">
-                {t('dashboard.title').split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">{t('dashboard.title').split(' ')[1]}</span>
+                {t('advanceddashboard.title')}
               </h1>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 {t('dashboard.subtitle')}

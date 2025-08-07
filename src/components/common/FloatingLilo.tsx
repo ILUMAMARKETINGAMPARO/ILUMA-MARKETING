@@ -2,7 +2,7 @@ import React from 'react';
 import Lilo3D from '@/components/lilo/Lilo3D';
 import LiloFullBodyCharacter from '@/components/lilo/LiloFullBodyCharacter';
 import { LiloModule } from '@/types/lilo';
-import { useLiloContextual } from '@/hooks/useLiloContextual.ts';
+import { useLiloContextual } from '@/hooks/useLiloContextual';
 
 interface FloatingLiloProps {
   currentPage?: string;
@@ -41,7 +41,10 @@ const FloatingLilo: React.FC<FloatingLiloProps> = ({
 
   // Robot consistant - toujours la même apparence 2D avec corps complet
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div 
+      className="fixed bottom-4 right-4 z-50 cursor-pointer"
+      onClick={onInteraction}
+    >
       <LiloFullBodyCharacter 
         mood={enrichedContext.mood || 'happy'}
         scale={0.8}

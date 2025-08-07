@@ -10,6 +10,7 @@ import AccessibilityPanel from '@/components/accessibility/AccessibilityPanel';
 import VisualBreadcrumbs from '@/components/navigation/VisualBreadcrumbs';
 import DynamicSEO from '@/components/seo/DynamicSEO';
 import TouchOptimizer from '@/components/responsive/TouchOptimizer';
+import MobileOptimizationEngine from '@/components/mobile/MobileOptimizationEngine';
 
 interface AppLayoutProps {
   useSafeMode?: boolean;
@@ -19,10 +20,10 @@ const AppLayout: React.FC<AppLayoutProps> = ({ useSafeMode = false }) => {
   const location = useLocation();
 
   return (
-    <TouchOptimizer>
-      <PromotionOrchestrator>
-        {/* SEO dynamique */}
-        <DynamicSEO />
+    <MobileOptimizationEngine>
+      <TouchOptimizer>
+        <PromotionOrchestrator>
+        {/* SEO will be handled by individual pages */}
         
         {/* Navigation Breadcrumbs */}
         <VisualBreadcrumbs />
@@ -50,10 +51,10 @@ const AppLayout: React.FC<AppLayoutProps> = ({ useSafeMode = false }) => {
         <SecretShipButton />
         <AccessibilityPanel />
         <GDPRConsentManager />
-        <GDPRBanner />
         <PerformanceOptimizer />
       </PromotionOrchestrator>
     </TouchOptimizer>
+    </MobileOptimizationEngine>
     );
   };
 

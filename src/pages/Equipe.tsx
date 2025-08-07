@@ -5,10 +5,10 @@ import Footer from '@/components/Footer';
 import TeamSection from '@/components/team/TeamSection';
 import LeadAssignmentSystem from '@/components/team/LeadAssignmentSystem';
 import { Users, Brain, Target, Award } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Equipe = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-900/20 to-black">
       <Navigation />

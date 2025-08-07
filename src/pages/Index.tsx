@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
+import { useDeviceInfo } from '@/hooks/use-mobile';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import PopupLiloPromo from '@/components/PopupLiloPromo';
@@ -19,10 +20,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Sparkles, ArrowRight, Brain, Target, Rocket, Users, Star, TrendingUp, Zap, Heart, Globe, MessageSquare, CheckCircle, PlayCircle, HelpCircle, Eye, Lightbulb, Coffee, Smile, ThumbsUp, Wand2, Search, BarChart3, Award, Clock, Shield, MapPin } from 'lucide-react';
 import ClientInterface from '@/components/rivalviews/ClientInterface';
 const Index = () => {
-  const {
-    t,
-    language
-  } = useLanguage();
+  const { t, language } = useTranslations();
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
   const [liloMood, setLiloMood] = useState('curious');
   const [currentStory, setCurrentStory] = useState(0);
@@ -31,13 +29,20 @@ const Index = () => {
     x: 0,
     y: 0
   });
+
+  // Hook de détection mobile
+  const {
+    isMobile,
+    isTablet,
+    orientation
+  } = useDeviceInfo();
   const {
     scrollY
   } = useScroll();
 
-  // Parallax effects avec scroll storytelling
-  const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
-  const heroScale = useTransform(scrollY, [0, 300], [1, 1.1]);
+  // Parallax effects avec scroll storytelling - adaptatif mobile
+  const backgroundY = useTransform(scrollY, [0, 500], [0, isMobile ? 75 : 150]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, isMobile ? 1.05 : 1.1]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.3]);
   const storyProgress = useTransform(scrollY, [0, 2000], [0, 100]);
 
@@ -96,27 +101,27 @@ const Index = () => {
   // User paths - Tim Brown narrative approach
   const userPaths = [{
     id: 'discovery',
-    title: t('home.paths.discovery.title') || 'Exploration Guidée',
-    subtitle: t('home.paths.discovery.subtitle') || 'Je découvre Iluma™',
-    description: t('home.paths.discovery.description') || 'Parcours scénarisé étape par étape, Lilo actif, pédagogie FAC',
+    title: t('home.userPaths.discovery.title'),
+    subtitle: t('home.userPaths.discovery.subtitle'),
+    description: t('home.userPaths.discovery.description'),
     icon: Brain,
     color: 'from-cyan-500 to-blue-500',
     path: '/methode-iluma',
     persona: 'curious'
   }, {
     id: 'objectives',
-    title: t('home.paths.objectives.title') || 'Choix Précis',
-    subtitle: t('home.paths.objectives.subtitle') || 'J\'ai un projet spécifique',
-    description: t('home.paths.objectives.description') || 'Accès direct à tous les modules intelligents Iluma™',
+    title: t('home.userPaths.objectives.title'),
+    subtitle: t('home.userPaths.objectives.subtitle'),
+    description: t('home.userPaths.objectives.description'),
     icon: Target,
     color: 'from-purple-500 to-pink-500',
     path: '/modules',
     persona: 'focused'
   }, {
     id: 'exploration',
-    title: t('home.paths.exploration.title') || 'Visite Libre',
-    subtitle: t('home.paths.exploration.subtitle') || 'Je veux tout explorer',
-    description: t('home.paths.exploration.description') || 'Navigation libre dans tous les outils et services (filtrables + IA)',
+    title: t('home.userPaths.exploration.title'),
+    subtitle: t('home.userPaths.exploration.subtitle'),
+    description: t('home.userPaths.exploration.description'),
     icon: Rocket,
     color: 'from-orange-500 to-red-500',
     path: '/presentation-outils',
@@ -158,25 +163,19 @@ const Index = () => {
     benefit: 'Support intelligent'
   }];
 
-  // FAQ data for SGE optimization (Rand Fishkin approach)
-  const faqData = [
-    {
-      question: t('home.faq.items.0.question') || "Et si votre agence savait exactement ce que pense Google ?",
-      answer: t('home.faq.items.0.answer') || "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
-    },
-    {
-      question: t('home.faq.items.1.question') || "Comment Iluma™ garantit-elle des résultats mesurables ?",
-      answer: t('home.faq.items.1.answer') || "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
-    },
-    {
-      question: t('home.faq.items.2.question') || "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?",
-      answer: t('home.faq.items.2.answer') || "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
-    },
-    {
-      question: t('home.faq.items.3.question') || "Puis-je voir des résultats avant d'investir ?",
-      answer: t('home.faq.items.3.answer') || "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
-    }
-  ];
+  const faqData = [{
+    question: t('faq.google.question') || "Et si votre agence savait exactement ce que pense Google ?",
+    answer: "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
+  }, {
+    question: t('faq.results.question') || "Comment Iluma™ garantit-elle des résultats mesurables ?",
+    answer: "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
+  }, {
+    question: t('faq.difference.question') || "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?",
+    answer: "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
+  }, {
+    question: t('faq.preview.question') || "Puis-je voir des résultats avant d'investir ?",
+    answer: "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
+  }];
   return <>
       <SEOHead />
       <StructuredData type="Organization" />
@@ -242,8 +241,8 @@ const Index = () => {
                     
                   </motion.div>
 
-                  {/* Main Title */}
-                  <motion.h1 className="text-6xl md:text-8xl font-extrabold font-['Montserrat'] mb-6" initial={{
+                  {/* Main Title - Responsive mobile */}
+                  <motion.h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-extrabold font-['Montserrat'] mb-6`} initial={{
                   y: 50,
                   opacity: 0
                 }} animate={{
@@ -260,18 +259,18 @@ const Index = () => {
                     repeat: Infinity,
                     ease: "linear"
                   }}>
-                      {t('home.hero.title') || "Iluma™"}
+                      Iluma™
                     </motion.span>
-                    <span className="block text-white/90 text-4xl md:text-6xl mt-4">
-                      {t('home.hero.subtitle') || "L'IA qui ILLUMINE"}
+                    <span className={`block text-white/90 ${isMobile ? 'text-2xl' : 'text-4xl md:text-6xl'} mt-4`}>
+                      {t('home.hero.subtitle')}
                     </span>
-                    <span className="block text-white/90 text-4xl md:text-6xl">
-                      {t('home.hero.subtitle2') || "votre visibilité"}
+                    <span className={`block text-white/90 ${isMobile ? 'text-2xl' : 'text-4xl md:text-6xl'}`}>
+                      {t('home.hero.subtitle2')}
                     </span>
                   </motion.h1>
 
-                  {/* Enhanced Description */}
-                  <motion.p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-['Montserrat']" initial={{
+                  {/* Enhanced Description - Responsive */}
+                  <motion.p className={`${isMobile ? 'text-lg' : 'text-xl md:text-2xl'} text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-['Montserrat'] ${isMobile ? 'px-4' : ''}`} initial={{
                   y: 30,
                   opacity: 0
                 }} animate={{
@@ -281,11 +280,11 @@ const Index = () => {
                   duration: 0.8,
                   delay: 0.4
                 }}>
-                    {t('home.hero.description') || "Être visible au bon moment, au bon endroit. Notre écosystème IA complet génère des résultats mesurables pour votre entreprise."}
+                    {t('home.hero.description')}
                   </motion.p>
 
-                  {/* Interactive Path Selection */}
-                  <motion.div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12" initial={{
+                  {/* Interactive Path Selection - Mobile responsive grid */}
+                  <motion.div className={`grid ${isMobile ? 'grid-cols-1 gap-4 max-w-sm' : 'md:grid-cols-3 gap-6 max-w-5xl'} mx-auto mb-12`} initial={{
                   y: 30,
                   opacity: 0
                 }} animate={{
@@ -347,7 +346,7 @@ const Index = () => {
                     <Link to="/adluma">
                       <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-black font-black px-12 py-6 text-xl rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#8E44FF]/30 font-['Montserrat'] group">
                         <Sparkles className="w-6 h-6 mr-3 group-hover:animate-spin" />
-                        🚀 {t('home.hero.primaryCTA') || 'Diagnostic Gratuit avec Lilo'}
+                        🚀 {t('home.hero.primaryCTA')}
                         <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                       </Button>
                     </Link>
@@ -400,10 +399,10 @@ const Index = () => {
                           }} style={{
                             backgroundSize: '200% 100%'
                           }}>
-                              ⚡ OFFRE TRANSFORMATION TOTALE ⚡
+                              {t('home.promotion.title')}
                             </motion.h3>
                             <p className="text-white/80 text-lg font-semibold">
-                              L'offre qui RÉVOLUTIONNE votre visibilité
+                              {t('home.promotion.subtitle')}
                             </p>
                           </div>
                           
@@ -456,123 +455,7 @@ const Index = () => {
             duration: 1
           }}>
               <div className="max-w-6xl mx-auto">
-                <motion.div className="text-center mb-16" initial={{
-                y: 50,
-                opacity: 0
-              }} whileInView={{
-                y: 0,
-                opacity: 1
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.8
-              }}>
-                  <motion.div className="mb-8 flex items-center justify-center gap-4" initial={{
-                  scale: 0
-                }} animate={{
-                  scale: 1
-                }} transition={{
-                  delay: 0.3,
-                  type: "spring",
-                  stiffness: 100
-                }}>
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] rounded-full flex items-center justify-center animate-pulse">
-                      <Brain className="w-6 h-6 text-white" />
-                    </div>
-                    <motion.div className="bg-black/50 backdrop-blur-xl rounded-2xl p-3 border border-[#8E44FF]/30" animate={{
-                    y: [0, -3, 0]
-                  }} transition={{
-                    duration: 2,
-                    repeat: Infinity
-                  }}>
-                      <p className="text-[#FFD56B] font-['Montserrat'] text-sm">
-                        🤖 <strong>Lilo, votre guide IA</strong>, vous explique tout ce qu'on fait
-                      </p>
-                    </motion.div>
-                  </motion.div>
-
-                  <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                    🤖 <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">{t('home.wonder.question') || "Et si votre agence savait exactement ce que pense Google ?"}</span><br />
-                    <span className="text-3xl md:text-4xl text-white/90">{t('home.wonder.answer') || "Nous sommes une agence qui pense comme une IA."}</span>
-                  </h2>
-                  
-                  <p className="text-xl text-white/80 max-w-4xl mx-auto font-['Montserrat'] mb-8">
-                    {t('home.wonder.description') || "Iluma, c'est plus qu'une agence. C'est une méthode, des outils, des services IA et une mission : faire rayonner votre entreprise."}
-                  </p>
-
-                  {/* Liste des découvertes */}
-                  <motion.div className="bg-gradient-to-r from-[#8E44FF]/10 to-[#FFD56B]/10 rounded-3xl p-8 border border-[#8E44FF]/30 backdrop-blur-xl mb-12" initial={{
-                  scale: 0.9,
-                  opacity: 0
-                }} whileInView={{
-                  scale: 1,
-                  opacity: 1
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  duration: 0.8,
-                  delay: 0.2
-                }}>
-                     <h3 className="text-2xl font-bold text-white mb-6 font-['Montserrat']">
-                       🎯 {t('home.features.subtitle') || "Ce que vous allez découvrir"} :
-                     </h3>
-                     
-                     <div className="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
-                       {[{
-                       icon: Rocket,
-                       text: t('home.features.items.tools') || "Nos outils IA (Landing Page Intelligente, Simulateur ADLUMA™, QRVISIBILITÉ™, etc.)"
-                     }, {
-                       icon: Brain,
-                       text: t('home.features.items.services') || "Nos services stratégiques (SEO SGE, design UX, contenu IA, etc.)"
-                     }, {
-                       icon: Heart,
-                       text: t('home.features.items.lilo') || "Le rôle de Lilo, notre IA émotionnelle"
-                     }, {
-                       icon: Target,
-                       text: t('home.features.items.logic') || "La logique concrète derrière chaque action"
-                     }].map((item, index) => {
-                      const IconComponent = item.icon;
-                      return <motion.div key={index} initial={{
-                        x: -20,
-                        opacity: 0
-                      }} whileInView={{
-                        x: 0,
-                        opacity: 1
-                      }} viewport={{
-                        once: true
-                      }} transition={{
-                        duration: 0.6,
-                        delay: index * 0.1
-                      }} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300">
-                            <IconComponent className="w-6 h-6 text-[#FFD56B] flex-shrink-0 mt-1" />
-                            <p className="text-white/90 font-['Montserrat']">{item.text}</p>
-                          </motion.div>;
-                    })}
-                    </div>
-                  </motion.div>
-
-                  {/* CTA Principal avec animation */}
-                  <motion.div initial={{
-                  y: 30,
-                  opacity: 0
-                }} whileInView={{
-                  y: 0,
-                  opacity: 1
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  duration: 0.8,
-                  delay: 0.4
-                }}>
-                    <Link to="/presentation-outils">
-                      <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-black font-black px-12 py-6 text-xl rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#8E44FF]/30 font-['Montserrat'] group">
-                        <Eye className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-                        📍 {t('home.features.exploreAll') || "Explorer tout ce qu'on fait (et pourquoi)"}
-                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                      </Button>
-                    </Link>
-                  </motion.div>
-                </motion.div>
+                
               </div>
             </motion.section>
 
@@ -627,26 +510,26 @@ const Index = () => {
                      
                      <div className="grid md:grid-cols-4 gap-6">
                        {[{
-                       day: t('home.transformation.steps.day1.day') || "Jour 1",
-                       action: t('home.transformation.steps.day1.action') || "Diagnostic ADLUMA™",
-                       result: t('home.transformation.steps.day1.result') || "Analyse complète",
-                       icon: Search
-                     }, {
-                       day: t('home.transformation.steps.day7.day') || "Jour 7",
-                       action: t('home.transformation.steps.day7.action') || "Déploiement ILA™",
-                       result: t('home.transformation.steps.day7.result') || "Score +40%",
-                       icon: TrendingUp
-                     }, {
-                       day: t('home.transformation.steps.day15.day') || "Jour 15",
-                       action: t('home.transformation.steps.day15.action') || "Activation ILUMATCH™",
-                       result: t('home.transformation.steps.day15.result') || "5 partenaires",
-                       icon: Users
-                     }, {
-                       day: t('home.transformation.steps.day30.day') || "Jour 30",
-                       action: t('home.transformation.steps.day30.action') || "Résultats mesurés",
-                       result: t('home.transformation.steps.day30.result') || "+410% visibilité",
-                       icon: Award
-                     }].map((step, index) => {
+                      day: t('home.transformation.steps.day1.day') || "Jour 1",
+                      action: t('home.transformation.steps.day1.action') || "Diagnostic ADLUMA™",
+                      result: t('home.transformation.steps.day1.result') || "Analyse complète",
+                      icon: Search
+                    }, {
+                      day: t('home.transformation.steps.day7.day') || "Jour 7",
+                      action: t('home.transformation.steps.day7.action') || "Déploiement ILA™",
+                      result: t('home.transformation.steps.day7.result') || "Score +40%",
+                      icon: TrendingUp
+                    }, {
+                      day: t('home.transformation.steps.day15.day') || "Jour 15",
+                      action: t('home.transformation.steps.day15.action') || "Activation ILUMATCH™",
+                      result: t('home.transformation.steps.day15.result') || "5 partenaires",
+                      icon: Users
+                    }, {
+                      day: t('home.transformation.steps.day30.day') || "Jour 30",
+                      action: t('home.transformation.steps.day30.action') || "Résultats mesurés",
+                      result: t('home.transformation.steps.day30.result') || "+410% visibilité",
+                      icon: Award
+                    }].map((step, index) => {
                       const IconComponent = step.icon;
                       return <motion.div key={index} initial={{
                         y: 30,
@@ -706,34 +589,34 @@ const Index = () => {
 
                  <div className="space-y-12">
                    {[{
-                   step: t('home.howTo.steps.diagnostic.step') || "01",
-                   title: t('home.howTo.steps.diagnostic.title') || "Diagnostic IA Gratuit",
-                   description: t('home.howTo.steps.diagnostic.description') || "ADLUMA™ analyse votre visibilité actuelle et identifie vos opportunités",
-                   action: t('home.howTo.steps.diagnostic.action') || "Obtenez votre score ILA™ en 2 minutes",
-                   icon: Brain,
-                   color: "from-cyan-500 to-blue-500"
-                 }, {
-                   step: t('home.howTo.steps.strategy.step') || "02",
-                   title: t('home.howTo.steps.strategy.title') || "Stratégie Personnalisée",
-                   description: t('home.howTo.steps.strategy.description') || "Notre IA crée un plan d'action sur mesure basé sur vos objectifs",
-                   action: t('home.howTo.steps.strategy.action') || "Recevez votre roadmap détaillée",
-                   icon: Target,
-                   color: "from-purple-500 to-pink-500"
-                 }, {
-                   step: t('home.howTo.steps.deployment.step') || "03",
-                   title: t('home.howTo.steps.deployment.title') || "Déploiement des Modules",
-                   description: t('home.howTo.steps.deployment.description') || "Activation progressive de votre écosystème Iluma™",
-                   action: t('home.howTo.steps.deployment.action') || "Modules actifs selon vos priorités",
-                   icon: Rocket,
-                   color: "from-orange-500 to-red-500"
-                 }, {
-                   step: t('home.howTo.steps.optimization.step') || "04",
-                   title: t('home.howTo.steps.optimization.title') || "Optimisation Continue",
-                   description: t('home.howTo.steps.optimization.description') || "LILO™ surveille et optimise vos performances 24/7",
-                   action: t('home.howTo.steps.optimization.action') || "Croissance automatisée et mesurable",
-                   icon: TrendingUp,
-                   color: "from-green-500 to-emerald-500"
-                 }].map((howTo, index) => {
+                  step: t('home.howTo.steps.diagnostic.step') || "01",
+                  title: t('home.howTo.steps.diagnostic.title') || "Diagnostic IA Gratuit",
+                  description: t('home.howTo.steps.diagnostic.description') || "ADLUMA™ analyse votre visibilité actuelle et identifie vos opportunités",
+                  action: t('home.howTo.steps.diagnostic.action') || "Obtenez votre score ILA™ en 2 minutes",
+                  icon: Brain,
+                  color: "from-cyan-500 to-blue-500"
+                }, {
+                  step: t('home.howTo.steps.strategy.step') || "02",
+                  title: t('home.howTo.steps.strategy.title') || "Stratégie Personnalisée",
+                  description: t('home.howTo.steps.strategy.description') || "Notre IA crée un plan d'action sur mesure basé sur vos objectifs",
+                  action: t('home.howTo.steps.strategy.action') || "Recevez votre roadmap détaillée",
+                  icon: Target,
+                  color: "from-purple-500 to-pink-500"
+                }, {
+                  step: t('home.howTo.steps.deployment.step') || "03",
+                  title: t('home.howTo.steps.deployment.title') || "Déploiement des Modules",
+                  description: t('home.howTo.steps.deployment.description') || "Activation progressive de votre écosystème Iluma™",
+                  action: t('home.howTo.steps.deployment.action') || "Modules actifs selon vos priorités",
+                  icon: Rocket,
+                  color: "from-orange-500 to-red-500"
+                }, {
+                  step: t('home.howTo.steps.optimization.step') || "04",
+                  title: t('home.howTo.steps.optimization.title') || "Optimisation Continue",
+                  description: t('home.howTo.steps.optimization.description') || "LILO™ surveille et optimise vos performances 24/7",
+                  action: t('home.howTo.steps.optimization.action') || "Croissance automatisée et mesurable",
+                  icon: TrendingUp,
+                  color: "from-green-500 to-emerald-500"
+                }].map((howTo, index) => {
                   const IconComponent = howTo.icon;
                   return <motion.div key={index} initial={{
                     x: index % 2 === 0 ? -50 : 50,
@@ -788,10 +671,10 @@ const Index = () => {
               }}>
                   <HelpCircle className="w-12 h-12 text-[#FFD56B] mx-auto mb-4" />
                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                     {t('home.faq.title') || "Questions"} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Fréquentes</span>
+                     {t('home.faq.title')} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">{t('home.faq.frequent')}</span>
                    </h2>
                    <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
-                     {t('home.faq.subtitle') || "Tout ce que vous devez savoir sur Iluma™"}
+                     {t('home.faq.subtitle')}
                    </p>
                 </motion.div>
 
@@ -843,29 +726,29 @@ const Index = () => {
               }} transition={{
                 duration: 0.8
               }}>
-                   <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                     {t('home.results.title') || "Résultats"} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Garantis</span>
-                   </h2>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
+                      {t('results.title') || "Résultats Garantis"}
+                    </h2>
                 </motion.div>
 
                  <div className="grid md:grid-cols-4 gap-6">
                    {[{
-                   value: t('home.results.stats.visitors.value') || "+410%",
-                   label: t('home.results.stats.visitors.label') || "Visiteurs en 30 jours",
-                   icon: TrendingUp
-                 }, {
-                   value: t('home.results.stats.reviews.value') || "+8",
-                   label: t('home.results.stats.reviews.label') || "Avis Google générés",
-                   icon: Star
-                 }, {
-                   value: t('home.results.stats.clicks.value') || "+260%",
-                   label: t('home.results.stats.clicks.label') || "Clics Google Maps",
-                   icon: Target
-                 }, {
-                   value: t('home.results.stats.followers.value') || "+140%",
-                   label: t('home.results.stats.followers.label') || "Followers organiques",
-                   icon: Users
-                 }].map((stat, index) => {
+                  value: t('home.results.stats.visitors.value') || "+410%",
+                  label: t('home.results.stats.visitors.label') || "Visiteurs en 30 jours",
+                  icon: TrendingUp
+                }, {
+                  value: t('home.results.stats.reviews.value') || "+8",
+                  label: t('home.results.stats.reviews.label') || "Avis Google générés",
+                  icon: Star
+                }, {
+                  value: t('home.results.stats.clicks.value') || "+260%",
+                  label: t('home.results.stats.clicks.label') || "Clics Google Maps",
+                  icon: Target
+                }, {
+                  value: t('home.results.stats.followers.value') || "+140%",
+                  label: t('home.results.stats.followers.label') || "Followers organiques",
+                  icon: Users
+                }].map((stat, index) => {
                   const IconComponent = stat.icon;
                   return <motion.div key={index} initial={{
                     y: 50,

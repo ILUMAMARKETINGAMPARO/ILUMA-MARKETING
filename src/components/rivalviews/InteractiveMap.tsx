@@ -13,7 +13,7 @@ import {
   Target,
   Eye
 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client.ts';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Business {
   id: string;
@@ -58,7 +58,7 @@ const InteractiveMap: React.FC = () => {
         query = query.ilike('city', `%${city}%`);
       }
 
-      const { data, error } = await query.limit(100);
+      const { data, error } = await query.limit(500); // Augmenté pour voir toutes les entreprises
 
       if (error) {
         console.error('Erreur Supabase:', error);

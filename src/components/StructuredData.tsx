@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 interface StructuredDataProps {
   type: 'Organization' | 'LocalBusiness' | 'FAQPage' | 'Article' | 'HowTo' | 'Review' | 'BreadcrumbList';
@@ -7,7 +7,7 @@ interface StructuredDataProps {
 }
 
 export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
-  const { language, t } = useLanguage();
+  const { t } = useTranslations();
 
   const getStructuredData = () => {
     const baseUrl = 'https://ilumamarketing.com';
@@ -21,7 +21,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "legalName": "Iluma Marketing LLC",
           "url": baseUrl,
           "logo": `${baseUrl}/logo.png`,
-          "description": t('seo.home.description'),
+          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
           "foundingDate": "2024",
           "address": {
             "@type": "PostalAddress",
@@ -59,7 +59,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "@type": "LocalBusiness",
           "name": "Iluma Marketing",
           "image": `${baseUrl}/logo.png`,
-          "description": t('seo.home.description'),
+          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
           "url": baseUrl,
           "telephone": "+1-514-882-8910",
           "email": "hola@ilumamarketing.com",
@@ -103,34 +103,34 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "mainEntity": [
             {
               "@type": "Question",
-              "name": t('home.faq.items.0.question'),
+              "name": "Et si votre agence savait exactement ce que pense Google ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": t('home.faq.items.0.answer')
+                "text": "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
               }
             },
             {
               "@type": "Question", 
-              "name": t('home.faq.items.1.question'),
+              "name": "Comment Iluma™ garantit-elle des résultats mesurables ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": t('home.faq.items.1.answer')
+                "text": "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
               }
             },
             {
               "@type": "Question",
-              "name": t('home.faq.items.2.question'),
+              "name": "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": t('home.faq.items.2.answer')
+                "text": "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
               }
             },
             {
               "@type": "Question",
-              "name": t('home.faq.items.3.question'),
+              "name": "Puis-je voir des résultats avant d'investir ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": t('home.faq.items.3.answer')
+                "text": "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
               }
             }
           ]
@@ -140,8 +140,8 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
         return {
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": t('seo.home.title'),
-          "description": t('seo.home.description'),
+          "headline": "Iluma™ - L'IA qui ILLUMINE votre visibilité",
+          "description": "Révolutionnez votre marketing digital avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
           "image": `${baseUrl}/og-image.jpg`,
           "author": {
             "@type": "Organization",
@@ -174,7 +174,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "estimatedCost": {
             "@type": "MonetaryAmount",
             "currency": "CAD",
-            "value": "997"
+            "value": "Contact us"
           },
           "supply": [
             {
@@ -232,7 +232,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
             {
               "@type": "ListItem",
               "position": 1,
-              "name": t('breadcrumbs.home'),
+              "name": "Accueil",
               "item": baseUrl
             }
           ]

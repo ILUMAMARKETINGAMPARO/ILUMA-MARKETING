@@ -29,7 +29,11 @@ const VisualBreadcrumbs: React.FC = () => {
       'team': 'Équipe',
       'about': 'À propos',
       'legal': 'Mentions légales',
-      'privacy': 'Confidentialité'
+      'privacy': 'Confidentialité',
+      'methode-iluma': 'Méthode Iluma™',
+      'hub': 'Hub Central',
+      'presentation-outils': 'Nos Outils',
+      'etudes-de-cas': 'Études de Cas'
     };
     
     let currentPath = '';

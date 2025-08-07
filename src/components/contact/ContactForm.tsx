@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-
 interface FormData {
   nom: string;
   email: string;
@@ -44,11 +43,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   ];
 
   const budgets = [
-    'Moins de 5 000$',
-    '5 000€ - 15 000$',
-    '15 000€ - 50 000$',
-    '50 000€ - 100 000$',
-    'Plus de 100 000$'
+    'Startup',
+    'Petite entreprise',
+    'Moyenne entreprise',
+    'Grande entreprise',
+    'Enterprise'
   ];
 
   const objectifs = [
@@ -72,7 +71,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   return (
     <div className="glass-effect rounded-3xl p-8 border border-white/20">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white">Parlez-nous de votre projet</h2>
+        <h2 className="text-2xl font-bold text-white">Parlons de votre projet</h2>
         <div className="flex gap-2">
           {[1, 2, 3].map(stepNum => (
             <div 
@@ -96,7 +95,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                   value={formData.nom}
                   onChange={(e) => handleInputChange('nom', e.target.value)}
                   className="glass-effect border-white/20 text-white"
-                  placeholder="Votre nom"
+                  placeholder="Votre nom complet"
                 />
               </div>
               <div>
@@ -107,7 +106,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   className="glass-effect border-white/20 text-white"
-                  placeholder="votre@entreprise.com"
+                  placeholder="votre@email.com"
                 />
               </div>
             </div>

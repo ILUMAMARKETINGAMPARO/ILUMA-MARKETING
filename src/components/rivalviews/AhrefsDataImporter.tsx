@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Upload, Download, AlertCircle, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast.ts";
-import { supabase } from "@/integrations/supabase/client.ts";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import * as XLSX from 'xlsx';
 
 interface AhrefsDataImporterProps {

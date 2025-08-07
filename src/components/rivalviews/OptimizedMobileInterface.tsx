@@ -16,9 +16,9 @@ import {
   Eye,
   Loader2
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews.ts';
+import { RivalBusiness } from '@/types/rivalviews';
 import { useDebounce } from '@/hooks/use-debounce';
-import { useIntersectionObserver } from '@/hooks/use-intersection-observer.ts';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 // Lazy load des composants lourds
 const MobileBusinessList = lazy(() => import('./MobileBusinessList'));
@@ -71,7 +71,7 @@ const OptimizedMobileInterface: React.FC<OptimizedMobileInterfaceProps> = ({
   // Pagination pour les performances
   const [displayedBusinesses, setDisplayedBusinesses] = useState<RivalBusiness[]>([]);
   const [page, setPage] = useState(1);
-  const ITEMS_PER_PAGE = 20;
+  const ITEMS_PER_PAGE = 500; // Augmenté pour afficher toutes les entreprises
 
   // Intersection observer pour le lazy loading
   const { targetRef, isIntersecting } = useIntersectionObserver({

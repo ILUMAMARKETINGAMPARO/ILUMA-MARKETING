@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import SEOManager from '@/components/seo/SEOManager';
 import { SEOEngine } from '@/utils/seoEngine';
 import RevolveViewsClient from '@/components/rivalviews/RevolveViewsClient';
+import MobilePageWrapper from '@/components/mobile/MobilePageWrapper';
 
 const RivalViews = () => {
   const seoData = {
@@ -20,15 +21,15 @@ const RivalViews = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-background">
+      <MobilePageWrapper enablePadding={false} className="min-h-screen bg-background">
         <SEOManager {...seoData} />
         <Navigation />
         
-        {/* Nouveau RevolveViews™ - Interface client professionnelle */}
+        {/* RevolveViews™ avec vraies données - Mobile optimisé */}
         <RevolveViewsClient />
 
         <Footer />
-      </div>
+      </MobilePageWrapper>
     </>
   );
 };

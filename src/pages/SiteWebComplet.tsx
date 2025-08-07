@@ -1,50 +1,50 @@
 import React from 'react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Monitor, Smartphone, Zap, Gauge, Shield, Search, Palette, Code, Database, Users, Rocket, ArrowRight, Check, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const SiteWebComplet: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useTranslations();
 
   const features = [
     {
       icon: Monitor,
-      title: t('siteWebComplet.features.responsive.title'),
-      description: t('siteWebComplet.features.responsive.description'),
+      title: t('siteWebComplet.features.responsive'),
+      description: t('siteWebComplet.features.responsiveDesc'),
       color: 'text-purple-400'
     },
     {
       icon: Zap,
-      title: t('siteWebComplet.features.performance.title'),
-      description: t('siteWebComplet.features.performance.description'),
+      title: t('siteWebComplet.features.performance'),
+      description: t('siteWebComplet.features.performanceDesc'),
       color: 'text-yellow-400'
     },
     {
       icon: Search,
-      title: t('siteWebComplet.features.seo.title'),
-      description: t('siteWebComplet.features.seo.description'),
+      title: t('siteWebComplet.features.seo'),
+      description: t('siteWebComplet.features.seoDesc'),
       color: 'text-green-400'
     },
     {
       icon: Shield,
-      title: t('siteWebComplet.features.security.title'),
-      description: t('siteWebComplet.features.security.description'),
+      title: t('siteWebComplet.features.security'),
+      description: t('siteWebComplet.features.securityDesc'),
       color: 'text-blue-400'
     },
     {
       icon: Database,
-      title: t('siteWebComplet.features.cms.title'),
-      description: t('siteWebComplet.features.cms.description'),
+      title: t('siteWebComplet.features.cms'),
+      description: t('siteWebComplet.features.cmsDesc'),
       color: 'text-indigo-400'
     },
     {
       icon: Users,
-      title: t('siteWebComplet.features.analytics.title'),
-      description: t('siteWebComplet.features.analytics.description'),
+      title: t('siteWebComplet.features.analytics'),
+      description: t('siteWebComplet.features.analyticsDesc'),
       color: 'text-pink-400'
     }
   ];
@@ -55,26 +55,26 @@ const SiteWebComplet: React.FC = () => {
       price: t('siteWebComplet.packages.starter.price'),
       description: t('siteWebComplet.packages.starter.description'),
       features: [
-        t('siteWebComplet.packages.starter.features.0'),
-        t('siteWebComplet.packages.starter.features.1'),
-        t('siteWebComplet.packages.starter.features.2'),
-        t('siteWebComplet.packages.starter.features.3'),
-        t('siteWebComplet.packages.starter.features.4')
+        'Site web responsive (5 pages)',
+        'Design personnalisé',
+        'SEO de base intégré',
+        'Formulaires de contact',
+        'Support 3 mois inclus'
       ],
       popular: false
     },
     {
-      name: t('siteWebComplet.packages.professional.name'),
-      price: t('siteWebComplet.packages.professional.price'),
-      description: t('siteWebComplet.packages.professional.description'),
+      name: t('siteWebComplet.packages.pro.name'),
+      price: t('siteWebComplet.packages.pro.price'),
+      description: t('siteWebComplet.packages.pro.description'),
       features: [
-        t('siteWebComplet.packages.professional.features.0'),
-        t('siteWebComplet.packages.professional.features.1'),
-        t('siteWebComplet.packages.professional.features.2'),
-        t('siteWebComplet.packages.professional.features.3'),
-        t('siteWebComplet.packages.professional.features.4'),
-        t('siteWebComplet.packages.professional.features.5'),
-        t('siteWebComplet.packages.professional.features.6')
+        'Site web multi-pages (jusqu\'à 15)',
+        'IA comportementale intégrée',
+        'CRM intelligent inclus',
+        'SEO avancé + Analytics',
+        'Blog et gestion de contenu',
+        'E-commerce de base',
+        'Support prioritaire 6 mois'
       ],
       popular: true
     },
@@ -83,14 +83,14 @@ const SiteWebComplet: React.FC = () => {
       price: t('siteWebComplet.packages.enterprise.price'),
       description: t('siteWebComplet.packages.enterprise.description'),
       features: [
-        t('siteWebComplet.packages.enterprise.features.0'),
-        t('siteWebComplet.packages.enterprise.features.1'),
-        t('siteWebComplet.packages.enterprise.features.2'),
-        t('siteWebComplet.packages.enterprise.features.3'),
-        t('siteWebComplet.packages.enterprise.features.4'),
-        t('siteWebComplet.packages.enterprise.features.5'),
-        t('siteWebComplet.packages.enterprise.features.6'),
-        t('siteWebComplet.packages.enterprise.features.7')
+        'Site web illimité (pages)',
+        'IA personnalisée avancée',
+        'CRM enterprise complet',
+        'E-commerce avancé',
+        'API et intégrations custom',
+        'Dashboard analytics pro',
+        'Formation équipe incluse',
+        'Support dédié 24/7'
       ],
       popular: false
     }
@@ -99,26 +99,26 @@ const SiteWebComplet: React.FC = () => {
   const process = [
     {
       step: 1,
-      title: t('siteWebComplet.process.consultation.title'),
-      description: t('siteWebComplet.process.consultation.description'),
+      title: t('siteWebComplet.process.consultation'),
+      description: t('siteWebComplet.process.consultationDesc'),
       icon: Users
     },
     {
       step: 2,
-      title: t('siteWebComplet.process.design.title'),
-      description: t('siteWebComplet.process.design.description'),
+      title: t('siteWebComplet.process.design'),
+      description: t('siteWebComplet.process.designDesc'),
       icon: Palette
     },
     {
       step: 3,
-      title: t('siteWebComplet.process.development.title'),
-      description: t('siteWebComplet.process.development.description'),
+      title: t('siteWebComplet.process.development'),
+      description: t('siteWebComplet.process.developmentDesc'),
       icon: Code
     },
     {
       step: 4,
-      title: t('siteWebComplet.process.launch.title'),
-      description: t('siteWebComplet.process.launch.description'),
+      title: t('siteWebComplet.process.launch'),
+      description: t('siteWebComplet.process.launchDesc'),
       icon: Rocket
     }
   ];
@@ -126,10 +126,10 @@ const SiteWebComplet: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t('siteWebComplet.meta.title')}</title>
-        <meta name="description" content={t('siteWebComplet.meta.description')} />
-        <meta name="keywords" content={t('siteWebComplet.meta.keywords')} />
-        <link rel="canonical" href={`https://ilumamarketing.com${language !== 'fr' ? `/${language}` : ''}/site-web-complet`} />
+        <title>Site Web Complet IA | Solution Digitale Complète - Iluma™</title>
+        <meta name="description" content="Créez votre site web complet avec l'intelligence artificielle d'Iluma™. Design moderne, SEO optimisé, CRM intégré. Solution clé en main pour entreprises." />
+        <meta name="keywords" content="site web complet, création site internet, design web moderne, SEO optimisé, CRM intégré, solution digitale, Iluma" />
+        <link rel="canonical" href="https://ilumamarketing.com/site-web-complet" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -153,11 +153,11 @@ const SiteWebComplet: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="group">
-                  {t('siteWebComplet.hero.cta.primary')}
+                  {t('siteWebComplet.hero.startProject')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button variant="outline" size="lg">
-                  {t('siteWebComplet.hero.cta.secondary')}
+                  {t('siteWebComplet.hero.viewWork')}
                 </Button>
               </div>
             </motion.div>
@@ -298,7 +298,7 @@ const SiteWebComplet: React.FC = () => {
                         ))}
                       </ul>
                       <Button className="w-full" variant={pkg.popular ? "default" : "outline"}>
-                        {t('siteWebComplet.packages.cta')}
+                        {t('siteWebComplet.packages.choosePlan')}
                       </Button>
                     </CardContent>
                   </Card>
@@ -324,11 +324,11 @@ const SiteWebComplet: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="group">
-                  {t('siteWebComplet.cta.primary')}
+                  {t('siteWebComplet.cta.startNow')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button variant="outline" size="lg">
-                  {t('siteWebComplet.cta.secondary')}
+                  {t('siteWebComplet.cta.consultation')}
                 </Button>
               </div>
             </motion.div>

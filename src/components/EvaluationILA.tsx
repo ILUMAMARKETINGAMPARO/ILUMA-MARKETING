@@ -6,11 +6,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import MPEContainer from '@/components/mpe/MPEContainer';
 
 const EvaluationILA = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const [formData, setFormData] = useState({
     nomEntreprise: '',
     adresse: '',
@@ -75,41 +75,41 @@ const EvaluationILA = () => {
   };
 
   const getScoreLevel = (score) => {
-    if (score >= 80) return { level: t('evaluationILA.results.levels.excellent'), color: 'text-green-400', bgColor: 'bg-green-500/20' };
-    if (score >= 65) return { level: t('evaluationILA.results.levels.good'), color: 'text-blue-400', bgColor: 'bg-blue-500/20' };
-    if (score >= 45) return { level: t('evaluationILA.results.levels.average'), color: 'text-yellow-400', bgColor: 'bg-yellow-500/20' };
-    if (score >= 25) return { level: t('evaluationILA.results.levels.poor'), color: 'text-orange-400', bgColor: 'bg-orange-500/20' };
-    return { level: t('evaluationILA.results.levels.critical'), color: 'text-red-400', bgColor: 'bg-red-500/20' };
+    if (score >= 80) return { level: t('ila.results.level.excellent'), color: 'text-green-400', bgColor: 'bg-green-500/20' };
+    if (score >= 65) return { level: t('ila.results.level.good'), color: 'text-blue-400', bgColor: 'bg-blue-500/20' };
+    if (score >= 45) return { level: t('ila.results.level.average'), color: 'text-yellow-400', bgColor: 'bg-yellow-500/20' };
+    if (score >= 25) return { level: t('ila.results.level.weak'), color: 'text-orange-400', bgColor: 'bg-orange-500/20' };
+    return { level: t('ila.results.level.critical'), color: 'text-red-400', bgColor: 'bg-red-500/20' };
   };
 
   const getRecommendations = (score) => {
     if (score >= 80) {
       return [
-        "Optimisation avancée avec IA Iluma™ pour maintenir la domination",
-        "Expansion stratégique vers de nouveaux mots-clés premium",
-        "Automatisation complète du content marketing",
-        "Mise en place de campagnes de rétention client intelligentes"
+        t('ila.recommendations.excellent1'),
+        t('ila.recommendations.excellent2'),
+        t('ila.recommendations.excellent3'),
+        t('ila.recommendations.excellent4')
       ];
     } else if (score >= 65) {
       return [
-        "Optimisation SEO locale ciblée avec modules ILA™",
-        "Amélioration de la stratégie d'avis clients",
-        "Développement de contenu blog optimisé IA",
-        "Campagnes Google Ads ciblées géographiquement"
+        t('ila.recommendations.good1'),
+        t('ila.recommendations.good2'),
+        t('ila.recommendations.good3'),
+        t('ila.recommendations.good4')
       ];
     } else if (score >= 45) {
       return [
-        "Révision complète de la stratégie SEO locale",
-        "Optimisation urgente de la fiche Google Business Profile",
-        "Création de contenu local optimisé avec BlogIA™",
-        "Mise en place d'un système d'acquisition d'avis"
+        t('ila.recommendations.average1'),
+        t('ila.recommendations.average2'),
+        t('ila.recommendations.average3'),
+        t('ila.recommendations.average4')
       ];
     } else {
       return [
-        "Refonte complète de la présence digitale",
-        "Audit SEO technique approfondi",
-        "Création d'une stratégie de contenu locale",
-        "Formation équipe aux bonnes pratiques digitales"
+        t('ila.recommendations.weak1'),
+        t('ila.recommendations.weak2'),
+        t('ila.recommendations.weak3'),
+        t('ila.recommendations.weak4')
       ];
     }
   };
@@ -121,10 +121,10 @@ const EvaluationILA = () => {
         <div className="text-center mb-16">
           <MPEContainer animation="fade-in">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient">{t('evaluationILA.title')}</span>
+              <span className="text-gradient">{t('ila.hero.title')}</span>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              {t('evaluationILA.description')}
+              {t('ila.hero.subtitle')}
             </p>
           </MPEContainer>
         </div>
@@ -136,10 +136,10 @@ const EvaluationILA = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-white flex items-center gap-3">
                   <Calculator className="w-6 h-6 text-cyan-400" />
-                  Informations entreprise
+                  {t('ila.form.title')}
                 </CardTitle>
                 <CardDescription className="text-white/70">
-                  Renseignez vos données pour une analyse précise
+                  {t('ila.form.subtitle')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -147,39 +147,39 @@ const EvaluationILA = () => {
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="nomEntreprise" className="text-white/90">
-                      {t('evaluationILA.form.companyName')}
+                      {t('ila.form.businessName')}
                     </Label>
                     <Input
                       id="nomEntreprise"
                       value={formData.nomEntreprise}
                       onChange={(e) => setFormData({...formData, nomEntreprise: e.target.value})}
-                      placeholder={t('evaluationILA.form.placeholders.companyName')}
+                      placeholder={t('ila.form.businessNamePlaceholder')}
                       className="glass-effect border-white/20 text-white placeholder:text-white/50"
                     />
                   </div>
 
                   <div>
                     <Label htmlFor="adresse" className="text-white/90">
-                      {t('evaluationILA.form.address')}
+                      {t('ila.form.address')}
                     </Label>
                     <Input
                       id="adresse"
                       value={formData.adresse}
                       onChange={(e) => setFormData({...formData, adresse: e.target.value})}
-                      placeholder={t('evaluationILA.form.placeholders.address')}
+                      placeholder={t('ila.form.addressPlaceholder')}
                       className="glass-effect border-white/20 text-white placeholder:text-white/50"
                     />
                   </div>
 
                   <div>
                     <Label htmlFor="siteWeb" className="text-white/90">
-                      {t('evaluationILA.form.website')}
+                      {t('ila.form.website')}
                     </Label>
                     <Input
                       id="siteWeb"
                       value={formData.siteWeb}
                       onChange={(e) => setFormData({...formData, siteWeb: e.target.value})}
-                      placeholder={t('evaluationILA.form.placeholders.website')}
+                      placeholder={t('ila.form.websitePlaceholder')}
                       className="glass-effect border-white/20 text-white placeholder:text-white/50"
                     />
                   </div>
@@ -190,7 +190,7 @@ const EvaluationILA = () => {
                   <div>
                     <Label className="text-white/90 flex items-center gap-2">
                       <Star className="w-4 h-4 text-yellow-400" />
-                      {t('evaluationILA.form.googleRating')}: {formData.etoiles[0]}/5
+                      {t('ila.form.googleRating')}: {formData.etoiles[0]}/5
                     </Label>
                     <Slider
                       value={formData.etoiles}
@@ -204,7 +204,7 @@ const EvaluationILA = () => {
 
                   <div>
                     <Label className="text-white/90">
-                      {t('evaluationILA.form.reviewCount')}: {formData.nombreAvis[0]}
+                      {t('ila.form.reviewCount')}: {formData.nombreAvis[0]}
                     </Label>
                     <Slider
                       value={formData.nombreAvis}
@@ -218,7 +218,7 @@ const EvaluationILA = () => {
 
                   <div>
                     <Label className="text-white/90">
-                      {t('evaluationILA.form.searchVolume')}: {formData.volumeRecherche[0]}/mois
+                      {t('ila.form.searchVolume')}: {formData.volumeRecherche[0]}/mois
                     </Label>
                     <Slider
                       value={formData.volumeRecherche}
@@ -232,7 +232,7 @@ const EvaluationILA = () => {
 
                   <div>
                     <Label className="text-white/90">
-                      {t('evaluationILA.form.difficulty')}: {formData.kd[0]}%
+                      {t('ila.form.difficulty')}: {formData.kd[0]}%
                     </Label>
                     <Slider
                       value={formData.kd}
@@ -248,7 +248,7 @@ const EvaluationILA = () => {
                 {/* Switches */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <Label className="text-white/90">{t('evaluationILA.form.activeBlog')}</Label>
+                    <Label className="text-white/90">{t('ila.form.activeBlog')}</Label>
                     <Switch
                       checked={formData.blogActif}
                       onCheckedChange={(checked) => setFormData({...formData, blogActif: checked})}
@@ -256,7 +256,7 @@ const EvaluationILA = () => {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <Label className="text-white/90">{t('evaluationILA.form.isChain')}</Label>
+                    <Label className="text-white/90">{t('ila.form.multipleLocations')}</Label>
                     <Switch
                       checked={formData.centrale}
                       onCheckedChange={(checked) => setFormData({...formData, centrale: checked})}
@@ -273,12 +273,12 @@ const EvaluationILA = () => {
                   {isAnalyzing ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Analyse IA en cours...
+                      {t('ila.form.analyzingButton')}
                     </>
                   ) : (
                     <>
                       <BarChart3 className="w-5 h-5 mr-2" />
-                      {t('evaluationILA.form.calculate')}
+                      {t('ila.form.calculateButton')}
                     </>
                   )}
                 </Button>
@@ -291,10 +291,10 @@ const EvaluationILA = () => {
             {showResults && score !== null ? (
               <Card className="glass-effect border-white/20">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-white flex items-center gap-3">
-                    <Award className="w-6 h-6 text-yellow-400" />
-                    {t('evaluationILA.results.score')} : {score}/100
-                  </CardTitle>
+                <CardTitle className="text-2xl text-white flex items-center gap-3">
+                  <Award className="w-6 h-6 text-yellow-400" />
+                  {t('ila.results.scoreTitle')} : {score}/100
+                </CardTitle>
                   <div className={`inline-flex items-center px-4 py-2 rounded-full ${getScoreLevel(score).bgColor}`}>
                     <span className={`font-semibold ${getScoreLevel(score).color}`}>
                       {getScoreLevel(score).level}
@@ -317,7 +317,7 @@ const EvaluationILA = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5 text-green-400" />
-                      {t('evaluationILA.results.recommendations')}
+                      {t('ila.results.recommendationsTitle')}
                     </h4>
                     <ul className="space-y-3">
                       {getRecommendations(score).map((rec, index) => (
@@ -333,7 +333,7 @@ const EvaluationILA = () => {
                   <div className="pt-4 border-t border-white/20">
                     <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold">
                       <Globe className="w-5 h-5 mr-2" />
-                      {t('evaluationILA.results.getDetailedReport')}
+                      {t('ila.results.getReportButton')}
                     </Button>
                   </div>
                 </CardContent>
@@ -343,10 +343,10 @@ const EvaluationILA = () => {
                 <CardContent className="text-center py-12">
                   <Calculator className="w-16 h-16 text-white/40 mx-auto mb-6" />
                   <h3 className="text-xl text-white/80 mb-4">
-                    Remplissez le formulaire pour découvrir votre score ILA™
+                    {t('ila.placeholder.title')}
                   </h3>
                   <p className="text-white/60">
-                    Notre IA analyse votre présence locale et vous propose un plan d'action personnalisé
+                    {t('ila.placeholder.subtitle')}
                   </p>
                 </CardContent>
               </Card>

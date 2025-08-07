@@ -11,43 +11,66 @@ const SEOManager: React.FC<SEOManagerProps> = ({ seoData, path = '' }) => {
 
   return (
     <Helmet>
-      {/* Titre et Meta Description */}
+      {/* Titre SEO optimisé (60 caractères max) */}
       <title>{seoData.title}</title>
       <meta name="description" content={seoData.description} />
       
-      {/* Keywords */}
-      <meta name="keywords" content={seoData.keywords.join(', ')} />
+      {/* Mots-clés stratégiques longue traîne */}
+      <meta name="keywords" content={Array.isArray(seoData.keywords) ? seoData.keywords.join(', ') : seoData.keywords} />
       
-      {/* URLs Canoniques */}
+      {/* Meta robots avancées pour SGE */}
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      
+      {/* URLs Canoniques anti-duplicate */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* Open Graph */}
+      {/* Open Graph optimisé pour engagement */}
       <meta property="og:title" content={seoData.openGraph?.title || seoData.title} />
       <meta property="og:description" content={seoData.openGraph?.description || seoData.description} />
       <meta property="og:type" content={seoData.openGraph?.type || 'website'} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:site_name" content="Iluma™ - IA Marketing" />
+      <meta property="og:site_name" content="Iluma™ - Intelligence Artificielle Marketing" />
       <meta property="og:locale" content="fr_CA" />
-      <meta property="og:locale:alternate" content="en_US" />
-      <meta property="og:locale:alternate" content="es_ES" />
+      <meta property="og:locale:alternate" content="en_CA" />
       {seoData.openGraph?.image && (
-        <meta property="og:image" content={seoData.openGraph.image} />
+        <>
+          <meta property="og:image" content={seoData.openGraph.image} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Iluma™ - IA Marketing & SEO Intelligent" />
+        </>
       )}
       
-      {/* Twitter Cards */}
+      {/* Twitter Cards optimisé CTR */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@IlumaMarketing" />
+      <meta name="twitter:creator" content="@IlumaMarketing" />
       <meta name="twitter:title" content={seoData.title} />
       <meta name="twitter:description" content={seoData.description} />
       {seoData.openGraph?.image && (
-        <meta name="twitter:image" content={seoData.openGraph.image} />
+        <>
+          <meta name="twitter:image" content={seoData.openGraph.image} />
+          <meta name="twitter:image:alt" content="Iluma™ - IA Marketing Revolution" />
+        </>
       )}
       
-      {/* Autres Meta */}
-      <meta name="robots" content="index, follow" />
-      <meta name="author" content="Iluma Marketing" />
-      <meta name="language" content="French" />
+      {/* Métadonnées spécialisées */}
+      <meta name="author" content="Iluma™ Marketing Intelligence" />
+      <meta name="language" content="fr-CA" />
       <meta name="geo.region" content="CA-QC" />
-      <meta name="geo.placename" content="Montréal" />
+      <meta name="geo.placename" content="Québec, Montréal, Laval, Longueuil" />
+      <meta name="geo.position" content="45.5017;-73.5673" />
+      <meta name="ICBM" content="45.5017, -73.5673" />
+      
+      {/* App mobile optimisé */}
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="Iluma™" />
+      <meta name="application-name" content="Iluma™ Marketing" />
+      <meta name="theme-color" content="#8E44FF" />
+      <meta name="msapplication-TileColor" content="#8E44FF" />
       
       {/* Données Structurées */}
       {seoData.structuredData && (

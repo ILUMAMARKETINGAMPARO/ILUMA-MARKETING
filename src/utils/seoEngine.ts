@@ -31,9 +31,9 @@ const ILUMA_KEYWORDS = [
 
 const PAGE_TEMPLATES = {
   home: {
-    titleTemplate: "Iluma™ - IA Marketing & SEO Intelligent | Automatisation Complète",
-    descriptionTemplate: "Transformez votre marketing avec l'IA Iluma™. SEO intelligent, landing pages automatisées, CRM intégré. Résultats garantis en 30 jours.",
-    keywords: [...ILUMA_KEYWORDS, 'accueil', 'marketing automation', 'transformation digitale']
+    titleTemplate: "Iluma™ - IA Marketing Révolutionnaire | +300% Visibilité Garantie",
+    descriptionTemplate: "🚀 Iluma™ transforme votre marketing avec l'IA. Modules ADLUMA™, ILA™, ILUMATCH™ : SEO intelligent, landing pages aimants, automation complète. ROI garanti 30 jours.",
+    keywords: [...ILUMA_KEYWORDS, 'IA marketing Québec', 'SEO intelligent Montréal', 'landing pages aimants', 'automatisation marketing IA', 'ADLUMA simulateur', 'ILA score local', 'ILUMATCH réseau business', 'LILO assistant IA', 'agence marketing IA', 'transformation digitale Québec', 'ROI marketing garanti', 'visibilité locale IA', 'growth hacking IA', 'conversion optimization AI', 'marketing automation', 'intelligence artificielle marketing', 'performance marketing IA']
   },
   module: {
     titleTemplate: "{moduleName} - Module Iluma™ | IA Marketing Avancée",

@@ -1,0 +1,58 @@
+{
+  "glyphs": {
+    "L": {
+      "ha": 500,
+      "x_min": 50,
+      "x_max": 450,
+      "y_min": 0,
+      "y_max": 700,
+      "o": "m 50 700 l 50 0 l 450 0 l 450 100 l 150 100 l 150 700 z"
+    },
+    "I": {
+      "ha": 250,
+      "x_min": 75,
+      "x_max": 175,
+      "y_min": 0,
+      "y_max": 700,
+      "o": "m 75 0 l 175 0 l 175 700 l 75 700 z"
+    },
+    "O": {
+      "ha": 600,
+      "x_min": 50,
+      "x_max": 550,
+      "y_min": -10,
+      "y_max": 710,
+      "o": "m 300 710 q 175 675 112.5 587.5 q 50 500 50 350 q 50 200 112.5 112.5 q 175 25 300 -10 q 425 25 487.5 112.5 q 550 200 550 350 q 550 500 487.5 587.5 q 425 675 300 710 z m 300 610 q 375 585 425 525 q 450 465 450 350 q 450 235 425 175 q 375 115 300 90 q 225 115 175 175 q 150 235 150 350 q 150 465 175 525 q 225 585 300 610 z"
+    },
+    "™": {
+      "ha": 400,
+      "x_min": 10,
+      "x_max": 390,
+      "y_min": 450,
+      "y_max": 700,
+      "o": "m 10 700 l 390 700 l 390 650 l 225 650 l 225 450 l 175 450 l 175 650 l 10 650 z m 250 700 l 300 700 l 300 525 l 325 525 l 350 700 l 390 700 l 365 520 q 355 500 345 485 q 335 475 325 470 q 345 465 355 450 q 365 430 375 405 l 390 405 l 350 405 q 325 430 315 445 q 305 465 295 480 l 300 480 l 300 450 l 250 450 z"
+    }
+  },
+  "familyName": "Montserrat",
+  "ascender": 968,
+  "descender": -251,
+  "underlinePosition": -125,
+  "underlineThickness": 50,
+  "boundingBox": {
+    "yMin": -251,
+    "yMax": 968,
+    "xMin": -170,
+    "xMax": 1529
+  },
+  "resolution": 1000,
+  "original_font_information": {
+    "format": 0,
+    "copyright": "Copyright 2011 The Montserrat Project Authors",
+    "fontFamily": "Montserrat",
+    "fontSubfamily": "Bold",
+    "uniqueID": "Montserrat Bold",
+    "fullName": "Montserrat Bold",
+    "version": "Version 7.200",
+    "postScriptName": "Montserrat-Bold"
+  }
+}

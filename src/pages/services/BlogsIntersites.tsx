@@ -6,11 +6,15 @@ import { PenTool, Network, Globe, Zap, CheckCircle, ArrowRight, FileText, Search
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTranslations } from '@/hooks/useTranslations';
+import SEOManager from '@/components/seo/SEOManager';
+import { getMultilingualSEOData } from '@/utils/seoMultilingualEngine';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Helmet } from 'react-helmet-async';
 
 const BlogsIntersites = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
+  const { language } = useLanguage();
+  const seoData = getMultilingualSEOData('contentCreation', language);
 
   const features = [
     {
@@ -38,28 +42,27 @@ const BlogsIntersites = () => {
   const stats = [
     {
       number: "500+",
-      label: "Contenus/Mois",
-      description: "Articles, blogs et contenus web générés"
+      label: t('services.contentCreation.stats.content.label') || "Contenus/Mois",
+      description: t('services.contentCreation.stats.content.description') || "Articles, blogs et contenus web générés"
     },
     {
       number: "+280%",
-      label: "Engagement",
-      description: "Augmentation moyenne de l'engagement"
+      label: t('services.contentCreation.stats.engagement.label') || "Engagement",
+      description: t('services.contentCreation.stats.engagement.description') || "Augmentation moyenne de l'engagement"
     },
     {
       number: "+150%",
-      label: "Ranking SEO",
-      description: "Amélioration du positionnement Google"
+      label: t('services.contentCreation.stats.seo.label') || "Ranking SEO",
+      description: t('services.contentCreation.stats.seo.description') || "Amélioration du positionnement Google"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0B0B0E] via-[#1a1a2e] to-[#16213e]">
-      <Helmet>
-        <title>Création de Contenu IA - Blogs & Articles SEO | Iluma™</title>
-        <meta name="description" content="Service de création de contenu automatisée par IA. Blogs, articles, contenus web optimisés SEO pour maximiser votre visibilité et engagement." />
-        <meta name="keywords" content="création contenu, blog IA, articles SEO, contenu automatisé, rédaction IA, content marketing, Iluma" />
-      </Helmet>
+      <SEOManager 
+        seoData={seoData}
+        path="/services/blogs-intersites"
+      />
 
       <Navigation />
       
@@ -93,7 +96,7 @@ const BlogsIntersites = () => {
               </Link>
               <Link to="/adluma">
                 <Button size="lg" variant="outline" className="border-[#8E44FF] text-[#8E44FF] hover:bg-[#8E44FF] hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 font-['Montserrat']">
-                  Calculer mon ROI
+                  {t('common.calculateRoi') || 'Calculer mon ROI'}
                 </Button>
               </Link>
             </div>
@@ -149,10 +152,10 @@ const BlogsIntersites = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4 font-['Montserrat']">
-                Pourquoi la Création de Contenu ?
+                {t('services.contentCreation.benefits.title')}
               </h2>
               <p className="text-xl text-white/70 font-['Montserrat']">
-                Le contenu de qualité pour attirer et convertir votre audience
+                {t('services.contentCreation.benefits.description')}
               </p>
             </div>
             

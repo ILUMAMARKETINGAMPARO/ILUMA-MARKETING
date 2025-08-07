@@ -1,23 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Brain, Users, ArrowRight } from 'lucide-react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const MethodologySection = () => {
+  const { t } = useTranslations();
+  
   const pillars = [
     {
       icon: Search,
-      title: "Visibilité locale + SEO IA",
-      description: "Référencement naturel boosté par intelligence artificielle"
+      title: t('methodology.pillars.visibility.title'),
+      description: t('methodology.pillars.visibility.description')
     },
     {
       icon: Brain,
-      title: "Intelligence de contenu",
-      description: "LLM, prompts, structuration optimisée"
+      title: t('methodology.pillars.intelligence.title'),
+      description: t('methodology.pillars.intelligence.description')
     },
     {
       icon: Users,
-      title: "Visibilité croisée",
-      description: "Partenariats stratégiques entre entreprises"
+      title: t('methodology.pillars.crossVisibility.title'),
+      description: t('methodology.pillars.crossVisibility.description')
     }
   ];
 
@@ -32,7 +35,7 @@ const MethodologySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-['Montserrat']">
-            Une méthodologie unique en 3 forces
+            {t('methodology.title')}
           </h2>
         </motion.div>
 
@@ -70,7 +73,7 @@ const MethodologySection = () => {
           className="text-center"
         >
           <button className="group px-8 py-4 border-2 border-white/30 text-white hover:bg-white/10 font-bold rounded-xl text-lg transition-all duration-300 hover:scale-105 font-['Montserrat'] flex items-center gap-2 mx-auto">
-            Découvrir notre méthode complète
+            {t('methodology.cta')}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>

@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Cookie, Settings, X, ExternalLink } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 interface ConsentSettings {
   necessary: boolean;
@@ -34,7 +34,7 @@ const GDPRConsentManager = () => {
     functional: false
   });
 
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
 
   useEffect(() => {
     const savedConsent = localStorage.getItem('iluma-gdpr-consent');
@@ -284,13 +284,15 @@ const GDPRConsentManager = () => {
                     exit={{ opacity: 0, height: 0 }}
                     className="bg-white/5 rounded-lg p-4 mb-4"
                   >
-                    <div className="grid gap-4">
-                      {Object.entries(currentContent.cookieTypes).map(([key, type]) => (
+                     <div className="grid gap-4">
+                      {Object.entries(currentContent.cookieTypes).map(([key, type]) => {
+                        const cookieType = type as { name: string; description: string };
+                        return (
                         <div key={key} className="flex items-center justify-between">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
                               <Cookie className="w-4 h-4 text-[#FFD56B]" />
-                              <span className="font-medium text-white">{type.name}</span>
+                              <span className="font-medium text-white">{cookieType.name}</span>
                               <Badge 
                                 className={key === 'necessary' ? 
                                   "bg-red-500/20 border-red-500/30 text-red-300" : 
@@ -301,7 +303,7 @@ const GDPRConsentManager = () => {
                                 {key === 'necessary' ? currentContent.status.required : currentContent.status.optional}
                               </Badge>
                             </div>
-                            <p className="text-white/70 text-xs">{type.description}</p>
+                            <p className="text-white/70 text-xs">{cookieType.description}</p>
                           </div>
                           <Switch
                             checked={consent[key as keyof ConsentSettings]}
@@ -311,7 +313,8 @@ const GDPRConsentManager = () => {
                             disabled={key === 'necessary'}
                           />
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </motion.div>
                 )}

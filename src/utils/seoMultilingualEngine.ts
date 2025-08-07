@@ -1,4 +1,4 @@
-import { Language } from '@/types/language.ts';
+import { Language } from '@/types/language';
 
 interface MultilingualSEOData {
   [key: string]: {
@@ -90,6 +90,66 @@ export const getMultilingualSEOData = (page: string, language: Language): Multil
         keywords: ["puntuación ILA", "análisis visibilidad", "auditoría SEO", "visibilidad local", "recomendaciones IA", "mejora SEO"],
         h1: "Puntuación ILA™ - Tu Visibilidad Analizada por IA"
       }
+    },
+    contentCreation: {
+      fr: {
+        title: "Création de Contenu IA - Blogs & Articles SEO | Iluma™",
+        description: "Service de création de contenu automatisée par IA. Blogs, articles, contenus web optimisés SEO pour maximiser votre visibilité et engagement.",
+        keywords: ["création contenu", "blog IA", "articles SEO", "contenu automatisé", "rédaction IA", "content marketing", "Iluma"],
+        h1: "Création de Contenu IA - Blogs & Articles Optimisés SEO"
+      },
+      en: {
+        title: "AI Content Creation - SEO Blogs & Articles | Iluma™",
+        description: "Automated AI content creation service. Blogs, articles, SEO-optimized web content to maximize your visibility and engagement.",
+        keywords: ["content creation", "AI blog", "SEO articles", "automated content", "AI writing", "content marketing", "Iluma"],
+        h1: "AI Content Creation - SEO Optimized Blogs & Articles"
+      },
+      es: {
+        title: "Creación de Contenido IA - Blogs y Artículos SEO | Iluma™",
+        description: "Servicio de creación de contenido automatizado por IA. Blogs, artículos, contenido web optimizado SEO para maximizar tu visibilidad y engagement.",
+        keywords: ["creación contenido", "blog IA", "artículos SEO", "contenido automatizado", "redacción IA", "content marketing", "Iluma"],
+        h1: "Creación de Contenido IA - Blogs y Artículos Optimizados SEO"
+      }
+    },
+    faq: {
+      fr: {
+        title: "FAQ Iluma™ - Questions Fréquentes IA Marketing | Montréal",
+        description: "Réponses à vos questions sur nos services IA, SEO local, landing pages intelligentes et marketing digital. Support expert disponible.",
+        keywords: ["FAQ Iluma", "questions marketing IA", "support SEO", "aide landing page", "assistance technique", "Montréal"],
+        h1: "Questions Fréquemment Posées - Support Iluma™"
+      },
+      en: {
+        title: "Iluma™ FAQ - AI Marketing Questions | Montreal",
+        description: "Answers to your questions about our AI services, local SEO, smart landing pages and digital marketing. Expert support available.",
+        keywords: ["Iluma FAQ", "AI marketing questions", "SEO support", "landing page help", "technical assistance", "Montreal"],
+        h1: "Frequently Asked Questions - Iluma™ Support"
+      },
+      es: {
+        title: "FAQ Iluma™ - Preguntas Marketing IA | Montreal",
+        description: "Respuestas a tus preguntas sobre servicios IA, SEO local, landing pages inteligentes y marketing digital. Soporte experto disponible.",
+        keywords: ["FAQ Iluma", "preguntas marketing IA", "soporte SEO", "ayuda landing page", "asistencia técnica", "Montreal"],
+        h1: "Preguntas Frecuentes - Soporte Iluma™"
+      }
+    },
+    notFound: {
+      fr: {
+        title: "Page Introuvable 404 | Iluma™ Marketing IA",
+        description: "La page que vous cherchez n'existe pas. Retournez à l'accueil ou contactez notre assistant IA LILO pour obtenir de l'aide.",
+        keywords: ["404", "page introuvable", "erreur", "navigation", "aide", "assistant IA"],
+        h1: "Page Non Trouvée - Erreur 404"
+      },
+      en: {
+        title: "Page Not Found 404 | Iluma™ AI Marketing",
+        description: "The page you're looking for doesn't exist. Return to homepage or contact our AI assistant LILO for help.",
+        keywords: ["404", "page not found", "error", "navigation", "help", "AI assistant"],
+        h1: "Page Not Found - Error 404"
+      },
+      es: {
+        title: "Página No Encontrada 404 | Iluma™ Marketing IA",
+        description: "La página que buscas no existe. Vuelve al inicio o contacta nuestro asistente IA LILO para ayuda.",
+        keywords: ["404", "página no encontrada", "error", "navegación", "ayuda", "asistente IA"],
+        h1: "Página No Encontrada - Error 404"
+      }
     }
   };
 
@@ -102,7 +162,7 @@ export const getMultilingualSEOData = (page: string, language: Language): Multil
 };
 
 export const generateHreflangLinks = (currentPath: string) => {
-  const cleanPath = currentPath.replace(/^\/(en|es)/, '');
+  const cleanPath = currentPath.replace(/^\/(en|es|ar)/, '');
   const baseUrl = 'https://ilumamarketing.com';
   
   return [
@@ -114,6 +174,7 @@ export const generateHreflangLinks = (currentPath: string) => {
     { lang: 'es', url: `${baseUrl}/es${cleanPath}` },
     { lang: 'es-ES', url: `${baseUrl}/es${cleanPath}` },
     { lang: 'es-MX', url: `${baseUrl}/es${cleanPath}` },
+    { lang: 'ar', url: `${baseUrl}/ar${cleanPath}` },
     { lang: 'x-default', url: `${baseUrl}${cleanPath}` }
   ];
 };
@@ -149,6 +210,16 @@ export const getSGEOptimizedContent = (page: string, language: Language) => {
         {
           question: "¿Cómo funciona el asistente IA LILO?",
           answer: "LILO es nuestro asistente IA que te guía en tus estrategias de marketing, analiza tus necesidades y propone soluciones personalizadas 24/7."
+        }
+      ],
+      ar: [
+        {
+          question: "ما هو التسويق بالذكاء الاصطناعي من Iluma؟",
+          answer: "التسويق بالذكاء الاصطناعي من Iluma يجمع بين الذكاء الاصطناعي واستراتيجيات التسويق المحلي لتحسين رؤيتك وحملاتك الإعلانية وعائد استثمارك."
+        },
+        {
+          question: "كيف يعمل المساعد الذكي LILO؟",
+          answer: "LILO هو مساعدنا الذكي الذي يرشدك في استراتيجيات التسويق الخاصة بك، ويحلل احتياجاتك ويقترح حلولاً شخصية على مدار 24/7."
         }
       ]
     }

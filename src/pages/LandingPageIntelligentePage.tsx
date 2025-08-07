@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { 
   Zap, Target, BarChart3, Sparkles, Play, Settings, TrendingUp, Users, Clock, 
   ArrowRight, ExternalLink, Brain, CheckCircle, Rocket, Star, Shield, Globe,
@@ -17,20 +17,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import SEOManager from '@/components/seo/SEOManager';
 import DynamicSEO from '@/components/seo/DynamicSEO';
 import PerformanceOptimizer from '@/components/performance/PerformanceOptimizer';
-import { translations } from '@/data/translations';
 
 const LandingPageIntelligentePage = () => {
-  const { t, language } = useLanguage();
+  const { t } = useTranslations();
   const [activeFeature, setActiveFeature] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState('premium');
 
-  // Get current language translations
-  const currentTranslations = translations[language];
-
   const seoData = {
-    title: t('landingPage.seoData.title') || "Landing Page Intelligente IA Personnalisée | Site Web Complet Optimisé - Iluma™",
-    description: t('landingPage.seoData.description') || "Créez votre landing page intelligente personnalisée avec l'IA d'Iluma™. Solution complète : Design, SEO, CRM, Analytics. Conversion garantie, livraison 48h.",
-    keywords: t('landingPage.seoData.keywords') || "landing page personnalisée, IA conversion, site web sur mesure, optimisation SEO, page d'atterrissage intelligente, marketing digital, Iluma, intelligence artificielle, CRM intégré",
+    title: "Landing Page Intelligente IA Personnalisée | Site Web Complet Optimisé - Iluma™",
+    description: "Créez votre landing page intelligente personnalisée avec l'IA d'Iluma™. Solution complète : Design, SEO, CRM, Analytics. Conversion garantie, livraison 48h.",
+    keywords: "landing page personnalisée, IA conversion, site web sur mesure, optimisation SEO, page d'atterrissage intelligente, marketing digital, Iluma, intelligence artificielle, CRM intégré",
     image: "https://ilumamarketing.com/images/landing-page-ia-personnalisee.jpg",
     canonical: "https://ilumamarketing.com/landing-page-intelligente"
   };
@@ -38,29 +34,33 @@ const LandingPageIntelligentePage = () => {
   const features = [
     {
       icon: Brain,
-      title: t('landingPage.features.ai.title') || "IA Comportementale Avancée",
-      description: t('landingPage.features.ai.description') || "Adaptation en temps réel du contenu selon le profil visiteur",
-      details: ["Personnalisation dynamique", "Scoring automatique des leads", "Recommandations intelligentes"],
+      title: t('landingPageIntelligente.ai.title'),
+      description: t('landingPageIntelligente.ai.subtitle'),
+      details: [
+        t('landingPageIntelligente.ai.features.personalization'),
+        t('landingPageIntelligente.ai.features.scoring'),
+        t('landingPageIntelligente.ai.features.recommendations')
+      ],
       gradient: "from-violet-500 to-purple-600"
     },
     {
       icon: Target,
-      title: t('landingPage.features.seo.title') || "SEO Ultra-Optimisé", 
-      description: t('landingPage.features.seo.description') || "Référencement naturel maximisé pour Google et Bing",
+      title: "SEO Ultra-Optimisé", 
+      description: "Référencement naturel maximisé pour Google et Bing",
       details: ["Schema.org complet", "Core Web Vitals optimisés", "Indexation accélérée"],
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       icon: Users,
-      title: t('landingPage.features.crm.title') || "CRM Intelligent Intégré",
-      description: t('landingPage.features.crm.description') || "Gestion automatique des prospects et nurturing",
+      title: "CRM Intelligent Intégré",
+      description: "Gestion automatique des prospects et nurturing",
       details: ["Segmentation automatique", "Email automation", "Scoring prédictif"],
       gradient: "from-green-500 to-emerald-600"
     },
     {
       icon: BarChart,
-      title: t('landingPage.features.analytics.title') || "Analytics & Reporting",
-      description: t('landingPage.features.analytics.description') || "Tableaux de bord en temps réel et insights avancés",
+      title: "Analytics & Reporting",
+      description: "Tableaux de bord en temps réel et insights avancés",
       details: ["Métriques de conversion", "Heatmaps avancées", "ROI tracking"],
       gradient: "from-orange-500 to-red-600"
     }
@@ -69,48 +69,45 @@ const LandingPageIntelligentePage = () => {
   const plans = [
     {
       id: 'starter',
-      name: 'Landing Starter',
-      price: '1,497€',
-      description: 'Page unique optimisée',
+      name: t('landingPageIntelligente.packages.starter.title'),
+      description: t('landingPageIntelligente.packages.starter.subtitle'),
       features: [
-        'Landing page responsive',
-        'SEO de base',
-        'Formulaire de contact',
-        'Analytics Google',
-        'Support 30 jours'
+        t('landingPageIntelligente.packages.starter.feature1'),
+        t('landingPageIntelligente.packages.starter.feature2'),
+        t('landingPageIntelligente.packages.starter.feature3'),
+        t('landingPageIntelligente.packages.starter.feature4'),
+        t('landingPageIntelligente.packages.starter.feature5')
       ],
       gradient: 'from-blue-500 to-cyan-600',
       popular: false
     },
     {
       id: 'premium',
-      name: 'Site Web Complet',
-      price: '2,997€',
-      description: 'Solution complète professionnelle',
+      name: t('landingPageIntelligente.packages.complete.title'),
+      description: t('landingPageIntelligente.packages.complete.subtitle'),
       features: [
-        'Site web multi-pages',
-        'IA comportementale',
-        'CRM intelligent intégré',
-        'SEO avancé + Schema.org',
-        'Analytics pro + heatmaps',
-        'Support illimité 6 mois',
-        'Formation équipe incluse'
+        t('landingPageIntelligente.packages.complete.feature1'),
+        t('landingPageIntelligente.packages.complete.feature2'),
+        t('landingPageIntelligente.packages.complete.feature3'),
+        t('landingPageIntelligente.packages.complete.feature4'),
+        t('landingPageIntelligente.packages.complete.feature5'),
+        t('landingPageIntelligente.packages.complete.feature6'),
+        t('landingPageIntelligente.packages.complete.feature7')
       ],
       gradient: 'from-violet-500 to-purple-600',
       popular: true
     },
     {
       id: 'enterprise',
-      name: 'Enterprise IA',
-      price: 'Sur devis',
-      description: 'Solution sur mesure avec IA avancée',
+      name: t('landingPageIntelligente.packages.enterprise.title'),
+      description: t('landingPageIntelligente.packages.enterprise.subtitle'),
       features: [
-        'Plateforme multi-sites',
-        'IA personnalisée',
-        'Intégrations API sur mesure',
-        'Tableau de bord exécutif',
-        'Support dédié 24/7',
-        'SLA garantie 99.9%'
+        t('landingPageIntelligente.packages.enterprise.feature1'),
+        t('landingPageIntelligente.packages.enterprise.feature2'),
+        t('landingPageIntelligente.packages.enterprise.feature3'),
+        t('landingPageIntelligente.packages.enterprise.feature4'),
+        t('landingPageIntelligente.packages.enterprise.feature5'),
+        t('landingPageIntelligente.packages.enterprise.feature6')
       ],
       gradient: 'from-yellow-500 to-orange-600',
       popular: false
@@ -120,30 +117,30 @@ const LandingPageIntelligentePage = () => {
   const processSteps = [
     {
       step: "01",
-      title: "Analyse & Stratégie",
-      description: "Audit complet de votre marché et définition de la stratégie digitale optimale",
-      duration: "24h",
+      title: t('landingPageIntelligente.process.step1.title'),
+      description: t('landingPageIntelligente.process.step1.description'),
+      duration: t('landingPageIntelligente.process.duration1'),
       deliverables: ["Audit concurrentiel", "Personas définis", "Stratégie SEO", "Plan de conversion"]
     },
     {
       step: "02", 
-      title: "Design & Développement",
-      description: "Création de votre site avec IA intégrée, responsive et optimisé SEO",
-      duration: "48h",
+      title: t('landingPageIntelligente.process.step2.title'),
+      description: t('landingPageIntelligente.process.step2.description'),
+      duration: t('landingPageIntelligente.process.duration2'),
       deliverables: ["Maquettes validées", "Développement responsive", "Intégration IA", "Tests complets"]
     },
     {
       step: "03",
-      title: "Intégration & Configuration",
-      description: "Configuration CRM, analytics et tests complets de performance",
-      duration: "24h",
+      title: t('landingPageIntelligente.process.step3.title'),
+      description: t('landingPageIntelligente.process.step3.description'),
+      duration: t('landingPageIntelligente.process.duration3'),
       deliverables: ["CRM configuré", "Analytics connectés", "Tests A/B setup", "Monitoring actif"]
     },
     {
       step: "04",
-      title: "Lancement & Formation",
-      description: "Mise en ligne, formation équipe et monitoring continu des résultats",
-      duration: "Ongoing",
+      title: t('landingPageIntelligente.process.step4.title'),
+      description: t('landingPageIntelligente.process.step4.description'),
+      duration: t('landingPageIntelligente.process.duration4'),
       deliverables: ["Site en production", "Formation équipe", "Documentation", "Support continu"]
     }
   ];
@@ -175,44 +172,38 @@ const LandingPageIntelligentePage = () => {
                   <Rocket className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-violet-300 font-medium text-sm tracking-wider uppercase">{t('landingPage.hero.badge') || "Landing Page Intelligente"}</div>
-                  <div className="text-white/60 text-xs">{t('landingPage.hero.subtitle') || "Personnalisée & Optimisée IA"}</div>
+                  <div className="text-violet-300 font-medium text-sm tracking-wider uppercase">Landing Page Intelligente</div>
+                  <div className="text-white/60 text-xs">Personnalisée & Optimisée IA</div>
                 </div>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  {t('landingPage.hero.title1') || "Votre Site Web"}
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                  {t('landingPage.hero.title2') || "Intelligent & Personnalisé"}
+                  {t('landingPageIA.hero.title')}
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
-                {t('landingPage.hero.description1') || "Une solution complète créée sur mesure pour votre business :"} 
-                <br />
-                <strong className="text-violet-400">{t('landingPage.hero.description2') || "Design unique + IA comportementale + SEO avancé + CRM intégré"}</strong>
+                {t('landingPageIA.hero.subtitle')}
               </p>
               
               {/* Trust Indicators */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-violet-400 mb-2">48h</div>
-                  <div className="text-white/80 text-sm">{t('landingPage.hero.guarantees.delivery') || "Livraison garantie"}</div>
+                  <div className="text-white/80 text-sm">{t('landingPageIA.hero.delivery')}</div>
                 </div>
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-green-400 mb-2">+350%</div>
-                  <div className="text-white/80 text-sm">{t('landingPage.hero.guarantees.conversion') || "Conversion moyenne"}</div>
+                  <div className="text-white/80 text-sm">{t('landingPageIA.hero.conversion')}</div>
                 </div>
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-orange-400 mb-2">100%</div>
-                  <div className="text-white/80 text-sm">{t('landingPage.hero.guarantees.responsive') || "Responsive design"}</div>
+                  <div className="text-white/80 text-sm">{t('landingPageIA.hero.responsive')}</div>
                 </div>
                 <div className="glass-effect border-white/20 rounded-xl p-6">
                   <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
-                  <div className="text-white/80 text-sm">{t('landingPage.hero.guarantees.support') || "Support inclus"}</div>
+                  <div className="text-white/80 text-sm">{t('landingPageIA.hero.support')}</div>
                 </div>
               </div>
               
@@ -222,7 +213,7 @@ const LandingPageIntelligentePage = () => {
                   className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-10 py-6 text-xl font-bold shadow-2xl shadow-violet-500/25"
                 >
                   <Sparkles className="w-6 h-6 mr-3" />
-                  {t('landingPage.hero.cta.primary') || "Voir nos réalisations"}
+                  {t('landingPageIA.hero.viewWork')}
                   <ArrowRight className="w-6 h-6 ml-3" />
                 </Button>
                 <Button 
@@ -231,7 +222,7 @@ const LandingPageIntelligentePage = () => {
                   className="border-2 border-violet-400/50 text-white hover:bg-violet-500/10 px-10 py-6 text-xl font-bold"
                 >
                   <Brain className="w-6 h-6 mr-3" />
-                  {t('landingPage.hero.cta.secondary') || "Consultation gratuite"}
+                  {t('landingPageIA.hero.consultation')}
                 </Button>
               </div>
             </motion.div>
@@ -249,10 +240,10 @@ const LandingPageIntelligentePage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Technologies <span className="text-violet-400">Avancées</span>
+                {t('landingPageIA.technologies.title')}
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
-                Chaque fonctionnalité est pensée pour maximiser vos conversions
+                {t('landingPageIA.technologies.subtitle')}
               </p>
               
               <Tabs value={features[activeFeature].title} className="w-full">
@@ -321,10 +312,10 @@ const LandingPageIntelligentePage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Processus <span className="text-violet-400">Iluma™</span>
+                {t('landingPageIA.process.title')}
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
-                De l'idée à la mise en ligne, nous gérons chaque étape avec précision
+                {t('landingPageIA.process.subtitle')}
               </p>
               
               <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto">
@@ -379,10 +370,10 @@ const LandingPageIntelligentePage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Tarifs <span className="text-violet-400">Transparents</span>
+                {t('landingPageIA.packages.title')}
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
-                Choisissez la solution qui correspond à vos besoins et votre budget
+                {t('landingPageIA.packages.subtitle')}
               </p>
               
               <div className="grid md:grid-cols-3 gap-8">
@@ -397,7 +388,7 @@ const LandingPageIntelligentePage = () => {
                   >
                     {plan.popular && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
-                        Plus populaire
+                        {t('landingPageIntelligente.packages.popular')}
                       </div>
                     )}
                     
@@ -408,10 +399,6 @@ const LandingPageIntelligentePage = () => {
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                         <p className="text-white/60 text-sm mb-4">{plan.description}</p>
-                        <div className="text-4xl font-black text-white mb-1">{plan.price}</div>
-                        {plan.id !== 'enterprise' && (
-                          <p className="text-white/50 text-sm">TTC, paiement unique</p>
-                        )}
                       </div>
                       
                       <ul className="space-y-3 mb-8">
@@ -427,7 +414,7 @@ const LandingPageIntelligentePage = () => {
                         className={`w-full py-3 ${plan.popular ? 'bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700' : 'bg-white/10 hover:bg-white/20'} text-white font-bold`}
                         onClick={() => setSelectedPlan(plan.id)}
                       >
-                        {plan.id === 'enterprise' ? 'Nous contacter' : 'Choisir ce plan'}
+                        {plan.id === 'enterprise' ? t('landingPageIntelligente.packages.enterprise.cta') : t('landingPageIntelligente.packages.starter.cta')}
                       </Button>
                     </Card>
                   </motion.div>
@@ -453,17 +440,13 @@ const LandingPageIntelligentePage = () => {
                   <div className="flex items-center justify-center gap-3 mb-8">
                     <div className="w-3 h-3 bg-violet-400 rounded-full animate-pulse"></div>
                     <span className="text-violet-300 text-sm font-medium tracking-widest uppercase">
-                      Prêt à transformer votre business ?
+                      {t('landingPageIA.cta.title')}
                     </span>
                     <div className="w-3 h-3 bg-violet-400 rounded-full animate-pulse"></div>
                   </div>
                   
                   <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-                    Votre Site Web Intelligent
-                    <br />
-                    <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
-                      Livré en 48h
-                    </span>
+                    {t('landingPageIA.cta.subtitle')}
                   </h3>
                   
                   <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -478,14 +461,9 @@ const LandingPageIntelligentePage = () => {
                       className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-12 py-6 text-xl font-black shadow-2xl shadow-violet-500/25 hover:scale-105 transition-all duration-300"
                     >
                       <Rocket className="w-6 h-6 mr-3" />
-                      Démarrer mon projet
+                      {t('landingPageIA.cta.startProject')}
                       <ArrowRight className="w-6 h-6 ml-3" />
                     </Button>
-                    
-                    <div className="text-center">
-                      <div className="text-sm text-white/60 mb-1">À partir de</div>
-                      <div className="text-2xl font-black text-white">1,497€</div>
-                    </div>
                   </div>
                   
                   <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/70">

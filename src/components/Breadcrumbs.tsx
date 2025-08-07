@@ -1,11 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
 import { StructuredData } from './StructuredData';
 
 export const Breadcrumbs = () => {
   const location = useLocation();
-  const { t } = useLanguage();
   
   const pathnames = location.pathname.split('/').filter((x) => x);
   
@@ -16,13 +14,13 @@ export const Breadcrumbs = () => {
     {
       "@type": "ListItem",
       "position": 1,
-      "name": t('breadcrumbs.home'),
+      "name": "Accueil",
       "item": "https://ilumamarketing.com/"
     },
     ...pathnames.map((pathname, index) => ({
       "@type": "ListItem",
       "position": index + 2,
-      "name": t(`breadcrumbs.${pathname}`) || pathname.charAt(0).toUpperCase() + pathname.slice(1),
+      "name": pathname.charAt(0).toUpperCase() + pathname.slice(1).replace('-', ' '),
       "item": `https://ilumamarketing.com/${pathnames.slice(0, index + 1).join('/')}`
     }))
   ];
@@ -36,17 +34,17 @@ export const Breadcrumbs = () => {
             <Link 
               to="/" 
               className="flex items-center hover:text-[#8E44FF] transition-colors"
-              aria-label={t('breadcrumbs.home')}
+              aria-label="Accueil"
             >
               <Home className="w-4 h-4" />
-              <span className="sr-only">{t('breadcrumbs.home')}</span>
+              <span className="sr-only">Accueil</span>
             </Link>
           </li>
           
           {pathnames.map((pathname, index) => {
             const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
             const isLast = index === pathnames.length - 1;
-            const breadcrumbName = t(`breadcrumbs.${pathname}`) || pathname.charAt(0).toUpperCase() + pathname.slice(1);
+            const breadcrumbName = pathname.charAt(0).toUpperCase() + pathname.slice(1).replace('-', ' ');
             
             return (
               <li key={pathname} className="flex items-center">

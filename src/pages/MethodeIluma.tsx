@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
+import { useTranslations } from '@/hooks/useTranslations';
 
 import SEOManager from '@/components/seo/SEOManager';
 import FAQSection from '@/components/faq/FAQSection';
@@ -26,13 +27,12 @@ import {
   Rocket,
   TrendingUp
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const MethodeIluma = () => {
-  const { t } = useLanguage();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
+  const { t } = useTranslations();
   const [activeStep, setActiveStep] = useState(0);
   
   const seoData = SEOEngine.generatePageSEO('service', { 
@@ -43,107 +43,107 @@ const MethodeIluma = () => {
   const methodSteps = [
     {
       id: 'diagnostic',
-      title: t('methodIluma.steps.diagnostic.title'),
-      fact: t('methodIluma.steps.diagnostic.fact'),
-      action: t('methodIluma.steps.diagnostic.action'),
-      context: t('methodIluma.steps.diagnostic.context'),
+      title: t('methodeiluma.steps.diagnostic.title'),
+      fact: t('methodeiluma.steps.diagnostic.fact'),
+      action: t('methodeiluma.steps.diagnostic.action'),
+      context: t('methodeiluma.steps.diagnostic.context'),
       icon: Brain,
       color: 'from-purple-500 to-blue-500',
       module: 'ADLUMA™',
       path: '/adluma',
       deliverables: [
-        t('methodIluma.steps.diagnostic.deliverables.0'),
-        t('methodIluma.steps.diagnostic.deliverables.1'),
-        t('methodIluma.steps.diagnostic.deliverables.2')
+        t('methodeiluma.steps.diagnostic.deliverables.0'),
+        t('methodeiluma.steps.diagnostic.deliverables.1'),
+        t('methodeiluma.steps.diagnostic.deliverables.2')
       ],
-      cta: t('methodIluma.steps.diagnostic.cta')
+      cta: t('methodeiluma.steps.diagnostic.cta')
     },
     {
       id: 'presence',
-      title: t('methodIluma.steps.presence.title'),
-      fact: t('methodIluma.steps.presence.fact'),
-      action: t('methodIluma.steps.presence.action'),
-      context: t('methodIluma.steps.presence.context'),
+      title: t('methodeiluma.steps.presence.title'),
+      fact: t('methodeiluma.steps.presence.fact'),
+      action: t('methodeiluma.steps.presence.action'),
+      context: t('methodeiluma.steps.presence.context'),
       icon: Eye,
       color: 'from-blue-500 to-cyan-500',
       module: 'SEO SGE',
       path: '/seo-social',
       deliverables: [
-        t('methodIluma.steps.presence.deliverables.0'),
-        t('methodIluma.steps.presence.deliverables.1'),
-        t('methodIluma.steps.presence.deliverables.2'),
-        t('methodIluma.steps.presence.deliverables.3')
+        t('methodeiluma.steps.presence.deliverables.0'),
+        t('methodeiluma.steps.presence.deliverables.1'),
+        t('methodeiluma.steps.presence.deliverables.2'),
+        t('methodeiluma.steps.presence.deliverables.3')
       ],
-      cta: t('methodIluma.steps.presence.cta')
+      cta: t('methodeiluma.steps.presence.cta')
     },
     {
       id: 'pages',
-      title: t('methodIluma.steps.pages.title'),
-      fact: t('methodIluma.steps.pages.fact'),
-      action: t('methodIluma.steps.pages.action'),
-      context: t('methodIluma.steps.pages.context'),
+      title: t('methodeiluma.steps.pages.title'),
+      fact: t('methodeiluma.steps.pages.fact'),
+      action: t('methodeiluma.steps.pages.action'),
+      context: t('methodeiluma.steps.pages.context'),
       icon: PenTool,
       color: 'from-yellow-500 to-orange-500',
       module: 'LANDING™',
       path: '/landing-page-intelligente',
       deliverables: [
-        t('methodIluma.steps.pages.deliverables.0'),
-        t('methodIluma.steps.pages.deliverables.1'),
-        t('methodIluma.steps.pages.deliverables.2'),
-        t('methodIluma.steps.pages.deliverables.3')
+        t('methodeiluma.steps.pages.deliverables.0'),
+        t('methodeiluma.steps.pages.deliverables.1'),
+        t('methodeiluma.steps.pages.deliverables.2'),
+        t('methodeiluma.steps.pages.deliverables.3')
       ],
-      cta: t('methodIluma.steps.pages.cta')
+      cta: t('methodeiluma.steps.pages.cta')
     },
     {
       id: 'visibility',
-      title: t('methodIluma.steps.visibility.title'),
-      fact: t('methodIluma.steps.visibility.fact'),
-      action: t('methodIluma.steps.visibility.action'),
-      context: t('methodIluma.steps.visibility.context'),
+      title: t('methodeiluma.steps.visibility.title'),
+      fact: t('methodeiluma.steps.visibility.fact'),
+      action: t('methodeiluma.steps.visibility.action'),
+      context: t('methodeiluma.steps.visibility.context'),
       icon: Globe,
       color: 'from-green-500 to-teal-500',
       module: 'RivalViews™',
       path: '/rivalviews',
       deliverables: [
-        t('methodIluma.steps.visibility.deliverables.0'),
-        t('methodIluma.steps.visibility.deliverables.1'),
-        t('methodIluma.steps.visibility.deliverables.2')
+        t('methodeiluma.steps.visibility.deliverables.0'),
+        t('methodeiluma.steps.visibility.deliverables.1'),
+        t('methodeiluma.steps.visibility.deliverables.2')
       ],
-      cta: t('methodIluma.steps.visibility.cta')
+      cta: t('methodeiluma.steps.visibility.cta')
     },
     {
       id: 'intelligence',
-      title: t('methodIluma.steps.intelligence.title'),
-      fact: t('methodIluma.steps.intelligence.fact'),
-      action: t('methodIluma.steps.intelligence.action'),
-      context: t('methodIluma.steps.intelligence.context'),
+      title: t('methodeiluma.steps.intelligence.title'),
+      fact: t('methodeiluma.steps.intelligence.fact'),
+      action: t('methodeiluma.steps.intelligence.action'),
+      context: t('methodeiluma.steps.intelligence.context'),
       icon: Zap,
       color: 'from-pink-500 to-purple-500',
       module: 'IA ACTIVE',
       path: '/hub',
       deliverables: [
-        t('methodIluma.steps.intelligence.deliverables.0'),
-        t('methodIluma.steps.intelligence.deliverables.1'),
-        t('methodIluma.steps.intelligence.deliverables.2')
+        t('methodeiluma.steps.intelligence.deliverables.0'),
+        t('methodeiluma.steps.intelligence.deliverables.1'),
+        t('methodeiluma.steps.intelligence.deliverables.2')
       ],
-      cta: t('methodIluma.steps.intelligence.cta')
+      cta: t('methodeiluma.steps.intelligence.cta')
     },
     {
       id: 'scalability',
-      title: t('methodIluma.steps.scalability.title'),
-      fact: t('methodIluma.steps.scalability.fact'),
-      action: t('methodIluma.steps.scalability.action'),
-      context: t('methodIluma.steps.scalability.context'),
+      title: t('methodeiluma.steps.scalability.title'),
+      fact: t('methodeiluma.steps.scalability.fact'),
+      action: t('methodeiluma.steps.scalability.action'),
+      context: t('methodeiluma.steps.scalability.context'),
       icon: Rocket,
       color: 'from-red-500 to-pink-500',
       module: 'SCALE™',
       path: '/hub',
       deliverables: [
-        t('methodIluma.steps.scalability.deliverables.0'),
-        t('methodIluma.steps.scalability.deliverables.1'),
-        t('methodIluma.steps.scalability.deliverables.2')
+        t('methodeiluma.steps.scalability.deliverables.0'),
+        t('methodeiluma.steps.scalability.deliverables.1'),
+        t('methodeiluma.steps.scalability.deliverables.2')
       ],
-      cta: t('methodIluma.steps.scalability.cta')
+      cta: t('methodeiluma.steps.scalability.cta')
     }
   ];
 
@@ -151,29 +151,29 @@ const MethodeIluma = () => {
     {
       name: 'Ulysse Tremblay',
       company: 'Literie d\'Amitié',
-      text: 'En moins de deux mois, notre visibilité a explosé.',
+      text: t('methodeiluma.testimonials.text1') || 'En moins de deux mois, notre visibilité a explosé.',
       rating: 5
     },
     {
       name: 'Clara Doulis',
       company: 'Réseau Santé',
-      text: 'Ils ont su allier l\'humain et l\'IA dans une même méthode.',
+      text: t('methodeiluma.testimonials.text2') || 'Ils ont su allier l\'humain et l\'IA dans une même méthode.',
       rating: 5
     }
   ];
 
   const benefits = [
     {
-      title: t('methodIluma.benefits.items.0.title') || 'Approche IA-First',
-      description: t('methodIluma.benefits.items.0.description') || 'Méthode propriétaire basée sur l\'intelligence artificielle'
+      title: t('methodeiluma.benefits.approach') || 'Approche IA-First',
+      description: t('methodeiluma.benefits.approachDesc') || 'Méthode propriétaire basée sur l\'intelligence artificielle'
     },
     {
-      title: t('methodIluma.benefits.items.1.title') || 'Résultats Garantis',
-      description: t('methodIluma.benefits.items.1.description') || '+214% de trafic organique en moyenne chez nos clients'
+      title: t('methodeiluma.benefits.guaranteed') || 'Résultats Garantis',
+      description: t('methodeiluma.benefits.guaranteedDesc') || '+214% de trafic organique en moyenne chez nos clients'
     },
     {
-      title: t('methodIluma.benefits.items.2.title') || 'Accompagnement Expert',
-      description: t('methodIluma.benefits.items.2.description') || 'Équipe dédiée avec Lilo, votre assistant IA personnel'
+      title: t('methodeiluma.benefits.support') || 'Accompagnement Expert',
+      description: t('methodeiluma.benefits.supportDesc') || 'Équipe dédiée avec Lilo, votre assistant IA personnel'
     }
   ];
 
@@ -190,11 +190,11 @@ const MethodeIluma = () => {
             <div className="relative">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 font-['Montserrat'] leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  {t('methodIluma.heroTitle')}
+                  {t('methodeiluma.hero.title')}
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-4xl mx-auto font-['Montserrat']">
-                {t('methodIluma.heroSubtitle')}
+                {t('methodeiluma.hero.subtitle')}
               </p>
               <div className="flex items-center justify-center gap-4 text-white/60 mb-8">
                 <Brain className="w-8 h-8" />
@@ -204,7 +204,7 @@ const MethodeIluma = () => {
                 <Zap className="w-8 h-8 text-yellow-400" />
               </div>
               <Badge className="bg-[#8E44FF]/20 text-[#FFD56B] text-lg px-6 py-2 font-['Montserrat']">
-                {t('methodIluma.heroTagline')}
+                {t('methodeiluma.hero.badge')}
               </Badge>
             </div>
           </MPEContainer>
@@ -215,10 +215,10 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white font-['Montserrat']">
-            {t('methodIluma.timelineTitle')}
+            {t('methodeiluma.steps.title')}
           </h2>
           <p className="text-xl text-white/70 text-center mb-16 font-['Montserrat']">
-            {t('methodIluma.timelineSubtitle')}
+            {t('methodeiluma.steps.subtitle')}
           </p>
           
           <div className="relative">
@@ -271,7 +271,7 @@ const MethodeIluma = () => {
 
                           {/* Deliverables */}
                           <div className="mb-4">
-                            <p className="text-sm font-semibold text-[#FFD56B] mb-2">{t('methodIluma.deliverables')}</p>
+                            <p className="text-sm font-semibold text-[#FFD56B] mb-2">Livrables</p>
                             <div className="space-y-1">
                               {step.deliverables.map((deliverable, idx) => (
                                 <div key={idx} className="flex items-center gap-2 text-sm text-white/70">
@@ -312,7 +312,7 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-white font-['Montserrat']">
-            {t('methodIluma.testimonialTitle')}
+            {t('methodeiluma.testimonials.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -344,10 +344,10 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white font-['Montserrat']">
-            {t('methodIluma.benefits.title')}
+            {t('methodeiluma.benefits.title')}
           </h2>
           <p className="text-xl text-white/70 text-center mb-16 font-['Montserrat']">
-            {t('methodIluma.benefits.subtitle')}
+            {t('methodeiluma.benefits.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -377,10 +377,10 @@ const MethodeIluma = () => {
         <div className="max-w-4xl mx-auto text-center">
           <MPEContainer animation="fade-in">
             <h2 className="text-4xl font-bold text-white mb-6 font-['Montserrat']">
-              {t('methodIluma.ctaTitle')}
+              {t('methodeiluma.cta.title') || 'Prêt à transformer votre entreprise ?'}
             </h2>
             <p className="text-xl text-white/80 mb-12 font-['Montserrat']">
-              {t('methodIluma.ctaSubtitle')}
+              {t('methodeiluma.cta.subtitle') || 'Commencez votre transformation dès aujourd\'hui'}
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -390,7 +390,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodIluma.ctaButtons.simulate')}
+                  {t('methodeiluma.cta.simulate') || '🎯 Simuler votre croissance'}
                 </Button>
               </Link>
               
@@ -400,7 +400,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodIluma.ctaButtons.diagnostic')}
+                  {t('methodeiluma.cta.diagnosis') || '📊 Diagnostic gratuit'}
                 </Button>
               </Link>
               
@@ -410,7 +410,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodIluma.ctaButtons.call')}
+                  {t('methodeiluma.cta.consultation') || '📞 Consultation stratégique'}
                 </Button>
               </Link>
             </div>
@@ -428,10 +428,10 @@ const MethodeIluma = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-white mb-4 font-['Montserrat']">
-              {t('methodIluma.faqTitle')}
+              {t('methodeIluma.faq.title')}
             </h2>
             <p className="text-white/70 font-['Montserrat']">
-              {t('methodIluma.faqSubtitle')}
+              {t('methodeIluma.faq.description')}
             </p>
           </motion.div>
           <FAQSection />

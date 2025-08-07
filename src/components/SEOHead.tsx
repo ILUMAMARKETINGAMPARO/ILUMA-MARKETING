@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/hooks/useLanguage.ts';
-import { useSEOData } from '@/hooks/useSEOData.ts';
+import { useTranslations } from '@/hooks/useTranslations';
+import { useSEOData } from '@/hooks/useSEOData';
 
 interface SEOHeadProps {
   title?: string;
@@ -35,7 +35,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   structuredData,
   hreflang = true
 }) => {
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
   const autoSEOData = useSEOData();
 
   // Use provided props or fallback to automatic SEO data

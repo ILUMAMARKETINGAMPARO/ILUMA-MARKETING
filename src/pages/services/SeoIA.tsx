@@ -1,171 +1,137 @@
 import React from 'react';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { Brain, Search, TrendingUp, Target, CheckCircle, ArrowRight } from 'lucide-react';
+import { SEOHead } from '@/components/SEOHead';
+import { Bot, TrendingUp, Search, Target, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const SeoIA = () => {
-  const { t } = useLanguage();
-  
+  const { t } = useTranslations();
+
   const benefits = [
-    "Analyse sémantique automatisée",
-    "Génération de contenu optimisé", 
-    "Suivi des performances en temps réel",
-    "Optimisation technique automatique",
-    "Recherche de mots-clés IA",
-    "Recommandations personnalisées"
+    t('services.seoIA.benefits.analysis'),
+    t('services.seoIA.benefits.optimization'),
+    t('services.seoIA.benefits.content'),
+    t('services.seoIA.benefits.tracking'),
+    t('services.seoIA.benefits.recommendations'),
+    t('services.seoIA.benefits.reporting')
   ];
 
   const features = [
     {
-      icon: Brain,
-      title: "IA Générative",
-      description: "Création automatique de contenu SEO optimisé avec analyse sémantique avancée"
+      icon: Bot,
+      title: t('services.seoIA.features.predictiveAI'),
+      description: t('services.seoIA.features.predictiveAI.description')
     },
     {
       icon: Search,
-      title: "Recherche Intelligente",
-      description: t('services.seo.features.research.description')
+      title: t('services.seoIA.features.advancedSearch'),
+      description: t('services.seoIA.features.advancedSearch.description')
     },
     {
       icon: TrendingUp,
-      title: "Croissance Accélérée",
-      description: "Augmentation rapide du trafic organique grâce à l'automatisation IA"
+      title: t('services.seoIA.features.performanceTracking'),
+      description: t('services.seoIA.features.performanceTracking.description')
     },
     {
       icon: Target,
-      title: "Ciblage Précis",
-      description: "Optimisation pour votre audience locale avec personnalisation avancée"
+      title: t('services.seoIA.features.preciseTargeting'),
+      description: t('services.seoIA.features.preciseTargeting.description')
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0B0B0E] via-[#1a1a2e] to-[#16213e]">
+    <div className="min-h-screen">
+      <SEOHead
+        title={t('services.seoIA.title')}
+        description={t('services.seoIA.description')}
+        keywords="SEO IA, référencement artificiel, SEO automatique, intelligence artificielle SEO"
+      />
       <Navigation />
-      
-      <main className="pt-32 pb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Brain className="w-8 h-8 text-[#8E44FF]" />
-              <span className="text-[#8E44FF] font-medium text-lg font-['Montserrat']">SEO IA</span>
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-6">
+                <Bot className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up font-['Montserrat']">
+                <span className="text-gradient">{t('services.seoIA.title')}</span>
+              </h1>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up font-['Montserrat']" style={{ animationDelay: '0.2s' }}>
+                {t('services.seoIA.description')}
+              </p>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent mb-6 font-['Montserrat']">
-              SEO Alimenté
-              <br />
-              <span className="text-3xl md:text-5xl">par l'Intelligence Artificielle</span>
-            </h1>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed font-['Montserrat']">
-              Révolutionnez votre référencement avec notre système IA qui génère, 
-              optimise et surveille votre contenu automatiquement.
-            </p>
-          </motion.div>
+          </div>
+        </section>
 
-          {/* Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <Card className="glass-effect border-[#8E44FF]/20 p-8 h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#8E44FF] to-[#FFD56B] rounded-xl flex items-center justify-center mb-6">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 font-['Montserrat']">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/70 text-lg leading-relaxed font-['Montserrat']">
-                    {feature.description}
-                  </p>
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {features.map((feature, index) => (
+                <Card 
+                  key={feature.title}
+                  className="glass-effect border-white/20 hover:border-white/30 transition-all duration-500 hover-glow animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-white">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-white/70">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
                 </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </div>
 
-          {/* Benefits Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16"
-          >
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6 font-['Montserrat']">
-                Pourquoi choisir notre <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">SEO IA</span> ?
-              </h2>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 * index }}
-                    className="flex items-center space-x-3"
+            {/* Benefits Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  {t('services.seoIA.whyChoose')}
+                </h2>
+                <div className="space-y-4">
+                  {benefits.map((benefit, index) => (
+                    <div 
+                      key={benefit}
+                      className="flex items-center space-x-3 animate-fade-in-up"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                      <span className="text-white/80">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="glass-effect rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                  {t('services.seoIA.cta')}
+                </h3>
+                <div className="text-center space-y-4">
+                  <Button 
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold hover-glow w-full"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#FFD56B] flex-shrink-0" />
-                    <span className="text-white/80 font-['Montserrat']">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            <div className="glass-effect rounded-2xl p-8 border border-[#8E44FF]/20">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center font-['Montserrat']">
-                Résultats Garantis
-              </h3>
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between items-center">
-                  <span className="text-white/70 font-['Montserrat']">Trafic organique</span>
-                  <span className="text-[#FFD56B] font-bold font-['Montserrat']">+150%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/70 font-['Montserrat']">Temps d'optimisation</span>
-                  <span className="text-[#FFD56B] font-bold font-['Montserrat']">-80%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/70 font-['Montserrat']">ROI SEO</span>
-                  <span className="text-[#FFD56B] font-bold font-['Montserrat']">+300%</span>
+                    {t('services.seoIA.consultation')}
+                  </Button>
+                  <p className="text-white/60 text-sm">
+                    {t('services.seoIA.audit')}
+                  </p>
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center"
-          >
-            <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 font-['Montserrat'] group">
-                <Brain className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                Démarrer avec l'IA SEO
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
+          </div>
+        </section>
       </main>
-
       <Footer />
     </div>
   );

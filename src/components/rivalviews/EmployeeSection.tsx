@@ -15,14 +15,18 @@ import {
   Target,
   TrendingUp,
   Bot,
-  Crown
+  Crown,
+  Database,
+  Download
 } from 'lucide-react';
 import ProspectionModule from './ProspectionModule';
 import BusinessTable from './BusinessTable';
-import { RivalBusiness } from '@/types/rivalviews.ts';
+import { RivalBusiness } from '@/types/rivalviews';
 import BusinessComparison from './BusinessComparison';
 import CollaborativeNotes from './CollaborativeNotes';
 import MapListToggle from './MapListToggle';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 interface EmployeeSectionProps {
   onLogout: () => void;
@@ -32,6 +36,8 @@ const EmployeeSection: React.FC<EmployeeSectionProps> = ({ onLogout }) => {
   const { user, signOut, profile } = useAuth();
   const [activeTab, setActiveTab] = useState('prospection');
   const [selectedBusiness, setSelectedBusiness] = useState<RivalBusiness | null>(null);
+  const [isLoadingBusinesses, setIsLoadingBusinesses] = useState(false);
+  const [businessCount, setBusinessCount] = useState<number>(0);
 
   // Mock data pour la demo
   const mockBusinesses: RivalBusiness[] = [
@@ -94,6 +100,38 @@ const EmployeeSection: React.FC<EmployeeSectionProps> = ({ onLogout }) => {
     onLogout();
   };
 
+  // Fonction pour charger toutes les entreprises et afficher le nombre
+  const loadAllBusinesses = async () => {
+    try {
+      setIsLoadingBusinesses(true);
+      console.log('🔄 Chargement de toutes les entreprises...');
+      
+      // Compter le nombre total d'entreprises
+      const { count, error: countError } = await supabase
+        .from('businesses')
+        .select('*', { count: 'exact', head: true });
+
+      if (countError) {
+        console.error('❌ Erreur lors du comptage:', countError);
+        toast.error('Erreur lors du comptage des entreprises');
+        return;
+      }
+
+      setBusinessCount(count || 0);
+      console.log(`✅ Total d'entreprises trouvées: ${count}`);
+      
+      toast.success(`${count} entreprises chargées avec succès!`, {
+        description: 'Toutes vos données sont maintenant disponibles dans RivalViews'
+      });
+
+    } catch (error) {
+      console.error('❌ Erreur:', error);
+      toast.error('Erreur lors du chargement des entreprises');
+    } finally {
+      setIsLoadingBusinesses(false);
+    }
+  };
+
   const tabs = [
     {
       id: 'prospection',
@@ -148,6 +186,58 @@ const EmployeeSection: React.FC<EmployeeSectionProps> = ({ onLogout }) => {
             </div>
             
             <div className="flex items-center gap-4">
+              {/* Boutons de gestion des entreprises */}
+              <div className="flex gap-2">
+                <Button
+                  onClick={loadAllBusinesses}
+                  disabled={isLoadingBusinesses}
+                  className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:opacity-90 text-white font-medium"
+                >
+                  <Database className="w-4 h-4 mr-2" />
+                  {isLoadingBusinesses ? 'Chargement...' : 'Charger Entreprises'}
+                </Button>
+                
+                <Button
+                  onClick={async () => {
+                    setIsLoadingBusinesses(true);
+                    try {
+                      console.log('🚀 Démarrage de la synchronisation...');
+                      const { data, error } = await supabase.functions.invoke('sync-prospection-data');
+                      
+                      if (error) {
+                        console.error('❌ Erreur:', error);
+                        throw error;
+                      }
+                      
+                      console.log('✅ Réponse:', data);
+                      toast.success(`🎉 ${data.stats.newlyAdded} nouvelles entreprises synchronisées!`, {
+                        description: `Total: ${data.stats.totalInDatabase} entreprises en base`
+                      });
+                      
+                      // Recharger le compteur
+                      await loadAllBusinesses();
+                      
+                    } catch (error) {
+                      console.error('❌ Erreur sync:', error);
+                      toast.error('❌ Erreur lors de la synchronisation des données');
+                    } finally {
+                      setIsLoadingBusinesses(false);
+                    }
+                  }}
+                  disabled={isLoadingBusinesses}
+                  className="bg-green-600 hover:bg-green-700 text-white font-medium"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  {isLoadingBusinesses ? 'Sync...' : 'Sync Toutes Données'}
+                </Button>
+              </div>
+              
+              {businessCount > 0 && (
+                <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
+                  {businessCount} entreprises
+                </Badge>
+              )}
+              
               <div className="text-right">
                 <p className="text-white font-medium">
                   {profile?.first_name || user?.email?.split('@')[0] || 'Employé'}

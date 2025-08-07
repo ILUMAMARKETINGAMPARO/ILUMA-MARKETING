@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { 
   Search, 
   Target, 
@@ -21,7 +21,8 @@ import {
   TrendingUp,
   Settings,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Monitor
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +31,7 @@ interface HubIntelligentNavigationProps {
 }
 
 const HubIntelligentNavigation: React.FC<HubIntelligentNavigationProps> = ({ onRecommendation }) => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslations();
   const [selectedObjective, setSelectedObjective] = useState('');
   const [selectedSector, setSelectedSector] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -103,7 +104,8 @@ const HubIntelligentNavigation: React.FC<HubIntelligentNavigationProps> = ({ onR
   // Données d'écosystème par défaut
   const products = [
     { id: 'adluma', name: 'ADLUMA™', description: 'Simulateur d\'impressions publicitaires multicanal', path: '/adluma', icon: Target, color: 'from-blue-500 to-cyan-500' },
-    { id: 'landing', name: 'Landing Page Intelligente', description: 'Pages de conversion optimisées par IA', path: '/landing-page-intelligente', icon: Globe, color: 'from-green-500 to-blue-500' }
+    { id: 'landing', name: 'Landing Page Intelligente', description: 'Pages de conversion optimisées par IA', path: '/landing-page-intelligente', icon: Globe, color: 'from-green-500 to-blue-500' },
+    { id: 'website', name: 'Site Web Complet', description: 'Sites web professionnels performants', path: '/site-web-complet', icon: Monitor, color: 'from-purple-500 to-pink-500' }
   ];
 
   const solutions = [

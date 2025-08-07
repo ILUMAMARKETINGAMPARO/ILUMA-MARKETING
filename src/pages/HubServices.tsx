@@ -12,7 +12,7 @@ import PerformanceOptimizer from '@/components/performance/PerformanceOptimizer'
 import FAQSection from '@/components/faq/FAQSection';
 import { motion } from 'framer-motion';
 import { products, solutions, services, categories, ecosystemStats } from '@/data/ecosystem';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { SEOEngine } from '@/utils/seoEngine';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -36,7 +36,7 @@ import {
 } from 'lucide-react';
 
 const HubServices = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
   const [activeSection, setActiveSection] = useState<'products' | 'solutions' | 'services'>('products');

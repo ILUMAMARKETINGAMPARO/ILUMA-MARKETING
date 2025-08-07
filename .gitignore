@@ -16,7 +16,6 @@ dist-ssr
 *.local
 
 # Supabase files
-supabase/config.toml     
 supabase/migrations/*.sql
 
 # Editor directories and files

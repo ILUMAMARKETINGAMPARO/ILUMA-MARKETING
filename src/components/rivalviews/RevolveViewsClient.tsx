@@ -16,8 +16,8 @@ import { useIsMobile, useDeviceInfo } from '@/hooks/use-mobile';
 import { useDebounce } from '@/hooks/use-debounce';
 import EmployeeAuth from './EmployeeAuth';
 import EmployeeSection from './EmployeeSection';
-import SimplifiedRivalViews from './SimplifiedRivalViews';
-import EnhancedBusinessCard from './EnhancedBusinessCard';
+import SimplifiedRivalViews from './SimplifiedRivalViews.tsx';
+import EnhancedBusinessCard from './EnhancedBusinessCard.tsx';
 import { MapPin, Star, TrendingUp, BarChart3, Users, Crown, Eye, Shuffle, List, Database, Zap, Building2, Target, Rocket, X, ArrowLeftRight, Upload, RefreshCw, Sparkles, AlertTriangle, Info, CheckCircle, Clock, Filter, Search, Settings, Globe } from 'lucide-react';
 import { RivalBusiness, RivalFilters } from '@/types/rivalviews';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -109,7 +109,7 @@ const RevolveViewsClient: React.FC = () => {
       setIsLoading(true);
       const {
         enrichBusinessesWithAhrefs
-      } = await import('@/utils/enrichAhrefsData');
+      } = await import('@/utils/enrichAhrefsData.ts');
       const result = await enrichBusinessesWithAhrefs();
       console.log('Ahrefs enrichment result:', result);
       if (result.success) {
@@ -134,7 +134,7 @@ const RevolveViewsClient: React.FC = () => {
       setIsLoading(true);
 
       // Utiliser la classe de synchronisation pour charger les données enrichies
-      const { BusinessDataSync } = await import('@/utils/businessDataSync');
+      const { BusinessDataSync } = await import('@/utils/businessDataSync.ts');
       const enrichedBusinesses = await BusinessDataSync.loadEnrichedBusinessData();
       
       // Filtrer par ville si nécessaire

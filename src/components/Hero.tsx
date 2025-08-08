@@ -3,10 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage.ts';
-
 const Hero = () => {
-  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0B0B0E] via-[#1a1a2e] to-[#16213e]">
@@ -52,7 +49,7 @@ const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            lang={t('nav.home') === 'Accueil' ? 'fr' : t('nav.home') === 'Home' ? 'en' : 'es'}
+            lang="fr"
             aria-level={1}
           >
             <span className="font-extralight text-white/90">Illuminer votre</span>

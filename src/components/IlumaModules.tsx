@@ -3,16 +3,16 @@ import { Calculator, Brain, Zap, Star, Settings, Globe, Target } from 'lucide-re
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const IlumaModules = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   const modules = [
     {
       id: 'adluma',
-      name: t('modules.adluma.name'),
-      description: t('modules.adluma.desc'),
+      name: "AdLuma™",
+      description: "Simulateur prédictif de campagnes publicitaires",
       icon: Calculator,
       path: '/adluma',
       color: 'from-[#8E44FF] to-[#B88EFF]',
@@ -20,8 +20,8 @@ const IlumaModules = () => {
     },
     {
       id: 'ila',
-      name: t('modules.ila.name'),
-      description: t('modules.ila.desc'),
+      name: "ILA™",
+      description: "Intelligence Locale Adaptative",
       icon: Brain,
       path: '/ila',
       color: 'from-[#FFD56B] to-[#F5D06F]',
@@ -29,8 +29,8 @@ const IlumaModules = () => {
     },
     {
       id: 'blogia',
-      name: t('modules.blogia.name'),
-      description: t('modules.blogia.desc'),
+      name: "BlogIA™",
+      description: "Générateur de contenu IA avancé",
       icon: Zap,
       path: '/blogia',
       color: 'from-[#8E44FF] to-[#FFD56B]',
@@ -38,8 +38,8 @@ const IlumaModules = () => {
     },
     {
       id: 'ilumatch',
-      name: t('modules.ilumatch.name'),
-      description: t('modules.ilumatch.desc'),
+      name: "ILUMATCH™",
+      description: "IA de matching client-prospect",
       icon: Star,
       path: '/ilumatch',
       color: 'from-[#B88EFF] to-[#8E44FF]',
@@ -47,8 +47,8 @@ const IlumaModules = () => {
     },
     {
       id: 'hub',
-      name: t('modules.hub.name'),
-      description: t('modules.hub.desc'),
+      name: "Hub Central",
+      description: "Centre de contrôle IA intégré",
       icon: Settings,
       path: '/hub',
       color: 'from-[#F5D06F] to-[#FFD56B]',
@@ -56,8 +56,8 @@ const IlumaModules = () => {
     },
     {
       id: 'landing',
-      name: t('modules.landing.name'),
-      description: t('modules.landing.desc'),
+      name: "Landing Pages IA",
+      description: "Pages de conversion intelligentes",
       icon: Globe,
       path: '/landing-page-intelligente',
       color: 'from-[#8E44FF] to-[#F5D06F]',
@@ -121,7 +121,7 @@ const IlumaModules = () => {
                       className="w-full text-[#8E44FF] hover:bg-[#8E44FF]/10 hover:text-[#FFD56B] transition-all duration-300 font-['Montserrat'] group-hover:shadow-lg"
                     >
                       <Target className="w-4 h-4 mr-2" />
-                      {t('cta.discover')}
+                      Découvrir
                     </Button>
                   </Link>
                 </CardContent>

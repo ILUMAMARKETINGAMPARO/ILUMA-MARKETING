@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Rocket, Phone, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import MobileNavigation from './navigation/MobileNavigation';
 import OrbitalDropdown from './navigation/OrbitalDropdown';
 import GridDropdown from './navigation/GridDropdown';
@@ -14,9 +14,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isPromoOpen, setIsPromoOpen] = useState(false);
-  const {
-    t
-  } = useLanguage();
+  const { t } = useTranslations();
   const navItems = getNavigationItems(t);
   const handleDropdownToggle = (itemName: string) => {
     setActiveDropdown(activeDropdown === itemName ? null : itemName);
@@ -76,7 +74,7 @@ const Navigation = () => {
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-red-500 hover:to-orange-500 text-white font-semibold px-3 py-2 rounded-full text-xs transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 font-['Montserrat'] group relative overflow-hidden"
           >
             <Rocket className="w-3 h-3 mr-1 group-hover:animate-bounce" />
-            {t('nav.specialOffer')}
+            Offre Spéciale
             <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full animate-pulse"></div>
           </Button>
           
@@ -84,7 +82,7 @@ const Navigation = () => {
           <Link to="/contact" onClick={closeDropdowns}>
             <Button size="sm" className="bg-gradient-to-r from-[#FFD56B] to-[#8E44FF] hover:from-[#8E44FF] hover:to-[#FFD56B] text-black font-semibold px-4 py-2 rounded-full text-xs transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#FFD56B]/25 font-['Montserrat'] group relative overflow-hidden">
               <Phone className="w-3 h-3 mr-1 group-hover:animate-pulse" />
-              {t('nav.scheduleDemo')}
+              Planifier Démo
               <div className="absolute inset-0 bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full animate-pulse"></div>
             </Button>
           </Link>

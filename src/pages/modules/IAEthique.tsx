@@ -6,8 +6,10 @@ import { Shield, Heart, Users, Lock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const IAEthique = () => {
+  const { t } = useTranslations();
   const principles = [
     {
       icon: Shield,

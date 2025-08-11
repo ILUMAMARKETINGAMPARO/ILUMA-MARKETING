@@ -3,18 +3,21 @@ import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import MPEContainer from '@/components/mpe/MPEContainer';
 import SEOManager from '@/components/seo/SEOManager';
-import { useLanguage } from '@/hooks/useLanguage';
-import { SEOEngine } from '@/utils/seoEngine';
 import { Search, Calendar, User, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Blog = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const seoData = SEOEngine.generatePageSEO('blog');
+  const seoData = {
+    title: t('blog.title'),
+    description: t('blog.description'),
+    keywords: ['blog marketing', 'intelligence artificielle', 'SEO', 'stratégies digitales']
+  };
 
   const blogPosts = [
     {
@@ -76,11 +79,11 @@ const Blog = () => {
 
   const categories = [
     { id: 'all', label: t('blog.categories.all'), count: blogPosts.length },
-    { id: 'ia-marketing', label: t('blog.categories.aiMarketing'), count: 1 },
-    { id: 'etudes-cas', label: t('blog.categories.caseStudies'), count: 1 },
+    { id: 'ia-marketing', label: t('blog.categories.iaMarketing'), count: 1 },
+    { id: 'etudes-cas', label: t('blog.categories.etudesCas'), count: 1 },
     { id: 'seo', label: t('blog.categories.seo'), count: 1 },
-    { id: 'conversion', label: 'Conversion', count: 1 },
-    { id: 'youtube', label: 'YouTube', count: 1 }
+    { id: 'conversion', label: t('blog.categories.conversion'), count: 1 },
+    { id: 'youtube', label: t('blog.categories.youtube'), count: 1 }
   ];
 
   const filteredPosts = blogPosts.filter(post => {
@@ -104,7 +107,7 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <MPEContainer className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                {t('blog.title')} – {t('blog.subtitle')}
+                {t('blog.title')}
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 font-['Montserrat']">
                 {t('blog.description')}
@@ -116,7 +119,7 @@ const Blog = () => {
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
                   <Input
                     type="text"
-                    placeholder={t('blog.search.placeholder')}
+                    placeholder={t('blog.searchPlaceholder')}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-12 glass-effect border-white/20 text-white placeholder:text-white/60 bg-white/5"
@@ -236,8 +239,8 @@ const Blog = () => {
                 <div className="w-20 h-20 mx-auto rounded-full bg-white/5 flex items-center justify-center mb-6">
                   <Search className="w-10 h-10 text-white/40" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{t('blog.noResults.title')}</h3>
-                <p className="text-white/60">{t('blog.noResults.description')}</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{t('blog.noResults')}</h3>
+                <p className="text-white/60">{t('blog.noResultsDesc')}</p>
               </div>
             )}
           </div>

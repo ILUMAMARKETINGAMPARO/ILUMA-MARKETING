@@ -8,25 +8,25 @@ const FidelityFeatures = () => {
       icon: Brain,
       title: "IA Comportementale",
       description: "Analyse prédictive des patterns clients",
-      color: "from-purple-400 to-pink-500"
+      color: "from-primary to-secondary"
     },
     {
       icon: Heart,
       title: "Nurturing Personnalisé",
       description: "Parcours adaptatif selon le profil",
-      color: "from-red-400 to-pink-500"
+      color: "from-accent to-secondary"
     },
     {
       icon: Target,
       title: "Segmentation Avancée",
       description: "Micro-ciblage comportemental",
-      color: "from-blue-400 to-cyan-500"
+      color: "from-primary to-accent"
     },
     {
       icon: TrendingUp,
       title: "Conversion Progressive",
       description: "Optimisation continue des taux",
-      color: "from-green-400 to-emerald-500"
+      color: "from-secondary to-accent"
     }
   ];
 

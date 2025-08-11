@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTranslations } from '@/hooks/useTranslations';
+import Navigation from '@/components/navigation/NavbarIlumaUltimate';
+import Footer from '@/components/Footer';
 
 const SiteWebComplet: React.FC = () => {
   const { t } = useTranslations();
@@ -52,7 +54,6 @@ const SiteWebComplet: React.FC = () => {
   const packages = [
     {
       name: t('siteWebComplet.packages.starter.name'),
-      price: t('siteWebComplet.packages.starter.price'),
       description: t('siteWebComplet.packages.starter.description'),
       features: [
         'Site web responsive (5 pages)',
@@ -65,7 +66,6 @@ const SiteWebComplet: React.FC = () => {
     },
     {
       name: t('siteWebComplet.packages.pro.name'),
-      price: t('siteWebComplet.packages.pro.price'),
       description: t('siteWebComplet.packages.pro.description'),
       features: [
         'Site web multi-pages (jusqu\'à 15)',
@@ -80,7 +80,6 @@ const SiteWebComplet: React.FC = () => {
     },
     {
       name: t('siteWebComplet.packages.enterprise.name'),
-      price: t('siteWebComplet.packages.enterprise.price'),
       description: t('siteWebComplet.packages.enterprise.description'),
       features: [
         'Site web illimité (pages)',
@@ -132,9 +131,12 @@ const SiteWebComplet: React.FC = () => {
         <link rel="canonical" href="https://ilumamarketing.com/site-web-complet" />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+        <Navigation />
+        
+        <main className="pt-32">
+          {/* Hero Section */}
+          <section className="relative py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
           <div className="relative max-w-7xl mx-auto text-center">
             <motion.div
@@ -285,7 +287,6 @@ const SiteWebComplet: React.FC = () => {
                     )}
                     <CardHeader className="text-center">
                       <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                      <div className="text-3xl font-bold text-primary">{pkg.price}</div>
                       <CardDescription>{pkg.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
@@ -334,6 +335,9 @@ const SiteWebComplet: React.FC = () => {
             </motion.div>
           </div>
         </section>
+        </main>
+        
+        <Footer />
       </div>
     </>
   );

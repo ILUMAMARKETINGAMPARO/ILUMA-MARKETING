@@ -6,9 +6,10 @@ import { Search, TrendingUp, Users, Award, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTranslations } from '@/hooks/useTranslations';
-
+import { useI18nNamespace } from '@/hooks/useI18nNamespace';
 const BingSEO = () => {
   const { t } = useTranslations();
+  useI18nNamespace('bing-seo');
   const benefits = [
     t('services.bingSEO.benefits.specialized'),
     t('services.bingSEO.benefits.competition'),
@@ -21,22 +22,22 @@ const BingSEO = () => {
   const features = [
     {
       icon: Search,
-      title: t('services.bingSEO.features.bingOptimization'),
+      title: t('services.bingSEO.features.bingOptimization.title'),
       description: t('services.bingSEO.features.bingOptimization.description')
     },
     {
       icon: Users,
-      title: t('services.bingSEO.features.qualifiedAudience'),
+      title: t('services.bingSEO.features.qualifiedAudience.title'),
       description: t('services.bingSEO.features.qualifiedAudience.description')
     },
     {
       icon: TrendingUp,
-      title: t('services.bingSEO.features.lessCompetition'),
+      title: t('services.bingSEO.features.lessCompetition.title'),
       description: t('services.bingSEO.features.lessCompetition.description')
     },
     {
       icon: Award,
-      title: t('services.bingSEO.features.highROI'),
+      title: t('services.bingSEO.features.highROI.title'),
       description: t('services.bingSEO.features.highROI.description')
     }
   ];
@@ -128,6 +129,100 @@ const BingSEO = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Méthode Iluma™ */}
+        <section className="py-20" id="methode-iluma">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-white mb-10">{t('services.bingSEO.method.title')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {([0,1,2,3] as const).map((i) => (
+                <Card key={i} className="glass-effect border-white/20">
+                  <CardHeader>
+                    <CardTitle className="text-white text-xl">{t(`services.bingSEO.method.steps.${i}.title`)}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-white/70">{t(`services.bingSEO.method.steps.${i}.desc`)}</CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Produits */}
+        <section className="py-20" id="produits">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-white mb-10">{t('services.bingSEO.products.title')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {([0,1,2] as const).map((i) => (
+                <Card key={i} className="glass-effect border-white/20">
+                  <CardHeader>
+                    <CardTitle className="text-white text-xl">{t(`services.bingSEO.products.plans.${i}.name`)}</CardTitle>
+                    <CardDescription className="text-white/70">{t(`services.bingSEO.products.plans.${i}.desc`)}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 list-disc list-inside text-white/80">
+                      {([0,1,2] as const).map((j) => (
+                        <li key={j}>{t(`services.bingSEO.products.plans.${i}.points.${j}`)}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions */}
+        <section className="py-20" id="solutions">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-white mb-10">{t('services.bingSEO.solutions.title')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {([0,1,2,3] as const).map((i) => (
+                <Card key={i} className="glass-effect border-white/20 p-6">
+                  <span className="text-white/90">{t(`services.bingSEO.solutions.items.${i}`)}</span>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Experts */}
+        <section className="py-20" id="services-experts">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-white mb-10">{t('services.bingSEO.experts.title')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {([0,1,2,3] as const).map((i) => (
+                <Card key={i} className="glass-effect border-white/20 p-6">
+                  <span className="text-white/90">{t(`services.bingSEO.experts.items.${i}`)}</span>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comment ça marche */}
+        <section className="py-20" id="comment-ca-marche">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-white mb-10">{t('services.bingSEO.how.title')}</h2>
+            <ol className="space-y-4 text-white/80 list-decimal list-inside">
+              {([0,1,2] as const).map((i) => (
+                <li key={i}>{t(`services.bingSEO.how.steps.${i}`)}</li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Contact & Support */}
+        <section className="py-20" id="contact-support">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-white mb-3">{t('services.bingSEO.support.title')}</h2>
+            <p className="text-white/70 mb-6">{t('services.bingSEO.support.subtitle')}</p>
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 text-white px-8 py-4 rounded-2xl font-semibold hover-glow">
+              {t('services.bingSEO.support.cta')}
+            </Button>
           </div>
         </section>
       </main>

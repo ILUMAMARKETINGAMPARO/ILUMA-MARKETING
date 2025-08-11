@@ -5,10 +5,10 @@ import { SEOHead } from '@/components/SEOHead';
 import { Users, Heart, TrendingUp, Megaphone, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTranslations } from '@/hooks/useTranslations';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const MetaAds = () => {
-  const { t } = useTranslations();
+  const { t } = useLanguage();
   const benefits = [
     t('services.metaAds.benefits.campaigns'),
     t('services.metaAds.benefits.targeting'),

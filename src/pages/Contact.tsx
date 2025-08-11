@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import SEOManager from '@/components/seo/SEOManager';
 import JsonLd from '@/components/seo/JsonLd';
 import SkipToContent from '@/components/accessibility/SkipToContent';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { useLiloUX } from '@/hooks/useLiloUX';
 import { Phone, Mail, MapPin, Clock, Send, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,7 +17,7 @@ import ContactMap from '@/components/contact/ContactMap';
 import MapboxProvider from '@/components/rivalviews/MapboxProvider';
 import FloatingLilo from '@/components/common/FloatingLilo';
 const Contact = () => {
-  const { language, t } = useLanguage();
+  const { language, t } = useTranslations();
   const {
     liloMood,
     liloMessage,
@@ -129,12 +129,12 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h1 id="contact-hero" className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up font-['Montserrat']">
-                <span className="text-gradient">{t('contact.title')} – {t('contact.subtitle')}</span>
+                <span className="text-gradient">Contactez-nous – Parlons de votre projet</span>
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up font-['Montserrat']" style={{
               animationDelay: '0.2s'
             }}>
-                {t('contact.subtitle')} - {language === 'fr' && 'Vous avez un projet ? Vous cherchez une solution IA-first ? Planifions un rendez-vous personnalisé pour analyser votre situation, vous présenter Iluma™ et concevoir votre stratégie sur mesure.'}
+                Parlons de votre projet - {language === 'fr' && 'Vous avez un projet ? Vous cherchez une solution IA-first ? Planifions un rendez-vous personnalisé pour analyser votre situation, vous présenter Iluma™ et concevoir votre stratégie sur mesure.'}
                 {language === 'en' && 'Do you have a project? Looking for an AI-first solution? Let\'s schedule a personalized meeting to analyze your situation, present Iluma™ and design your custom strategy.'}
                 {language === 'es' && '¿Tiene un proyecto? ¿Busca una solución AI-first? Programemos una reunión personalizada para analizar su situación, presentar Iluma™ y diseñar su estrategia a medida.'}
               </p>
@@ -164,7 +164,7 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-6" aria-label="Formulaire de contact">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="nom" className="text-white">{t('contact.form.name')} *</Label>
+                        <Label htmlFor="nom" className="text-white">Nom complet *</Label>
                         <Input 
                           id="nom" 
                           type="text" 
@@ -172,13 +172,13 @@ const Contact = () => {
                           value={formData.nom} 
                           onChange={e => handleChange('nom', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder={t('contact.form.placeholder.name')}
+                          placeholder="Votre nom complet"
                           aria-required="true"
                           autoComplete="name"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email" className="text-white">{t('contact.form.email')} *</Label>
+                        <Label htmlFor="email" className="text-white">Email *</Label>
                         <Input 
                           id="email" 
                           type="email" 
@@ -186,7 +186,7 @@ const Contact = () => {
                           value={formData.email} 
                           onChange={e => handleChange('email', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder={t('contact.form.placeholder.email')}
+                          placeholder="votre@email.com"
                           aria-required="true"
                           autoComplete="email"
                         />
@@ -195,50 +195,50 @@ const Contact = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="telephone" className="text-white">{t('contact.form.phone')}</Label>
+                        <Label htmlFor="telephone" className="text-white">Téléphone</Label>
                         <Input 
                           id="telephone" 
                           type="tel" 
                           value={formData.telephone} 
                           onChange={e => handleChange('telephone', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder={t('contact.form.placeholder.phone')}
+                          placeholder="(514) 123-4567"
                           autoComplete="tel"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="entreprise" className="text-white">{t('contact.form.company')}</Label>
+                        <Label htmlFor="entreprise" className="text-white">Entreprise</Label>
                         <Input 
                           id="entreprise" 
                           type="text" 
                           value={formData.entreprise} 
                           onChange={e => handleChange('entreprise', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder={t('contact.form.placeholder.company')}
+                          placeholder="Nom de votre entreprise"
                           autoComplete="organization"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="objet" className="text-white">{t('contact.form.subject')}</Label>
+                      <Label htmlFor="objet" className="text-white">Sujet</Label>
                       <Select value={formData.objet} onValueChange={value => handleChange('objet', value)}>
-                        <SelectTrigger className="bg-white/10 border-white/20 text-white" aria-label={t('contact.form.subject')}>
-                          <SelectValue placeholder={t('forms.placeholders.subject')} />
+                        <SelectTrigger className="bg-white/10 border-white/20 text-white" aria-label="Sujet">
+                          <SelectValue placeholder="Choisissez un sujet" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="consultation">{t('contact.form.subjects.consultation')}</SelectItem>
-                          <SelectItem value="seo">{t('contact.form.subjects.seo')}</SelectItem>
-                          <SelectItem value="landing">{t('contact.form.subjects.landing')}</SelectItem>
-                          <SelectItem value="youtube">{t('contact.form.subjects.youtube')}</SelectItem>
-                          <SelectItem value="devis">{t('contact.form.subjects.quote')}</SelectItem>
-                          <SelectItem value="autre">{t('contact.form.subjects.other')}</SelectItem>
+                          <SelectItem value="consultation">Consultation stratégique</SelectItem>
+                          <SelectItem value="seo">SEO et référencement</SelectItem>
+                          <SelectItem value="landing">Landing pages</SelectItem>
+                          <SelectItem value="youtube">YouTube SEO</SelectItem>
+                          <SelectItem value="devis">Demande de devis</SelectItem>
+                          <SelectItem value="autre">Autre</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-white">{t('contact.form.message')} *</Label>
+                      <Label htmlFor="message" className="text-white">Message *</Label>
                       <Textarea 
                         id="message" 
                         required 
@@ -246,7 +246,7 @@ const Contact = () => {
                         value={formData.message} 
                         onChange={e => handleChange('message', e.target.value)} 
                         className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                        placeholder={t('contact.form.placeholder.message')}
+                        placeholder="Décrivez votre projet ou vos besoins..."
                         aria-required="true"
                       />
                     </div>
@@ -259,7 +259,7 @@ const Contact = () => {
                         aria-label="Envoyer le formulaire de contact"
                       >
                         <Send className="w-5 h-5 mr-2" aria-hidden="true" />
-                        {t('contact.form.send')}
+                        Envoyer le message
                       </Button>
                       
                       <Button 

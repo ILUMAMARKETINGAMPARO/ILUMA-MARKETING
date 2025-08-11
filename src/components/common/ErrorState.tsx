@@ -2,8 +2,6 @@ import React from 'react';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/hooks/useLanguage.ts';
-
 interface ErrorStateProps {
   message?: string;
   onRetry?: () => void;
@@ -15,9 +13,7 @@ const ErrorState = ({
   onRetry,
   variant = 'card' 
 }: ErrorStateProps) => {
-  const { t } = useLanguage();
-  
-  const defaultMessage = t('common.error');
+  const defaultMessage = 'Erreur';
   
   const ErrorContent = () => (
     <div className="flex flex-col items-center justify-center gap-4 text-center">
@@ -33,7 +29,7 @@ const ErrorState = ({
           className="border-red-500/30 text-red-300 hover:bg-red-500/10"
         >
           <RefreshCw className="w-4 h-4 mr-2" />
-          {t('common.refresh')}
+          Actualiser
         </Button>
       )}
     </div>

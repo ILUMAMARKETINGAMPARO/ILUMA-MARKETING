@@ -228,19 +228,40 @@ const Footer = () => {
                 <Mail className="w-5 h-5 mr-2 text-accent" />
                 {t('footer.contact.title')}
               </h4>
-              <div className="space-y-2 text-white/70 text-sm">
-                <p className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  {t('footer.contact.email')}
-                </p>
-                <p className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {t('footer.contact.phone')}
-                </p>
-                <p className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  {t('footer.contact.location')}
-                </p>
+              <div className="space-y-3 text-white/70 text-sm">
+                <div className="flex items-start">
+                  <Mail className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-primary" />
+                  <div className="min-w-0 flex-1">
+                    <a 
+                      href="mailto:administracion@ilumamarketing.com"
+                      className="block text-wrap break-all leading-tight hover:text-primary transition-colors duration-200 underline decoration-1 underline-offset-2"
+                    >
+                      administracion@ilumamarketing.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0 text-primary" />
+                  <a 
+                    href="tel:+15148828910"
+                    className="hover:text-primary transition-colors duration-200 underline decoration-1 underline-offset-2"
+                  >
+                    +1 (514) 882-8910
+                  </a>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-primary" />
+                  <div className="min-w-0 flex-1">
+                    <a 
+                      href="https://maps.google.com/?q=12090+Bd+Sainte-Gertrude,+Montréal,+QC+H1G+5R2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-wrap break-words leading-tight hover:text-primary transition-colors duration-200 underline decoration-1 underline-offset-2"
+                    >
+                      12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             

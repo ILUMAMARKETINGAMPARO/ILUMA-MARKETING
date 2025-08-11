@@ -19,8 +19,17 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Sparkles, ArrowRight, Brain, Target, Rocket, Users, Star, TrendingUp, Zap, Heart, Globe, MessageSquare, CheckCircle, PlayCircle, HelpCircle, Eye, Lightbulb, Coffee, Smile, ThumbsUp, Wand2, Search, BarChart3, Award, Clock, Shield, MapPin } from 'lucide-react';
 import ClientInterface from '@/components/rivalviews/ClientInterface';
+
+// New hero components
+import ParticleSystem from '@/components/hero/ParticleSystem';
+import FloatingElements from '@/components/hero/FloatingElements';
+import HolographicTitle from '@/components/hero/HolographicTitle';
+import AIInitializationSequence from '@/components/hero/AIInitializationSequence';
 const Index = () => {
-  const { t, language } = useTranslations();
+  const {
+    t,
+    language
+  } = useTranslations();
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
   const [liloMood, setLiloMood] = useState('curious');
   const [currentStory, setCurrentStory] = useState(0);
@@ -162,7 +171,6 @@ const Index = () => {
     gradient: 'from-violet-500 to-purple-600',
     benefit: 'Support intelligent'
   }];
-
   const faqData = [{
     question: t('faq.google.question') || "Et si votre agence savait exactement ce que pense Google ?",
     answer: "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
@@ -181,6 +189,7 @@ const Index = () => {
       <StructuredData type="Organization" />
       <StructuredData type="LocalBusiness" />
       <StructuredData type="FAQPage" />
+      
       <div className="min-h-screen bg-gradient-to-br from-[#0A0A10] via-[#1a1a2e] to-[#0A0A10] overflow-hidden">
         <MPEProvider>
           <TeamProvider>
@@ -192,9 +201,9 @@ const Index = () => {
               y: backgroundY
             }} animate={{
               scale: [1, 1.2, 1],
-              opacity: [0.2, 0.4, 0.2],
-              x: mousePosition.x * 50,
-              y: mousePosition.y * 30
+              opacity: [0.3, 0.6, 0.3],
+              x: mousePosition.x * 30,
+              y: mousePosition.y * 20
             }} transition={{
               duration: 8,
               repeat: Infinity,
@@ -212,186 +221,346 @@ const Index = () => {
             }} />
             </div>
 
-            {/* Hero Section with Lilo Welcome */}
-            <motion.section className="relative min-h-screen flex items-center justify-center px-6" style={{
+            {/* Revolutionary Hero Section */}
+            <motion.section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{
             scale: heroScale,
             opacity: heroOpacity
           }}>
-              <div className="max-w-7xl mx-auto text-center relative z-10">
+              {/* AI Initialization Sequence */}
+              <AIInitializationSequence />
+
+              {/* Particle System Background */}
+              <ParticleSystem />
+
+              {/* Floating 3D Elements */}
+              <FloatingElements />
+
+              {/* Advanced Background Effects */}
+              <div className="absolute inset-0">
+                {/* Neural network pattern */}
+                <motion.div className="absolute inset-0 opacity-30" style={{
+                backgroundImage: `radial-gradient(circle at 20% 80%, rgba(142, 68, 255, 0.1) 0%, transparent 50%),
+                                     radial-gradient(circle at 80% 20%, rgba(255, 213, 107, 0.1) 0%, transparent 50%),
+                                     radial-gradient(circle at 40% 40%, rgba(142, 68, 255, 0.05) 0%, transparent 50%)`
+              }} animate={{
+                backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
+              }} transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }} />
+
+                {/* Dynamic gradient orbs */}
+                <motion.div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/40 to-accent/40 rounded-full blur-3xl" animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.4, 0.7, 0.4],
+                x: [0, 100, -50, 0],
+                y: [0, -50, 50, 0]
+              }} transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }} />
+                
+                <motion.div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-accent/30 to-primary/30 rounded-full blur-3xl" animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.3, 0.6, 0.3],
+                x: [0, -80, 60, 0],
+                y: [0, 60, -40, 0]
+              }} transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3
+              }} />
+
+                {/* Rotating energy field */}
+                <motion.div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] transform -translate-x-1/2 -translate-y-1/2" animate={{
+                rotate: [0, 360],
+                scale: [0.8, 1.1, 0.8]
+              }} transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}>
+                  <div className="w-full h-full border border-primary/20 rounded-full blur-sm opacity-60" />
+                  <div className="absolute inset-8 border border-accent/20 rounded-full blur-sm opacity-40" />
+                  <div className="absolute inset-16 border border-primary/10 rounded-full blur-sm opacity-30" />
+                </motion.div>
+              </div>
+
+              {/* Main Content */}
+              <div className="max-w-7xl mx-auto text-center relative z-20 px-6">
                 <motion.div initial={{
                 opacity: 0,
-                y: 50
+                y: 100
               }} animate={{
                 opacity: 1,
                 y: 0
               }} transition={{
-                duration: 1
-              }}>
-                  {/* Lilo AI Greeting */}
-                  <motion.div className="mb-8 flex items-center justify-center gap-4" initial={{
-                  scale: 0
+                duration: 1.5,
+                delay: 6
+              }} className="space-y-12">
+                  {/* Holographic Brand Badge */}
+                  <motion.div initial={{
+                  scale: 0,
+                  opacity: 0
                 }} animate={{
-                  scale: 1
+                  scale: 1,
+                  opacity: 1
                 }} transition={{
-                  delay: 0.5,
+                  delay: 6.5,
                   type: "spring",
-                  stiffness: 100
-                }}>
-                    
+                  stiffness: 200
+                }} className="inline-block">
                     
                   </motion.div>
 
-                  {/* Main Title - Responsive mobile */}
-                  <motion.h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-extrabold font-['Montserrat'] mb-6`} initial={{
-                  y: 50,
-                  opacity: 0
+                  {/* Holographic Title */}
+                  <HolographicTitle title="Iluma™" subtitle={t('home.hero.subtitle')} subtitle2={t('home.hero.subtitle2')} isMobile={isMobile} />
+
+                  {/* Enhanced Description with glassmorphism */}
+                  <motion.div initial={{
+                  opacity: 0,
+                  y: 30
                 }} animate={{
-                  y: 0,
-                  opacity: 1
+                  opacity: 1,
+                  y: 0
                 }} transition={{
                   duration: 1,
-                  delay: 0.2
-                }}>
-                    <motion.span className="block bg-gradient-to-r from-[#8E44FF] via-[#FFD56B] to-[#8E44FF] bg-clip-text text-transparent bg-[length:200%_100%]" animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+                  delay: 7
+                }} className="relative">
+                    <motion.div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl blur-xl" animate={{
+                    scale: [1, 1.02, 1],
+                    opacity: [0.5, 0.8, 0.5]
                   }} transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}>
-                      Iluma™
-                    </motion.span>
-                    <span className={`block text-white/90 ${isMobile ? 'text-2xl' : 'text-4xl md:text-6xl'} mt-4`}>
-                      {t('home.hero.subtitle')}
-                    </span>
-                    <span className={`block text-white/90 ${isMobile ? 'text-2xl' : 'text-4xl md:text-6xl'}`}>
-                      {t('home.hero.subtitle2')}
-                    </span>
-                  </motion.h1>
+                    duration: 4,
+                    repeat: Infinity
+                  }} />
+                    <div className="relative bg-card/30 backdrop-blur-xl rounded-2xl p-8 border border-primary/20">
+                      <p className={`${isMobile ? 'text-lg' : 'text-xl md:text-2xl'} text-white/90 max-w-4xl mx-auto leading-relaxed font-['Montserrat']`}>
+                        {t('home.hero.description')}
+                      </p>
+                    </div>
+                  </motion.div>
 
-                  {/* Enhanced Description - Responsive */}
-                  <motion.p className={`${isMobile ? 'text-lg' : 'text-xl md:text-2xl'} text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-['Montserrat'] ${isMobile ? 'px-4' : ''}`} initial={{
-                  y: 30,
-                  opacity: 0
+                  {/* Interactive Path Selection with 3D cards */}
+                  <motion.div className={`grid ${isMobile ? 'grid-cols-1 gap-6 max-w-sm' : 'md:grid-cols-3 gap-8 max-w-6xl'} mx-auto`} initial={{
+                  opacity: 0,
+                  y: 50
                 }} animate={{
-                  y: 0,
-                  opacity: 1
+                  opacity: 1,
+                  y: 0
                 }} transition={{
-                  duration: 0.8,
-                  delay: 0.4
-                }}>
-                    {t('home.hero.description')}
-                  </motion.p>
-
-                  {/* Interactive Path Selection - Mobile responsive grid */}
-                  <motion.div className={`grid ${isMobile ? 'grid-cols-1 gap-4 max-w-sm' : 'md:grid-cols-3 gap-6 max-w-5xl'} mx-auto mb-12`} initial={{
-                  y: 30,
-                  opacity: 0
-                }} animate={{
-                  y: 0,
-                  opacity: 1
-                }} transition={{
-                  duration: 0.8,
-                  delay: 0.6
+                  duration: 1,
+                  delay: 7.5
                 }}>
                     {userPaths.map((path, index) => {
                     const IconComponent = path.icon;
-                    return <motion.div key={path.id} whileHover={{
+                    return <motion.div key={path.id} initial={{
+                      opacity: 0,
+                      rotateX: -15,
+                      y: 50
+                    }} animate={{
+                      opacity: 1,
+                      rotateX: 0,
+                      y: 0
+                    }} transition={{
+                      delay: 8 + index * 0.2,
+                      duration: 0.8
+                    }} whileHover={{
                       scale: 1.05,
-                      y: -10
+                      rotateY: 5,
+                      z: 50
                     }} whileTap={{
                       scale: 0.95
-                    }} initial={{
-                      y: 50,
-                      opacity: 0
-                    }} animate={{
-                      y: 0,
-                      opacity: 1
-                    }} transition={{
-                      delay: 0.2 * index
+                    }} style={{
+                      transformStyle: 'preserve-3d'
                     }}>
                           <Link to={path.path}>
-                            <Card className="h-full bg-black/40 backdrop-blur-xl border border-white/10 hover:border-[#8E44FF]/50 transition-all duration-500 cursor-pointer group">
-                              <CardContent className="p-6 text-center">
-                                <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${path.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                                  <IconComponent className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2 font-['Montserrat']">
-                                  {path.title}
-                                </h3>
-                                <p className="text-[#FFD56B] mb-3 font-['Montserrat'] font-semibold">
-                                  {path.subtitle}
-                                </p>
-                                <p className="text-white/70 text-sm font-['Montserrat']">
-                                  {path.description}
-                                </p>
-                              </CardContent>
-                            </Card>
+                            <motion.div className="relative h-full group cursor-pointer" whileHover="hover">
+                              {/* 3D shadow */}
+                              <motion.div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl" variants={{
+                            hover: {
+                              scale: 1.1,
+                              opacity: 0.8,
+                              y: 10
+                            }
+                          }} transition={{
+                            duration: 0.3
+                          }} />
+
+                              {/* Main card */}
+                              <Card className="relative h-full bg-card/40 backdrop-blur-xl border border-primary/30 hover:border-primary/60 transition-all duration-500 overflow-hidden">
+                                {/* Animated background gradient */}
+                                <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100" initial={false} variants={{
+                              hover: {
+                                opacity: 1
+                              }
+                            }} transition={{
+                              duration: 0.3
+                            }} />
+
+                                <CardContent className="relative p-8 text-center h-full flex flex-col">
+                                  {/* Floating icon */}
+                                  <motion.div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${path.color} flex items-center justify-center mx-auto mb-6 shadow-2xl`} variants={{
+                                hover: {
+                                  rotateY: 360,
+                                  scale: 1.1
+                                }
+                              }} transition={{
+                                duration: 0.6
+                              }}>
+                                    <IconComponent className="w-10 h-10 text-white" />
+                                  </motion.div>
+
+                                  <h3 className="text-2xl font-bold text-white mb-3 font-['Montserrat']">
+                                    {path.title}
+                                  </h3>
+                                  <p className="text-accent mb-4 font-['Montserrat'] font-semibold text-lg">
+                                    {path.subtitle}
+                                  </p>
+                                  <p className="text-white/70 font-['Montserrat'] flex-grow">
+                                    {path.description}
+                                  </p>
+
+                                  {/* Hover arrow */}
+                                  <motion.div className="mt-6" variants={{
+                                hover: {
+                                  x: 5
+                                }
+                              }}>
+                                    <ArrowRight className="w-6 h-6 text-accent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                  </motion.div>
+                                </CardContent>
+                              </Card>
+                            </motion.div>
                           </Link>
                         </motion.div>;
                   })}
                   </motion.div>
 
-                  {/* Main CTA */}
+                  {/* Revolutionary CTA Section */}
                   <motion.div initial={{
-                  y: 30,
-                  opacity: 0
+                  opacity: 0,
+                  scale: 0.8
                 }} animate={{
-                  y: 0,
-                  opacity: 1
+                  opacity: 1,
+                  scale: 1
                 }} transition={{
-                  duration: 0.8,
-                  delay: 0.8
-                }} className="mb-16 space-y-6">
-                    <Link to="/adluma">
-                      <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-black font-black px-12 py-6 text-xl rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#8E44FF]/30 font-['Montserrat'] group">
-                        <Sparkles className="w-6 h-6 mr-3 group-hover:animate-spin" />
-                        🚀 {t('home.hero.primaryCTA')}
-                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                      </Button>
-                    </Link>
-                    
-                    {/* Bouton Promotion Spectaculaire - Ouvre la popup */}
+                  duration: 1,
+                  delay: 9
+                }} className="space-y-8">
+                    {/* Primary CTA with 3D effect */}
+                    <motion.div whileHover={{
+                    scale: 1.05,
+                    rotateX: 5
+                  }} whileTap={{
+                    scale: 0.95
+                  }} style={{
+                    transformStyle: 'preserve-3d'
+                  }}>
+                      <Link to="/adluma">
+                        <motion.div className="relative group" animate={{
+                        rotateY: [0, 1, -1, 0]
+                      }} transition={{
+                        duration: 8,
+                        repeat: Infinity
+                      }}>
+                          {/* 3D shadow */}
+                          <motion.div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-3xl blur-xl opacity-60" animate={{
+                          scale: [1, 1.05, 1],
+                          opacity: [0.6, 0.8, 0.6]
+                        }} transition={{
+                          duration: 3,
+                          repeat: Infinity
+                        }} style={{
+                          transform: 'translateZ(-20px)'
+                        }} />
+
+                          <Button size="lg" className="relative bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white font-black px-16 py-8 text-2xl rounded-3xl transition-all duration-500 shadow-2xl border-2 border-white/20 font-['Montserrat'] group overflow-hidden">
+                            {/* Animated background */}
+                            <motion.div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100" initial={false} transition={{
+                            duration: 0.3
+                          }} />
+
+                            <motion.div className="relative flex items-center gap-4" animate={{
+                            x: [0, 2, 0]
+                          }} transition={{
+                            duration: 2,
+                            repeat: Infinity
+                          }}>
+                              <motion.div animate={{
+                              rotate: [0, 360]
+                            }} transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "linear"
+                            }}>
+                                <Sparkles className="w-8 h-8" />
+                              </motion.div>
+                              <span>🚀 {t('home.hero.primaryCTA')}</span>
+                              <motion.div animate={{
+                              x: [0, 5, 0]
+                            }} transition={{
+                              duration: 1.5,
+                              repeat: Infinity
+                            }}>
+                                <ArrowRight className="w-8 h-8" />
+                              </motion.div>
+                            </motion.div>
+                          </Button>
+                        </motion.div>
+                      </Link>
+                    </motion.div>
+
+                    {/* Spectacular Promotion Button */}
                     <motion.div className="relative group cursor-pointer" whileHover={{
-                    scale: 1.05
+                    scale: 1.05,
+                    rotateX: 5
                   }} whileTap={{
                     scale: 0.95
                   }} onClick={() => {
                     const promoEvent = new CustomEvent('openPromotionPopup');
                     window.dispatchEvent(promoEvent);
+                  }} style={{
+                    transformStyle: 'preserve-3d'
                   }}>
-                      {/* Effets de fond galactique */}
-                      <motion.div className="absolute -inset-4 bg-gradient-to-r from-[#8E44FF] via-[#FFD56B] to-[#8E44FF] rounded-2xl blur-xl opacity-60" animate={{
+                      {/* Galactic background effects */}
+                      <motion.div className="absolute -inset-6 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-2xl opacity-70" animate={{
                       rotate: [0, 360],
                       scale: [1, 1.1, 1]
                     }} transition={{
                       duration: 8,
                       repeat: Infinity,
                       ease: "linear"
+                    }} style={{
+                      transform: 'translateZ(-30px)'
                     }} />
-                      
-                      {/* Bouton principal */}
-                      <motion.div className="relative bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] p-1 rounded-2xl" animate={{
+
+                      {/* Main button container */}
+                      <motion.div className="relative bg-gradient-to-r from-primary to-accent p-1 rounded-3xl" animate={{
                       boxShadow: ['0 0 30px rgba(142, 68, 255, 0.6)', '0 0 60px rgba(255, 213, 107, 0.8)', '0 0 30px rgba(142, 68, 255, 0.6)']
                     }} transition={{
                       duration: 3,
                       repeat: Infinity
                     }}>
-                        <div className="bg-[#0A0A10] rounded-xl px-8 py-6 flex items-center gap-4">
-                          {/* Icône animée */}
-                          <motion.div className="w-12 h-12 bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] rounded-full flex items-center justify-center" animate={{
-                          rotate: [0, 360]
+                        <div className="bg-background/90 backdrop-blur-xl rounded-[22px] px-10 py-8 flex items-center gap-6">
+                          {/* Animated icon */}
+                          <motion.div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-2xl" animate={{
+                          rotate: [0, 360],
+                          scale: [1, 1.1, 1]
                         }} transition={{
                           duration: 4,
                           repeat: Infinity,
                           ease: "linear"
                         }}>
-                            <Sparkles className="w-6 h-6 text-white" />
+                            <Sparkles className="w-8 h-8 text-white" />
                           </motion.div>
-                          
-                          {/* Texte */}
+
+                          {/* Enhanced text */}
                           <div className="text-left">
-                            <motion.h3 className="text-2xl font-black text-transparent bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text" animate={{
+                            <motion.h3 className="text-3xl font-black text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text font-['Montserrat']" animate={{
                             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
                           }} transition={{
                             duration: 3,
@@ -401,41 +570,50 @@ const Index = () => {
                           }}>
                               {t('home.promotion.title')}
                             </motion.h3>
-                            <p className="text-white/80 text-lg font-semibold">
+                            <p className="text-white/80 text-xl font-semibold font-['Montserrat']">
                               {t('home.promotion.subtitle')}
                             </p>
                           </div>
-                          
-                          {/* Flèche animée */}
+
+                          {/* Animated arrow */}
                           <motion.div animate={{
-                          x: [0, 10, 0]
+                          x: [0, 10, 0],
+                          rotate: [0, 5, -5, 0]
                         }} transition={{
-                          duration: 1.5,
+                          duration: 2,
                           repeat: Infinity
                         }}>
-                            <Zap className="w-8 h-8 text-[#FFD56B]" />
+                            <Zap className="w-10 h-10 text-accent" />
                           </motion.div>
                         </div>
                       </motion.div>
-                      
-                      {/* Particules flottantes */}
-                      {Array.from({
-                      length: 6
-                    }).map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-[#FFD56B] rounded-full" style={{
-                      top: '50%',
-                      left: '50%'
-                    }} animate={{
-                      x: [0, Math.cos(i * 60 * Math.PI / 180) * 60],
-                      y: [0, Math.sin(i * 60 * Math.PI / 180) * 60],
-                      opacity: [0, 1, 0],
-                      scale: [0, 1, 0]
-                    }} transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.3,
-                      ease: "easeOut"
-                    }} />)}
                     </motion.div>
+                  </motion.div>
+
+                  {/* Scroll indicator with enhanced design */}
+                  <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" animate={{
+                  y: [0, 15, 0],
+                  opacity: [0.6, 1, 0.6]
+                }} transition={{
+                  duration: 2,
+                  repeat: Infinity
+                }}>
+                    <div className="flex flex-col items-center gap-2">
+                      <span className="text-white/60 text-sm font-['Montserrat']">Découvrir</span>
+                      <motion.div className="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center" animate={{
+                      borderColor: ['rgba(255,255,255,0.3)', 'rgba(142,68,255,0.8)', 'rgba(255,255,255,0.3)']
+                    }} transition={{
+                      duration: 3,
+                      repeat: Infinity
+                    }}>
+                        <motion.div className="w-1 h-3 bg-white/60 rounded-full mt-2" animate={{
+                        y: [0, 8, 0]
+                      }} transition={{
+                        duration: 1.5,
+                        repeat: Infinity
+                      }} />
+                      </motion.div>
+                    </div>
                   </motion.div>
                 </motion.div>
               </div>
@@ -444,22 +622,7 @@ const Index = () => {
             {/* Interface Client Intégrée */}
             <ClientInterface />
 
-            {/* Section Présentation Complète - Nouveau */}
-            <motion.section className="py-20 px-6 relative z-10" initial={{
-            opacity: 0
-          }} whileInView={{
-            opacity: 1
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 1
-          }}>
-              <div className="max-w-6xl mx-auto">
-                
-              </div>
-            </motion.section>
-
-            {/* Wow Moment Section - Nancy Duarte approach */}
+            {/* Section Wow Moment */}
             <motion.section className="py-32 px-6 relative z-10" initial={{
             opacity: 0
           }} whileInView={{
@@ -504,12 +667,12 @@ const Index = () => {
                   duration: 0.8,
                   delay: 0.2
                 }}>
-                     <h3 className="text-3xl font-bold text-white mb-8 font-['Montserrat']">
-                       🚀 {t('home.transformation.title') || "La transformation d'un client en 30 jours"}
-                     </h3>
-                     
-                     <div className="grid md:grid-cols-4 gap-6">
-                       {[{
+                    <h3 className="text-3xl font-bold text-white mb-8 font-['Montserrat']">
+                      🚀 {t('home.transformation.title') || "La transformation d'un client en 30 jours"}
+                    </h3>
+                    
+                    <div className="grid md:grid-cols-4 gap-6">
+                      {[{
                       day: t('home.transformation.steps.day1.day') || "Jour 1",
                       action: t('home.transformation.steps.day1.action') || "Diagnostic ADLUMA™",
                       result: t('home.transformation.steps.day1.result') || "Analyse complète",
@@ -557,97 +720,7 @@ const Index = () => {
               </div>
             </motion.section>
 
-            {/* How-To Section for SEO/SGE - Brian Dean approach */}
-            <motion.section className="py-20 px-6 relative z-10" initial={{
-            opacity: 0
-          }} whileInView={{
-            opacity: 1
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 1
-          }}>
-              <div className="max-w-4xl mx-auto">
-                <motion.div className="text-center mb-16" initial={{
-                y: 50,
-                opacity: 0
-              }} whileInView={{
-                y: 0,
-                opacity: 1
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.8
-              }}>
-                   <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                     {t('home.howTo.title') || "Comment fonctionne"} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Iluma™</span> ?
-                   </h2>
-                   <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
-                     {t('home.howTo.subtitle') || "Votre parcours vers la visibilité maximale en 4 étapes"}
-                   </p>
-                </motion.div>
-
-                 <div className="space-y-12">
-                   {[{
-                  step: t('home.howTo.steps.diagnostic.step') || "01",
-                  title: t('home.howTo.steps.diagnostic.title') || "Diagnostic IA Gratuit",
-                  description: t('home.howTo.steps.diagnostic.description') || "ADLUMA™ analyse votre visibilité actuelle et identifie vos opportunités",
-                  action: t('home.howTo.steps.diagnostic.action') || "Obtenez votre score ILA™ en 2 minutes",
-                  icon: Brain,
-                  color: "from-cyan-500 to-blue-500"
-                }, {
-                  step: t('home.howTo.steps.strategy.step') || "02",
-                  title: t('home.howTo.steps.strategy.title') || "Stratégie Personnalisée",
-                  description: t('home.howTo.steps.strategy.description') || "Notre IA crée un plan d'action sur mesure basé sur vos objectifs",
-                  action: t('home.howTo.steps.strategy.action') || "Recevez votre roadmap détaillée",
-                  icon: Target,
-                  color: "from-purple-500 to-pink-500"
-                }, {
-                  step: t('home.howTo.steps.deployment.step') || "03",
-                  title: t('home.howTo.steps.deployment.title') || "Déploiement des Modules",
-                  description: t('home.howTo.steps.deployment.description') || "Activation progressive de votre écosystème Iluma™",
-                  action: t('home.howTo.steps.deployment.action') || "Modules actifs selon vos priorités",
-                  icon: Rocket,
-                  color: "from-orange-500 to-red-500"
-                }, {
-                  step: t('home.howTo.steps.optimization.step') || "04",
-                  title: t('home.howTo.steps.optimization.title') || "Optimisation Continue",
-                  description: t('home.howTo.steps.optimization.description') || "LILO™ surveille et optimise vos performances 24/7",
-                  action: t('home.howTo.steps.optimization.action') || "Croissance automatisée et mesurable",
-                  icon: TrendingUp,
-                  color: "from-green-500 to-emerald-500"
-                }].map((howTo, index) => {
-                  const IconComponent = howTo.icon;
-                  return <motion.div key={index} initial={{
-                    x: index % 2 === 0 ? -50 : 50,
-                    opacity: 0
-                  }} whileInView={{
-                    x: 0,
-                    opacity: 1
-                  }} viewport={{
-                    once: true
-                  }} transition={{
-                    duration: 0.8,
-                    delay: index * 0.2
-                  }} className="flex items-center gap-8">
-                        <div className={`w-20 h-20 rounded-full bg-gradient-to-r ${howTo.color} flex items-center justify-center flex-shrink-0`}>
-                          <IconComponent className="w-10 h-10 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-4 mb-3">
-                            <span className="text-[#FFD56B] font-bold text-2xl font-['Montserrat']">{howTo.step}</span>
-                            <h3 className="text-2xl font-bold text-white font-['Montserrat']">{howTo.title}</h3>
-                          </div>
-                          <p className="text-white/80 font-['Montserrat'] mb-2">{howTo.description}</p>
-                          <p className="text-[#8E44FF] font-semibold font-['Montserrat']">→ {howTo.action}</p>
-                        </div>
-                      </motion.div>;
-                })}
-                </div>
-              </div>
-            </motion.section>
-
-            {/* FAQ Section - Rand Fishkin SGE approach */}
+            {/* FAQ Section */}
             <motion.section className="py-20 px-6 relative z-10" initial={{
             opacity: 0
           }} whileInView={{
@@ -670,12 +743,12 @@ const Index = () => {
                 duration: 0.8
               }}>
                   <HelpCircle className="w-12 h-12 text-[#FFD56B] mx-auto mb-4" />
-                   <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                     {t('home.faq.title')} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">{t('home.faq.frequent')}</span>
-                   </h2>
-                   <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
-                     {t('home.faq.subtitle')}
-                   </p>
+                  <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
+                    Questions <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Fréquentes</span>
+                  </h2>
+                  <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
+                    Toutes les réponses à vos questions sur Iluma™
+                  </p>
                 </motion.div>
 
                 <motion.div initial={{
@@ -704,87 +777,7 @@ const Index = () => {
               </div>
             </motion.section>
 
-            {/* Results Section */}
-            <motion.section className="py-20 px-6 relative z-10" initial={{
-            opacity: 0
-          }} whileInView={{
-            opacity: 1
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 1
-          }}>
-              <div className="max-w-6xl mx-auto">
-                <motion.div className="text-center mb-16" initial={{
-                y: 50,
-                opacity: 0
-              }} whileInView={{
-                y: 0,
-                opacity: 1
-              }} viewport={{
-                once: true
-              }} transition={{
-                duration: 0.8
-              }}>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                      {t('results.title') || "Résultats Garantis"}
-                    </h2>
-                </motion.div>
-
-                 <div className="grid md:grid-cols-4 gap-6">
-                   {[{
-                  value: t('home.results.stats.visitors.value') || "+410%",
-                  label: t('home.results.stats.visitors.label') || "Visiteurs en 30 jours",
-                  icon: TrendingUp
-                }, {
-                  value: t('home.results.stats.reviews.value') || "+8",
-                  label: t('home.results.stats.reviews.label') || "Avis Google générés",
-                  icon: Star
-                }, {
-                  value: t('home.results.stats.clicks.value') || "+260%",
-                  label: t('home.results.stats.clicks.label') || "Clics Google Maps",
-                  icon: Target
-                }, {
-                  value: t('home.results.stats.followers.value') || "+140%",
-                  label: t('home.results.stats.followers.label') || "Followers organiques",
-                  icon: Users
-                }].map((stat, index) => {
-                  const IconComponent = stat.icon;
-                  return <motion.div key={index} initial={{
-                    y: 50,
-                    opacity: 0
-                  }} whileInView={{
-                    y: 0,
-                    opacity: 1
-                  }} viewport={{
-                    once: true
-                  }} transition={{
-                    duration: 0.6,
-                    delay: index * 0.1
-                  }} whileHover={{
-                    scale: 1.05
-                  }}>
-                        <Card className="bg-gradient-to-br from-[#8E44FF]/20 to-[#FFD56B]/20 border border-[#8E44FF]/30 backdrop-blur-xl">
-                          <CardContent className="p-6 text-center">
-                            <IconComponent className="w-8 h-8 text-[#FFD56B] mx-auto mb-4" />
-                            <div className="text-3xl font-bold text-[#FFD56B] mb-2 font-['Montserrat']">
-                              {stat.value}
-                            </div>
-                            <div className="text-white/80 text-sm font-['Montserrat']">
-                              {stat.label}
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </motion.div>;
-                })}
-                </div>
-              </div>
-            </motion.section>
-
             <Footer />
-
-
-            {/* Popup Lilo Promo */}
             <PopupLiloPromo />
 
           </TeamProvider>

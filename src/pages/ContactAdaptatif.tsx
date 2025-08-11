@@ -5,6 +5,7 @@ import MPEContainer from '@/components/mpe/MPEContainer';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactInfo from '@/components/contact/ContactInfo';
 import ThankYouScreen from '@/components/contact/ThankYouScreen';
+import { useTranslations } from '@/hooks/useTranslations';
 
 interface FormData {
   nom: string;
@@ -18,6 +19,7 @@ interface FormData {
 }
 
 const ContactAdaptatif = () => {
+  const { t } = useTranslations();
   const [formData, setFormData] = useState<FormData | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -47,10 +49,10 @@ const ContactAdaptatif = () => {
           <div className="container mx-auto px-4">
             <MPEContainer className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Contact <span className="text-gradient">Intelligent</span>
+                {t('contact.hero.title')} <span className="text-gradient">{t('contact.hero.highlight')}</span>
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-                Notre formulaire adaptatif personnalise votre expérience pour des recommandations sur mesure
+                {t('contact.hero.description')}
               </p>
             </MPEContainer>
           </div>

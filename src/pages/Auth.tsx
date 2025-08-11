@@ -9,9 +9,11 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Auth = () => {
   const { user, signIn, signUp } = useAuth();
+  const { t } = useTranslations();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -213,10 +215,10 @@ const Auth = () => {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-white font-['Montserrat'] mb-2">
-                Bienvenue sur Iluma™
+                {t('auth.title')}
               </h1>
               <p className="text-white/70 font-['Montserrat']">
-                Accédez à votre espace intelligent
+                {t('auth.subtitle')}
               </p>
             </div>
 

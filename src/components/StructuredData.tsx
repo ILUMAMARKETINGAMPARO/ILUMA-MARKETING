@@ -21,7 +21,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "legalName": "Iluma Marketing LLC",
           "url": baseUrl,
           "logo": `${baseUrl}/logo.png`,
-          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
+          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Outils IA complets pour transformer votre visibilité en ligne.",
           "foundingDate": "2024",
           "address": {
             "@type": "PostalAddress",
@@ -59,7 +59,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "@type": "LocalBusiness",
           "name": "Iluma Marketing",
           "image": `${baseUrl}/logo.png`,
-          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
+          "description": "Iluma Marketing révolutionne le marketing digital des PME avec l'intelligence artificielle la plus avancée. Outils IA complets pour transformer votre visibilité en ligne.",
           "url": baseUrl,
           "telephone": "+1-514-882-8910",
           "email": "hola@ilumamarketing.com",
@@ -141,7 +141,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "Iluma™ - L'IA qui ILLUMINE votre visibilité",
-          "description": "Révolutionnez votre marketing digital avec l'intelligence artificielle la plus avancée. Solutions IA complètes pour transformer votre visibilité en ligne.",
+          "description": "Révolutionnez votre marketing digital avec l'intelligence artificielle la plus avancée. Outils IA complets pour transformer votre visibilité en ligne.",
           "image": `${baseUrl}/og-image.jpg`,
           "author": {
             "@type": "Organization",

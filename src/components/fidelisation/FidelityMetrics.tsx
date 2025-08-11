@@ -16,7 +16,7 @@ const FidelityMetrics = () => {
         <Card key={element.label} className="glass-effect border-white/20 p-6 text-center">
           <div className="text-3xl font-bold text-white mb-2">{element.metric}</div>
           <div className="text-white/60 text-sm mb-2">{element.label}</div>
-          <Badge className="bg-green-500/20 border-green-500/30 text-green-300 text-xs">
+          <Badge className="bg-accent/20 border-accent/30 text-accent text-xs">
             {element.trend}
           </Badge>
         </Card>

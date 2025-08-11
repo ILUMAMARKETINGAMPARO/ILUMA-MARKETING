@@ -6,11 +6,11 @@ import JsonLd from '@/components/seo/JsonLd';
 import SkipToContent from '@/components/accessibility/SkipToContent';
 import PerformanceOptimizer from '@/components/performance/PerformanceOptimizer';
 import FloatingLilo from '@/components/common/FloatingLilo';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Zap, Gauge, Smartphone, Globe } from 'lucide-react';
 
 const Performance = () => {
-  const { language, t } = useLanguage();
+  const { language, t } = useTranslations();
 
   const seoData = {
     title: `Performance & Optimisation Iluma™ | Score Lighthouse 95+ | ${language === 'fr' ? 'Montréal' : language === 'en' ? 'Montreal' : 'Montreal'}`,
@@ -75,16 +75,11 @@ const Performance = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent font-['Montserrat']">
-                Performance
-                <span className="block text-4xl md:text-6xl mt-2">
-                  Galactique ⚡
-                </span>
+                {t('performance.title')}
               </h1>
 
               <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                {language === 'fr' && "Score Lighthouse 95+, Core Web Vitals optimisés, performance mobile-first révolutionnaire"}
-                {language === 'en' && "Lighthouse Score 95+, optimized Core Web Vitals, revolutionary mobile-first performance"}
-                {language === 'es' && "Puntuación Lighthouse 95+, Core Web Vitals optimizados, rendimiento mobile-first revolucionario"}
+                {t('performance.subtitle')}
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mt-12">

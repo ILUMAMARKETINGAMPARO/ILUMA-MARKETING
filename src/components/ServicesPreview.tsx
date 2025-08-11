@@ -2,65 +2,65 @@ import React from 'react';
 import { Search, FileText, Play, Mic, Target, Users, ArrowRight, ShoppingCart, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const ServicesPreview = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   
   const services = [
     {
       icon: Search,
-      title: t('services.types.seoAi'),
-      description: t('services.types.seoAiDesc'),
+      title: "SEO IA Intelligent",
+      description: "Optimisation avec intelligence artificielle pour dominer Google",
       color: "from-iluma-blue-500 to-iluma-blue-600",
       delay: "0s"
     },
     {
       icon: Play,
-      title: t('services.types.youtubeSeo'),
-      description: t('services.types.youtubeSeoDesc'),
+      title: "YouTube SEO",
+      description: "Visibilité maximale sur la plateforme vidéo #1",
       color: "from-red-500 to-red-600",
       delay: "0.1s"
     },
     {
       icon: Target,
-      title: t('services.types.landingPages'),
-      description: t('services.types.landingPagesDesc'),
+      title: "Landing Pages IA",
+      description: "Pages de conversion optimisées par intelligence artificielle",
       color: "from-iluma-purple-500 to-iluma-purple-600",
       delay: "0.2s"
     },
     {
       icon: FileText,
-      title: t('services.types.loyaltyPages'),
-      description: t('services.types.loyaltyPagesDesc'),
+      title: "Pages Fidélisation",
+      description: "Transformez vos visiteurs en clients fidèles",
       color: "from-iluma-gold-500 to-iluma-gold-600",
       delay: "0.3s"
     },
     {
       icon: Globe,
-      title: t('services.types.interSiteBlogs'),
-      description: t('services.types.interSiteBlogsDesc'),
+      title: "Blogs Inter-Sites",
+      description: "Réseau de contenu intelligent pour amplifier votre portée",
       color: "from-iluma-blue-400 to-iluma-purple-500",
       delay: "0.4s"
     },
     {
       icon: Users,
-      title: t('services.types.localVisibility'),
-      description: t('services.types.localVisibilityDesc'),
+      title: "Visibilité Locale",
+      description: "Dominez votre marché local avec notre stratégie IA",
       color: "from-iluma-purple-400 to-iluma-blue-500",
       delay: "0.5s"
     },
     {
       icon: ShoppingCart,
-      title: t('services.types.ecommerce'),
-      description: t('services.types.ecommerceDesc'),
+      title: "E-commerce IA",
+      description: "Boutiques en ligne optimisées pour la conversion",
       color: "from-green-500 to-emerald-600",
       delay: "0.6s"
     },
     {
       icon: Mic,
-      title: t('services.types.podcasts'),
-      description: t('services.types.podcastsDesc'),
+      title: "Podcasts SEO",
+      description: "Amplifiez votre voix avec notre stratégie audio",
       color: "from-iluma-gold-400 to-iluma-purple-500",
       delay: "0.7s"
     }
@@ -71,10 +71,10 @@ const ServicesPreview = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up">
-            <span className="text-gradient">{t('services.title')}</span>
+            <span className="text-gradient">Nos Services IA</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            {t('services.subtitle')}
+            Solutions complètes propulsées par l'intelligence artificielle
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const ServicesPreview = () => {
             size="lg"
             className="bg-gradient-to-r from-iluma-blue-500 to-iluma-purple-500 hover:from-iluma-blue-600 hover:to-iluma-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover-glow shadow-xl"
           >
-            {t('services.discoverAll')}
+            Découvrir tous nos services
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

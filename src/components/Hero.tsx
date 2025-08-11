@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, Target } from 'lucide-react';
@@ -165,3 +166,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

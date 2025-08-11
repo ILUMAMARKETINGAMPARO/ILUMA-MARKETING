@@ -5,12 +5,22 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Home, ArrowLeft, Sparkles, Search } from 'lucide-react';
 import LiloAssistant from '@/components/lilo/LiloAssistant';
+import SEOManager from '@/components/seo/SEOManager';
+import { useTranslations } from '@/hooks/useTranslations';
 import { useLanguage } from '@/hooks/useLanguage';
+import { getMultilingualSEOData } from '@/utils/seoMultilingualEngine';
 
 const NotFound = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
+  const { language } = useLanguage();
+  const seoData = getMultilingualSEOData('notFound', language);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-900/20 to-black flex items-center justify-center relative">
+    <div className="min-h-screen bg-gradient-to-b from-[#0B0B0E] via-[#1a1a2e] to-[#16213e] flex items-center justify-center">
+      <SEOManager 
+        seoData={seoData}
+        path="/404"
+      />
+      
       {/* LILO avec mood "confused" */}
       <LiloAssistant currentPage="/404" isVisible={true} />
       
@@ -87,22 +97,22 @@ const NotFound = () => {
             <div className="flex flex-wrap gap-2 justify-center">
               <Link to="/adluma">
                 <Button size="sm" variant="outline" className="border-white/20 text-white/80 hover:text-white">
-                  {t('notFound.suggestions.adluma')}
+                  ADLUMA™
                 </Button>
               </Link>
               <Link to="/ila">
                 <Button size="sm" variant="outline" className="border-white/20 text-white/80 hover:text-white">
-                  {t('notFound.suggestions.ila')}
+                  Assistant ILA™
                 </Button>
               </Link>
               <Link to="/crm-iluma">
                 <Button size="sm" variant="outline" className="border-white/20 text-white/80 hover:text-white">
-                  {t('notFound.suggestions.crm')}
+                  CRM Iluma™
                 </Button>
               </Link>
               <Link to="/etudes-de-cas">
                 <Button size="sm" variant="outline" className="border-white/20 text-white/80 hover:text-white">
-                  {t('notFound.suggestions.cases')}
+                  Études de Cas
                 </Button>
               </Link>
             </div>

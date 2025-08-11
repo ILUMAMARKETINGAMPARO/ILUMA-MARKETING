@@ -26,42 +26,27 @@ import {
   Lightbulb,
   Wrench
 } from 'lucide-react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const HubCentral = () => {
+  const { t } = useTranslations();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
   const seoData = SEOEngine.generatePageSEO('module', { 
     moduleName: 'HUB Central', 
     benefit: 'centraliser tous vos outils marketing IA' 
   });
 
-  const features = [
-    {
-      icon: Brain,
-      title: "Intelligence Centralisée",
-      description: "Tous vos outils IA synchronisés en un seul endroit"
-    },
-    {
-      icon: Target,
-      title: "Navigation Contextuelle", 
-      description: "Interface adaptée à votre secteur et vos besoins"
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics Unifiées",
-      description: "Tableaux de bord consolidés pour tous vos projets"
-    },
-    {
-      icon: Settings,
-      title: "Automatisation Complète",
-      description: "Workflows intelligents entre tous les modules"
-    }
-  ];
+  const features = t('hubCentral.features.items').map((item: any, index: number) => ({
+    icon: [Brain, Target, BarChart3, Settings][index],
+    title: item.title,
+    description: item.description
+  }));
 
   const stats = [
-    { value: `${ecosystemStats.products.count}`, label: "Produits Finis", color: "text-blue-400" },
-    { value: `${ecosystemStats.solutions.count}`, label: "Solutions IA", color: "text-purple-400" },
-    { value: `${ecosystemStats.services.count}`, label: "Services Premium", color: "text-orange-400" },
-    { value: "24/7", label: "Support Disponible", color: "text-green-400" }
+    { value: `${ecosystemStats.products.count}`, label: t('hubCentral.stats.products'), color: "text-blue-400" },
+    { value: `${ecosystemStats.tools.count}`, label: t('hubCentral.stats.tools'), color: "text-purple-400" },
+    { value: `${ecosystemStats.services.count}`, label: t('hubCentral.stats.services'), color: "text-orange-400" },
+    { value: "24/7", label: t('hubCentral.stats.support'), color: "text-green-400" }
   ];
 
   const benefits = [
@@ -120,16 +105,15 @@ const HubCentral = () => {
                   transition={{ duration: 0.6 }}
                 >
                   <Badge className="mb-6 bg-[#8E44FF]/20 text-[#FFD56B] text-lg px-6 py-2 font-['Montserrat']">
-                    HUB CENTRAL ILUMA™
+                    {t('hubCentral.badge')}
                   </Badge>
                   <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Montserrat']">
                     <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                      HUB Central – Votre écosystème marketing unifié
+                      {t('hubCentral.title')}
                     </span>
                   </h1>
                   <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8 font-['Montserrat']">
-                    Découvrez nos <strong>{ecosystemStats.products.count} Produits</strong>, <strong>{ecosystemStats.solutions.count} Solutions IA</strong> et <strong>{ecosystemStats.services.count} Services Premium</strong> depuis une interface centralisée. 
-                    Tout ce dont vous avez besoin pour dominer votre marché local.
+                    {t('hubCentral.description').replace('{productsCount}', ecosystemStats.products.count).replace('{toolsCount}', ecosystemStats.tools.count).replace('{servicesCount}', ecosystemStats.services.count)}
                   </p>
                 </motion.div>
               </div>
@@ -166,10 +150,10 @@ const HubCentral = () => {
                 className="text-center mb-16"
               >
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-['Montserrat']">
-                  Pourquoi choisir le <span className="text-gradient">HUB Iluma™</span> ?
+                  {t('hubCentral.features.title')}
                 </h2>
                 <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
-                  Une plateforme unifiée qui révolutionne votre approche du marketing digital grâce à l'intelligence artificielle.
+                  {t('hubCentral.features.description')}
                 </p>
               </motion.div>
 
@@ -213,27 +197,21 @@ const HubCentral = () => {
                           <Package className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">Produits Finis</h3>
-                          <p className="text-blue-400 font-['Montserrat']">Solutions clé en main pour votre entreprise</p>
+                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">{t('hubCentral.categories.products.title')}</h3>
+                          <p className="text-blue-400 font-['Montserrat']">{t('hubCentral.categories.products.description')}</p>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-blue-400" />
-                          <span className="text-white/80 font-['Montserrat']">Sites Web Complets avec IA intégrée</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-blue-400" />
-                          <span className="text-white/80 font-['Montserrat']">Landing Pages Intelligentes haute conversion</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-blue-400" />
-                          <span className="text-white/80 font-['Montserrat']">Pages de Fidélisation personnalisées</span>
-                        </div>
+                        {t('hubCentral.categories.products.features').map((feature: string, index: number) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <CheckCircle className="w-4 h-4 text-blue-400" />
+                            <span className="text-white/80 font-['Montserrat']">{feature}</span>
+                          </div>
+                        ))}
                       </div>
                       <Link to="/services">
                         <Button className="mt-6 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-500 hover:to-blue-500 text-white">
-                          Découvrir nos Produits <ArrowRight className="w-4 h-4 ml-2" />
+                          {t('hubCentral.categories.products.button')} <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </Link>
                     </CardContent>
@@ -253,27 +231,21 @@ const HubCentral = () => {
                           <Lightbulb className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">Solutions IA</h3>
-                          <p className="text-purple-400 font-['Montserrat']">Outils intelligents pour optimiser votre stratégie</p>
+                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">{t('hubCentral.categories.solutions.title')}</h3>
+                          <p className="text-purple-400 font-['Montserrat']">{t('hubCentral.categories.solutions.description')}</p>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-purple-400" />
-                          <span className="text-white/80 font-['Montserrat']">ILUMATCH™ - Matching partenaires locaux</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-purple-400" />
-                          <span className="text-white/80 font-['Montserrat']">ADLUMA™ - Simulateur publicitaire IA</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-purple-400" />
-                          <span className="text-white/80 font-['Montserrat']">ILA™ - Score visibilité locale intelligent</span>
-                        </div>
+                        {t('hubCentral.categories.solutions.features').map((feature: string, index: number) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <CheckCircle className="w-4 h-4 text-purple-400" />
+                            <span className="text-white/80 font-['Montserrat']">{feature}</span>
+                          </div>
+                        ))}
                       </div>
                       <Link to="/presentation-outils">
                         <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white">
-                          Explorer nos Solutions <ArrowRight className="w-4 h-4 ml-2" />
+                          {t('hubCentral.categories.solutions.button')} <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </Link>
                     </CardContent>
@@ -293,27 +265,21 @@ const HubCentral = () => {
                           <Wrench className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">Services Premium</h3>
-                          <p className="text-orange-400 font-['Montserrat']">Prestations sur-mesure avec expertise humaine</p>
+                          <h3 className="text-2xl font-bold text-white font-['Montserrat']">{t('hubCentral.categories.services.title')}</h3>
+                          <p className="text-orange-400 font-['Montserrat']">{t('hubCentral.categories.services.description')}</p>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-orange-400" />
-                          <span className="text-white/80 font-['Montserrat']">Google SEO, Bing SEO, E-commerce SEO</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-orange-400" />
-                          <span className="text-white/80 font-['Montserrat']">Google ADS, Meta ADS, Amazon ADS</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="w-4 h-4 text-orange-400" />
-                          <span className="text-white/80 font-['Montserrat']">Création contenu + Partenariat La Poche Bleue</span>
-                        </div>
+                        {t('hubCentral.categories.services.features').map((feature: string, index: number) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <CheckCircle className="w-4 h-4 text-orange-400" />
+                            <span className="text-white/80 font-['Montserrat']">{feature}</span>
+                          </div>
+                        ))}
                       </div>
                       <Link to="/services">
                         <Button className="mt-6 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-yellow-500 hover:to-orange-500 text-white">
-                          Voir tous nos Services <ArrowRight className="w-4 h-4 ml-2" />
+                          {t('hubCentral.categories.services.button')} <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                       </Link>
                     </CardContent>
@@ -333,10 +299,10 @@ const HubCentral = () => {
                 className="text-center mb-12"
               >
                 <h2 className="text-4xl font-bold text-white mb-4 font-['Montserrat']">
-                  Questions fréquentes sur le <span className="text-gradient">HUB Iluma™</span>
+                  {t('hubCentral.faqSection.title')}
                 </h2>
                 <p className="text-white/70 font-['Montserrat']">
-                  Tout ce que vous devez savoir sur notre plateforme centralisée
+                  {t('hubCentral.faqSection.description')}
                 </p>
               </motion.div>
               <FAQSection />

@@ -29,112 +29,115 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEOEngine } from '@/utils/seoEngine';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Modules = () => {
+  const { t } = useTranslations();
+  
   const seoData = SEOEngine.generatePageSEO('module', { 
-    moduleName: 'Modules Iluma™', 
+    moduleName: t('modules.hero.title'), 
     benefit: 'transformer votre marketing avec notre écosystème IA complet' 
   });
 
   const modules = [
     {
       id: 'adluma',
-      name: 'ADLUMA™',
-      title: 'Simulateur IA de Visibilité',
-      description: 'Analysez et simulez votre visibilité digitale avec notre IA propriétaire',
+      name: t('modules.adluma.name'),
+      title: t('modules.adluma.title'),
+      description: t('modules.adluma.description'),
       icon: Calculator,
       color: 'from-cyan-400 to-blue-500',
       path: '/adluma',
-      status: 'Actif',
-      features: ['Simulation en temps réel', 'Analyse concurrentielle', 'Projections ROI']
+      status: t('modules.status.active'),
+      features: [t('modules.adluma.features.simulation'), t('modules.adluma.features.analysis'), t('modules.adluma.features.roi')]
     },
     {
       id: 'ila',
-      name: 'ILA™',
-      title: 'Indice Local d\'Attraction',
-      description: 'Mesurez votre pouvoir d\'attraction local avec notre scoring intelligent',
+      name: t('modules.ila.name'),
+      title: t('modules.ila.title'),
+      description: t('modules.ila.description'),
       icon: Target,
       color: 'from-purple-500 to-pink-500',
       path: '/ila',
-      status: 'Actif',
-      features: ['Score en temps réel', 'Benchmarking local', 'Recommandations IA']
+      status: t('modules.status.active'),
+      features: [t('modules.ila.features.score'), t('modules.ila.features.benchmark'), t('modules.ila.features.recommendations')]
     },
     {
       id: 'landing',
-      name: 'Landing Pages',
-      title: 'Pages de Conversion Intelligentes',
-      description: 'Créez des landing pages optimisées avec notre système IA',
+      name: t('modules.landing.name'),
+      title: t('modules.landing.title'),
+      description: t('modules.landing.description'),
       icon: Rocket,
       color: 'from-yellow-500 to-orange-500',
       path: '/landing-page-intelligente',
-      status: 'Actif',
-      features: ['Templates IA', 'A/B Testing', 'Conversion optimisée']
+      status: t('modules.status.active'),
+      features: [t('modules.landing.features.templates'), t('modules.landing.features.testing'), t('modules.landing.features.optimization')]
     },
     {
       id: 'fidelisation',
-      name: 'Fidélisation',
-      title: 'Pages de Fidélisation Diamant',
-      description: 'Retenez et engagez vos clients avec des parcours personnalisés',
+      name: t('modules.fidelisation.name'),
+      title: t('modules.fidelisation.title'),
+      description: t('modules.fidelisation.description'),
       icon: Heart,
       color: 'from-pink-500 to-red-500',
       path: '/page-fidelisation-intelligente',
-      status: 'Actif',
-      features: ['Parcours personnalisés', 'Gamification', 'Récompenses IA']
+      status: t('modules.status.active'),
+      features: [t('modules.fidelisation.features.personalized'), t('modules.fidelisation.features.gamification'), t('modules.fidelisation.features.rewards')]
     },
     {
       id: 'ilumatch',
-      name: 'ILUMATCH™',
-      title: 'Réseau d\'Inter-visibilité',
-      description: 'Connectez-vous à notre réseau de partenaires stratégiques',
+      name: t('modules.ilumatch.name'),
+      title: t('modules.ilumatch.title'),
+      description: t('modules.ilumatch.description'),
       icon: Users,
       color: 'from-green-500 to-teal-500',
       path: '/ilumatch',
-      status: 'Actif',
-      features: ['Matching intelligent', 'Réseau qualifié', 'Croissance partagée']
+      status: t('modules.status.active'),
+      features: [t('modules.ilumatch.features.matching'), t('modules.ilumatch.features.network'), t('modules.ilumatch.features.growth')]
     },
     {
       id: 'blogia',
-      name: 'BlogIA™',
-      title: 'Blog Intelligent SEO',
-      description: 'Générez du contenu SEO optimisé avec notre IA de rédaction',
+      name: t('modules.blogia.name'),
+      title: t('modules.blogia.title'),
+      description: t('modules.blogia.description'),
       icon: PenTool,
       color: 'from-indigo-500 to-purple-500',
       path: '/blogia',
-      status: 'Actif',
-      features: ['Contenu IA', 'SEO optimisé', 'Publication automatique']
+      status: t('modules.status.active'),
+      features: [t('modules.blogia.features.content'), t('modules.blogia.features.seo'), t('modules.blogia.features.publication')]
     },
     {
       id: 'lilo',
-      name: 'LILO™',
-      title: 'Assistant IA Galactique',
-      description: 'Votre assistant IA personnel pour tous vos projets Iluma',
+      name: t('modules.lilo.name'),
+      title: t('modules.lilo.title'),
+      description: t('modules.lilo.description'),
       icon: MessageSquare,
       color: 'from-violet-500 to-purple-600',
       path: '/lilo',
-      status: 'Actif',
-      features: ['Chat intelligent', 'Support 24/7', 'Apprentissage continu']
+      status: t('modules.status.active'),
+      features: [t('modules.lilo.features.chat'), t('modules.lilo.features.support'), t('modules.lilo.features.learning')]
     },
     {
       id: 'crm',
-      name: 'CRM Iluma',
-      title: 'Gestion Client Avancée',
-      description: 'Gérez vos clients et prospects avec notre CRM intelligent',
+      name: t('modules.crm.name'),
+      title: t('modules.crm.title'),
+      description: t('modules.crm.description'),
       icon: BarChart3,
       color: 'from-blue-500 to-cyan-500',
       path: '/crm-iluma',
-      status: 'Actif',
-      features: ['Suivi intelligent', 'Automatisation', 'Analytics avancés']
+      status: t('modules.status.active'),
+      features: [t('modules.crm.features.tracking'), t('modules.crm.features.automation'), t('modules.crm.features.analytics')]
     },
     {
       id: 'hub',
-      name: 'HUB™',
-      title: 'Centre de Contrôle',
-      description: 'Centralisez tous vos outils et projets Iluma en un seul endroit',
+      name: t('modules.hub.name'),
+      title: t('modules.hub.title'),
+      description: t('modules.hub.description'),
       icon: Globe,
       color: 'from-emerald-500 to-green-500',
       path: '/hub',
-      status: 'Actif',
-      features: ['Vue d\'ensemble', 'Contrôle centralisé', 'Tableaux de bord']
+      status: t('modules.status.active'),
+      features: [t('modules.hub.features.overview'), t('modules.hub.features.control'), t('modules.hub.features.dashboard')]
     }
   ];
 
@@ -168,41 +171,41 @@ const Modules = () => {
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   <p className="text-[#FFD56B] font-['Montserrat'] text-sm">
-                    🤖 <strong>Lilo, spécialiste IA & SGE</strong>, vous guide dans le choix de vos modules
+                    {t('modules.lilo.intro')}
                   </p>
                 </motion.div>
               </motion.div>
 
               <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Montserrat']">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Modules Iluma™
+                  {t('modules.hero.title')}
                 </span>
               </h1>
               
               {/* Structure FAC */}
               <div className="max-w-4xl mx-auto mb-8 space-y-4">
                 <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-red-400 mb-2">📊 FAIT</p>
+                  <p className="text-sm font-semibold text-red-400 mb-2">{t('modules.fact.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Les entreprises locales manquent d'outils personnalisés IA pour maximiser leur potentiel.
+                    {t('modules.fact.description')}
                   </p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-blue-400 mb-2">⚡ ACTION</p>
+                  <p className="text-sm font-semibold text-blue-400 mb-2">{t('modules.action.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Voici nos modules prêts à activer selon vos besoins spécifiques.
+                    {t('modules.action.description')}
                   </p>
                 </div>
                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-green-400 mb-2">🎯 CONTEXTE</p>
+                  <p className="text-sm font-semibold text-green-400 mb-2">{t('modules.context.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Ils sont conçus pour s'adapter à vos objectifs SEO, Ads, CRM et croissance.
+                    {t('modules.context.description')}
                   </p>
                 </div>
               </div>
 
               <Badge className="bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 text-[#FFD56B] text-lg px-6 py-2 border border-[#8E44FF]/30 font-['Montserrat']">
-                9 Modules Actifs • IA Propriétaire • Résultats Garantis
+                {t('modules.badge')}
               </Badge>
             </motion.div>
           </div>
@@ -265,7 +268,7 @@ const Modules = () => {
                           <Button 
                             className="w-full bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-white font-['Montserrat'] group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300"
                           >
-                            Découvrir {module.name}
+                            {t('modules.discover')} {module.name}
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
                         </Link>
@@ -288,10 +291,10 @@ const Modules = () => {
               className="bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 rounded-2xl p-12 border border-[#8E44FF]/30"
             >
               <h2 className="text-4xl font-bold text-white mb-6 font-['Montserrat']">
-                Prêt à activer votre écosystème Iluma™ ?
+                {t('modules.cta.title')}
               </h2>
               <p className="text-xl text-white/80 mb-8 font-['Montserrat']">
-                Commencez par notre diagnostic gratuit ou explorez directement nos modules.
+                {t('modules.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/adluma">
@@ -300,7 +303,7 @@ const Modules = () => {
                     className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   >
                     <Calculator className="w-5 h-5 mr-2" />
-                    Diagnostic ADLUMA™
+                    {t('modules.cta.diagnostic')}
                   </Button>
                 </Link>
                 <Link to="/hub">
@@ -310,7 +313,7 @@ const Modules = () => {
                     className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   >
                     <Globe className="w-5 h-5 mr-2" />
-                    Accéder au HUB™
+                    {t('modules.cta.hub')}
                   </Button>
                 </Link>
               </div>
@@ -329,10 +332,10 @@ const Modules = () => {
             >
               <HelpCircle className="w-12 h-12 text-iluma-gold-500 mx-auto mb-4" />
               <h2 className="text-4xl font-bold text-white mb-4 font-['Montserrat']">
-                Questions fréquentes sur les <span className="bg-gradient-to-r from-iluma-purple-500 to-iluma-gold-500 bg-clip-text text-transparent">Modules Iluma™</span>
+                {t('modules.faq.title')}
               </h2>
               <p className="text-white/70 font-['Montserrat']">
-                Tout ce que vous devez savoir sur notre écosystème IA
+                {t('modules.faq.subtitle')}
               </p>
             </motion.div>
             <FAQSection />

@@ -22,12 +22,12 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { AnimatedSection } from '@/components/animations/IlumaAnimations';
 import { katzSportCase } from '@/data/caseStudiesData';
 
 const SystemeComplet = () => {
-  const { language } = useLanguage();
+  const { language } = useTranslations();
   const [showAdminPanel, setShowAdminPanel] = useState(false);
 
   const systemModules = [

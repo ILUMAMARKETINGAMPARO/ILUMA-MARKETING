@@ -17,7 +17,7 @@ import {
   AlertTriangle,
   Lightbulb
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
 
 interface ILAIntroductionProps {
@@ -25,7 +25,7 @@ interface ILAIntroductionProps {
 }
 
 const ILAIntroduction: React.FC<ILAIntroductionProps> = ({ onNext }) => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslations();
 
   const introContent = {
     fr: {

@@ -4,6 +4,7 @@ import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/faq/FAQSection';
 import SEOManager from '@/components/seo/SEOManager';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -33,16 +34,23 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEOEngine } from '@/utils/seoEngine';
-import { products, solutions, services, categories, getAllOfferings, searchOfferings } from '@/data/ecosystem';
+import { products, tools, services, categories, getAllOfferings, searchOfferings } from '@/data/ecosystem';
 
 const PresentationOutils = () => {
+  const { t } = useTranslations();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   
-  const seoData = SEOEngine.generatePageSEO('service', { 
-    serviceName: 'Présentation des Outils Iluma™', 
-    benefit: 'découvrir tous nos services et outils IA organisés selon vos besoins' 
-  });
+  const seoData = {
+    title: t('presentationOutils.seo.title'),
+    description: t('presentationOutils.seo.description'),
+    keywords: [t('presentationOutils.seo.keywords')],
+    openGraph: {
+      title: t('presentationOutils.seo.ogTitle'),
+      description: t('presentationOutils.seo.ogDescription'),
+      type: 'website'
+    }
+  };
 
   // Solutions Iluma™ (version claire & impactante)
   const Solutions = [
@@ -94,23 +102,23 @@ const PresentationOutils = () => {
   const filteredTools = searchOfferings(searchTerm).filter(tool => {
     if (selectedCategory === 'all') return true;
     if (selectedCategory === 'products') return tool.type === 'product';
-    if (selectedCategory === 'solutions') return tool.type === 'solution';
+    if (selectedCategory === 'tools') return tool.type === 'tool';
     if (selectedCategory === 'services') return tool.type === 'service';
     return tool.category === selectedCategory;
   });
 
-  // Nouvelles catégories organisées
+  // Categories translated
   const allOfferings = getAllOfferings();
   const allCategories = [
-    { id: 'all', label: 'Tout l\'écosystème', count: allOfferings.length },
-    { id: 'products', label: '🏢 Produits', count: products.length },
-    { id: 'solutions', label: '🤖 Solutions IA', count: solutions.length },
-    { id: 'services', label: '🛠️ Services', count: services.length },
-    // Sous-catégories
-    { id: 'seo', label: 'SEO', count: allOfferings.filter(t => t.category === 'seo').length },
-    { id: 'ads', label: 'Publicité', count: allOfferings.filter(t => t.category === 'ads').length },
-    { id: 'analytics', label: 'Analytics', count: allOfferings.filter(t => t.category === 'analytics').length },
-    { id: 'partnership', label: 'Partenariats', count: allOfferings.filter(t => t.category === 'partnership').length }
+    { id: 'all', label: t('presentationOutils.filters.all'), count: allOfferings.length },
+    { id: 'products', label: t('presentationOutils.filters.products'), count: products.length },
+    { id: 'tools', label: t('presentationOutils.filters.tools'), count: tools.length },
+    { id: 'services', label: t('presentationOutils.filters.services'), count: services.length },
+    // Sub-categories
+    { id: 'seo', label: t('presentationOutils.filters.seo'), count: allOfferings.filter(t => t.category === 'seo').length },
+    { id: 'ads', label: t('presentationOutils.filters.advertising'), count: allOfferings.filter(t => t.category === 'ads').length },
+    { id: 'analytics', label: t('presentationOutils.filters.analytics'), count: allOfferings.filter(t => t.category === 'analytics').length },
+    { id: 'partnership', label: t('presentationOutils.filters.partnerships'), count: allOfferings.filter(t => t.category === 'partnership').length }
   ];
 
   return (
@@ -143,41 +151,41 @@ const PresentationOutils = () => {
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   <p className="text-[#FFD56B] font-['Montserrat'] text-sm">
-                    🤖 <strong>Lilo, spécialiste IA & SGE</strong>, vous guide à travers nos outils organisés par besoin
+                    {t('presentationOutils.lilo.intro')}
                   </p>
                 </motion.div>
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 font-['Montserrat']">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Présentation des Outils Iluma™
+                  {t('presentationOutils.hero.title')}
                 </span>
               </h1>
               
               {/* Structure FAC */}
               <div className="max-w-4xl mx-auto mb-8 space-y-6">
                 <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-red-400 mb-2">📊 FAIT</p>
+                  <p className="text-sm font-semibold text-red-400 mb-2">{t('presentationOutils.fact.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Les entreprises utilisent des outils sans stratégie globale, perdant 70% de leur potentiel.
+                    {t('presentationOutils.fact.description')}
                   </p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-blue-400 mb-2">⚡ ACTION</p>
+                  <p className="text-sm font-semibold text-blue-400 mb-2">{t('presentationOutils.action.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Voici nos services organisés par besoin, avec filtres IA et recommandations personnalisées.
+                    {t('presentationOutils.action.description')}
                   </p>
                 </div>
                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-green-400 mb-2">🎯 CONTEXTE</p>
+                  <p className="text-sm font-semibold text-green-400 mb-2">{t('presentationOutils.context.title')}</p>
                   <p className="text-white/90 font-['Montserrat'] text-lg">
-                    Tous nos outils s'intègrent dans une logique IA + performance + visibilité collective.
+                    {t('presentationOutils.context.description')}
                   </p>
                 </div>
               </div>
 
               <Badge className="bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 text-[#FFD56B] text-lg px-6 py-2 border border-[#8E44FF]/30 font-['Montserrat']">
-                {products.length} Produits • {solutions.length} Solutions IA • {services.length} Services • Navigation Libre
+                {t('presentationOutils.badge')}
               </Badge>
             </motion.div>
           </div>
@@ -192,7 +200,7 @@ const PresentationOutils = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
                 <Input
                   type="text"
-                  placeholder="Rechercher un outil ou service..."
+                  placeholder={t('presentationOutils.search.placeholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="bg-black/40 border-white/20 text-white pl-10 py-3 font-['Montserrat'] focus:border-[#8E44FF]"
@@ -248,17 +256,17 @@ const PresentationOutils = () => {
                               variant="outline"
                                className={`border-green-500/50 text-green-400 bg-green-500/10 font-['Montserrat'] mb-1`}
                             >
-                              {tool.status}
+                              {t(`presentationOutils.status.${tool.status === 'Actif' ? 'active' : 'available'}`)}
                             </Badge>
                             <Badge 
                               className={`text-xs font-['Montserrat'] ${
                                 tool.type === 'product' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' :
-                                tool.type === 'solution' ? 'bg-[#8E44FF]/20 text-[#8E44FF] border-[#8E44FF]/30' : 
+                                tool.type === 'tool' ? 'bg-[#8E44FF]/20 text-[#8E44FF] border-[#8E44FF]/30' : 
                                 'bg-[#FFD56B]/20 text-[#FFD56B] border-[#FFD56B]/30'
                               }`}
                             >
-                              {tool.type === 'product' ? 'Produit' : 
-                               tool.type === 'solution' ? 'Solution IA' : 'Service'}
+                              {tool.type === 'product' ? t('presentationOutils.type.product') : 
+                               tool.type === 'tool' ? t('presentationOutils.type.tool') : t('presentationOutils.type.service')}
                             </Badge>
                           </div>
                         </div>
@@ -287,8 +295,8 @@ const PresentationOutils = () => {
                             className="w-full bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-white font-['Montserrat'] group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300"
                             size="sm"
                           >
-                            {tool.type === 'product' ? 'Commander' : 
-                             tool.type === 'solution' ? 'Utiliser' : 'Découvrir'}
+                            {tool.type === 'product' ? t('presentationOutils.cta.order') : 
+                             tool.type === 'tool' ? t('presentationOutils.cta.use') : t('presentationOutils.cta.discover')}
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
                         </Link>
@@ -303,10 +311,10 @@ const PresentationOutils = () => {
               <div className="text-center py-16">
                 <Eye className="w-16 h-16 text-white/30 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white/70 mb-2 font-['Montserrat']">
-                  Aucun outil trouvé
+                  Aucun résultat trouvé
                 </h3>
                 <p className="text-white/50 font-['Montserrat']">
-                  Essayez de modifier vos critères de recherche
+                  Essayez de modifier vos filtres ou votre recherche
                 </p>
               </div>
             )}
@@ -324,10 +332,10 @@ const PresentationOutils = () => {
             >
               <Sparkles className="w-12 h-12 text-[#FFD56B] mx-auto mb-4" />
               <h2 className="text-4xl font-bold text-white mb-6 font-['Montserrat']">
-                Prêt à choisir vos outils ?
+                {t('presentationOutils.cta.title')}
               </h2>
               <p className="text-xl text-white/80 mb-8 font-['Montserrat']">
-                Commencez par notre diagnostic gratuit ou explorez notre méthode complète.
+                {t('presentationOutils.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/adluma">
@@ -336,7 +344,7 @@ const PresentationOutils = () => {
                     className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   >
                     <Calculator className="w-5 h-5 mr-2" />
-                    Diagnostic Gratuit
+                    {t('presentationOutils.cta.diagnostic')}
                   </Button>
                 </Link>
                 <Link to="/methode-iluma">
@@ -346,7 +354,7 @@ const PresentationOutils = () => {
                     className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   >
                     <Brain className="w-5 h-5 mr-2" />
-                    Voir la Méthode
+                    {t('presentationOutils.cta.method')}
                   </Button>
                 </Link>
               </div>
@@ -365,10 +373,10 @@ const PresentationOutils = () => {
             >
               <HelpCircle className="w-12 h-12 text-[#FFD56B] mx-auto mb-4" />
               <h2 className="text-4xl font-bold text-white mb-4 font-['Montserrat']">
-                Questions fréquentes sur nos <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Outils</span>
+                {t('presentationOutils.faq.title')}
               </h2>
               <p className="text-white/70 font-['Montserrat']">
-                Tout ce que vous devez savoir sur notre écosystème complet
+                {t('presentationOutils.faq.subtitle')}
               </p>
             </motion.div>
             <FAQSection />

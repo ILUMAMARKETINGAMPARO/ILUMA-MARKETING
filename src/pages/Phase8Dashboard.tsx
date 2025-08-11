@@ -10,10 +10,10 @@ import PredictiveModeling from '@/components/phase8/PredictiveModeling';
 import MLInsightsDashboard from '@/components/phase8/MLInsightsDashboard';
 import AdvancedReporting from '@/components/phase8/AdvancedReporting';
 import { ILAProvider } from '@/contexts/ILAContext';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Phase8Dashboard = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   return (
     <ILAProvider>

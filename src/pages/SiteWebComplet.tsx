@@ -55,42 +55,25 @@ const SiteWebComplet: React.FC = () => {
     {
       name: t('siteWebComplet.packages.starter.name'),
       description: t('siteWebComplet.packages.starter.description'),
-      features: [
-        'Site web responsive (5 pages)',
-        'Design personnalisé',
-        'SEO de base intégré',
-        'Formulaires de contact',
-        'Support 3 mois inclus'
-      ],
+      features: Array.isArray(t('siteWebComplet.packages.features.starter')) 
+        ? t('siteWebComplet.packages.features.starter') as string[]
+        : [],
       popular: false
     },
     {
       name: t('siteWebComplet.packages.pro.name'),
       description: t('siteWebComplet.packages.pro.description'),
-      features: [
-        'Site web multi-pages (jusqu\'à 15)',
-        'IA comportementale intégrée',
-        'CRM intelligent inclus',
-        'SEO avancé + Analytics',
-        'Blog et gestion de contenu',
-        'E-commerce de base',
-        'Support prioritaire 6 mois'
-      ],
+      features: Array.isArray(t('siteWebComplet.packages.features.pro'))
+        ? t('siteWebComplet.packages.features.pro') as string[]
+        : [],
       popular: true
     },
     {
       name: t('siteWebComplet.packages.enterprise.name'),
       description: t('siteWebComplet.packages.enterprise.description'),
-      features: [
-        'Site web illimité (pages)',
-        'IA personnalisée avancée',
-        'CRM enterprise complet',
-        'E-commerce avancé',
-        'API et intégrations custom',
-        'Dashboard analytics pro',
-        'Formation équipe incluse',
-        'Support dédié 24/7'
-      ],
+      features: Array.isArray(t('siteWebComplet.packages.features.enterprise'))
+        ? t('siteWebComplet.packages.features.enterprise') as string[]
+        : [],
       popular: false
     }
   ];
@@ -125,8 +108,8 @@ const SiteWebComplet: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Site Web Complet IA | Solution Digitale Complète - Iluma™</title>
-        <meta name="description" content="Créez votre site web complet avec l'intelligence artificielle d'Iluma™. Design moderne, SEO optimisé, CRM intégré. Solution clé en main pour entreprises." />
+        <title>{t('siteWebComplet.hero.title')} | Iluma™</title>
+        <meta name="description" content={t('siteWebComplet.hero.subtitle')} />
         <meta name="keywords" content="site web complet, création site internet, design web moderne, SEO optimisé, CRM intégré, solution digitale, Iluma" />
         <link rel="canonical" href="https://ilumamarketing.com/site-web-complet" />
       </Helmet>

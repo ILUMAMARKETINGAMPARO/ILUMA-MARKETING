@@ -16,7 +16,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { CaseStudy } from '@/data/caseStudiesData';
 
 interface CaseStudyDetailCardProps {
@@ -28,7 +28,7 @@ const CaseStudyDetailCard: React.FC<CaseStudyDetailCardProps> = ({
   caseStudy, 
   isExpanded = false 
 }) => {
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
   const [activeTab, setActiveTab] = useState('overview');
 
   return (

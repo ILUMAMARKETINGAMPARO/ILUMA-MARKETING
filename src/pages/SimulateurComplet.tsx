@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Calculator, Brain, TrendingUp, Zap, Play, RotateCcw, Download, ArrowRight, Sparkles, Target, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -15,7 +15,7 @@ import { useADLUMACalculator, ADLUMAInputs } from '@/hooks/useADLUMACalculator';
 const SimulateurComplet = () => {
   const { isCalculating, results, calculateResults } = useADLUMACalculator();
   const [activeTab, setActiveTab] = useState<'ads' | 'seo' | 'landing'>('ads');
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const [formData, setFormData] = useState<ADLUMAInputs>({
     budget: 1500,
     sector: 'restaurant',

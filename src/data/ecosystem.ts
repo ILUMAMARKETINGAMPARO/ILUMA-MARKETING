@@ -36,7 +36,7 @@ export const products = [
     path: '/landing-page-intelligente',
     category: 'web',
     status: 'Disponible',
-    pricing: 'Sur devis',
+    pricing: 'Contactez-nous',
     features: ['Design responsive', 'SEO optimisé', 'Integration IA', 'Maintenance incluse']
   },
   {
@@ -49,7 +49,7 @@ export const products = [
     path: '/landing-page-intelligente',
     category: 'conversion',
     status: 'Disponible',
-    pricing: 'À partir de 1,497$',
+    pricing: 'Contactez-nous',
     features: ['Conversion optimisée', 'A/B testing', 'Analytics intégrées', 'Mobile-first']
   },
   {
@@ -62,13 +62,13 @@ export const products = [
     path: '/page-fidelisation-intelligente',
     category: 'retention',
     status: 'Disponible',
-    pricing: 'À partir de 997$',
+    pricing: 'Contactez-nous',
     features: ['Personnalisation IA', 'Programmes fidélité', 'Offres exclusives', 'Dashboard client']
   }
 ];
 
-// 🤖 SOLUTIONS - Outils IA intelligents
-export const solutions = [
+// 🛠️ OUTILS - Outils IA intelligents
+export const tools = [
   {
     id: 'ilumatch',
     name: 'ILUMATCH™',
@@ -79,7 +79,7 @@ export const solutions = [
     path: '/ilumatch',
     category: 'partnership',
     status: 'Actif',
-    pricing: 'Gratuit puis sur mesure',
+    pricing: 'Contactez-nous',
     features: ['Score ILA™', 'Matching IA', 'Partenariats équitables', 'Suivi collaborations']
   },
   {
@@ -92,7 +92,7 @@ export const solutions = [
     path: '/adluma',
     category: 'simulation',
     status: 'Actif',
-    pricing: 'Gratuit',
+    pricing: 'Contactez-nous',
     features: ['Simulation précise', 'ROI prédictif', 'Ciblage local', 'Multi-plateformes']
   },
   {
@@ -105,7 +105,7 @@ export const solutions = [
     path: '/blogia',
     category: 'content',
     status: 'Actif',
-    pricing: 'À partir de 497$/mois',
+    pricing: 'Contactez-nous',
     features: ['Rédaction IA', 'SEO automatique', 'Planning éditorial', 'Multi-langues']
   },
   {
@@ -118,7 +118,7 @@ export const solutions = [
     path: '/rivalviews',
     category: 'analytics',
     status: 'Actif',
-    pricing: 'Gratuit puis premium',
+    pricing: 'Contactez-nous',
     features: ['Carte interactive', 'Analyse concurrence', 'Scores visibilité', 'Insights stratégiques']
   },
   {
@@ -131,7 +131,7 @@ export const solutions = [
     path: '/ila',
     category: 'analytics',
     status: 'Actif',
-    pricing: 'Gratuit',
+    pricing: 'Contactez-nous',
     features: ['Score 0-100', 'Analyse multifacteurs', 'Recommandations IA', 'Suivi évolution']
   }
 ];
@@ -149,7 +149,7 @@ export const services = [
     path: '/services/seo-ia',
     category: 'seo',
     status: 'Disponible',
-    pricing: 'À partir de 1,997$/mois',
+    pricing: 'Contactez-nous',
     features: ['Audit complet', 'Optimisation technique', 'Contenu SEO', 'Suivi positions']
   },
   {
@@ -162,7 +162,7 @@ export const services = [
     path: '/services/bing-seo',
     category: 'seo',
     status: 'Nouveau',
-    pricing: 'À partir de 997$/mois',
+    pricing: 'Contactez-nous',
     features: ['Optimisation Bing', 'Trafic additionnel', 'Moins de concurrence', 'ROI élevé']
   },
   {
@@ -175,7 +175,7 @@ export const services = [
     path: '/services/ecommerce',
     category: 'seo',
     status: 'Disponible',
-    pricing: 'À partir de 2,497$/mois',
+    pricing: 'Contactez-nous',
     features: ['SEO produits', 'Rich snippets', 'Structure technique', 'Conversion optimisée']
   },
   {
@@ -188,7 +188,7 @@ export const services = [
     path: '/services/visibilite-locale',
     category: 'geo',
     status: 'Disponible',
-    pricing: 'À partir de 1,497$/mois',
+    pricing: 'Contactez-nous',
     features: ['Google My Business', 'Citations locales', 'Avis clients', 'Pack local']
   },
   
@@ -203,7 +203,7 @@ export const services = [
     path: '/services/google-ads',
     category: 'ads',
     status: 'Disponible',
-    pricing: 'Gestion à partir de 497$/mois',
+    pricing: 'Contactez-nous',
     features: ['Ciblage précis', 'Optimisation IA', 'ROI garanti', 'Rapports détaillés']
   },
   {
@@ -216,7 +216,7 @@ export const services = [
     path: '/services/instagram-ads',
     category: 'ads',
     status: 'Disponible',
-    pricing: 'À partir de 797$/mois',
+    pricing: 'Contactez-nous',
     features: ['Contenu créatif', 'Stories & Reels', 'Ciblage avancé', 'Engagement élevé']
   },
   {
@@ -229,7 +229,7 @@ export const services = [
     path: '/services/meta-ads',
     category: 'ads',
     status: 'Disponible',
-    pricing: 'À partir de 997$/mois',
+    pricing: 'Contactez-nous',
     features: ['Multi-plateformes', 'Lookalike audiences', 'Retargeting', 'Attribution avancée']
   },
   {
@@ -242,7 +242,7 @@ export const services = [
     path: '/services/tinder-ads',
     category: 'ads',
     status: 'Nouveau',
-    pricing: 'À partir de 1,297$/mois',
+    pricing: 'Contactez-nous',
     features: ['Audience jeune', 'Engagement élevé', 'Formats natifs', 'Branding lifestyle']
   },
   {
@@ -255,7 +255,7 @@ export const services = [
     path: '/services/spotify-ads',
     category: 'ads',
     status: 'Nouveau',
-    pricing: 'À partir de 1,197$/mois',
+    pricing: 'Contactez-nous',
     features: ['Audio ciblé', 'Podcasts populaires', 'Engagement auditif', 'Mémorisation élevée']
   },
   {
@@ -268,7 +268,7 @@ export const services = [
     path: '/services/amazon-ads',
     category: 'ads',
     status: 'Nouveau',
-    pricing: 'À partir de 1,497$/mois',
+    pricing: 'Contactez-nous',
     features: ['Sponsored Products', 'Brand Store', 'DSP Amazon', 'Conversion directe']
   },
   
@@ -283,7 +283,7 @@ export const services = [
     path: '/services/blogs-intersites',
     category: 'content',
     status: 'Disponible',
-    pricing: 'À partir de 1,997$/mois',
+    pricing: 'Contactez-nous',
     features: ['Stratégie éditoriale', 'Contenu multiformat', 'SEO intégré', 'Distribution optimisée']
   },
   {
@@ -296,7 +296,7 @@ export const services = [
     path: '/services/partenariat-poche-bleue',
     category: 'partnership',
     status: 'Exclusif',
-    pricing: 'Sur projet',
+    pricing: 'Contactez-nous',
     features: ['Visibilité média', 'Audience qualifiée', 'Content collab', 'Impact amplifié']
   }
 ];
@@ -309,12 +309,12 @@ export const categories = {
     { id: 'conversion', label: 'Conversion', count: products.filter(p => p.category === 'conversion').length },
     { id: 'retention', label: 'Fidélisation', count: products.filter(p => p.category === 'retention').length }
   ],
-  solutions: [
-    { id: 'all', label: 'Toutes les solutions', count: solutions.length },
-    { id: 'partnership', label: 'Partenariats', count: solutions.filter(s => s.category === 'partnership').length },
-    { id: 'simulation', label: 'Simulation', count: solutions.filter(s => s.category === 'simulation').length },
-    { id: 'content', label: 'Contenu IA', count: solutions.filter(s => s.category === 'content').length },
-    { id: 'analytics', label: 'Analytics', count: solutions.filter(s => s.category === 'analytics').length }
+  tools: [
+    { id: 'all', label: 'Tous les outils', count: tools.length },
+    { id: 'partnership', label: 'Partenariats', count: tools.filter(s => s.category === 'partnership').length },
+    { id: 'simulation', label: 'Simulation', count: tools.filter(s => s.category === 'simulation').length },
+    { id: 'content', label: 'Contenu IA', count: tools.filter(s => s.category === 'content').length },
+    { id: 'analytics', label: 'Analytics', count: tools.filter(s => s.category === 'analytics').length }
   ],
   services: [
     { id: 'all', label: 'Tous les services', count: services.length },
@@ -329,20 +329,20 @@ export const categories = {
 // Stats globaux
 export const ecosystemStats = {
   products: { count: products.length, label: 'Produits Finis' },
-  solutions: { count: solutions.length, label: 'Solutions IA' },
+  tools: { count: tools.length, label: 'Outils IA' },
   services: { count: services.length, label: 'Services Sur-Mesure' },
-  total: { count: products.length + solutions.length + services.length, label: 'Total Offres' }
+  total: { count: products.length + tools.length + services.length, label: 'Total Offres' }
 };
 
 // Fonction utilitaire pour obtenir tous les éléments
 export const getAllOfferings = () => [
   ...products.map(p => ({ ...p, type: 'product' as const })),
-  ...solutions.map(s => ({ ...s, type: 'solution' as const })),
+  ...tools.map(t => ({ ...t, type: 'tool' as const })),
   ...services.map(s => ({ ...s, type: 'service' as const }))
 ];
 
 // Fonction de recherche unifiée
-export const searchOfferings = (query: string, type?: 'product' | 'solution' | 'service') => {
+export const searchOfferings = (query: string, type?: 'product' | 'tool' | 'service') => {
   const allOfferings = getAllOfferings();
   const filtered = type ? allOfferings.filter(item => item.type === type) : allOfferings;
   
@@ -356,4 +356,7 @@ export const searchOfferings = (query: string, type?: 'product' | 'solution' | '
   });
 };
 
-export default { products, solutions, services, categories, ecosystemStats };
+export default { products, tools, services, categories, ecosystemStats };
+
+// Pour rétrocompatibilité
+export const solutions = tools;

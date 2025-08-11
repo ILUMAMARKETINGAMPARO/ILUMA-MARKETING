@@ -11,10 +11,10 @@ import NotificationCenter from '@/components/phase6/NotificationCenter';
 import APIConnectors from '@/components/phase6/APIConnectors';
 import { ILAProvider } from '@/contexts/ILAContext';
 import { InterconnectionProvider } from '@/contexts/InterconnectionContext';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Phase6Dashboard = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   return (
     <ILAProvider>

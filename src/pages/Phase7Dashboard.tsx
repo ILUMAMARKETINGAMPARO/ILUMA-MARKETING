@@ -12,10 +12,10 @@ import CommunicationHub from '@/components/phase7/CommunicationHub';
 import SecurityMonitor from '@/components/phase7/SecurityMonitor';
 import PerformanceOptimizer from '@/components/phase7/PerformanceOptimizer';
 import { ILAProvider } from '@/contexts/ILAContext';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Phase7Dashboard = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   return (
     <ILAProvider>

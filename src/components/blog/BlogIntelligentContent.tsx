@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { 
   Search, 
   User, 
@@ -25,7 +25,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const BlogIntelligentContent: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProfile, setSelectedProfile] = useState('');

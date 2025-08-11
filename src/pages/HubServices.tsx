@@ -44,9 +44,9 @@ const HubServices = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const seoData = {
-    title: "HUB Services Iluma™ | Écosystème Complet Solutions IA Marketing",
-    description: "Découvrez notre écosystème complet de solutions IA marketing : 12+ produits, solutions et services intégrés. ADLUMA™, ILA™, CRM Intelligent, SEO IA, Landing Pages et plus.",
-    keywords: "hub services, écosystème marketing, solutions IA, ADLUMA, ILA, CRM intelligent, SEO IA, landing pages, visibilité locale, e-commerce, Iluma",
+    title: "HUB Services Iluma™ | Écosystème Complet Outils IA Marketing",
+    description: "Découvrez notre écosystème complet d'outils IA marketing : 12+ produits, outils et services intégrés. ADLUMA™, ILA™, CRM Intelligent, SEO IA, Landing Pages et plus.",
+    keywords: "hub services, écosystème marketing, outils IA, ADLUMA, ILA, CRM intelligent, SEO IA, landing pages, visibilité locale, e-commerce, Iluma",
     image: "https://ilumamarketing.com/images/hub-services-ecosystem.jpg",
     canonical: "https://ilumamarketing.com/services"
   };
@@ -116,7 +116,7 @@ const HubServices = () => {
 
   const stats = [
     { value: `${ecosystemStats.products.count}`, label: t('hubServices.stats.products'), color: "text-blue-400" },
-    { value: `${ecosystemStats.solutions.count}`, label: t('hubServices.stats.solutions'), color: "text-purple-400" },
+    { value: `${ecosystemStats.tools.count}`, label: t('hubServices.stats.tools'), color: "text-purple-400" },
     { value: `${ecosystemStats.services.count}`, label: t('hubServices.stats.services'), color: "text-orange-400" },
     { value: "24/7", label: t('hubServices.stats.support'), color: "text-green-400" }
   ];
@@ -186,14 +186,14 @@ const HubServices = () => {
                 <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
                   Plus de <strong className="text-violet-400">12 solutions intégrées</strong> pour transformer votre présence digitale
                   <br />
-                  <span className="text-white/70">Produits • Solutions IA • Services Premium</span>
+                  <span className="text-white/70">Produits • Outils IA • Services Premium</span>
                 </p>
                 
                 {/* Navigation par sections */}
                 <div className="flex justify-center gap-4 mb-8">
                   {[
                     { key: 'products', label: t('hubServices.products'), count: ecosystemStats.products.count, color: 'from-blue-500 to-cyan-500' },
-                    { key: 'solutions', label: t('hubServices.solutions'), count: ecosystemStats.solutions.count, color: 'from-purple-500 to-pink-500' },
+                    { key: 'tools', label: t('hubServices.tools'), count: ecosystemStats.tools.count, color: 'from-purple-500 to-pink-500' },
                     { key: 'services', label: t('hubServices.services'), count: ecosystemStats.services.count, color: 'from-orange-500 to-yellow-500' }
                   ].map((section) => (
                     <Button
@@ -634,7 +634,7 @@ const HubServices = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "HUB Services Iluma™",
-            "description": "Écosystème complet de solutions IA marketing. Plus de 12 modules intégrés pour transformer votre entreprise.",
+            "description": "Écosystème complet d'outils IA marketing. Plus de 12 modules intégrés pour transformer votre entreprise.",
             "url": "https://ilumamarketing.com/services",
             "provider": {
               "@type": "Organization",

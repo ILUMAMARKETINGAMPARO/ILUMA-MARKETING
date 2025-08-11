@@ -14,11 +14,15 @@ import {
   Search,
   Eye,
   Edit,
-  Trash2
+  Trash2,
+  Star,
+  MessageSquare
 } from 'lucide-react';
 import { useCRM } from '@/contexts/CRMContext';
 import SectionWrapper from '../foundation/SectionWrapper';
 import { Button } from '@/components/ui/button';
+import ClientDetailView from './ClientDetailView';
+import { ClientFiche } from '@/types/crm';
 
 interface ClientsSectionProps {
   selectedClients: string[];
@@ -35,9 +39,10 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
   onEdit,
   onRemove
 }) => {
-  const { clients, calculateILA, findMatches, isLoading } = useCRM();
+  const { clients, calculateILA, findMatches, isLoading, updateClient } = useCRM();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [selectedClient, setSelectedClient] = useState<ClientFiche | null>(null);
 
   const filteredClients = clients.filter(client => {
     const matchesSearch = (client.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
@@ -60,6 +65,22 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
     if (score >= 60) return 'text-yellow-400';
     return 'text-red-400';
   };
+
+  const handleClientUpdate = (updates: Partial<ClientFiche>) => {
+    if (selectedClient) {
+      setSelectedClient({ ...selectedClient, ...updates });
+    }
+  };
+
+  if (selectedClient) {
+    return (
+      <ClientDetailView
+        client={selectedClient}
+        onBack={() => setSelectedClient(null)}
+        onUpdate={handleClientUpdate}
+      />
+    );
+  }
 
   return (
     <motion.div
@@ -116,7 +137,7 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
         <div className="space-y-4">
           {filteredClients.map((client) => (
             <motion.div key={client.id} layout>
-              <Card className={`glass-effect border-white/20 p-6 hover:border-[#8E44FF]/40 transition-colors ${
+              <Card className={`glass-effect border-white/20 p-6 hover:border-[#8E44FF]/40 transition-colors cursor-pointer ${
                 selectedClients.includes(client.id) ? 'ring-2 ring-[#8E44FF]/50 bg-[#8E44FF]/10' : ''
               }`}>
                 <div className="flex items-center justify-between">
@@ -130,6 +151,7 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                           setSelectedClients(selectedClients.filter(id => id !== client.id));
                         }
                       }}
+                      onClick={(e) => e.stopPropagation()}
                     />
                     <div className="w-16 h-16 bg-gradient-to-br from-[#8E44FF] to-[#FFD56B] rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-xl font-['Montserrat']">
@@ -137,7 +159,7 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                       </span>
                     </div>
                     
-                    <div className="flex-1">
+                    <div className="flex-1" onClick={() => setSelectedClient(client)}>
                       <div className="flex items-center gap-3 mb-1">
                         <h3 className="text-xl font-bold text-white font-['Montserrat']">
                           {client.name || 'Nom non défini'}
@@ -147,7 +169,7 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                         </Badge>
                       </div>
                       
-                      <div className="flex items-center gap-4 text-white/60 text-sm font-['Montserrat']">
+                      <div className="flex items-center gap-4 text-white/60 text-sm font-['Montserrat'] mb-2">
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
                           <span>{(client.address || '').split(',')[0] || 'Adresse non définie'}</span>
@@ -156,6 +178,32 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                         <span>Secteur: {client.sector || 'Non défini'}</span>
                         <span>•</span>
                         <span>CA: {(client.revenue || 0).toLocaleString()}€</span>
+                      </div>
+
+                      {/* Données Excel */}
+                      <div className="flex items-center gap-4 text-xs text-white/50">
+                        {client.excelData?.googleRating && (
+                          <div className="flex items-center gap-1">
+                            <Star className="w-3 h-3 text-yellow-400" />
+                            <span>{client.excelData.googleRating} ⭐</span>
+                          </div>
+                        )}
+                        {client.excelData?.reviewCount && (
+                          <div className="flex items-center gap-1">
+                            <MessageSquare className="w-3 h-3 text-blue-400" />
+                            <span>{client.excelData.reviewCount} avis</span>
+                          </div>
+                        )}
+                        {client.excelData?.followersInstagram > 0 && (
+                          <span className="text-pink-400">
+                            {client.excelData.followersInstagram.toLocaleString()} IG
+                          </span>
+                        )}
+                        {client.excelData?.followersFacebook > 0 && (
+                          <span className="text-blue-500">
+                            {client.excelData.followersFacebook.toLocaleString()} FB
+                          </span>
+                        )}
                       </div>
 
                       <div className="flex items-center gap-4 mt-2">
@@ -168,11 +216,16 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                         </div>
                         
                         <div className="flex gap-1">
-                          {(client.services || []).map((service) => (
+                          {(client.services || []).slice(0, 2).map((service) => (
                             <Badge key={service} variant="outline" className="border-white/20 text-white/70 text-xs">
                               {service}
                             </Badge>
                           ))}
+                          {(client.services || []).length > 2 && (
+                            <Badge variant="outline" className="border-white/20 text-white/70 text-xs">
+                              +{(client.services || []).length - 2}
+                            </Badge>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -181,22 +234,40 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({
                   <div className="flex items-center gap-2">
                     <Button
                       size="sm"
-                      onClick={() => calculateILA(client.id)}
-                      disabled={isLoading}
-                      className="bg-gradient-to-r from-blue-600 to-cyan-600 font-['Montserrat']"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedClient(client);
+                      }}
+                      className="bg-gradient-to-r from-cyan-600 to-blue-600 font-['Montserrat']"
                     >
-                      <Target className="w-4 h-4 mr-1" />
-                      Recalculer ILA™
+                      <Eye className="w-4 h-4 mr-1" />
+                      Voir
                     </Button>
                     
                     <Button
                       size="sm"
-                      onClick={() => findMatches(client.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        calculateILA(client.id);
+                      }}
+                      disabled={isLoading}
+                      className="bg-gradient-to-r from-blue-600 to-cyan-600 font-['Montserrat']"
+                    >
+                      <Target className="w-4 h-4 mr-1" />
+                      ILA™
+                    </Button>
+                    
+                    <Button
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        findMatches(client.id);
+                      }}
                       disabled={isLoading}
                       className="bg-gradient-to-r from-purple-600 to-pink-600 font-['Montserrat']"
                     >
                       <Network className="w-4 h-4 mr-1" />
-                      ILUMATCH™
+                      MATCH™
                     </Button>
                   </div>
                 </div>

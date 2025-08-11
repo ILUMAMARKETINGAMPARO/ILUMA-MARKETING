@@ -127,10 +127,10 @@ const IAMiroir: React.FC<IAMiroirProps> = ({
 
       // Réaction basée sur les sections précédentes
       if (userContext.previousSections.length > 3) {
-        const hasSeenPricing = userContext.previousSections.includes('pricing');
+        const hasSeenServices = userContext.previousSections.includes('services');
         const hasSeenTestimonials = userContext.previousSections.includes('testimonials');
         
-        if (hasSeenPricing && !hasSeenTestimonials) {
+        if (hasSeenServices && !hasSeenTestimonials) {
           reactions.push({
             id: 'testimonials-suggestion',
             trigger: 'scroll',

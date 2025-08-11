@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Shield, X, Settings } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const GDPRBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   useEffect(() => {
     const consent = localStorage.getItem('iluma-gdpr-consent');

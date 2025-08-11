@@ -29,9 +29,9 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, onBudgetChange, imp
         {/* Budget Slider */}
         <div className="space-y-4">
           <div className="flex justify-between text-white/80">
-            <span>300$</span>
-            <span className="text-2xl font-bold text-gradient">{budget}$</span>
-            <span>2000$</span>
+            <span>Minimal</span>
+            <span className="text-2xl font-bold text-gradient">Budget</span>
+            <span>Optimal</span>
           </div>
           
           <div className="relative">
@@ -93,15 +93,15 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, onBudgetChange, imp
         {/* Budget Breakdown */}
         <div className="grid grid-cols-3 gap-4">
           <div className="glass-effect rounded-xl p-4 text-center">
-            <div className="text-cyan-400 font-bold">{Math.round(budget * 0.7)}$</div>
+            <div className="text-cyan-400 font-bold">70%</div>
             <div className="text-white/60 text-xs">Publicité</div>
           </div>
           <div className="glass-effect rounded-xl p-4 text-center">
-            <div className="text-purple-400 font-bold">{Math.round(budget * 0.2)}$</div>
+            <div className="text-purple-400 font-bold">20%</div>
             <div className="text-white/60 text-xs">Optimisation</div>
           </div>
           <div className="glass-effect rounded-xl p-4 text-center">
-            <div className="text-green-400 font-bold">{Math.round(budget * 0.1)}$</div>
+            <div className="text-green-400 font-bold">10%</div>
             <div className="text-white/60 text-xs">Analytics</div>
           </div>
         </div>

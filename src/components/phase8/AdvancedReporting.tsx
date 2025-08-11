@@ -67,8 +67,8 @@ const AdvancedReporting = () => {
   const keyMetrics = [
     { title: 'Trafic Total', value: '2.4M', change: '+28%', trend: 'up' },
     { title: 'Taux Conversion', value: '8.7%', change: '+15%', trend: 'up' },
-    { title: 'Coût Acquisition', value: '€24.50', change: '-12%', trend: 'down' },
-    { title: 'Valeur Vie Client', value: '€340', change: '+22%', trend: 'up' }
+    { title: 'Coût Acquisition', value: 'Optimisé', change: '-12%', trend: 'down' },
+    { title: 'Valeur Vie Client', value: 'Élevée', change: '+22%', trend: 'up' }
   ];
 
   const generateReport = () => {

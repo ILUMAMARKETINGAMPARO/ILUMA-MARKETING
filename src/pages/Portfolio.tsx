@@ -17,90 +17,90 @@ import {
   Filter,
   Zap
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 
 const projectsData = [
   {
     id: 1,
-    title: "Katz Sport - Révolution SEO",
-    category: "Sport",
-    client: "Katz Sport",
-    description: "Transformation complète de la visibilité SEO pour une boutique spécialisée en équipements de crosse.",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&auto=format",
+    title: "GG Montreal Style - Mode & Style",
+    category: "Mode",
+    client: "GG Montreal",
+    description: "Site web moderne pour une boutique de mode montréalaise avec système de gestion de produits.",
+    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop&auto=format",
+    url: "https://preview--gg-montreal-style-57.lovable.app/",
     results: {
-      traffic: "+214%",
-      keywords: "45 mots-clés",
-      conversion: "+52%",
-      timeframe: "6 mois"
+      performance: "95/100",
+      design: "Interface moderne",
+      mobile: "100% responsive",
+      timeframe: "3 semaines"
     },
-    scoreILA: 89,
     status: "Terminé",
-    tags: ["SEO Local", "E-commerce", "Analytics"],
-    story: "Katz Sport n'avait aucune présence SEO. En 6 mois, nous avons créé un écosystème digital complet qui génère maintenant un flux constant de clients qualifiés."
+    tags: ["E-commerce", "Mode", "Responsive Design"],
+    story: "Création d'un site vitrine élégant avec catalogue produits pour une boutique de mode montréalaise."
   },
   {
     id: 2,
-    title: "Clinique Force Santé - Digital Santé",
-    category: "Santé",
-    client: "Réseau Force Santé",
-    description: "Modernisation digitale complète avec prise de RDV IA et scoring patient automatique.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format",
+    title: "Livrerie d'Amitié - Librairie",
+    category: "Culture",
+    client: "Livrerie d'Amitié",
+    description: "Site web chaleureux pour une librairie communautaire avec système de catalogue en ligne.",
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop&auto=format",
+    url: "https://preview--literiedamitie.lovable.app/",
     results: {
-      traffic: "+187%",
-      keywords: "67 mots-clés",
-      conversion: "+73%",
-      timeframe: "4 mois"
+      performance: "92/100",
+      design: "Ambiance chaleureuse",
+      mobile: "100% responsive",
+      timeframe: "2 semaines"
     },
-    scoreILA: 94,
     status: "Terminé",
-    tags: ["Santé", "IA", "Booking", "CRM"],
-    story: "Automatisation de la prise de RDV avec intelligence prédictive pour optimiser les créneaux et réduire les no-shows de 60%."
+    tags: ["Catalogue", "Culture", "Communauté"],
+    story: "Développement d'une plateforme digitale qui reflète l'âme d'une librairie de quartier."
   },
   {
     id: 3,
-    title: "La Poche Bleue - Média Sportif",
-    category: "Média",
-    client: "La Poche Bleue",
-    description: "Stratégie de partenariat et écosystème publicitaire pour média sportif +350k abonnés.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&auto=format",
+    title: "Dongato Donperro - Landing Page",
+    category: "Services",
+    client: "Dongato Donperro",
+    description: "Landing page percutante avec design moderne et call-to-action optimisés.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&auto=format",
+    url: "https://preview--dongato-donperro-landing.lovable.app/",
     results: {
-      traffic: "+156%",
-      keywords: "89 mots-clés",
-      conversion: "+41%",
-      timeframe: "8 mois"
+      performance: "98/100",
+      design: "Design impactant",
+      mobile: "100% responsive",
+      timeframe: "1 semaine"
     },
-    scoreILA: 92,
-    status: "En cours",
-    tags: ["Média", "Partenariat", "Influence"],
-    story: "Création d'un hub de partenariats intelligents reliant marques locales et influence sportive authentique."
+    status: "Terminé",
+    tags: ["Landing Page", "Conversion", "Marketing"],
+    story: "Création d'une landing page haute conversion avec design moderne et UX optimisée."
   },
   {
     id: 4,
-    title: "Concept M Rustique - Restaurant",
-    category: "Restauration",
-    client: "Concept M Rustique",
-    description: "Écosystème digital gastronomique avec réservation IA et gestion de réputation.",
-    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop&auto=format",
+    title: "Imane Barkak Estate - Immobilier",
+    category: "Immobilier",
+    client: "Imane Barkak",
+    description: "Site web professionnel pour agent immobilier avec portfolio de propriétés.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&auto=format",
+    url: "https://preview--imane-barkak-estate.lovable.app/",
     results: {
-      traffic: "+198%",
-      keywords: "34 mots-clés",
-      conversion: "+68%",
-      timeframe: "5 mois"
+      performance: "94/100",
+      design: "Professionnel & moderne",
+      mobile: "100% responsive",
+      timeframe: "2 semaines"
     },
-    scoreILA: 87,
     status: "Terminé",
-    tags: ["Restaurant", "Réservation", "Local SEO"],
-    story: "Transformation d'un restaurant familial en destination culinaire incontournable grâce à l'IA et au SEO local."
+    tags: ["Immobilier", "Portfolio", "Professionnel"],
+    story: "Développement d'une plateforme immobilière élégante avec showcase de propriétés."
   }
 ];
 
 const Portfolio = () => {
-  const { language } = useLanguage();
+  const { language } = useTranslations();
   const [activeFilter, setActiveFilter] = useState('Tous');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
-  const categories = ['Tous', 'Sport', 'Santé', 'Média', 'Restauration'];
+  const categories = ['Tous', 'Mode', 'Culture', 'Services', 'Immobilier'];
   
   const filteredProjects = activeFilter === 'Tous' 
     ? projectsData 
@@ -113,7 +113,7 @@ const Portfolio = () => {
       transition={{ duration: 0.6 }}
       whileHover={{ scale: 1.02 }}
       className="group cursor-pointer"
-      onClick={() => setSelectedProject(project.id)}
+      onClick={() => window.open(project.url, '_blank')}
     >
       <Card className="glass-effect border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
         <CardHeader>
@@ -124,10 +124,18 @@ const Portfolio = () => {
             `}>
               {project.status}
             </Badge>
-            <div className="flex items-center gap-1">
-              <Star className="w-4 h-4 text-yellow-400 fill-current" />
-              <span className="text-sm font-bold text-white">{project.scoreILA}</span>
-            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-purple-500/30 text-purple-300 hover:bg-purple-500/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(project.url, '_blank');
+              }}
+            >
+              Voir le site
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
           </div>
           <CardTitle className="text-white group-hover:text-purple-300 transition-colors">
             {project.title}
@@ -139,16 +147,16 @@ const Portfolio = () => {
         <CardContent>
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-400">{project.results.traffic}</div>
-              <div className="text-xs text-white/60">Trafic</div>
+              <div className="text-2xl font-bold text-green-400">{project.results.performance}</div>
+              <div className="text-xs text-white/60">Performance</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400">{project.results.keywords}</div>
-              <div className="text-xs text-white/60">Mots-clés</div>
+              <div className="text-2xl font-bold text-blue-400">{project.results.design}</div>
+              <div className="text-xs text-white/60">Design</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-400">{project.results.conversion}</div>
-              <div className="text-xs text-white/60">Conversion</div>
+              <div className="text-2xl font-bold text-purple-400">{project.results.mobile}</div>
+              <div className="text-xs text-white/60">Mobile</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-cyan-400">{project.results.timeframe}</div>
@@ -190,13 +198,13 @@ const Portfolio = () => {
               <span className="text-purple-300 font-medium text-lg">PORTFOLIO ILUMA™</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-purple-100 to-cyan-100 bg-clip-text text-transparent mb-6">
-              Notre intelligence
+              Nos réalisations
               <br />
-              <span className="text-4xl md:text-6xl">en action</span>
+              <span className="text-4xl md:text-6xl">web & landing pages</span>
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-8">
-              Chaque projet est une mission. Chaque mission, une transformation.
-              Découvrez nos réalisations les plus transformatrices.
+              Découvrez nos créations web : sites vitrines, e-commerce et landing pages 
+              développés avec Lovable pour nos clients.
             </p>
             
             {/* Smart Filter */}
@@ -254,33 +262,33 @@ const Portfolio = () => {
             <Card className="glass-effect border-purple-500/20">
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl text-white mb-4">
-                  Impact Cumulé Iluma™
+                  Portfolio Web & Landing Pages
                 </CardTitle>
                 <CardDescription className="text-white/70 text-lg">
-                  Résultats mesurables de notre approche IA-first
+                  Sites web et landing pages créés avec Lovable
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   <div className="text-center">
-                    <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                    <div className="text-3xl font-bold text-green-400">+189%</div>
-                    <div className="text-sm text-white/60">Trafic moyen</div>
+                    <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                    <div className="text-3xl font-bold text-green-400">4</div>
+                    <div className="text-sm text-white/60">Sites créés</div>
                   </div>
                   <div className="text-center">
-                    <Globe className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                    <div className="text-3xl font-bold text-blue-400">235</div>
-                    <div className="text-sm text-white/60">Mots-clés indexés</div>
+                    <TrendingUp className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                    <div className="text-3xl font-bold text-blue-400">95/100</div>
+                    <div className="text-sm text-white/60">Performance moyenne</div>
                   </div>
                   <div className="text-center">
                     <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                    <div className="text-3xl font-bold text-purple-400">+58%</div>
-                    <div className="text-sm text-white/60">Conversion moyenne</div>
+                    <div className="text-3xl font-bold text-purple-400">100%</div>
+                    <div className="text-sm text-white/60">Responsive</div>
                   </div>
                   <div className="text-center">
                     <Clock className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                    <div className="text-3xl font-bold text-cyan-400">4.2</div>
-                    <div className="text-sm text-white/60">Mois moyens</div>
+                    <div className="text-3xl font-bold text-cyan-400">2</div>
+                    <div className="text-sm text-white/60">Semaines moyennes</div>
                   </div>
                 </div>
               </CardContent>
@@ -297,17 +305,17 @@ const Portfolio = () => {
             <Card className="glass-effect border-purple-500/20 bg-gradient-to-r from-purple-600/10 to-cyan-600/10">
               <CardContent className="py-12">
                 <h2 className="text-4xl font-bold text-white mb-4">
-                  Vous aimeriez voir votre marque ici ?
+                  Besoin d'un site web ou landing page ?
                 </h2>
                 <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                  Créez votre propre mission avec Iluma. Ensemble, révélons votre puissance invisible.
+                  Créons ensemble votre présence web avec Lovable. Design moderne, performance optimale.
                 </p>
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  Démarrer ma transformation
+                  Créer mon site web
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </CardContent>

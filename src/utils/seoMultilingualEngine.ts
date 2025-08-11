@@ -162,7 +162,7 @@ export const getMultilingualSEOData = (page: string, language: Language): Multil
 };
 
 export const generateHreflangLinks = (currentPath: string) => {
-  const cleanPath = currentPath.replace(/^\/(en|es|ar)/, '');
+  const cleanPath = currentPath.replace(/^\/(en|es)/, '');
   const baseUrl = 'https://ilumamarketing.com';
   
   return [
@@ -174,7 +174,6 @@ export const generateHreflangLinks = (currentPath: string) => {
     { lang: 'es', url: `${baseUrl}/es${cleanPath}` },
     { lang: 'es-ES', url: `${baseUrl}/es${cleanPath}` },
     { lang: 'es-MX', url: `${baseUrl}/es${cleanPath}` },
-    { lang: 'ar', url: `${baseUrl}/ar${cleanPath}` },
     { lang: 'x-default', url: `${baseUrl}${cleanPath}` }
   ];
 };
@@ -210,16 +209,6 @@ export const getSGEOptimizedContent = (page: string, language: Language) => {
         {
           question: "¿Cómo funciona el asistente IA LILO?",
           answer: "LILO es nuestro asistente IA que te guía en tus estrategias de marketing, analiza tus necesidades y propone soluciones personalizadas 24/7."
-        }
-      ],
-      ar: [
-        {
-          question: "ما هو التسويق بالذكاء الاصطناعي من Iluma؟",
-          answer: "التسويق بالذكاء الاصطناعي من Iluma يجمع بين الذكاء الاصطناعي واستراتيجيات التسويق المحلي لتحسين رؤيتك وحملاتك الإعلانية وعائد استثمارك."
-        },
-        {
-          question: "كيف يعمل المساعد الذكي LILO؟",
-          answer: "LILO هو مساعدنا الذكي الذي يرشدك في استراتيجيات التسويق الخاصة بك، ويحلل احتياجاتك ويقترح حلولاً شخصية على مدار 24/7."
         }
       ]
     }

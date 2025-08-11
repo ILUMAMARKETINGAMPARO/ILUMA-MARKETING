@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import InterVisibiliteHero from '@/components/inter-visibilite/InterVisibiliteHero';
 import NetworkBenefits from '@/components/inter-visibilite/NetworkBenefits';
 import SuccessMetrics from '@/components/inter-visibilite/SuccessMetrics';
@@ -10,7 +10,7 @@ import InterVisibiliteInterface from '@/components/inter-visibilite/InterVisibil
 import InterVisibiliteCTA from '@/components/inter-visibilite/InterVisibiliteCTA';
 
 const InterVisibilite = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-blue-900/20 to-black">

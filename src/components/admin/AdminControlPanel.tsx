@@ -20,7 +20,7 @@ import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import APITokenManager from './APITokenManager';
 import EnhancedAPISecretsTable from './EnhancedAPISecretsTable';
 
@@ -30,7 +30,7 @@ interface AdminControlPanelProps {
 }
 
 const AdminControlPanel: React.FC<AdminControlPanelProps> = ({ isOpen, onClose }) => {
-  const { language } = useLanguage();
+  const { t } = useTranslations();
   
   // États pour tous les paramètres
   const [settings, setSettings] = useState({

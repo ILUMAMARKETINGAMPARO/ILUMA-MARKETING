@@ -10,10 +10,10 @@ import PredictiveInsights from '@/components/phase5/PredictiveInsights';
 import RealTimeMonitoring from '@/components/phase5/RealTimeMonitoring';
 import MPEControlCenter from '@/components/phase5/MPEControlCenter';
 import { ILAProvider } from '@/contexts/ILAContext';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const Phase5Dashboard = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   return (
     <ILAProvider>

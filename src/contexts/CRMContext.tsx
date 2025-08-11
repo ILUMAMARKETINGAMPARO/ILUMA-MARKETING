@@ -72,7 +72,7 @@ const mockClients: ClientFiche[] = [
     assignedTo: 'Amparo Lopez',
     services: ['CRM Iluma', 'Landing Page Intelligente', 'ILUMATCH', 'BlogIA'],
     revenue: 5800,
-    notes: 'Leader literie Montréal - Croissance exceptionnelle avec nos solutions IA',
+    notes: 'Leader literie Montréal - Croissance exceptionnelle avec nos outils IA',
     documents: [],
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date()

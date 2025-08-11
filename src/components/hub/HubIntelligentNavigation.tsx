@@ -108,7 +108,7 @@ const HubIntelligentNavigation: React.FC<HubIntelligentNavigationProps> = ({ onR
     { id: 'website', name: 'Site Web Complet', description: 'Sites web professionnels performants', path: '/site-web-complet', icon: Monitor, color: 'from-purple-500 to-pink-500' }
   ];
 
-  const solutions = [
+  const tools = [
     { id: 'ila', name: 'ILA™', description: 'Score de performance et analyse intelligente', path: '/ila', category: 'analytics', icon: BarChart3, color: 'from-purple-500 to-pink-500' },
     { id: 'blogia', name: 'BLOGIA™', description: 'Générateur de contenu SEO intelligent', path: '/blogia', category: 'content', icon: PenTool, color: 'from-orange-500 to-red-500' },
     { id: 'ilumatch', name: 'ILUMATCH™', description: 'Matching intelligent client-solution', path: '/ilumatch', category: 'partnership', icon: Heart, color: 'from-pink-500 to-purple-500' }
@@ -128,9 +128,9 @@ const HubIntelligentNavigation: React.FC<HubIntelligentNavigationProps> = ({ onR
       icon: item.icon || Globe,
       color: item.color || 'from-blue-500 to-cyan-500'
     })),
-    ...solutions.map((item: any) => ({ 
+    ...tools.map((item: any) => ({ 
       ...item, 
-      type: 'solution' as const,
+      type: 'tool' as const,
       category: item.category === 'simulation' ? ['visibility', 'acquisition'] :
                item.category === 'analytics' ? ['automation', 'seo'] :
                item.category === 'content' ? ['content', 'seo'] :
@@ -317,11 +317,11 @@ const HubIntelligentNavigation: React.FC<HubIntelligentNavigationProps> = ({ onR
                       </div>
                       <Badge className={`text-xs font-['Montserrat'] ${
                         item.type === 'product' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' :
-                        item.type === 'solution' ? 'bg-[#8E44FF]/20 text-[#8E44FF] border-[#8E44FF]/30' : 
+                        item.type === 'tool' ? 'bg-[#8E44FF]/20 text-[#8E44FF] border-[#8E44FF]/30' : 
                         'bg-[#FFD56B]/20 text-[#FFD56B] border-[#FFD56B]/30'
                       }`}>
                         {item.type === 'product' ? '🏢 Produit' : 
-                         item.type === 'solution' ? '🤖 Solution IA' : '🛠️ Service'}
+                         item.type === 'tool' ? '🤖 Outil IA' : '🛠️ Service'}
                       </Badge>
                     </div>
                     

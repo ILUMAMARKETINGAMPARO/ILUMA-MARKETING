@@ -111,10 +111,10 @@ const BlogsIntersites = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-white mb-4 font-['Montserrat']">
-                Excellence Création de Contenu IA
+                {t('services.contentCreation.features.title') || 'Excellence Création de Contenu IA'}
               </h2>
               <p className="text-xl text-white/70 font-['Montserrat']">
-                Expertise technique combinée à l'intelligence artificielle pour du contenu performant
+                {t('services.contentCreation.features.subtitle') || 'Expertise technique combinée à l\'intelligence artificielle pour du contenu performant'}
               </p>
             </div>
             
@@ -184,11 +184,148 @@ const BlogsIntersites = () => {
             </div>
           </motion.div>
 
-          {/* CTA Section */}
+          {/* Process Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-4 font-['Montserrat']">
+                {t('services.contentCreation.process.title') || 'Notre processus en 4 étapes'}
+              </h2>
+              <p className="text-xl text-white/70 font-['Montserrat']">
+                {t('services.contentCreation.process.description') || 'De l\'analyse à la publication, un processus optimisé par IA'}
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  step: "01",
+                  title: t('services.contentCreation.process.step1.title') || "Analyse IA",
+                  description: t('services.contentCreation.process.step1.description') || "Analyse de votre secteur et concurrence",
+                  icon: BarChart3
+                },
+                {
+                  step: "02", 
+                  title: t('services.contentCreation.process.step2.title') || "Stratégie",
+                  description: t('services.contentCreation.process.step2.description') || "Planification éditoriale personnalisée",
+                  icon: Network
+                },
+                {
+                  step: "03",
+                  title: t('services.contentCreation.process.step3.title') || "Création",
+                  description: t('services.contentCreation.process.step3.description') || "Génération de contenu optimisé",
+                  icon: PenTool
+                },
+                {
+                  step: "04",
+                  title: t('services.contentCreation.process.step4.title') || "Optimisation",
+                  description: t('services.contentCreation.process.step4.description') || "Publication et suivi des performances",
+                  icon: Globe
+                }
+              ].map((processStep, index) => (
+                <motion.div
+                  key={processStep.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="relative"
+                >
+                  <Card className="glass-effect border-[#8E44FF]/20 p-6 text-center h-full hover:border-[#FFD56B]/30 transition-all duration-300">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] rounded-full flex items-center justify-center text-black font-bold text-sm">
+                        {processStep.step}
+                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <processStep.icon className="w-12 h-12 text-[#8E44FF] mx-auto mb-4" />
+                      <h3 className="text-lg font-bold text-white mb-3 font-['Montserrat']">
+                        {processStep.title}
+                      </h3>
+                      <p className="text-white/70 text-sm font-['Montserrat']">
+                        {processStep.description}
+                      </p>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Testimonials Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-4 font-['Montserrat']">
+                {t('services.contentCreation.testimonials.title') || 'Ce que disent nos clients'}
+              </h2>
+              <p className="text-xl text-white/70 font-['Montserrat']">
+                {t('services.contentCreation.testimonials.description') || 'Des résultats concrets avec notre service de création IA'}
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  quote: t('services.contentCreation.testimonials.client1.quote') || "Iluma™ a révolutionné notre stratégie de contenu. +300% d'engagement en 3 mois !",
+                  author: t('services.contentCreation.testimonials.client1.author') || "Marie L., Directrice Marketing",
+                  company: t('services.contentCreation.testimonials.client1.company') || "TechStartup Pro",
+                  rating: 5
+                },
+                {
+                  quote: t('services.contentCreation.testimonials.client2.quote') || "La qualité du contenu généré par IA dépasse nos attentes. Notre SEO a explosé.",
+                  author: t('services.contentCreation.testimonials.client2.author') || "David K., CEO",
+                  company: t('services.contentCreation.testimonials.client2.company') || "Digital Agency", 
+                  rating: 5
+                },
+                {
+                  quote: t('services.contentCreation.testimonials.client3.quote') || "Gain de temps énorme et ROI exceptionnel. Le meilleur investissement marketing !",
+                  author: t('services.contentCreation.testimonials.client3.author') || "Sophie M., Entrepreneure",
+                  company: t('services.contentCreation.testimonials.client3.company') || "E-commerce Plus",
+                  rating: 5
+                }
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                >
+                  <Card className="glass-effect border-[#8E44FF]/20 p-6 h-full">
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <div key={i} className="w-5 h-5 text-[#FFD56B]">⭐</div>
+                      ))}
+                    </div>
+                    <blockquote className="text-white/80 text-lg italic mb-6 font-['Montserrat']">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="border-t border-white/10 pt-4">
+                      <p className="text-white font-semibold font-['Montserrat']">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-[#8E44FF] text-sm font-['Montserrat']">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
             className="text-center"
           >
             <Card className="glass-effect border-[#8E44FF]/20 p-12">
@@ -198,13 +335,21 @@ const BlogsIntersites = () => {
               <p className="text-xl text-white/70 mb-8 font-['Montserrat']">
                 {t('services.contentCreation.cta.description')}
               </p>
-              <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 font-['Montserrat'] group">
-                  <FileText className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  {t('services.contentCreation.cta.button')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/contact">
+                  <Button size="lg" className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 font-['Montserrat'] group">
+                    <FileText className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                    {t('services.contentCreation.cta.button')}
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link to="/adluma">
+                  <Button size="lg" variant="outline" className="border-[#8E44FF] text-[#8E44FF] hover:bg-[#8E44FF] hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 font-['Montserrat']">
+                    <BarChart3 className="w-5 h-5 mr-2" />
+                    {t('common.calculateRoi') || 'Calculer mon ROI'}
+                  </Button>
+                </Link>
+              </div>
             </Card>
           </motion.div>
         </div>

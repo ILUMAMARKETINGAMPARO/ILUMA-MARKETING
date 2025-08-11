@@ -4,7 +4,7 @@ import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 
 import { useLiloUX } from '@/hooks/useLiloUX';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -31,7 +31,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const TableauAnalytics = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
   const [activeView, setActiveView] = useState('overview');
   const [timeRange, setTimeRange] = useState('30d');

@@ -17,7 +17,7 @@ import {
   MapPin,
   Eye
 } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
 
 // Safe LILO component that won't crash
@@ -42,7 +42,7 @@ interface ILUMATCHIntroductionProps {
 }
 
 const ILUMATCHIntroduction: React.FC<ILUMATCHIntroductionProps> = ({ onNext }) => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslations();
 
   const introContent = {
     fr: {

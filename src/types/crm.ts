@@ -43,6 +43,46 @@ export interface ClientFiche {
   }>;
   createdAt: Date;
   updatedAt: Date;
+  // Champs additionnels pour compatibilité
+  company?: string;
+  email?: string;
+  phone?: string;
+  website?: string;
+  city?: string;
+  lastContact?: Date;
+  nextFollowUp?: Date;
+  potentialValue?: number;
+  priority?: 'low' | 'medium' | 'high';
+  tags?: string[];
+  socialMedia?: {
+    linkedin?: string;
+    facebook?: string;
+    instagram?: string;
+    tiktok?: string;
+  };
+  // Données complètes du Excel
+  excelData?: {
+    googleRating: number;
+    reviewCount: number;
+    followersInstagram: number;
+    followersFacebook: number;
+    followersTikTok: number;
+    nbSuccursales: number;
+    domainRating: number;
+    ahrefsRank: number;
+    totalTraffic: number;
+    totalKeywords: number;
+    backlinks: number;
+    refDomains: number;
+    industrySpecific: {
+      cpcMoyen: number;
+      kdMoyen: number;
+      pagesIndexees: number;
+      traficOrganiqueEstime: number;
+      presenceBlog: boolean;
+      qualiteBlog: number;
+    };
+  };
 }
 
 export interface ProjectFiche {

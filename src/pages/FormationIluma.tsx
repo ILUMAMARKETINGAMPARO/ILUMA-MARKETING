@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { GraduationCap, Users, Clock, Target, BookOpen, Gamepad2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -100,7 +100,7 @@ const QuizModuleMatch: React.FC<{ onScoreChange?: (score: number) => void; onGam
 };
 
 const FormationIluma = () => {
-  const { t, language } = useLanguage();
+  const { t, language } = useTranslations();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
   const [userLevel, setUserLevel] = useState<'débutant' | 'intermédiaire' | 'expert'>('débutant');
   const [completedModules, setCompletedModules] = useState<number[]>([]);

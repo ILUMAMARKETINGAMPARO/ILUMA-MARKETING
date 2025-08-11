@@ -11,7 +11,7 @@ const FidelityAnalytics = () => {
   ];
 
   const metrics = [
-    { label: "Customer Lifetime Value", value: "€4,890", trend: "+45%" },
+    { label: "Customer Lifetime Value", value: "Contact us", trend: "+45%" },
     { label: "Taux de Rétention", value: "89.3%", trend: "+12%" },
     { label: "Fréquence d'Achat", value: "3.2x/mois", trend: "+67%" },
     { label: "NPS Score", value: "73", trend: "+28%" }

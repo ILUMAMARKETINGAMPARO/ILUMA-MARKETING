@@ -76,7 +76,7 @@ const LocalVisibilitySimulator: React.FC = () => {
       const newScore = Math.min(maxPossibleScore, baseScore + (maxPossibleScore - baseScore) * improvementFactor * 0.8);
       const visibilityBoost = Math.min(500, (newScore - baseScore) * 8);
       const leadBoost = Math.min(300, visibilityBoost * 0.6);
-      const revenueBoost = leadBoost * 150; // 150$ par lead moyen
+      const revenueBoost = leadBoost * 150; // Valeur par lead moyen
       
       let timeframeDays = 90;
       if (totalOptimization > 80) timeframeDays = 60;

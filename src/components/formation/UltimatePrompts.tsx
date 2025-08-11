@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { Copy, Sparkles, Brain, Target, Zap, Users, TrendingUp, Globe, MessageSquare, Settings, Database, Download, BarChart3, Lock, Eye, MapPin } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast.ts';
+import { useToast } from '@/hooks/use-toast';
 
 interface PromptData {
   id: number;
@@ -590,7 +590,7 @@ EXTENSIONS:
 □ Liens site: Services, Devis, Contact, Avis
 □ Accroche: "Devis gratuit", "24h/7j", "Garantie"  
 □ Lieu: Adresse complète + téléphone
-□ Prix: À partir de [X]€, Devis gratuit
+□ Contact: Demande d'information, Consultation
 
 📊 LANDING PAGES DÉDIÉES
 - URL 1: /[service]-[ville] (Groupe 1)
@@ -783,7 +783,7 @@ Secteur: [TYPE]`
 🎯 SEGMENTATION INTELLIGENTE
 
 SEGMENT 1: Prospects Chauds
-- Critères: Visite pricing + download ressource
+- Critères: Visite services + download ressource
 - Fréquence: 2-3 emails/semaine
 - Objectif: Conversion 7-14 jours
 
@@ -881,7 +881,7 @@ Triggers automatiques:
 Scoring comportemental:
 - Ouverture email: +1 point
 - Clic email: +3 points
-- Visite pricing: +5 points
+- Visite services: +5 points
 - Download ressource: +5 points
 - Demo réservée: +10 points
 

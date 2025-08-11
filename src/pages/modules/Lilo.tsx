@@ -6,10 +6,10 @@ import { Bot, MessageCircle, Zap, Globe, Brain, Heart, Send, Sparkles } from 'lu
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const LILO = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const [chatMessages, setChatMessages] = useState([
     {
       sender: 'LILO',

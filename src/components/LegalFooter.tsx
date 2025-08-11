@@ -9,11 +9,11 @@ const LegalFooter = () => {
     fr: {
       company: "Iluma Marketing LLC",
       addresses: {
-        montreal: "3512 Boulevard Industriel, Montréal, QC H1H 2Y4, Canada",
+        montreal: "12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2, Canada",
         newyork: "228 Park Ave S, PMB 75185, New York, NY 10003-1502, USA",
         delaware: "651 N Broad St, Suite 201, Middletown, DE 19709, USA"
       },
-      email: "iluma.marketing@gmail.com",
+      email: "administracion@ilumamarketing.com",
       phone: "+1 (514) 882-8910",
       ceo: "Sergio David Ortega-Ramos",
       coo: "Amparo Lopez",
@@ -24,11 +24,11 @@ const LegalFooter = () => {
     en: {
       company: "Iluma Marketing LLC",
       addresses: {
-        montreal: "3512 Boulevard Industriel, Montréal, QC H1H 2Y4, Canada",
+        montreal: "12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2, Canada",
         newyork: "228 Park Ave S, PMB 75185, New York, NY 10003-1502, USA",
         delaware: "651 N Broad St, Suite 201, Middletown, DE 19709, USA"
       },
-      email: "iluma.marketing@gmail.com",
+      email: "administracion@ilumamarketing.com",
       phone: "+1 (514) 882-8910",
       ceo: "Sergio David Ortega-Ramos",
       coo: "Amparo Lopez",
@@ -39,11 +39,11 @@ const LegalFooter = () => {
     es: {
       company: "Iluma Marketing LLC",
       addresses: {
-        montreal: "3512 Boulevard Industriel, Montréal, QC H1H 2Y4, Canada",
+        montreal: "12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2, Canada",
         newyork: "228 Park Ave S, PMB 75185, New York, NY 10003-1502, USA",
         delaware: "651 N Broad St, Suite 201, Middletown, DE 19709, USA"
       },
-      email: "iluma.marketing@gmail.com",
+      email: "administracion@ilumamarketing.com",
       phone: "+1 (514) 882-8910",
       ceo: "Sergio David Ortega-Ramos",
       coo: "Amparo Lopez",
@@ -54,11 +54,11 @@ const LegalFooter = () => {
     ar: {
       company: "Iluma Marketing LLC",
       addresses: {
-        montreal: "3512 Boulevard Industriel, Montréal, QC H1H 2Y4, Canada",
+        montreal: "12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2, Canada",
         newyork: "228 Park Ave S, PMB 75185, New York, NY 10003-1502, USA",
         delaware: "651 N Broad St, Suite 201, Middletown, DE 19709, USA"
       },
-      email: "iluma.marketing@gmail.com",
+      email: "administracion@ilumamarketing.com",
       phone: "+1 (514) 882-8910",
       ceo: "Sergio David Ortega-Ramos",
       coo: "Amparo Lopez",
@@ -106,14 +106,19 @@ const LegalFooter = () => {
           <div>
             <h4 className="text-white font-medium mb-3 font-['Montserrat']">{t('footer.contact.title')}</h4>
             <div className="space-y-2 text-white/70 text-sm">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-accent" />
-                <a href={`mailto:${info.email}`} className="hover:text-primary transition-colors">
-                  {info.email}
-                </a>
+              <div className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <a 
+                    href={`mailto:${info.email}`} 
+                    className="hover:text-primary transition-colors block break-all text-wrap leading-tight"
+                  >
+                    {info.email}
+                  </a>
+                </div>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-accent" />
+                <Phone className="w-4 h-4 text-accent flex-shrink-0" />
                 <a href={`tel:${info.phone}`} className="hover:text-primary transition-colors">
                   {info.phone}
                 </a>

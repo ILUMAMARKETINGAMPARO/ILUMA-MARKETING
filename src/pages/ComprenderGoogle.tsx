@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Instagram, Search, Users, Heart, MessageCircle, Hash, MousePointer, Star, MapPin, TrendingUp, Target, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
 const ComprenderGoogle = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   const socialComparison = [
     {

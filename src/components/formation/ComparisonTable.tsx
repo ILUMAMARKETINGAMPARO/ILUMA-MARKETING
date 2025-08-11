@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, X, Star, Zap, Target, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 
 interface ComparisonItem {
   criterion: Record<string, string>;
@@ -300,7 +300,7 @@ const comparisonData: ComparisonItem[] = [
 ];
 
 const ComparisonTable: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
 
   const getRatingIcon = (rating: string) => {
     switch (rating) {

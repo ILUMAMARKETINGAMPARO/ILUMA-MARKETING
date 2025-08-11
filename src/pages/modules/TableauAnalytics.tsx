@@ -7,11 +7,11 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { AnimatedSection } from '@/components/animations/IlumaAnimations';
 
 const TableauAnalytics = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
 
   const metrics = [
     {

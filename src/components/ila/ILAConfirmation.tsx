@@ -22,7 +22,7 @@ import {
   Mail
 } from 'lucide-react';
 import LiloCharacter from '@/components/lilo/LiloCharacter';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Link } from 'react-router-dom';
 
 interface FormData {
@@ -58,7 +58,7 @@ interface ILAConfirmationProps {
 }
 
 const ILAConfirmation: React.FC<ILAConfirmationProps> = ({ data, onStartOver }) => {
-  const { language } = useLanguage();
+  const { t, language } = useTranslations();
   const [currentDate] = useState(new Date());
 
   const confirmationContent = {

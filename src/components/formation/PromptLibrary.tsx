@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useTranslations } from '@/hooks/useTranslations';
 import { toast } from 'sonner';
 
 interface PromptItem {
@@ -98,7 +98,7 @@ interface PromptLibraryProps {
 }
 
 const PromptLibrary: React.FC<PromptLibraryProps> = ({ onPromptSelect }) => {
-  const { language, t } = useLanguage();
+  const { t, language } = useTranslations();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');

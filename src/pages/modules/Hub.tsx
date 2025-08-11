@@ -4,7 +4,7 @@ import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import { Zap, Settings, BarChart, Users, Bell, Link, ArrowRight, Activity, TrendingUp } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import HubMetrics from '@/components/hub/HubMetrics';
 import HubServices from '@/components/hub/HubServices';
 import HubActivity from '@/components/hub/HubActivity';
@@ -12,7 +12,7 @@ import HubSettings from '@/components/hub/HubSettings';
 import HubOverview from '@/components/hub/HubOverview';
 
 const Hub = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   
   const services = [
     {

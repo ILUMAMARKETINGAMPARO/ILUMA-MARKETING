@@ -4,7 +4,7 @@ import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import BlogIASEO from '@/components/seo/BlogIASEO';
 import { useLiloUX } from '@/hooks/useLiloUX';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -25,44 +25,44 @@ import {
 import { Link } from 'react-router-dom';
 
 const BlogIA = () => {
-  const { t } = useLanguage();
+  const { t } = useTranslations();
   const { liloMood, liloMessage, handleCTAHighlight } = useLiloUX();
   const [activeTab, setActiveTab] = useState('features');
 
   const aiFeatures = [
     {
       icon: Brain,
-      title: "Génération automatique",
-      description: "L'IA crée des articles optimisés SEO en analysant votre secteur et vos mots-clés",
+      title: t('blogIA.features.generation.title'),
+      description: t('blogIA.features.generation.description'),
       color: "from-purple-500 to-blue-500"
     },
     {
       icon: Target,
-      title: "Ciblage intelligent", 
-      description: "Contenu adapté à votre audience et à vos objectifs marketing",
+      title: t('blogIA.features.targeting.title'), 
+      description: t('blogIA.features.targeting.description'),
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: TrendingUp,
-      title: "Optimisation continue",
-      description: "Amélioration automatique basée sur les performances et l'engagement",
+      title: t('blogIA.features.optimization.title'),
+      description: t('blogIA.features.optimization.description'),
       color: "from-cyan-500 to-green-500"
     },
     {
       icon: Lightbulb,
-      title: "Idées créatives",
-      description: "Suggestions de sujets tendances et d'angles éditoriaux innovants",
+      title: t('blogIA.features.creativity.title'),
+      description: t('blogIA.features.creativity.description'),
       color: "from-green-500 to-yellow-500"
     }
   ];
 
   const benefits = [
-    "Gain de temps : 80% plus rapide qu'un blog traditionnel",
-    "SEO optimisé : Articles automatiquement référencés",
-    "Contenu personnalisé : Adapté à votre secteur d'activité", 
-    "Mise à jour automatique : Contenu toujours frais et pertinent",
-    "Analytics intégrés : Suivi des performances en temps réel",
-    "Multi-format : Articles, infographies, vidéos, podcasts"
+    t('blogIA.benefits.time'),
+    t('blogIA.benefits.seo'),
+    t('blogIA.benefits.personalized'),
+    t('blogIA.benefits.automatic'),
+    t('blogIA.benefits.analytics'),
+    t('blogIA.benefits.multiformat')
   ];
 
   return (
@@ -79,50 +79,51 @@ const BlogIA = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 rounded-full px-6 py-2 mb-6">
-                <PenTool className="w-5 h-5 text-[#FFD56B]" />
-                <span className="text-white font-['Montserrat']">BlogIA™</span>
-              </div>
+              <Badge className="bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 border-[#8E44FF]/30 text-white px-6 py-2 mb-6">
+                <PenTool className="w-5 h-5 text-[#FFD56B] mr-2" />
+                {t('blogIA.hero.badge')}
+              </Badge>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                Comment créer du contenu{' '}
-                <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">
-                  SEO automatiquement
-                </span>{' '}
-                avec l'IA ?
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-[#FFD56B] to-[#8E44FF] bg-clip-text text-transparent mb-6 font-['Montserrat']">
+                {t('blogIA.hero.title')}
               </h1>
               
-              <p className="text-xl text-white/80 mb-4 max-w-3xl mx-auto font-['Montserrat']">
-                BlogIA™ génère automatiquement des articles optimisés SEO, personnalisés pour votre secteur et votre audience cible.
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto font-['Montserrat']">
+                {t('blogIA.hero.subtitle')}
               </p>
               
-              <div className="bg-white/10 rounded-xl p-6 mb-8 max-w-4xl mx-auto">
-                <h2 className="text-lg font-semibold text-white mb-2 font-['Montserrat']">
-                  🤖 Lilo vous résume cette page
-                </h2>
-                <p className="text-white/90 font-['Montserrat']">
-                  L'IA analyse votre domaine d'activité, génère du contenu optimisé pour Google, et publie automatiquement sur votre blog. 
-                  Gain de temps : 80% plus rapide qu'un blog traditionnel avec un meilleur référencement.
-                </p>
-              </div>
+              <Card className="glass-effect border-[#8E44FF]/20 p-6 mb-8 max-w-4xl mx-auto">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg font-semibold text-white font-['Montserrat'] flex items-center justify-center gap-2">
+                    <Brain className="w-5 h-5 text-[#FFD56B]" />
+                    {t('blogIA.hero.liloSummary')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-white/90 font-['Montserrat']">
+                    {t('blogIA.hero.liloMessage')}
+                  </p>
+                </CardContent>
+              </Card>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link to="/contact">
                   <Button 
                     size="lg"
-                    className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-black px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
+                    className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] hover:from-[#FFD56B] hover:to-[#8E44FF] text-black px-8 py-4 text-lg font-semibold font-['Montserrat'] hover:scale-105 transition-all duration-300 rounded-xl shadow-lg"
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
-                    Démarrer avec BlogIA™
+                    {t('blogIA.hero.startButton')}
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
+                  className="border-[#8E44FF]/30 text-white hover:bg-[#8E44FF]/10 hover:border-[#8E44FF] px-8 py-4 text-lg font-semibold font-['Montserrat'] hover:scale-105 transition-all duration-300 rounded-xl"
                 >
                   <Users className="w-5 h-5 mr-2" />
-                  Voir une démo
+                  {t('blogIA.demo.button')}
                 </Button>
               </div>
             </motion.div>
@@ -136,15 +137,15 @@ const BlogIA = () => {
               <TabsList className="grid w-full grid-cols-3 bg-black/40 mb-12">
                 <TabsTrigger value="features" className="font-['Montserrat']">
                   <Brain className="w-4 h-4 mr-2" />
-                  Fonctionnalités IA
+                  {t('blogIA.tabs.features')}
                 </TabsTrigger>
                 <TabsTrigger value="benefits" className="font-['Montserrat']">
                   <TrendingUp className="w-4 h-4 mr-2" />
-                  Avantages
+                  {t('blogIA.tabs.benefits')}
                 </TabsTrigger>
                 <TabsTrigger value="workflow" className="font-['Montserrat']">
                   <Zap className="w-4 h-4 mr-2" />
-                  Processus
+                  {t('blogIA.tabs.process')}
                 </TabsTrigger>
               </TabsList>
 
@@ -178,7 +179,7 @@ const BlogIA = () => {
                 <Card className="glass-effect border-white/20 p-8">
                   <CardHeader>
                     <CardTitle className="text-2xl text-white mb-6 font-['Montserrat'] text-center">
-                      Pourquoi choisir BlogIA™ ?
+                      {t('blogIA.features.title')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -204,16 +205,32 @@ const BlogIA = () => {
                 <Card className="glass-effect border-white/20 p-8">
                   <CardHeader>
                     <CardTitle className="text-2xl text-white mb-6 font-['Montserrat'] text-center">
-                      Processus de création automatisé
+                      {t('blogIA.process.title') || 'Processus de création automatisé'}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
                       {[
-                        { step: "1", title: "Analyse de votre secteur", desc: "L'IA étudie votre domaine d'activité et vos concurrents" },
-                        { step: "2", title: "Génération de contenu", desc: "Création d'articles optimisés pour votre audience" },
-                        { step: "3", title: "Optimisation SEO", desc: "Intégration automatique des mots-clés et balises" },
-                        { step: "4", title: "Publication & suivi", desc: "Mise en ligne et analyse des performances" }
+                        { 
+                          step: "1", 
+                          title: t('blogIA.process.step1.title') || "Analyse de votre secteur", 
+                          desc: t('blogIA.process.step1.description') || "L'IA étudie votre domaine d'activité et vos concurrents" 
+                        },
+                        { 
+                          step: "2", 
+                          title: t('blogIA.process.step2.title') || "Génération de contenu", 
+                          desc: t('blogIA.process.step2.description') || "Création d'articles optimisés pour votre audience" 
+                        },
+                        { 
+                          step: "3", 
+                          title: t('blogIA.process.step3.title') || "Optimisation SEO", 
+                          desc: t('blogIA.process.step3.description') || "Intégration automatique des mots-clés et balises" 
+                        },
+                        { 
+                          step: "4", 
+                          title: t('blogIA.process.step4.title') || "Publication & suivi", 
+                          desc: t('blogIA.process.step4.description') || "Mise en ligne et analyse des performances" 
+                        }
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -250,16 +267,16 @@ const BlogIA = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-['Montserrat']">
-                Blog traditionnel vs BlogIA™
+                {t('blogIA.comparison.title')}
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto font-['Montserrat']">
-                Découvrez pourquoi l'intelligence artificielle révolutionne la création de contenu
+                {t('blogIA.comparison.subtitle') || 'Découvrez pourquoi l\'intelligence artificielle révolutionne la création de contenu'}
               </p>
             </motion.div>
             
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="glass-effect border-red-500/20 p-8">
-                <h3 className="text-xl font-bold text-red-400 mb-6 font-['Montserrat']">❌ Blog traditionnel</h3>
+                <h3 className="text-xl font-bold text-red-400 mb-6 font-['Montserrat']">❌ {t('blogIA.comparison.traditional')}</h3>
                 <ul className="space-y-3">
                   {[
                     "5-8h pour un article de qualité",
@@ -278,7 +295,7 @@ const BlogIA = () => {
               </Card>
               
               <Card className="glass-effect border-green-500/20 p-8">
-                <h3 className="text-xl font-bold text-green-400 mb-6 font-['Montserrat']">✅ BlogIA™</h3>
+                <h3 className="text-xl font-bold text-green-400 mb-6 font-['Montserrat']">{t('blogIA.comparison.blogia')}</h3>
                 <ul className="space-y-3">
                   {[
                     "1h pour un article optimisé complet",
@@ -310,7 +327,7 @@ const BlogIA = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-['Montserrat']">
-                Questions fréquentes sur BlogIA™
+                {t('blogIA.faq.title')}
               </h2>
             </motion.div>
             
@@ -396,10 +413,10 @@ const BlogIA = () => {
             >
               <Card className="glass-effect border-white/20 p-8">
                 <h2 className="text-3xl font-bold text-white mb-4 font-['Montserrat']">
-                  Prêt à révolutionner votre contenu ?
+                  {t('blogIA.cta.title')}
                 </h2>
                 <p className="text-white/80 mb-6 font-['Montserrat']">
-                  Rejoignez les entreprises qui ont déjà transformé leur stratégie de contenu avec BlogIA™
+                  Lancez-vous dès aujourd'hui et transformez votre stratégie de contenu avec l'intelligence artificielle
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/contact">

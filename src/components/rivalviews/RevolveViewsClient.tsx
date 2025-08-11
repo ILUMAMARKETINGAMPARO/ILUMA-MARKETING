@@ -16,8 +16,8 @@ import { useIsMobile, useDeviceInfo } from '@/hooks/use-mobile';
 import { useDebounce } from '@/hooks/use-debounce';
 import EmployeeAuth from './EmployeeAuth';
 import EmployeeSection from './EmployeeSection';
-import SimplifiedRivalViews from './SimplifiedRivalViews.tsx';
-import EnhancedBusinessCard from './EnhancedBusinessCard.tsx';
+import SimplifiedRivalViews from './SimplifiedRivalViews';
+import EnhancedBusinessCard from './EnhancedBusinessCard';
 import { MapPin, Star, TrendingUp, BarChart3, Users, Crown, Eye, Shuffle, List, Database, Zap, Building2, Target, Rocket, X, ArrowLeftRight, Upload, RefreshCw, Sparkles, AlertTriangle, Info, CheckCircle, Clock, Filter, Search, Settings, Globe } from 'lucide-react';
 import { RivalBusiness, RivalFilters } from '@/types/rivalviews';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -109,7 +109,7 @@ const RevolveViewsClient: React.FC = () => {
       setIsLoading(true);
       const {
         enrichBusinessesWithAhrefs
-      } = await import('@/utils/enrichAhrefsData.ts');
+      } = await import('@/utils/enrichAhrefsData');
       const result = await enrichBusinessesWithAhrefs();
       console.log('Ahrefs enrichment result:', result);
       if (result.success) {
@@ -134,7 +134,7 @@ const RevolveViewsClient: React.FC = () => {
       setIsLoading(true);
 
       // Utiliser la classe de synchronisation pour charger les données enrichies
-      const { BusinessDataSync } = await import('@/utils/businessDataSync.ts');
+      const { BusinessDataSync } = await import('@/utils/businessDataSync');
       const enrichedBusinesses = await BusinessDataSync.loadEnrichedBusinessData();
       
       // Filtrer par ville si nécessaire
@@ -269,75 +269,89 @@ const RevolveViewsClient: React.FC = () => {
     setActiveTab('analysis');
     setShowEmployeeAuth(false);
   };
-  return <div className="min-h-screen bg-gradient-to-br from-black via-[#1a0b2e] to-black text-white overflow-hidden">
+  return (
+    <div className={`${isMobile ? 'min-h-screen' : 'min-h-screen'} bg-gradient-to-br from-black via-[#1a0b2e] to-black text-white ${isMobile ? 'overflow-auto' : ''}`}>
       {/* Header avec statistiques - Mobile responsive */}
-      <motion.div initial={{
-      opacity: 0,
-      y: -20
-    }} animate={{
-      opacity: 1,
-      y: 0
-    }} className="relative p-4 md:p-6 bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 border-b border-[#8E44FF]/30 backdrop-blur-sm">
-        <div className={`flex ${isMobile ? 'flex-col' : 'flex-col md:flex-row'} items-start ${isMobile ? '' : 'md:items-center'} justify-between gap-4`}>
-          <div>
-            <h1 className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent`}>
-              RivalViews™ Professional
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        className={`relative ${isMobile ? 'p-3' : 'p-4 md:p-6'} bg-gradient-to-r from-[#8E44FF]/20 to-[#FFD56B]/20 border-b border-[#8E44FF]/30 backdrop-blur-sm`}
+      >
+        <div className={`flex ${isMobile ? 'flex-col space-y-3' : 'flex-col md:flex-row'} items-start ${isMobile ? '' : 'md:items-center'} justify-between gap-4`}>
+          <div className={isMobile ? 'w-full' : ''}>
+            <h1 className={`${isMobile ? 'text-xl' : 'text-3xl'} font-bold bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent`}>
+              RivalViews™ {isMobile ? '' : 'Professional'}
             </h1>
-            <p className={`text-white/80 mt-1 ${isMobile ? 'text-sm' : ''}`}>
-              {isMobile ? 'IA pour analyse concurrentielle' : 'Intelligence artificielle pour l\'analyse concurrentielle avancée'}
+            <p className={`text-white/80 mt-1 ${isMobile ? 'text-xs' : ''}`}>
+              {isMobile ? 'IA concurrentielle' : 'Intelligence artificielle pour l\'analyse concurrentielle avancée'}
             </p>
           </div>
           
-          <div className={`flex ${isMobile ? 'flex-col gap-2' : 'items-center gap-4'} ${isMobile ? 'text-xs' : 'text-sm'} text-white/80`}>
+          <div className={`flex ${isMobile ? 'flex-row justify-between w-full text-xs items-center' : 'items-center gap-4 text-sm'} text-white/80`}>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span>Mapbox {isMobile ? 'ON' : 'Satellite Active'}</span>
+              <span>{isMobile ? 'Active' : 'Mapbox Satellite Active'}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Database className="w-4 h-4" />
-              <span>{businesses.length} {isMobile ? 'entreprises' : 'entreprises géolocalisées'}</span>
+              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+              <span>{filteredBusinesses.length} / {businesses.length} {isMobile ? 'visibles' : 'entreprises visibles'}</span>
             </div>
+            {!isMobile && (
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                <span>Score moyen: {businesses.length > 0 ? Math.round(businesses.reduce((acc, b) => acc + b.ilaScore, 0) / businesses.length) : 0}</span>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
 
       {/* Navigation professionnelle - Mobile responsive */}
       <Tabs value={activeTab} onValueChange={value => setActiveTab(value as 'simplified' | 'map' | 'analysis')} className="w-full">
-        <TabsList className={`grid w-full grid-cols-3 bg-slate-900/80 border border-purple-500/20 backdrop-blur-sm ${isMobile ? 'mb-6 p-1 mx-4 mt-4' : 'mb-10 p-2 mx-6 mt-6'} rounded-2xl`}>
-          <TabsTrigger value="simplified" className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-2 px-2 text-sm' : 'py-3'}`}>
-            <Eye className="w-4 h-4 mr-2" />
-            Vue Simplifiée
+        <TabsList className={`grid w-full grid-cols-3 bg-slate-900/80 border border-purple-500/20 backdrop-blur-sm ${isMobile ? 'mb-4 p-1 mx-2 mt-2 h-12' : 'mb-10 p-2 mx-6 mt-6'} rounded-2xl`}>
+          <TabsTrigger 
+            value="simplified" 
+            className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-1 px-1 text-xs h-10' : 'py-3'}`}
+          >
+            <Eye className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'} ${isMobile ? 'mr-1' : 'mr-2'}`} />
+            <span className={isMobile ? 'hidden' : ''}>Vue </span>Simplifiée
           </TabsTrigger>
-          <TabsTrigger value="map" className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-2 px-2 text-sm' : 'py-3'}`}>
-            <MapPin className="w-4 h-4 mr-2" />
-            Vue Carte
+          <TabsTrigger 
+            value="map" 
+            className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-1 px-1 text-xs h-10' : 'py-3'}`}
+          >
+            <MapPin className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'} ${isMobile ? 'mr-1' : 'mr-2'}`} />
+            <span className={isMobile ? 'hidden' : ''}>Vue </span>Carte
           </TabsTrigger>
-          <TabsTrigger value="analysis" className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-600 data-[state=active]:to-orange-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-2 px-2 text-sm' : 'py-3'}`}>
-            <BarChart3 className={`${isMobile ? 'w-4 h-4 mr-1' : 'w-5 h-5 mr-2'}`} />
+          <TabsTrigger 
+            value="analysis" 
+            className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-orange-600 data-[state=active]:to-orange-700 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 rounded-xl ${isMobile ? 'py-1 px-1 text-xs h-10' : 'py-3'}`}
+          >
+            <BarChart3 className={`${isMobile ? 'w-3 h-3 mr-1' : 'w-5 h-5 mr-2'}`} />
             <span className={`font-semibold ${isMobile ? 'text-xs' : ''}`}>
-              {isMobile ? 'Analyse' : 'Mode Analyse'}
+              Analyse
             </span>
           </TabsTrigger>
         </TabsList>
 
         {/* Vue Simplifiée */}
         <TabsContent value="simplified" className={isMobile ? "mt-0 p-0" : "mt-0 px-6"}>
-          <div className="space-y-6">
-            {/* Barre de recherche et filtres */}
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className={`space-y-${isMobile ? '3' : '6'}`}>
+            {/* Barre de recherche et filtres - Mobile optimisé */}
+            <div className={`${isMobile ? 'px-2' : ''} flex flex-col ${isMobile ? 'gap-2' : 'md:flex-row gap-4'} items-center justify-between`}>
               <Input
-                placeholder="Rechercher une entreprise..."
+                placeholder={isMobile ? "Rechercher..." : "Rechercher une entreprise..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="max-w-md bg-black/20 border-white/20 text-white"
+                className={`${isMobile ? 'w-full h-10' : 'max-w-md'} bg-black/20 border-white/20 text-white placeholder:text-white/60`}
               />
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="w-[200px] bg-black/20 border-white/20 text-white">
-                  <SelectValue placeholder="Filtrer par secteur" />
+                <SelectTrigger className={`${isMobile ? 'w-full h-10' : 'w-[200px]'} bg-black/20 border-white/20 text-white`}>
+                  <SelectValue placeholder={isMobile ? "Secteur" : "Filtrer par secteur"} />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-black/90 border-white/20">
                   {BUSINESS_CATEGORIES.map(category => (
-                    <SelectItem key={category} value={category}>
+                    <SelectItem key={category} value={category} className="text-white hover:bg-white/10">
                       {category === 'all' ? 'Tous les secteurs' : category}
                     </SelectItem>
                   ))}
@@ -345,8 +359,49 @@ const RevolveViewsClient: React.FC = () => {
               </Select>
             </div>
 
-            {/* Grille des entreprises enrichies */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* Statistiques rapides pour mobile - Plus détaillées */}
+            {isMobile && filteredBusinesses.length > 0 && (
+              <div className="px-2">
+                <div className="bg-gradient-to-r from-[#8E44FF]/10 to-[#FFD56B]/10 rounded-lg p-4 border border-[#8E44FF]/20">
+                  <div className="grid grid-cols-2 gap-4 text-center mb-3">
+                    <div>
+                      <div className="text-xl font-bold text-white">{filteredBusinesses.length}</div>
+                      <div className="text-xs text-white/60">Entreprises</div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-[#8E44FF]">
+                        {Math.round(filteredBusinesses.reduce((acc, b) => acc + b.ilaScore, 0) / filteredBusinesses.length)}
+                      </div>
+                      <div className="text-xs text-white/60">Score ILA moy.</div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                    <div>
+                      <div className="text-sm font-bold text-green-400">
+                        {filteredBusinesses.filter(b => b.ilaScore >= 80).length}
+                      </div>
+                      <div className="text-white/60">Excellence</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-blue-400">
+                        {filteredBusinesses.filter(b => b.ilaScore >= 60 && b.ilaScore < 80).length}
+                      </div>
+                      <div className="text-white/60">Performance</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-orange-400">
+                        {filteredBusinesses.filter(b => b.ilaScore < 60).length}
+                      </div>
+                      <div className="text-white/60">Potentiel</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Grille des entreprises enrichies - Mobile optimisé */}
+            <div className={`${isMobile ? 'px-2' : ''} grid ${isMobile ? 'grid-cols-1 gap-3' : 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6'}`}>
               {filteredBusinesses.map((business) => (
                 <EnhancedBusinessCard
                   key={business.id}
@@ -363,18 +418,23 @@ const RevolveViewsClient: React.FC = () => {
 
             {/* Message si aucune entreprise */}
             {filteredBusinesses.length === 0 && !isLoading && (
-              <div className="text-center py-12">
-                <p className="text-white/60">Aucune entreprise trouvée</p>
+              <div className={`text-center ${isMobile ? 'py-8' : 'py-12'}`}>
+                <p className="text-white/60">{isMobile ? 'Aucun résultat' : 'Aucune entreprise trouvée'}</p>
+                {isMobile && (
+                  <p className="text-white/40 text-sm mt-2">Modifiez vos filtres</p>
+                )}
               </div>
             )}
           </div>
         </TabsContent>
 
         {/* Vue Carte */}
-        <TabsContent value="map" className="mt-0 px-0">
-          <div className="space-y-0">
-            {/* Interface RIVALVIEWS™ Pro V5 - Version exacte de l'image */}
-            <RivalViewsProV5 />
+        <TabsContent value="map" className={`mt-0 ${isMobile ? 'px-0' : 'px-0'}`}>
+          <div className={`space-y-0 ${isMobile ? 'h-auto' : ''}`}>
+            {/* Interface RIVALVIEWS™ Pro V5 - Version optimisée mobile */}
+            <div className={isMobile ? 'h-auto min-h-screen' : ''}>
+              <RivalViewsProV5 />
+            </div>
           </div>
         </TabsContent>
 
@@ -478,6 +538,7 @@ const RevolveViewsClient: React.FC = () => {
             </div>
           </motion.div>
         </div>}
-    </div>;
+    </div>
+  );
 };
 export default RevolveViewsClient;

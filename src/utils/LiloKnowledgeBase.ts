@@ -10,7 +10,7 @@ export const ilumaInfo = {
   founders: ['Sergio David Ortega-Ramos', 'Amparo Lopez'],
   contact: {
     phone: '+1 (514) 882-8910',
-    email: 'iluma.marketing@gmail.com',
+    email: 'administracion@ilumamarketing.com',
     website: 'https://ilumamarketing.com'
   },
   mission: 'Démocratiser le marketing digital intelligent pour les PME locales',
@@ -18,7 +18,7 @@ export const ilumaInfo = {
     'Marketing digital IA-first',
     'SEO local et géolocalisé', 
     'Campagnes publicitaires intelligentes',
-    'Solutions IA propriétaires',
+    'Outils IA propriétaires',
     'Transformation digitale PME'
   ]
 };
@@ -78,12 +78,12 @@ export const contextualResponses = {
     suggestions: [
       "🎯 Faire mon diagnostic ADLUMA™",
       "📊 Calculer mon score ILA™", 
-      "🔍 Explorer nos solutions IA",
+      "🔍 Explorer nos outils IA",
       "📞 Réserver une démo gratuite"
     ]
   },
 
-  // Solutions IA
+  // Outils IA
   '/adluma': {
     welcome: [
       "🎯 ADLUMA™ - notre simulateur publicitaire intelligent ! Prêt à prédire l'impact de vos campagnes ?",
@@ -191,11 +191,11 @@ export const faqKnowledge = {
   },
   "délais": {
     question: ["délai", "temps", "durée", "rapidité"],
-    response: "⚡ Site web: 2-4 semaines | SEO: premiers résultats en 30-90 jours | Solutions IA: activation immédiate | Diagnostic gratuit en 24h !"
+    response: "⚡ Site web: 2-4 semaines | SEO: premiers résultats en 30-90 jours | Outils IA: activation immédiate | Diagnostic gratuit en 24h !"
   },
   "contact": {
     question: ["contact", "appel", "téléphone", "email"],
-    response: "📞 +1 (514) 882-8910 | 📧 iluma.marketing@gmail.com | Sergio & Amparo vous répondent personnellement !"
+    response: "📞 +1 (514) 882-8910 | 📧 administracion@ilumamarketing.com | Sergio & Amparo vous répondent personnellement !"
   },
   "services": {
     question: ["service", "offre", "que faites", "proposez"],
@@ -203,7 +203,7 @@ export const faqKnowledge = {
   },
   "solutions": {
     question: ["solution", "outil", "ia", "intelligence"],
-    response: `🤖 ${solutions.length} solutions IA : ILUMATCH™ (matching), ADLUMA™ (simulation), BLOG IA™ (contenu), QRVISIBILITÉ™ (analyse), ILA™ (scoring)`
+    response: `🤖 ${solutions.length} outils IA : ILUMATCH™ (matching), ADLUMA™ (simulation), BLOG IA™ (contenu), QRVISIBILITÉ™ (analyse), ILA™ (scoring)`
   },
   "produits": {
     question: ["produit", "site", "landing", "web"],
@@ -264,7 +264,7 @@ export const getPageSuggestions = (currentPage: string) => {
 
 // Stats rapides enrichis
 export const getQuickStats = () => {
-  return `📊 Écosystème Iluma™: ${products.length} produits • ${solutions.length} solutions IA • ${services.length} services premium = ${products.length + solutions.length + services.length} offres total !`;
+  return `📊 Écosystème Iluma™: ${products.length} produits • ${solutions.length} outils IA • ${services.length} services premium = ${products.length + solutions.length + services.length} offres total !`;
 };
 
 // Obtenir les détails d'une offre spécifique

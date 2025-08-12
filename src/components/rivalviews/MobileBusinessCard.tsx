@@ -13,7 +13,7 @@ import {
   MapPin,
   ChevronRight
 } from 'lucide-react';
-import { RivalBusiness } from '@/types/rivalviews.ts';
+import { RivalBusiness } from '@/types/rivalviews';
 
 interface MobileBusinessCardProps {
   business: RivalBusiness;
@@ -85,8 +85,8 @@ const MobileBusinessCard: React.FC<MobileBusinessCardProps> = ({
         </CardHeader>
         
         <CardContent className="pt-0 space-y-3">
-          {/* Métriques compactes en grille */}
-          <div className="grid grid-cols-3 gap-2 text-xs">
+          {/* Statistiques RÉELLES de votre Supabase - Métriques principales */}
+          <div className="grid grid-cols-3 gap-2 text-xs mb-3">
             {/* Google Rating */}
             <div className="bg-blue-500/10 border border-blue-500/30 rounded p-2">
               <div className="flex items-center gap-1 mb-1">
@@ -101,33 +101,85 @@ const MobileBusinessCard: React.FC<MobileBusinessCardProps> = ({
               </div>
             </div>
             
-            {/* SEO Performance */}
+            {/* Trafic Organique */}
             <div className="bg-green-500/10 border border-green-500/30 rounded p-2">
               <div className="flex items-center gap-1 mb-1">
                 <TrendingUp className="w-3 h-3 text-green-400" />
-                <span className="text-green-400 font-medium">SEO</span>
+                <span className="text-green-400 font-medium">Trafic</span>
               </div>
               <div className="text-white font-semibold">
-                {business.top10Keywords}
+                {business.organicTraffic > 0 ? (business.organicTraffic > 1000 ? `${Math.round(business.organicTraffic/1000)}K` : business.organicTraffic) : '0'}
               </div>
               <div className="text-white/60">
-                TOP 10
+                /mois
               </div>
             </div>
             
-            {/* Position */}
+            {/* Mots-clés */}
             <div className="bg-purple-500/10 border border-purple-500/30 rounded p-2">
               <div className="flex items-center gap-1 mb-1">
                 <Target className="w-3 h-3 text-purple-400" />
-                <span className="text-purple-400 font-medium">Pos</span>
+                <span className="text-purple-400 font-medium">KW</span>
               </div>
               <div className="text-white font-semibold">
-                #{business.serpRank}
+                {business.indexedKeywords > 0 ? (business.indexedKeywords > 1000 ? `${Math.round(business.indexedKeywords/1000)}K` : business.indexedKeywords) : '0'}
               </div>
               <div className="text-white/60">
-                SERP
+                mots-clés
               </div>
             </div>
+          </div>
+
+          {/* Statistiques avancées - Deuxième ligne COMPLÈTE */}
+          <div className="grid grid-cols-3 gap-2 text-xs mb-3">
+            {/* Backlinks */}
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded p-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-orange-400 font-medium">BL</span>
+                <span className="text-white font-semibold">
+                  {business.backlinks > 0 ? (business.backlinks > 1000 ? `${Math.round(business.backlinks/1000)}K` : business.backlinks) : '0'}
+                </span>
+              </div>
+            </div>
+            
+            {/* Domain Rating */}
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded p-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-yellow-400 font-medium">DR</span>
+                <span className="text-white font-semibold">
+                  {business.domainRating || '0'}
+                </span>
+              </div>
+            </div>
+            
+            {/* Ref Domains */}
+            <div className="bg-cyan-500/10 border border-cyan-500/30 rounded p-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-cyan-400 font-medium">RD</span>
+                <span className="text-white font-semibold">
+                  {business.refDomains || '0'}
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Badges de performance avancés */}
+          <div className="flex flex-wrap gap-1 text-xs mb-2">
+            {business.organicTraffic > 5000 && (
+              <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded">🔥 Trafic Fort</span>
+            )}
+            {business.domainRating && business.domainRating > 30 && (
+              <span className="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded">💪 Autorité</span>
+            )}
+            {business.presenceBlog && (
+              <span className="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded">📝 Blog</span>
+            )}
+            {business.refDomainsEducational && business.refDomainsEducational > 0 && (
+              <span className="bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded">🎓 EDU</span>
+            )}
+            {business.refDomainsGovernmental && business.refDomainsGovernmental > 0 && (
+              <span className="bg-red-500/20 text-red-400 px-2 py-0.5 rounded">🏛️ GOV</span>
+            )}
           </div>
           
           {/* Actions mobiles */}
@@ -175,16 +227,34 @@ const MobileBusinessCard: React.FC<MobileBusinessCardProps> = ({
             )}
           </div>
           
-          {/* Détails supplémentaires */}
+          {/* Détails supplémentaires COMPLETS */}
           <div className="text-xs text-white/60 space-y-1">
             <div className="flex justify-between">
               <span>Trafic organique:</span>
               <span className="text-white">{business.organicTraffic.toLocaleString()}/mois</span>
             </div>
             <div className="flex justify-between">
-              <span>Backlinks:</span>
-              <span className="text-white">{business.backlinks}</span>
+              <span>Backlinks totaux:</span>
+              <span className="text-white">{business.backlinks.toLocaleString()}</span>
             </div>
+            {business.refDomains && business.refDomains > 0 && (
+              <div className="flex justify-between">
+                <span>Domaines référents:</span>
+                <span className="text-white">{business.refDomains}</span>
+              </div>
+            )}
+            {business.pagesIndexees && business.pagesIndexees > 0 && (
+              <div className="flex justify-between">
+                <span>Pages indexées:</span>
+                <span className="text-white">{business.pagesIndexees}</span>
+              </div>
+            )}
+            {business.ahrefsRank && business.ahrefsRank > 0 && (
+              <div className="flex justify-between">
+                <span>Ahrefs Rank:</span>
+                <span className="text-white">{business.ahrefsRank.toLocaleString()}</span>
+              </div>
+            )}
             {business.distanceFromUser && (
               <div className="flex justify-between">
                 <span>Distance:</span>

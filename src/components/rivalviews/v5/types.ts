@@ -1,4 +1,4 @@
-// Types partagés pour le module v5
+// Types partagés pour le module v5 - COMPLET avec toutes les statistiques Supabase
 export interface UnifiedBusinessData {
   id: string;
   name: string;
@@ -17,7 +17,7 @@ export interface UnifiedBusinessData {
   lat: number;
   lng: number;
   
-  // Données Ahrefs
+  // Données Ahrefs principales
   organicTraffic: number;
   keywords: number;
   backlinks: number;
@@ -27,6 +27,40 @@ export interface UnifiedBusinessData {
   ilaScore: number;
   digitalPresence: 'forte' | 'moyenne' | 'faible';
   competitionLevel: 'élevée' | 'moyenne' | 'faible';
+  
+  // Métriques Ahrefs complètes
+  refDomains?: number;
+  refDomainsDofollow?: number;
+  refDomainsGovernmental?: number;
+  refDomainsEducational?: number;
+  refIps?: number;
+  refSubnets?: number;
+  linkedDomains?: number;
+  ahrefsRank?: number;
+  backlinksText?: number;
+  backlinksNofollow?: number;
+  backlinksRedirect?: number;
+  backlinksImage?: number;
+  backlinksFrame?: number;
+  backlinksForm?: number;
+  backlinksGovernmental?: number;
+  backlinksEducational?: number;
+  
+  // Métriques de contenu
+  presenceBlog?: boolean;
+  qualiteBlog?: number;
+  pagesIndexees?: number;
+  
+  // Métriques financières
+  cpcMoyen?: number;
+  kdMoyen?: number;
+  
+  // Scores détaillés
+  seoScoreDetailed?: number;
+  contenuScore?: number;
+  presencePhysiqueScore?: number;
+  reputationScore?: number;
+  positionScore?: number;
 }
 
 export type ViewModeV5 = 'map' | 'list' | 'hybrid';

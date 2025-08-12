@@ -25,68 +25,8 @@ import { Link } from 'react-router-dom';
 const IlumaEcosystem = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
 
-  const modules = [
-    {
-      id: 'adluma',
-      name: 'ADLUMA™',
-      description: 'Simulateur publicitaire IA',
-      icon: Calculator,
-      path: '/adluma',
-      color: 'from-purple-500 to-pink-500',
-      features: ['Prédictions IA', 'ROI Estimé', 'Multi-plateformes'],
-      status: 'active'
-    },
-    {
-      id: 'blogia',
-      name: 'BlogIA™',
-      description: 'Générateur de contenu intelligent',
-      icon: PenTool,
-      path: '/blogia',
-      color: 'from-blue-500 to-cyan-500',
-      features: ['Génération automatique', 'SEO optimisé', 'Multi-langues'],
-      status: 'active'
-    },
-    {
-      id: 'ilumatch',
-      name: 'ILUMATCH™',
-      description: 'Système de matching intelligent',
-      icon: Target,
-      path: '/ilumatch',
-      color: 'from-green-500 to-emerald-500',
-      features: ['Matching IA', 'Scoring avancé', 'Recommandations'],
-      status: 'active'
-    },
-    {
-      id: 'lilo',
-      name: 'LILO™',
-      description: 'Assistant IA conversationnel',
-      icon: Bot,
-      path: '/lilo',
-      color: 'from-orange-500 to-red-500',
-      features: ['Chat intelligent', 'Support 24/7', 'Multi-langues'],
-      status: 'active'
-    },
-    {
-      id: 'ila',
-      name: 'ILA™',
-      description: 'Indice de Luminosité Algorithmique',
-      icon: Brain,
-      path: '/ila',
-      color: 'from-yellow-500 to-amber-500',
-      features: ['Scoring précis', 'Analyse complète', 'Recommandations'],
-      status: 'active'
-    },
-    {
-      id: 'analytics',
-      name: 'Analytics+',
-      description: 'Tableau de bord intelligent',
-      icon: BarChart3,
-      path: '/tableau-analytics',
-      color: 'from-indigo-500 to-purple-500',
-      features: ['Métriques temps réel', 'Insights IA', 'Reporting auto'],
-      status: 'active'
-    }
-  ];
+  // Import des données depuis ecosystem.ts
+  const { tools } = require('@/data/ecosystem');
 
   const services = [
     {
@@ -131,7 +71,7 @@ const IlumaEcosystem = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-white mb-4 font-['Montserrat']">
-              Modules <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Iluma™</span>
+              Outils <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Iluma™</span>
             </h2>
             <p className="text-white/70 max-w-2xl mx-auto font-['Montserrat']">
               Une suite complète d'outils IA pour ILLUMINER votre présence digitale
@@ -140,7 +80,7 @@ const IlumaEcosystem = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {modules.map((module, index) => {
+          {tools.map((module, index) => {
             const IconComponent = module.icon;
             const isActive = activeModule === module.id;
             
@@ -272,7 +212,7 @@ const IlumaEcosystem = () => {
             Prêt à Transformer Votre Business ?
           </h3>
           <p className="text-white/70 max-w-2xl mx-auto mb-8 text-lg font-['Montserrat']">
-            Découvrez comment nos solutions IA peuvent propulser votre croissance
+            Découvrez comment nos outils IA peuvent propulser votre croissance
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/simulateur">

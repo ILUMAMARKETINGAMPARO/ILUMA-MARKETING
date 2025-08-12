@@ -14,6 +14,7 @@ import { SystemProvider } from '@/contexts/SystemContext';
 import { AppProvider } from '@/contexts/AppContext';
 import { MeetingProvider } from '@/contexts/MeetingContext';
 import { ExportProvider } from '@/contexts/ExportContext';
+import { SecurityProvider } from '@/components/security/SecurityProvider';
 import GlobalErrorBoundary from '@/components/lilo/LiloErrorBoundary';
 import AppLayout from '@/components/layout/AppLayout';
 import LazyLoadWrapper from '@/components/performance/LazyLoadWrapper';
@@ -115,29 +116,30 @@ function App() {
   return (
     <GlobalErrorBoundary>
       <AuthProvider>
-        <LanguageProvider>
-          <CRMProvider>
-            <MeetingProvider>
-              <ProjectProvider>
-                <SaveProvider>
-                  <AppProvider>
-                    <SystemProvider>
-                      <MPEProvider>
-                        <ExportProvider>
-                          <RouterProvider router={multilingualRouter} />
-                        </ExportProvider>
-                      </MPEProvider>
-                    </SystemProvider>
-                  </AppProvider>
-                </SaveProvider>
-              </ProjectProvider>
-            </MeetingProvider>
-          </CRMProvider>
-        </LanguageProvider>
+        <SecurityProvider>
+          <LanguageProvider>
+            <CRMProvider>
+              <MeetingProvider>
+                <ProjectProvider>
+                  <SaveProvider>
+                    <AppProvider>
+                      <SystemProvider>
+                        <MPEProvider>
+                          <ExportProvider>
+                            <RouterProvider router={multilingualRouter} />
+                          </ExportProvider>
+                        </MPEProvider>
+                      </SystemProvider>
+                    </AppProvider>
+                  </SaveProvider>
+                </ProjectProvider>
+              </MeetingProvider>
+            </CRMProvider>
+          </LanguageProvider>
+        </SecurityProvider>
       </AuthProvider>
     </GlobalErrorBoundary>
   );
 }
 
 export default App;
-

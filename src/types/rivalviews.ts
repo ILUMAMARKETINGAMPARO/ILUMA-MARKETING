@@ -22,20 +22,75 @@ export interface RivalBusiness {
   potential: 'low' | 'medium' | 'high';
   tags?: string[];
   
-  // Nouvelles variables pour Score ILA™ (selon document QRVISIBILITÉ™)
-  isChain: boolean; // Succursale ou non
-  chainCount?: number; // Nombre de succursales
-  indexedKeywords: number; // Mots-clés indexés (Ahrefs)
-  top10Keywords: number; // Mots-clés top 10 (Ahrefs)
-  topKeyword?: string; // Top mot-clé par volume
-  topKeywordVolume?: number; // Volume du top mot-clé
-  backlinks: number; // Nombre total de backlinks (Ahrefs)
-  organicTraffic: number; // Trafic organique estimé mensuel (Ahrefs)
-  totalComments: number; // Nombre total de commentaires (GMB)
-  hasPhotos: boolean; // Présence de photos (GMB)
-  distanceFromUser?: number; // Distance / concentration concurrentielle
-  lastReview?: string; // Dernier avis (preview)
-  avgPosition?: number; // Position moyenne SEO
+  // Données complètes de performance selon format demandé
+  isChain: boolean;
+  chainCount?: number;
+  indexedKeywords: number; // Total mots-clés (Ahrefs)
+  top10Keywords: number; // Top 10 mots-clés
+  top20Keywords?: number; // Top 20 mots-clés calculé
+  topKeyword?: string; // Mot-clé #1 principal
+  topKeywordVolume?: number; // Volume mensuel du mot-clé #1
+  backlinks: number; // Backlinks totaux
+  organicTraffic: number; // Trafic estimé/mois (Ahrefs)
+  totalComments: number; // Commentaires GMB
+  hasPhotos: boolean; // Photos présentes
+  distanceFromUser?: number;
+  lastReview?: string;
+  avgPosition?: number;
+  
+  // Données sociales enrichies
+  followersInstagram?: number;
+  followersFacebook?: number;
+  followersTikTok?: number;
+  followersLinkedIn?: number;
+  
+  // Métriques SEO avancées
+  domainRating?: number; // DR Ahrefs
+  ahrefsRank?: number;
+  refDomains?: number; // Domaines référents
+  seoScore?: number; // Score SEO sur 5
+  
+  // Métriques Ahrefs complètes - TOUTES les données de Supabase
+  refDomainsDofollow?: number;
+  refDomainsGovernmental?: number;
+  refDomainsEducational?: number;
+  refIps?: number;
+  refSubnets?: number;
+  linkedDomains?: number;
+  backlinksText?: number;
+  backlinksNofollow?: number;
+  backlinksRedirect?: number;
+  backlinksImage?: number;
+  backlinksFrame?: number;
+  backlinksForm?: number;
+  backlinksGovernmental?: number;
+  backlinksEducational?: number;
+  
+  // Métriques de contenu et blog
+  presenceBlog?: boolean;
+  qualiteBlog?: number;
+  pagesIndexees?: number;
+  
+  // Métriques financières
+  cpcMoyen?: number;
+  kdMoyen?: number;
+  
+  // Scores détaillés ILA
+  seoScoreDetailed?: number;
+  contenuScore?: number;
+  presencePhysiqueScore?: number;
+  reputationScore?: number;
+  positionScore?: number;
+  
+  // Actions et recommandations IA
+  aiRecommendedAction?: string; // Action IA recommandée
+  aiAnalysis?: string; // Analyse complète IA
+  competitorAnalysis?: string; // Analyse concurrentielle
+  
+  // Synchronisation CRM
+  crmId?: string; // ID dans le CRM
+  lastSyncAt?: string; // Dernière synchronisation
+  syncStatus?: 'synced' | 'pending' | 'error';
 }
 
 export interface RivalFilters {

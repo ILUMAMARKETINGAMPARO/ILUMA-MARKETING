@@ -105,8 +105,8 @@ export const EnterpriseListV5: React.FC<EnterpriseListV5Props> = ({
                     </div>
                   </div>
 
-                  {/* Métriques principales */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                  {/* Statistiques RÉELLES de votre Supabase */}
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm mb-3">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Star className="w-4 h-4 text-yellow-400" />
                       <span>{business.googleStars}</span>
@@ -115,18 +115,94 @@ export const EnterpriseListV5: React.FC<EnterpriseListV5Props> = ({
                     
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <TrendingUp className="w-4 h-4 text-green-400" />
-                      <span>{business.organicTraffic.toLocaleString()}/mois</span>
+                      <span className="font-bold text-green-400">{business.organicTraffic.toLocaleString()}</span>
+                      <span className="text-xs">trafic/mois</span>
                     </div>
                     
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Eye className="w-4 h-4 text-blue-400" />
-                      <span>{business.keywords} mots-clés</span>
+                      <span className="font-bold text-blue-400">{business.keywords.toLocaleString()}</span>
+                      <span className="text-xs">mots-clés</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="w-4 h-4 text-purple-400 text-center font-bold">BL</span>
+                      <span className="font-bold text-purple-400">{business.backlinks.toLocaleString()}</span>
+                      <span className="text-xs">backlinks</span>
                     </div>
                     
                     <div className={`flex items-center gap-2 font-bold ${getScoreColor(business.ilaScore)}`}>
                       <span>ILA™ {business.ilaScore}</span>
                     </div>
                   </div>
+
+                  {/* Métriques avancées COMPLÈTES - Toutes les données Supabase */}
+                  {(business.domainRating > 0 || business.refDomains || business.ahrefsRank) && (
+                    <div className="flex flex-wrap gap-2 text-xs text-muted-foreground border-t border-border/20 pt-2">
+                      {business.domainRating > 0 && (
+                        <span>DR: <span className="text-orange-400 font-bold">{business.domainRating}</span></span>
+                      )}
+                      {business.refDomains && business.refDomains > 0 && (
+                        <span>RD: <span className="text-blue-400 font-bold">{business.refDomains}</span></span>
+                      )}
+                      {business.ahrefsRank && business.ahrefsRank > 0 && (
+                        <span>AR: <span className="text-purple-400 font-bold">{business.ahrefsRank.toLocaleString()}</span></span>
+                      )}
+                      {business.pagesIndexees && business.pagesIndexees > 0 && (
+                        <span>Pages: <span className="text-indigo-400 font-bold">{business.pagesIndexees}</span></span>
+                      )}
+                      
+                      {/* Badges de performance */}
+                      {business.organicTraffic > 10000 && (
+                        <span className="text-green-400 font-medium">🔥 FORT TRAFIC</span>
+                      )}
+                      {business.backlinks > 1000 && (
+                        <span className="text-purple-400 font-medium">💪 FORTE AUTORITÉ</span>
+                      )}
+                      {business.keywords > 10000 && (
+                        <span className="text-blue-400 font-medium">🎯 RICHE SEO</span>
+                      )}
+                      {business.presenceBlog && (
+                        <span className="text-cyan-400 font-medium">📝 BLOG ACTIF</span>
+                      )}
+                      {business.refDomainsEducational && business.refDomainsEducational > 0 && (
+                        <span className="text-yellow-400 font-medium">🎓 LIENS EDU</span>
+                      )}
+                      {business.refDomainsGovernmental && business.refDomainsGovernmental > 0 && (
+                        <span className="text-red-400 font-medium">🏛️ LIENS GOV</span>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Scores détaillés ILA */}
+                  {(business.seoScoreDetailed || business.contenuScore || business.reputationScore) && (
+                    <div className="grid grid-cols-4 gap-2 text-xs mt-2 p-2 bg-background/20 rounded">
+                      {business.seoScoreDetailed > 0 && (
+                        <div className="text-center">
+                          <div className="text-green-400 font-bold">{business.seoScoreDetailed}</div>
+                          <div className="text-muted-foreground">SEO</div>
+                        </div>
+                      )}
+                      {business.contenuScore > 0 && (
+                        <div className="text-center">
+                          <div className="text-blue-400 font-bold">{business.contenuScore}</div>
+                          <div className="text-muted-foreground">Contenu</div>
+                        </div>
+                      )}
+                      {business.reputationScore > 0 && (
+                        <div className="text-center">
+                          <div className="text-yellow-400 font-bold">{business.reputationScore}</div>
+                          <div className="text-muted-foreground">Réputation</div>
+                        </div>
+                      )}
+                      {business.positionScore > 0 && (
+                        <div className="text-center">
+                          <div className="text-purple-400 font-bold">{business.positionScore}</div>
+                          <div className="text-muted-foreground">Position</div>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {/* Contact rapide */}
                   <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">

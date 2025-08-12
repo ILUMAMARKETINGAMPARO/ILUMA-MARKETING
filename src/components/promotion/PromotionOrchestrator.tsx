@@ -11,9 +11,10 @@ const PromotionOrchestrator: React.FC<PromotionOrchestratorProps> = ({
   children
 }) => {
   const [showPopup, setShowPopup] = useState(false);
-  console.log('🎪 PromotionOrchestrator State:', {
-    showPopup
-  });
+  // Logs désactivés pour éviter les spams
+  // console.log('🎪 PromotionOrchestrator State:', {
+  //   showPopup
+  // });
   const [hasShownPopup, setHasShownPopup] = useState(false);
   const {
     userBehavior,

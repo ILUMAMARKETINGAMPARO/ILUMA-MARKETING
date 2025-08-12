@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { sanitizeUserInput, sanitizeEmail, validateRoleChange, logSecurityEvent } from '@/utils/security';
 
 interface Profile {
   id: string;
@@ -166,28 +167,82 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const updateProfile = async (updates: Partial<Profile>) => {
     if (!user) return { error: new Error('Not authenticated') };
 
-    const { error } = await supabase
-      .from('profiles')
-      .update(updates)
-      .eq('user_id', user.id);
+    try {
+      // Sanitize input data
+      const sanitizedUpdates = {
+        ...updates,
+        first_name: updates.first_name ? sanitizeUserInput(updates.first_name) : updates.first_name,
+        last_name: updates.last_name ? sanitizeUserInput(updates.last_name) : updates.last_name,
+        display_name: updates.display_name ? sanitizeUserInput(updates.display_name) : updates.display_name,
+      };
 
-    if (error) {
-      toast({
-        title: "Erreur de mise à jour",
-        description: error.message,
-        variant: "destructive"
-      });
-    } else {
+      // Enhanced security check for role modifications
+      if (sanitizedUpdates.role && profile) {
+        const isAllowed = validateRoleChange(
+          profile.role,
+          sanitizedUpdates.role,
+          user.id,
+          user.id
+        );
+        
+        if (!isAllowed) {
+          logSecurityEvent('UNAUTHORIZED_ROLE_CHANGE_ATTEMPT', {
+            userId: user.id,
+            currentRole: profile.role,
+            attemptedRole: sanitizedUpdates.role,
+            timestamp: new Date().toISOString()
+          });
+          
+          const error = new Error('Unauthorized: Insufficient privileges to modify roles');
+          toast({
+            title: "Erreur de sécurité",
+            description: "Vous n'avez pas les privilèges pour modifier les rôles.",
+            variant: "destructive"
+          });
+          return { error };
+        }
+      }
+
+      const { error } = await supabase
+        .from('profiles')
+        .update(sanitizedUpdates)
+        .eq('user_id', user.id);
+
+      if (error) {
+        toast({
+          title: "Erreur de mise à jour",
+          description: error.message,
+          variant: "destructive"
+        });
+        return { error };
+      }
+
       // Refresh profile
       await fetchProfile(user.id);
+      
+      // Log successful profile update
+      logSecurityEvent('PROFILE_UPDATED', {
+        userId: user.id,
+        updatedFields: Object.keys(sanitizedUpdates),
+        timestamp: new Date().toISOString()
+      });
+
       toast({
         title: "Profil mis à jour",
         description: "Vos informations ont été sauvegardées.",
         variant: "default"
       });
-    }
 
-    return { error };
+      return { error: null };
+    } catch (error: any) {
+      console.error('Profile update error:', error);
+      toast({
+        title: "Erreur de mise à jour",
+        description: error.message,
+        variant: "destructive"
+      });
+      return { error };
+    }
   };
 
   const value = {

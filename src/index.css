@@ -683,3 +683,25 @@ body.popup-open {
   background: rgba(255, 213, 107, 0.5);
   border-radius: 999px;
 }
+
+/* === Solutions définitives pour éléments flottants === */
+.lilo-floating-container {
+  position: fixed !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+.ship-floating-container {
+  position: fixed !important;
+  z-index: 9998 !important;
+  pointer-events: auto !important;
+}
+
+/* Isoler les éléments flottants des transformations parentes */
+.lilo-floating-container,
+.ship-floating-container {
+  will-change: transform;
+  isolation: isolate;
+  contain: layout style;
+}
+

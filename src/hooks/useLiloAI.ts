@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
-import { supabase } from '@/integrations/supabase/client.ts';
+import { supabase } from '@/integrations/supabase/client';
 import { LiloModule, LiloMood } from '@/types/lilo';
+import { useLiloVoice } from './useLiloVoice';
 
 interface LiloMessage {
   id: string;
@@ -34,6 +35,17 @@ interface UseLiloAIReturn {
   updateContext: (context: Partial<LiloAIContext>) => void;
   generateSuggestions: () => string[];
   isConnected: boolean;
+  
+  // Nouvelles fonctionnalités vocales
+  voiceInterface: {
+    speak: (text: string, emotion?: LiloMood) => Promise<void>;
+    isSpeaking: boolean;
+    isListening: boolean;
+    transcript: string;
+    startListening: () => Promise<void>;
+    stopListening: () => void;
+    toggleVoice: () => void;
+  };
 }
 
 export const useLiloAI = (
@@ -47,6 +59,9 @@ export const useLiloAI = (
   const [currentEmotion, setCurrentEmotion] = useState<LiloMood>('happy');
   const [aiContext, setAIContext] = useState<LiloAIContext>(context);
   const [isConnected, setIsConnected] = useState(true);
+  
+  // Intégration de l'interface vocale
+  const voice = useLiloVoice(module, userId);
 
   const generateMessageId = () => `msg-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -93,6 +108,11 @@ export const useLiloAI = (
 
       setMessages(prev => [...prev, liloResponse]);
       setCurrentEmotion(data.emotion || 'helper');
+      
+      // Synthèse vocale automatique de la réponse
+      if (data.response && voice.synthesis.isSupported) {
+        await voice.synthesis.speak(data.response, data.emotion || 'helper');
+      }
 
       // Mettre à jour l'activité récente
       setAIContext(prev => ({
@@ -213,6 +233,17 @@ export const useLiloAI = (
     executeAction,
     updateContext,
     generateSuggestions,
-    isConnected
+    isConnected,
+    
+    // Interface vocale intégrée
+    voiceInterface: {
+      speak: voice.synthesis.speak,
+      isSpeaking: voice.synthesis.isSpeaking,
+      isListening: voice.recognition.isListening,
+      transcript: voice.transcript,
+      startListening: voice.recognition.start,
+      stopListening: voice.recognition.stop,
+      toggleVoice: () => voice.recognition.isListening ? voice.recognition.stop() : voice.recognition.start()
+    }
   };
 };

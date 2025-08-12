@@ -44,7 +44,8 @@ const LiloEnhancedChat: React.FC<LiloEnhancedChatProps> = ({
     clearConversation,
     executeAction,
     generateSuggestions,
-    isConnected
+    isConnected,
+    voiceInterface
   } = useLiloAI(userId, module, context, language);
 
   // Notifier le changement d'émotion au parent
@@ -56,6 +57,13 @@ const LiloEnhancedChat: React.FC<LiloEnhancedChatProps> = ({
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Gérer la transcription vocale
+  useEffect(() => {
+    if (voiceInterface.transcript && !inputValue) {
+      setInputValue(voiceInterface.transcript);
+    }
+  }, [voiceInterface.transcript, inputValue]);
 
   // Focus sur l'input quand le chat s'ouvre
   useEffect(() => {

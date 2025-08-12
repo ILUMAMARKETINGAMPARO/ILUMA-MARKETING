@@ -5,12 +5,12 @@ import { ArrowRight, Brain, Package, Lightbulb, Wrench } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { products, solutions, services } from '@/data/ecosystem';
+import { products, tools, services } from '@/data/ecosystem';
 
 const ModularServicesGrid: React.FC = () => {
   // Échantillons représentatifs de chaque catégorie
   const featuredProducts = products.slice(0, 2);
-  const featuredSolutions = solutions.slice(0, 2);
+  const featuredTools = tools.slice(0, 2);
   const featuredServices = services.filter(s => s.category === 'seo' || s.category === 'ads').slice(0, 2);
 
   const categories = [
@@ -23,10 +23,10 @@ const ModularServicesGrid: React.FC = () => {
       icon: <Package className="w-8 h-8" />
     },
     {
-      id: 'solutions', 
-      title: '🤖 Solutions IA',
+      id: 'tools', 
+      title: '🤖 Outils IA',
       subtitle: 'Outils intelligents propriétaires',
-      items: featuredSolutions,
+      items: featuredTools,
       color: 'from-purple-500 to-pink-400', 
       icon: <Lightbulb className="w-8 h-8" />
     },
@@ -53,7 +53,7 @@ const ModularServicesGrid: React.FC = () => {
             🚀 Écosystème <span className="text-gradient">Iluma™</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            <strong>Produits</strong> finis • <strong>Solutions IA</strong> propriétaires • <strong>Services</strong> premium sur-mesure
+            <strong>Produits</strong> finis • <strong>Outils IA</strong> propriétaires • <strong>Services</strong> premium sur-mesure
           </p>
         </motion.div>
 
@@ -152,8 +152,8 @@ const ModularServicesGrid: React.FC = () => {
                               size="sm"
                               className="w-full group/btn bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-300"
                             >
-                              {category.id === 'products' ? 'Commander' : 
-                               category.id === 'solutions' ? 'Utiliser' : 'Découvrir'}
+                             {category.id === 'products' ? 'Commander' : 
+                               category.id === 'tools' ? 'Utiliser' : 'Découvrir'}
                               <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                             </Button>
                           </Link>
@@ -184,7 +184,7 @@ const ModularServicesGrid: React.FC = () => {
             <Link to="/presentation-outils">
               <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
                 <Brain className="w-5 h-5 mr-2" />
-                Voir Tous nos Produits, Solutions & Services
+                Voir Tous nos Produits, Outils & Services
               </Button>
             </Link>
           </Card>

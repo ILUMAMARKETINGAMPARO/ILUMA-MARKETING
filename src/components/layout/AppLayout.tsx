@@ -35,14 +35,14 @@ const AppLayout: React.FC<AppLayoutProps> = ({ useSafeMode = false }) => {
       <FloatingLilo 
         currentPage={location.pathname.replace('/', '') || 'home'}
         onInteraction={() => {
-          console.log('LILO™ 3D assistance demandée sur:', location.pathname);
+          console.log('🤖 LILO™ Chat ouvert sur:', location.pathname);
         }}
         userId="anonymous"
         context={{
           page: location.pathname.replace('/', '') || 'home',
           userLevel: 'beginner',
           recentActivity: [],
-          emotion: 'curious',
+          emotion: 'excited',
           industryContext: 'marketing',
           currentGoals: ['help_user']
         }}

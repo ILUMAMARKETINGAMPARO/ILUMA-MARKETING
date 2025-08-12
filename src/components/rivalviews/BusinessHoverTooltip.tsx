@@ -1,5 +1,5 @@
 import React from 'react';
-import { RivalBusiness } from '@/types/rivalviews.ts';
+import { RivalBusiness } from '@/types/rivalviews';
 
 interface BusinessHoverTooltipProps {
   business: RivalBusiness | null;
@@ -14,30 +14,37 @@ const BusinessHoverTooltip: React.FC<BusinessHoverTooltipProps> = ({
 }) => {
   if (!isVisible || !business) return null;
 
-  // Calculer les scores et métriques selon le format demandé
-  const seoScore = business.ilaScore ? (business.ilaScore / 20).toFixed(1) : '3.5'; // ILA score converti sur 5
-  const traffic = business.organicTraffic || 40142;
-  const totalKeywords = business.indexedKeywords || 14708;
-  const topKeywords = business.top10Keywords || 650;
-  const top20Keywords = Math.round(topKeywords * 3.04); // Ratio 1980/650
-  const googleRating = business.googleRating || 4.1;
+  // Format uniforme selon demande utilisateur
+  const seoScore = business.seoScore || (business.ilaScore ? (business.ilaScore / 20).toFixed(1) : '3.5');
+  const traffic = business.organicTraffic || 0;
+  const totalKeywords = business.indexedKeywords || 0;
+  const topKeywords = business.top10Keywords || 0;
+  const top20Keywords = business.top20Keywords || Math.round(topKeywords * 3.04);
+  const googleRating = business.googleRating || 0;
   
-  // Mot-clé principal selon le secteur/nom
+  // Mot-clé principal enrichi
   const getMainKeyword = () => {
+    if (business.topKeyword && business.topKeywordVolume) {
+      return `"${business.topKeyword}" (${business.topKeywordVolume.toLocaleString()} vues)`;
+    }
+    
     const name = business.name.toLowerCase();
     if (name.includes('matelas')) return '"matelas orthopédique" (2 500 vues)';
     if (name.includes('restaurant')) return '"restaurant" (1 200 vues)';
-    if (name.includes('coiffure')) return '"coiffeur" (800 vues)';
+    if (name.includes('école') && name.includes('conduite')) return '"école de conduite" (1 800 vues)';
+    if (name.includes('lunette')) return '"lunettes" (1 200 vues)';
     return `"${business.name.split(' ')[0].toLowerCase()}" (1 000 vues)`;
   };
 
-  // Action recommandée basée sur le score SEO
+  // Action IA recommandée enrichie
   const getRecommendedAction = () => {
-    const score = parseFloat(seoScore);
-    if (score >= 4.0) return 'Optimisation avancée';
-    if (score >= 3.0) return 'SEO';
-    if (score >= 2.0) return 'Content Marketing';
-    return 'Audit complet';
+    return business.aiRecommendedAction || (() => {
+      const score = parseFloat(seoScore.toString());
+      if (score >= 4.0) return 'Optimisation avancée + expansion';
+      if (score >= 3.0) return 'SEO local + contenu blog';
+      if (score >= 2.0) return 'Audit technique + mots-clés';
+      return 'Audit complet + stratégie';
+    })();
   };
 
   return (

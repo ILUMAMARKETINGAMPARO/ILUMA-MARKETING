@@ -29,12 +29,15 @@ const PageFidelisationIntelligente = lazy(() => import('@/pages/PageFidelisation
 const SiteWebComplet = lazy(() => import('@/pages/SiteWebComplet'));
 const BlogIA = lazy(() => import('@/pages/BlogIA'));
 const Lilo = lazy(() => import('@/pages/Lilo'));
+const LiloAdvanced = lazy(() => import('@/pages/LiloAdvanced'));
 const TableauAnalytics = lazy(() => import('@/pages/TableauAnalytics'));
 const RivalViews = lazy(() => import('@/pages/RivalViews'));
 const Portfolio = lazy(() => import('@/pages/Portfolio'));
 const Modules = lazy(() => import('@/pages/Modules'));
 const PresentationOutils = lazy(() => import('@/pages/PresentationOutils'));
 const AdvancedDashboard = lazy(() => import('@/pages/AdvancedDashboard'));
+const Phase4Dashboard = lazy(() => import('@/pages/Phase4Dashboard'));
+const Phase5Dashboard = lazy(() => import('@/pages/Phase5Dashboard'));
 
 // Services
 const SeoIA = lazy(() => import('@/pages/services/SeoIA'));
@@ -45,6 +48,10 @@ const MetaAds = lazy(() => import('@/pages/services/MetaAds'));
 const GoogleAds = lazy(() => import('@/pages/services/GoogleAds'));
 const InstagramAds = lazy(() => import('@/pages/services/InstagramAds'));
 const BingSEO = lazy(() => import('@/pages/services/BingSEO'));
+const BlogsIntersites = lazy(() => import('@/pages/services/BlogsIntersites'));
+const ServicePage = lazy(() => import('@/pages/ServicePage'));
+const ServicesListPage = lazy(() => import('@/pages/ServicesListPage'));
+const HubServicesNew = lazy(() => import('@/pages/HubServicesNew'));
 
 interface RouteConfig {
   path: string;
@@ -59,7 +66,8 @@ const ROUTES_CONFIG: RouteConfig[] = [
   { path: '/ila', element: <LazyLoadWrapper><ILA /></LazyLoadWrapper> },
   { path: '/crm-iluma', element: <LazyLoadWrapper><CRMIlumaComplet /></LazyLoadWrapper> },
   { path: '/hub', element: <LazyLoadWrapper><HubCentral /></LazyLoadWrapper> },
-  { path: '/services', element: <LazyLoadWrapper><HubServices /></LazyLoadWrapper> },
+  { path: '/services', element: <LazyLoadWrapper><HubServicesNew /></LazyLoadWrapper> },
+  { path: '/hub-services', element: <LazyLoadWrapper><HubServices /></LazyLoadWrapper> },
   { path: '/methode-iluma', element: <LazyLoadWrapper><MethodeIluma /></LazyLoadWrapper> },
   { path: '/ilumatch', element: <LazyLoadWrapper><ILUMATCH /></LazyLoadWrapper> },
   { path: '/etudes-de-cas', element: <LazyLoadWrapper><EtudesDeCas /></LazyLoadWrapper> },
@@ -71,6 +79,7 @@ const ROUTES_CONFIG: RouteConfig[] = [
   { path: '/site-web-complet', element: <LazyLoadWrapper><SiteWebComplet /></LazyLoadWrapper> },
   { path: '/blogia', element: <LazyLoadWrapper><BlogIA /></LazyLoadWrapper> },
   { path: '/lilo', element: <LazyLoadWrapper><Lilo /></LazyLoadWrapper> },
+  { path: '/lilo-advanced', element: <LazyLoadWrapper><LiloAdvanced /></LazyLoadWrapper> },
   { path: '/analytics', element: <LazyLoadWrapper><TableauAnalytics /></LazyLoadWrapper> },
   { path: '/rival-views', element: <LazyLoadWrapper><RivalViews /></LazyLoadWrapper> },
   { path: '/portfolio', element: <LazyLoadWrapper><Portfolio /></LazyLoadWrapper> },
@@ -78,6 +87,8 @@ const ROUTES_CONFIG: RouteConfig[] = [
   { path: '/presentation-outils', element: <LazyLoadWrapper><PresentationOutils /></LazyLoadWrapper> },
   { path: '/dashboard', element: <LazyLoadWrapper><AdvancedDashboard /></LazyLoadWrapper> },
   { path: '/dashboard-avance', element: <LazyLoadWrapper><AdvancedDashboard /></LazyLoadWrapper> },
+  { path: '/phase4', element: <LazyLoadWrapper><Phase4Dashboard /></LazyLoadWrapper> },
+  { path: '/phase5', element: <LazyLoadWrapper><Phase5Dashboard /></LazyLoadWrapper> },
   
   // Pages de sections principales (redirections vers HUB)
   { path: '/visibilite', element: <Navigate to="/hub" replace /> },
@@ -88,10 +99,16 @@ const ROUTES_CONFIG: RouteConfig[] = [
   { path: '/services/ecommerce', element: <LazyLoadWrapper><Ecommerce /></LazyLoadWrapper> },
   { path: '/services/visibilite-locale', element: <LazyLoadWrapper><VisibiliteLocale /></LazyLoadWrapper> },
   { path: '/services/youtube-seo', element: <LazyLoadWrapper><YouTubeSEO /></LazyLoadWrapper> },
-  { path: '/services/meta-ads', element: <LazyLoadWrapper><MetaAds /></LazyLoadWrapper> },
-  { path: '/services/google-ads', element: <LazyLoadWrapper><GoogleAds /></LazyLoadWrapper> },
+  { path: '/services/meta-ads', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
+  { path: '/services/google-ads', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
   { path: '/services/instagram-ads', element: <LazyLoadWrapper><InstagramAds /></LazyLoadWrapper> },
-  { path: '/services/bing-seo', element: <LazyLoadWrapper><BingSEO /></LazyLoadWrapper> },
+  { path: '/services/bing-seo', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
+  { path: '/services/blogs-intersites', element: <LazyLoadWrapper><BlogsIntersites /></LazyLoadWrapper> },
+  
+  // New expert services routes
+  { path: '/services/seo-google', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
+  { path: '/services/content-creation', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
+  { path: '/services/partnership', element: <LazyLoadWrapper><ServicePage /></LazyLoadWrapper> },
 ];
 
 const MultilingualRouter: React.FC = () => {

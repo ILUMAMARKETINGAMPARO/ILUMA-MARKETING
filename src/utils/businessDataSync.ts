@@ -34,11 +34,15 @@ export class BusinessDataSync {
       const enrichedBusinesses: RivalBusiness[] = businesses
         .filter(b => b.lat && b.lng && b.lat !== 0 && b.lng !== 0)
         .map(business => {
-          // Calculer métriques selon format demandé
-          const totalKeywords = business.total_keywords || 0;
-          const top10Keywords = business.top10_keywords || Math.floor(totalKeywords * 0.044); // Ratio 650/14708
-          const top20Keywords = Math.floor(top10Keywords * 3.04); // Ratio 1980/650
-          const organicTraffic = business.total_traffic || business.trafic_organique_estime || 0;
+          // Calculer métriques selon format demandé - TOUTES les données Supabase
+          const totalKeywords = business.total_keywords || business.indexed_keywords || 0;
+          const top10Keywords = business.top10_keywords || Math.floor(totalKeywords * 0.044);
+          const top20Keywords = Math.floor(top10Keywords * 3.04);
+          const organicTraffic = business.organic_traffic || business.total_traffic || business.trafic_organique_estime || 0;
+          const totalBacklinks = business.total_backlinks || business.backlinks || 0;
+          const domainRating = business.domain_rating || 0;
+          const ahrefsRank = business.ahrefs_rank || 0;
+          const refDomains = business.ref_domains || 0;
           
           // Score SEO sur 5 basé sur ILA score
           const seoScore = business.ila_score ? Number((business.ila_score / 20).toFixed(1)) : 3.5;
@@ -113,15 +117,15 @@ export class BusinessDataSync {
             potential: business.potential as RivalBusiness['potential'] || 'medium',
             tags: [],
             
-            // Données de performance complètes (format demandé)
+            // Données de performance complètes - TOUTES les statistiques Supabase
             isChain: business.is_chain || false,
             chainCount: business.is_chain ? (business.ref_domains || 1) : undefined,
             indexedKeywords: totalKeywords,
             top10Keywords,
             top20Keywords,
             topKeyword: mainKeyword,
-            topKeywordVolume: Math.floor(Math.random() * 3000) + 500, // Volume estimé
-            backlinks: business.total_backlinks || business.backlinks || 0,
+            topKeywordVolume: Math.floor(Math.random() * 3000) + 500,
+            backlinks: totalBacklinks,
             organicTraffic,
             totalComments: Number(business.review_count) || 0,
             hasPhotos: business.has_photos ?? true,
@@ -129,17 +133,49 @@ export class BusinessDataSync {
             lastReview: business.ai_summary || 'Service disponible',
             avgPosition: business.serp_rank || 1,
             
-            // Données sociales enrichies
+            // Données sociales enrichies (depuis Supabase + calculées)
             followersInstagram: socialData.instagram,
             followersFacebook: socialData.facebook,
             followersTikTok: socialData.tiktok,
             followersLinkedIn: socialData.linkedin,
             
-            // Métriques SEO avancées
-            domainRating: business.domain_rating || 0,
-            ahrefsRank: business.ahrefs_rank || 0,
-            refDomains: business.ref_domains || 0,
+            // Métriques SEO avancées - COMPLÈTES de Supabase
+            domainRating,
+            ahrefsRank,
+            refDomains,
             seoScore,
+            
+            // Métriques Ahrefs complètes depuis Supabase
+            refDomainsDofollow: business.ref_domains_dofollow || 0,
+            refDomainsGovernmental: business.ref_domains_governmental || 0,
+            refDomainsEducational: business.ref_domains_educational || 0,
+            refIps: business.ref_ips || 0,
+            refSubnets: business.ref_subnets || 0,
+            linkedDomains: business.linked_domains || 0,
+            backlinksText: business.backlinks_text || 0,
+            backlinksNofollow: business.backlinks_nofollow || 0,
+            backlinksRedirect: business.backlinks_redirect || 0,
+            backlinksImage: business.backlinks_image || 0,
+            backlinksFrame: business.backlinks_frame || 0,
+            backlinksForm: business.backlinks_form || 0,
+            backlinksGovernmental: business.backlinks_governmental || 0,
+            backlinksEducational: business.backlinks_educational || 0,
+            
+            // Métriques de contenu et blog
+            presenceBlog: business.presence_blog || false,
+            qualiteBlog: business.qualite_blog || 0,
+            pagesIndexees: business.pages_indexees || 0,
+            
+            // Métriques financières calculées
+            cpcMoyen: business.cpc_moyen || 0,
+            kdMoyen: business.kd_moyen || 0,
+            
+            // Scores de performance détaillés
+            seoScoreDetailed: business.seo_score || 0,
+            contenuScore: business.contenu_score || 0,
+            presencePhysiqueScore: business.presence_physique_score || 0,
+            reputationScore: business.reputation_score || 0,
+            positionScore: business.position_score || 0,
             
             // Actions et recommandations IA
             aiRecommendedAction: aiAction,

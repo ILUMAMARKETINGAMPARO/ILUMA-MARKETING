@@ -16,17 +16,18 @@ const LiloFullBodyCharacter: React.FC<LiloFullBodyCharacterProps> = ({
   const getMoodExpression = () => {
     switch (mood) {
       case 'excited':
-        return { eyeScale: 1.2, mouthCurve: 'M72,78 Q80,72 88,78', blushOpacity: 0.8, armRotation: 15 };
+        return { eyeScale: 1.3, mouthCurve: 'M72,76 Q80,70 88,76', blushOpacity: 0.9, armRotation: 20, sparkles: true };
       case 'thinking':
-        return { eyeScale: 0.9, mouthCurve: 'M72,78 Q80,82 88,78', blushOpacity: 0.3, armRotation: -5 };
+        return { eyeScale: 0.8, mouthCurve: 'M74,78 Q80,82 86,78', blushOpacity: 0.4, armRotation: -8, sparkles: false };
       case 'curious':
-        return { eyeScale: 1.1, mouthCurve: 'M72,77 Q80,72 88,77', blushOpacity: 0.6, armRotation: 8 };
+        return { eyeScale: 1.2, mouthCurve: 'M72,77 Q80,71 88,77', blushOpacity: 0.7, armRotation: 12, sparkles: false };
       case 'dormant':
-        return { eyeScale: 0.7, mouthCurve: 'M72,79 Q80,83 88,79', blushOpacity: 0.2, armRotation: -10 };
+        return { eyeScale: 0.6, mouthCurve: 'M74,80 Q80,84 86,80', blushOpacity: 0.2, armRotation: -15, sparkles: false };
       case 'alert':
-        return { eyeScale: 1.3, mouthCurve: 'M72,77 Q80,70 88,77', blushOpacity: 0.9, armRotation: 20 };
+        return { eyeScale: 1.4, mouthCurve: 'M70,76 Q80,68 90,76', blushOpacity: 1, armRotation: 25, sparkles: true };
+      case 'happy':
       default:
-        return { eyeScale: 1, mouthCurve: 'M72,78 Q80,74 88,78', blushOpacity: 0.5, armRotation: 0 };
+        return { eyeScale: 1.1, mouthCurve: 'M72,78 Q80,72 88,78', blushOpacity: 0.6, armRotation: 10, sparkles: false };
     }
   };
 
@@ -326,20 +327,21 @@ const LiloFullBodyCharacter: React.FC<LiloFullBodyCharacterProps> = ({
         <ellipse cx="92" cy="160" rx="6" ry="8" fill="url(#bodyGradient)" />
 
         {/* Particules magiques selon l'humeur */}
-        {mood === 'excited' && (
+        {(mood === 'excited' || mood === 'alert') && (
           <>
             <motion.circle 
               cx="30" 
               cy="40" 
-              r="1.5" 
+              r="2" 
               fill="#FBBF24"
               animate={{
                 opacity: [0, 1, 0],
-                scale: [0.5, 1, 0.5],
-                y: [0, -10, 0]
+                scale: [0.5, 1.2, 0.5],
+                y: [0, -15, 0],
+                x: [0, 5, 0]
               }}
               transition={{
-                duration: 1.5,
+                duration: 2,
                 repeat: Infinity,
                 delay: 0
               }}
@@ -347,17 +349,18 @@ const LiloFullBodyCharacter: React.FC<LiloFullBodyCharacterProps> = ({
             <motion.circle 
               cx="130" 
               cy="50" 
-              r="1.5" 
+              r="1.8" 
               fill="#F6AD55"
               animate={{
                 opacity: [0, 1, 0],
-                scale: [0.5, 1, 0.5],
-                y: [0, -8, 0]
+                scale: [0.5, 1.1, 0.5],
+                y: [0, -12, 0],
+                x: [0, -3, 0]
               }}
               transition={{
-                duration: 1.5,
+                duration: 2.2,
                 repeat: Infinity,
-                delay: 0.5
+                delay: 0.3
               }}
             />
             <motion.circle 
@@ -368,12 +371,118 @@ const LiloFullBodyCharacter: React.FC<LiloFullBodyCharacterProps> = ({
               animate={{
                 opacity: [0, 1, 0],
                 scale: [0.5, 1, 0.5],
-                y: [0, -12, 0]
+                y: [0, -18, 0],
+                x: [0, 8, 0]
+              }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                delay: 0.6
+              }}
+            />
+            <motion.circle 
+              cx="135" 
+              cy="75" 
+              r="1.7" 
+              fill="#F093FB"
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0.5, 1.3, 0.5],
+                y: [0, -10, 0],
+                x: [0, -6, 0]
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: 0.9
+              }}
+            />
+            <motion.circle 
+              cx="40" 
+              cy="120" 
+              r="1.2" 
+              fill="#FFE066"
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0.5, 0.9, 0.5],
+                y: [0, -8, 0],
+                x: [0, 4, 0]
+              }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                delay: 1.2
+              }}
+            />
+            <motion.circle 
+              cx="120" 
+              cy="110" 
+              r="1.4" 
+              fill="#FF9A8B"
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0.5, 1.1, 0.5],
+                y: [0, -14, 0],
+                x: [0, -5, 0]
+              }}
+              transition={{
+                duration: 2.1,
+                repeat: Infinity,
+                delay: 1.5
+              }}
+            />
+          </>
+        )}
+
+        {/* Effet de pensée pour mode thinking */}
+        {mood === 'thinking' && (
+          <>
+            <motion.circle 
+              cx="105" 
+              cy="45" 
+              r="1" 
+              fill="#A78BFA"
+              animate={{
+                opacity: [0, 0.8, 0],
+                scale: [0.5, 1, 0.5],
+                y: [0, -5, 0]
               }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                delay: 1
+                delay: 0
+              }}
+            />
+            <motion.circle 
+              cx="110" 
+              cy="38" 
+              r="1.5" 
+              fill="#A78BFA"
+              animate={{
+                opacity: [0, 0.6, 0],
+                scale: [0.5, 1.2, 0.5],
+                y: [0, -8, 0]
+              }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                delay: 0.3
+              }}
+            />
+            <motion.circle 
+              cx="117" 
+              cy="30" 
+              r="2" 
+              fill="#A78BFA"
+              animate={{
+                opacity: [0, 0.4, 0],
+                scale: [0.5, 1.5, 0.5],
+                y: [0, -12, 0]
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                delay: 0.6
               }}
             />
           </>

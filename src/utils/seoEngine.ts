@@ -205,6 +205,30 @@ export const ILUMA_CONTENT = {
     }
   },
   services: {
+    'seoGoogle': {
+      description: 'Référencement Google boosté par intelligence artificielle',
+      benefits: ['Positionnement #1 Google', 'Trafic organique +300%', 'Contenu optimisé IA', 'Suivi temps réel']
+    },
+    'seoBing': {
+      description: 'Référencement Bing et écosystème Microsoft',
+      benefits: ['Audience qualifiée', 'Moins de concurrence', 'ROI supérieur', 'Optimisation spécifique']
+    },
+    'googleAds': {
+      description: 'Campagnes Google Ads optimisées par IA',
+      benefits: ['ROI +400%', 'Enchères intelligentes', 'Automatisation complète', 'Support expert']
+    },
+    'metaAds': {
+      description: 'Publicité Meta Ads intelligente Facebook/Instagram',
+      benefits: ['Ciblage précis IA', 'Créatifs automatiques', 'Performance optimisée', 'Écosystème complet']
+    },
+    'contentCreation': {
+      description: 'Création de contenu automatisée par IA',
+      benefits: ['Production x10 plus rapide', 'Qualité professionnelle', 'SEO intégré', 'Multi-formats']
+    },
+    'partnership': {
+      description: 'Programme partenaire Iluma™',
+      benefits: ['Commissions 40%', 'Solutions white label', 'Formation expert', 'Support dédié']
+    },
     'SEO IA': {
       description: 'Référencement naturel boosté par intelligence artificielle',
       benefits: ['Positionnement #1 Google', 'Trafic organique +300%', 'Contenu optimisé IA', 'Suivi temps réel']

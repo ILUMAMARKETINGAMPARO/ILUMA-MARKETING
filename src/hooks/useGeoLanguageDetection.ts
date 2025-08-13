@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage.ts';
-import { Language } from '@/types/language.ts';
+import { useLanguage } from '@/hooks/useLanguage';
+import { Language } from '@/types/language';
 
 interface GeoLanguageConfig {
   autoRedirect?: boolean;

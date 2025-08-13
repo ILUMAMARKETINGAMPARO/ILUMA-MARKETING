@@ -71,7 +71,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data = {} }) => {
         "@type": "ContactPoint",
         "contactType": "Customer Service",
         "telephone": "+1-514-XXX-XXXX",
-        "email": "contact@ilumamarketing.com",
+        "email": "administracion@ilumamarketing.com",
         "availableLanguage": ["French", "English"],
         "areaServed": "CA",
         "hoursAvailable": "Mo-Fr 09:00-17:00"
@@ -154,7 +154,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data = {} }) => {
         "longitude": -73.5673
       },
       "telephone": "+1-514-882-8910",
-      "email": "iluma.marketing@gmail.com",
+      "email": "administracion@ilumamarketing.com",
       "url": "https://ilumamarketing.com",
       "openingHours": "Mo-Fr 09:00-17:00",
       "priceRange": "$$",

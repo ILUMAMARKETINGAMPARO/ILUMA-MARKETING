@@ -14,7 +14,7 @@ import {
   TrendingUp, Globe, MessageCircle, Plus, Target,
   Zap, Eye, BarChart3, Download, Share2
 } from 'lucide-react';
-import { BusinessData } from '@/types/heatmap.ts';
+import { BusinessData } from '@/types/heatmap';
 
 interface InteractiveMapEnhanceProps {
   onBusinessSelect?: (business: BusinessData) => void;
@@ -191,7 +191,7 @@ const InteractiveMapEnhance: React.FC<InteractiveMapEnhanceProps> = ({
     if (!mapContainer.current) return;
 
     // Configuration Mapbox
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN || '';
+    // SECURITY: Removed direct env access - now using secure service
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,

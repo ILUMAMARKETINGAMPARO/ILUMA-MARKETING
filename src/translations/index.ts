@@ -1,1 +1,1 @@
-export { translations } from '@/data/translations';
+export { translations } from '@/data/translations-clean';

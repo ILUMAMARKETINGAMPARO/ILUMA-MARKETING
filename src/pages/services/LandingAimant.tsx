@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navigation from '@/components/navigation/NavbarIlumaUltimate';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -6,8 +7,11 @@ import { Magnet, Target, Zap, TrendingUp, CheckCircle, ArrowRight } from 'lucide
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const LandingAimant = () => {
+  const { t } = useTranslations();
+  
   const benefits = [
     "Conversion optimisée par IA",
     "A/B testing automatique",
@@ -41,8 +45,16 @@ const LandingAimant = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0B0B0E] via-[#1a1a2e] to-[#16213e]">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Landing Pages Aimant IA | Conversion Maximisée - Iluma™</title>
+        <meta name="description" content="Créez des landing pages irrésistibles qui convertissent vos visiteurs en leads qualifiés. Optimisation IA, A/B testing automatique, ROI +450%." />
+        <meta name="keywords" content="landing page, conversion, lead generation, A/B testing, optimisation IA, prospect qualifié, Iluma" />
+        <link rel="canonical" href="https://ilumamarketing.com/landing-aimant" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-gradient-to-b from-background via-primary/10 to-secondary/10">
+        <Navigation />
       
       <main className="pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,8 +175,9 @@ const LandingAimant = () => {
         </div>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

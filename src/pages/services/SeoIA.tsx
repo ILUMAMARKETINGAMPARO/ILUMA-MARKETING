@@ -23,22 +23,22 @@ const SeoIA = () => {
     {
       icon: Bot,
       title: t('services.seoIA.features.predictiveAI'),
-      description: t('services.seoIA.features.predictiveAI.description')
+      description: t('services.seoIA.featuresDescriptions.predictiveAI')
     },
     {
       icon: Search,
       title: t('services.seoIA.features.advancedSearch'),
-      description: t('services.seoIA.features.advancedSearch.description')
+      description: t('services.seoIA.featuresDescriptions.advancedSearch')
     },
     {
       icon: TrendingUp,
       title: t('services.seoIA.features.performanceTracking'),
-      description: t('services.seoIA.features.performanceTracking.description')
+      description: t('services.seoIA.featuresDescriptions.performanceTracking')
     },
     {
       icon: Target,
       title: t('services.seoIA.features.preciseTargeting'),
-      description: t('services.seoIA.features.preciseTargeting.description')
+      description: t('services.seoIA.featuresDescriptions.preciseTargeting')
     }
   ];
 

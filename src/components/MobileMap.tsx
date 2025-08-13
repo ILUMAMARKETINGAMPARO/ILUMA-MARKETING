@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MapPin, Search, Navigation, ZoomIn, ZoomOut } from 'lucide-react';
+import { secureApiService } from '@/services/secureApiService';
 
 interface MobileMapProps {
   height?: string;
@@ -27,73 +28,80 @@ const MobileMap: React.FC<MobileMapProps> = ({
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
 
   useEffect(() => {
-    if (!mapContainer.current) return;
+    const initializeMap = async () => {
+      if (map.current || !mapContainer.current) return;
 
-    // Clé Mapbox temporaire - À remplacer par votre clé
-    const mapboxToken = 'pk.eyJ1IjoiaWx1bWEtbWFya2V0aW5nIiwiYSI6ImNscXZxZnFoNDBrNjYyaW55ZGx6aGZpbGYifQ.example';
-    
-    // Vérifier si la clé existe
-    if (!mapboxToken || mapboxToken.includes('example')) {
-      console.warn('Mapbox token manquant. Veuillez ajouter votre clé Mapbox.');
-      return;
-    }
-
-    mapboxgl.accessToken = mapboxToken;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/dark-v11',
-      center: [-73.567256, 45.501689], // Montréal par défaut
-      zoom: 12,
-      attributionControl: false,
-      logoPosition: 'bottom-right'
-    });
-
-    // Styles responsive
-    map.current.on('load', () => {
-      setIsLoaded(true);
-      
-      // Ajouter les marqueurs pour les locations
-      locations.forEach((location, index) => {
-        const el = document.createElement('div');
-        el.className = 'w-6 h-6 bg-primary rounded-full border-2 border-white shadow-lg flex items-center justify-center';
-        el.innerHTML = '<div class="w-2 h-2 bg-white rounded-full"></div>';
+      try {
+        // Get secure token
+        const mapboxToken = await secureApiService.getMapboxToken();
         
-        const popup = new mapboxgl.Popup({ 
-          offset: 25,
-          className: 'mobile-map-popup'
-        }).setHTML(`
-          <div class="p-2">
-            <h3 class="font-semibold text-sm mb-1">${location.title}</h3>
-            ${location.description ? `<p class="text-xs text-gray-600">${location.description}</p>` : ''}
-          </div>
-        `);
+        if (!mapboxToken) {
+          console.warn('Mapbox token manquant. Veuillez configurer votre clé Mapbox dans les paramètres.');
+          return;
+        }
+
+        mapboxgl.accessToken = mapboxToken;
         
-        new mapboxgl.Marker(el)
-          .setLngLat([location.lng, location.lat])
-          .setPopup(popup)
-          .addTo(map.current!);
-      });
-    });
+        map.current = new mapboxgl.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/dark-v11',
+          center: [-73.567256, 45.501689], // Montréal par défaut
+          zoom: 12,
+          attributionControl: false,
+          logoPosition: 'bottom-right'
+        });
 
-    // Optimisation mobile
-    map.current.touchZoomRotate.disableRotation();
-    map.current.dragPan.disable();
-    map.current.scrollZoom.disable();
+        // Styles responsive
+        map.current.on('load', () => {
+          setIsLoaded(true);
+          
+          // Ajouter les marqueurs pour les locations
+          locations.forEach((location, index) => {
+            const el = document.createElement('div');
+            el.className = 'w-6 h-6 bg-primary rounded-full border-2 border-white shadow-lg flex items-center justify-center';
+            el.innerHTML = '<div class="w-2 h-2 bg-white rounded-full"></div>';
+            
+            const popup = new mapboxgl.Popup({ 
+              offset: 25,
+              className: 'mobile-map-popup'
+            }).setHTML(`
+              <div class="p-2">
+                <h3 class="font-semibold text-sm mb-1">${location.title}</h3>
+                ${location.description ? `<p class="text-xs text-gray-600">${location.description}</p>` : ''}
+              </div>
+            `);
+            
+            new mapboxgl.Marker(el)
+              .setLngLat([location.lng, location.lat])
+              .setPopup(popup)
+              .addTo(map.current!);
+          });
+        });
 
-    // Activer le drag uniquement sur desktop
-    const enableInteraction = () => {
-      if (window.innerWidth > 768) {
-        map.current?.dragPan.enable();
-        map.current?.scrollZoom.enable();
+        // Optimisation mobile
+        map.current.touchZoomRotate.disableRotation();
+        map.current.dragPan.disable();
+        map.current.scrollZoom.disable();
+
+        // Activer le drag uniquement sur desktop
+        const enableInteraction = () => {
+          if (window.innerWidth > 768) {
+            map.current?.dragPan.enable();
+            map.current?.scrollZoom.enable();
+          }
+        };
+
+        enableInteraction();
+        window.addEventListener('resize', enableInteraction);
+
+      } catch (error) {
+        console.error('Error initializing map:', error);
       }
     };
 
-    enableInteraction();
-    window.addEventListener('resize', enableInteraction);
+    initializeMap();
 
     return () => {
-      window.removeEventListener('resize', enableInteraction);
       map.current?.remove();
     };
   }, [locations]);

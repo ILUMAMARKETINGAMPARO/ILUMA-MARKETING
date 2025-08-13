@@ -1,0 +1,87 @@
+{
+  "services": {
+    "bingSEO": {
+      "title": "Référencement Bing par Iluma™",
+      "description": "Diversifiez votre trafic grâce à Bing et à l’écosystème Microsoft.",
+      "whyChoose": "Pourquoi choisir Bing avec Iluma™",
+      "cta": "Accélérez votre visibilité sur Bing",
+      "audit": "Audit initial offert sur demande.",
+      "features": {
+        "bingOptimization": {
+          "title": "Optimisation spécifique à Bing",
+          "description": "Balises, sitemaps, indexation et signaux propres à Bing."
+        },
+        "qualifiedAudience": {
+          "title": "Audience qualifiée",
+          "description": "CSP élevées, B2B et utilisateurs Windows / Edge."
+        },
+        "lessCompetition": {
+          "title": "Moins de concurrence",
+          "description": "Des positions plus accessibles qu’avec Google."
+        },
+        "highROI": {
+          "title": "ROI supérieur",
+          "description": "Trafic additionnel à coût d’acquisition compétitif."
+        }
+      },
+      "benefits": {
+        "specialized": "Expertise dédiée Bing & Microsoft",
+        "competition": "Concurrence souvent plus faible que Google",
+        "audience": "Audience à fort pouvoir d’achat et B2B",
+        "integration": "Intégration avec l’écosystème Microsoft",
+        "places": "Optimisation Bing Places et résultats locaux",
+        "multiEngine": "Stratégie multi-moteurs pour diversifier le trafic"
+      },
+      "method": {
+        "title": "Méthode Iluma™",
+        "steps": [
+          { "title": "Diagnostic complet", "desc": "Audit technique, sémantique et local." },
+          { "title": "Plan d’action", "desc": "Backlog priorisé et roadmaps mensuelles." },
+          { "title": "Exécution", "desc": "Implémentations, contenus et netlinking." },
+          { "title": "Mesure & IA", "desc": "Suivi, A/B tests et itérations guidées IA." }
+        ]
+      },
+      "products": {
+        "title": "Produits",
+        "plans": [
+          {
+            "name": "Essentiel",
+            "desc": "Démarrage Bing + bases techniques",
+            "points": ["Audit Bing", "Quick wins", "Bing Places"]
+          },
+          {
+            "name": "Croissance",
+            "desc": "Croissance durable multi-moteurs",
+            "points": ["Contenus optimisés", "Liens contextuels", "Rapports mensuels"]
+          },
+          {
+            "name": "Élite",
+            "desc": "Performance maximale pilotée par IA",
+            "points": ["Stratégie avancée", "Tests IA", "Reporting exécutif"]
+          }
+        ]
+      },
+      "solutions": {
+        "title": "Solutions",
+        "items": ["Local & retail", "B2B & SaaS", "E-commerce", "Santé & services"]
+      },
+      "experts": {
+        "title": "Services Experts",
+        "items": ["Audit SXO Bing", "Optimisation technique", "Contenu & EEAT", "Netlinking premium"]
+      },
+      "how": {
+        "title": "Comment ça marche",
+        "steps": [
+          "Call de découverte (15 min)",
+          "Audit et estimations d’impact",
+          "Démarrage et quick wins en 14 jours"
+        ]
+      },
+      "support": {
+        "title": "Contact & Support",
+        "subtitle": "Parlons de votre potentiel sur Bing",
+        "cta": "Nous contacter"
+      }
+    }
+  }
+}

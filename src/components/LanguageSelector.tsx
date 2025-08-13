@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Globe, Check } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage.ts';
-import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection.ts';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useGeoLanguageDetection } from '@/hooks/useGeoLanguageDetection';
 import {
   DropdownMenu,
   DropdownMenuContent,

@@ -90,7 +90,7 @@ export const EXTERNAL_LINKS = {
     LINKEDIN: 'https://www.linkedin.com/company/iluma-marketing',
   },
   CONTACT: {
-    EMAIL: 'mailto:contact@ilumamarketing.com',
+    EMAIL: 'mailto:administracion@ilumamarketing.com',
     PHONE: 'tel:+15148828910',
   }
 } as const;

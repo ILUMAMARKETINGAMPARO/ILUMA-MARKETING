@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Magnet, Target, Zap, TrendingUp, Users, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const LandingAimantDynamique = () => {
+  const { t } = useTranslations();
   const [currentStep, setCurrentStep] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -15,35 +17,35 @@ const LandingAimantDynamique = () => {
   const steps = [
     {
       icon: Target,
-      title: "Ciblage Intelligent",
-      description: "L'IA analyse votre audience et identifie les segments à fort potentiel",
+      title: t('landingAimant.steps.targeting.title'),
+      description: t('landingAimant.steps.targeting.description'),
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Magnet,
-      title: "Génération AIMANT™",
-      description: "Création automatique de contenus irrésistibles adaptés à chaque profil",
+      title: t('landingAimant.steps.generation.title'),
+      description: t('landingAimant.steps.generation.description'),
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Zap,
-      title: "Optimisation Continue",
-      description: "Machine learning en temps réel pour maximiser les conversions",
+      title: t('landingAimant.steps.optimization.title'),
+      description: t('landingAimant.steps.optimization.description'),
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: TrendingUp,
-      title: "Résultats Exponentiels",
-      description: "Croissance mesurable et ROI optimisé grâce à l'intelligence artificielle",
+      title: t('landingAimant.steps.results.title'),
+      description: t('landingAimant.steps.results.description'),
       color: "from-orange-500 to-red-500"
     }
   ];
 
   const stats = [
-    { label: "Taux de conversion moyen", value: "347%", icon: TrendingUp },
-    { label: "Leads qualifiés générés", value: "12K+", icon: Users },
-    { label: "Temps de mise en œuvre", value: "48h", icon: Clock },
-    { label: "Satisfaction client", value: "98%", icon: CheckCircle }
+    { label: t('landingAimant.stats.conversionRate'), value: t('landingAimant.stats.conversionValue'), icon: TrendingUp },
+    { label: t('landingAimant.stats.leadsGenerated'), value: t('landingAimant.stats.leadsValue'), icon: Users },
+    { label: t('landingAimant.stats.implementationTime'), value: t('landingAimant.stats.implementationValue'), icon: Clock },
+    { label: t('landingAimant.stats.satisfaction'), value: t('landingAimant.stats.satisfactionValue'), icon: CheckCircle }
   ];
 
   useEffect(() => {
@@ -66,15 +68,13 @@ const LandingAimantDynamique = () => {
           <div className="container mx-auto px-4">
             <MPEContainer className="text-center">
               <Badge className="mb-6 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-2 text-lg">
-                Landing Page AIMANT™ - Nouvelle Génération
+                {t('landingAimant.hero.badge')}
               </Badge>
               <h1 className="text-4xl md:text-7xl font-bold text-white mb-6">
-                Créez des <span className="text-gradient">Landing Pages</span>
-                <br />qui <span className="text-gradient">Convertissent</span>
+                {t('landingAimant.hero.title')}
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-                Notre technologie AIMANT™ utilise l'IA pour générer automatiquement des pages de conversion 
-                ultra-performantes adaptées à votre audience
+                {t('landingAimant.hero.subtitle')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -82,7 +82,7 @@ const LandingAimantDynamique = () => {
                   size="lg"
                   className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover-glow"
                 >
-                  Créer ma Landing Page IA
+                  {t('landingAimant.hero.ctaPrimary')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <Button 
@@ -90,7 +90,7 @@ const LandingAimantDynamique = () => {
                   variant="outline"
                   className="glass-effect border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-2xl"
                 >
-                  Voir la démo interactive
+                  {t('landingAimant.hero.ctaSecondary')}
                 </Button>
               </div>
 
@@ -113,10 +113,10 @@ const LandingAimantDynamique = () => {
           <div className="container mx-auto px-4">
             <MPEContainer className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                Processus <span className="text-gradient">AIMANT™</span> en Action
+                {t('landingAimant.process.title')}
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Découvrez comment notre IA transforme vos visiteurs en clients
+                {t('landingAimant.process.subtitle')}
               </p>
             </MPEContainer>
 
@@ -155,15 +155,15 @@ const LandingAimantDynamique = () => {
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white/80">Intelligence artificielle avancée</span>
+                        <span className="text-white/80">{t('landingAimant.features.ai')}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white/80">Personnalisation en temps réel</span>
+                        <span className="text-white/80">{t('landingAimant.features.realtime')}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-green-400" />
-                        <span className="text-white/80">Optimisation continue</span>
+                        <span className="text-white/80">{t('landingAimant.features.continuous')}</span>
                       </div>
                     </div>
                   </div>
@@ -189,24 +189,24 @@ const LandingAimantDynamique = () => {
                   <Magnet className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                  Prêt à <span className="text-gradient">Magnétiser</span> vos Visiteurs ?
+                  {t('landingAimant.cta.title')}
                 </h2>
                 <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-                  Lancez votre première Landing Page AIMANT™ dès aujourd'hui et multipliez vos conversions
+                  {t('landingAimant.cta.subtitle')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg"
                     className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold hover-glow"
                   >
-                    Commencer maintenant - Gratuit
+                    {t('landingAimant.cta.primary')}
                   </Button>
                   <Button 
                     size="lg"
                     variant="outline"
                     className="glass-effect border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-2xl"
                   >
-                    Parler à un expert
+                    {t('landingAimant.cta.secondary')}
                   </Button>
                 </div>
               </div>

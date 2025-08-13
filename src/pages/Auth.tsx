@@ -10,10 +10,13 @@ import { useAuth } from '@/contexts/AuthContext';
 import { Navigate, Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
 import { useTranslations } from '@/hooks/useTranslations';
+import { useDeviceInfo } from '@/hooks/use-mobile';
+import MobilePageWrapper from '@/components/mobile/MobilePageWrapper';
 
 const Auth = () => {
   const { user, signIn, signUp } = useAuth();
   const { t } = useTranslations();
+  const { isMobile, isTablet } = useDeviceInfo();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -192,17 +195,21 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[hsl(var(--primary))]/20 to-black flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <MobilePageWrapper 
+      className="min-h-screen bg-gradient-to-b from-black via-[hsl(var(--primary))]/20 to-black flex items-center justify-center"
+      enablePadding={true}
+      fullHeight={true}
+    >
+      <div className={`w-full ${isMobile ? 'max-w-sm px-2' : 'max-w-md px-4'}`}>
         {/* Back to home link */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6"
+          className={`${isMobile ? 'mb-4' : 'mb-6'}`}
         >
-          <Link to="/" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Retour à l'accueil
+          <Link to="/" className={`inline-flex items-center text-white/60 hover:text-white transition-colors ${isMobile ? 'text-sm' : ''}`}>
+            <ArrowLeft className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'} mr-2`} />
+            {isMobile ? 'Accueil' : 'Retour à l\'accueil'}
           </Link>
         </motion.div>
 
@@ -211,13 +218,13 @@ const Auth = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Card className="glass-effect border-white/20 p-8">
+          <Card className={`glass-effect border-white/20 ${isMobile ? 'p-4' : 'p-8'}`}>
             {/* Header */}
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-white font-['Montserrat'] mb-2">
+            <div className={`text-center ${isMobile ? 'mb-6' : 'mb-8'}`}>
+              <h1 className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold text-white font-['Montserrat'] mb-2`}>
                 {t('auth.title')}
               </h1>
-              <p className="text-white/70 font-['Montserrat']">
+              <p className={`text-white/70 font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                 {t('auth.subtitle')}
               </p>
             </div>
@@ -242,27 +249,27 @@ const Auth = () => {
             )}
 
             <Tabs defaultValue="login" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-6">
-                <TabsTrigger value="login">Connexion</TabsTrigger>
-                <TabsTrigger value="signup">Inscription</TabsTrigger>
+              <TabsList className={`grid w-full grid-cols-2 ${isMobile ? 'mb-4 h-10' : 'mb-6 h-12'}`}>
+                <TabsTrigger value="login" className={isMobile ? 'text-sm' : ''}>Connexion</TabsTrigger>
+                <TabsTrigger value="signup" className={isMobile ? 'text-sm' : ''}>Inscription</TabsTrigger>
               </TabsList>
 
               {/* Login Tab */}
-              <TabsContent value="login" className="space-y-4">
-                <form onSubmit={handleLogin} className="space-y-4">
+              <TabsContent value="login" className={isMobile ? 'space-y-3' : 'space-y-4'}>
+                <form onSubmit={handleLogin} className={isMobile ? 'space-y-3' : 'space-y-4'}>
                   <div className="space-y-2">
-                    <Label htmlFor="login-email" className="text-white font-['Montserrat']">
+                    <Label htmlFor="login-email" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                       Email
                     </Label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                      <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                       <Input
                         id="login-email"
                         type="email"
                         placeholder="votre@email.com"
                         value={loginData.email}
                         onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                        className="pl-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'pl-8 h-10 text-sm' : 'pl-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         required
                         disabled={loading}
                       />
@@ -270,18 +277,18 @@ const Auth = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="login-password" className="text-white font-['Montserrat']">
+                    <Label htmlFor="login-password" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                       Mot de passe
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                      <Lock className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                       <Input
                         id="login-password"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
                         value={loginData.password}
                         onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                        className="pl-10 pr-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'pl-8 pr-8 h-10 text-sm' : 'pl-10 pr-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         required
                         disabled={loading}
                       />
@@ -291,7 +298,7 @@ const Auth = () => {
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white"
                         disabled={loading}
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? <EyeOff className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} /> : <Eye className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />}
                       </button>
                     </div>
                   </div>
@@ -299,12 +306,12 @@ const Auth = () => {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/80 text-white font-['Montserrat'] h-12"
+                    className={`w-full bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/80 text-white font-['Montserrat'] ${isMobile ? 'h-10 text-sm' : 'h-12'}`}
                   >
                     {loading ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Connexion en cours...
+                        <Loader2 className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'} mr-2 animate-spin`} />
+                        {isMobile ? 'Connexion...' : 'Connexion en cours...'}
                       </>
                     ) : (
                       'Se connecter'
@@ -314,22 +321,22 @@ const Auth = () => {
               </TabsContent>
 
               {/* Signup Tab */}
-              <TabsContent value="signup" className="space-y-4">
-                <form onSubmit={handleSignup} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+              <TabsContent value="signup" className={isMobile ? 'space-y-3' : 'space-y-4'}>
+                <form onSubmit={handleSignup} className={isMobile ? 'space-y-3' : 'space-y-4'}>
+                  <div className={`${isMobile ? 'space-y-3' : 'grid grid-cols-2 gap-4'}`}>
                     <div className="space-y-2">
-                      <Label htmlFor="signup-firstname" className="text-white font-['Montserrat']">
+                      <Label htmlFor="signup-firstname" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                         Prénom *
                       </Label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                        <User className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                         <Input
                           id="signup-firstname"
                           type="text"
                           placeholder="Prénom"
                           value={signupData.firstName}
                           onChange={(e) => setSignupData({ ...signupData, firstName: e.target.value })}
-                          className="pl-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                          className={`${isMobile ? 'pl-8 h-10 text-sm' : 'pl-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                           required
                           disabled={loading}
                         />
@@ -337,7 +344,7 @@ const Auth = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="signup-lastname" className="text-white font-['Montserrat']">
+                      <Label htmlFor="signup-lastname" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                         Nom
                       </Label>
                       <Input
@@ -346,25 +353,25 @@ const Auth = () => {
                         placeholder="Nom"
                         value={signupData.lastName}
                         onChange={(e) => setSignupData({ ...signupData, lastName: e.target.value })}
-                        className="bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'h-10 text-sm' : 'h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         disabled={loading}
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-email" className="text-white font-['Montserrat']">
+                    <Label htmlFor="signup-email" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
                       Email *
                     </Label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                      <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                       <Input
                         id="signup-email"
                         type="email"
                         placeholder="votre@email.com"
                         value={signupData.email}
                         onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
-                        className="pl-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'pl-8 h-10 text-sm' : 'pl-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         required
                         disabled={loading}
                       />
@@ -372,18 +379,18 @@ const Auth = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-password" className="text-white font-['Montserrat']">
-                      Mot de passe * (min. 8 caractères)
+                    <Label htmlFor="signup-password" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
+                      Mot de passe * {isMobile ? '(8+ car.)' : '(min. 8 caractères)'}
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                      <Lock className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                       <Input
                         id="signup-password"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
                         value={signupData.password}
                         onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
-                        className="pl-10 pr-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'pl-8 pr-8 h-10 text-sm' : 'pl-10 pr-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         required
                         minLength={8}
                         disabled={loading}
@@ -394,24 +401,24 @@ const Auth = () => {
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white"
                         disabled={loading}
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? <EyeOff className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} /> : <Eye className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />}
                       </button>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-confirm" className="text-white font-['Montserrat']">
-                      Confirmer le mot de passe *
+                    <Label htmlFor="signup-confirm" className={`text-white font-['Montserrat'] ${isMobile ? 'text-sm' : ''}`}>
+                      {isMobile ? 'Confirmer MDP *' : 'Confirmer le mot de passe *'}
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
+                      <Lock className={`absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`} />
                       <Input
                         id="signup-confirm"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
                         value={signupData.confirmPassword}
                         onChange={(e) => setSignupData({ ...signupData, confirmPassword: e.target.value })}
-                        className="pl-10 bg-black/40 border-white/20 text-white placeholder:text-white/40"
+                        className={`${isMobile ? 'pl-8 h-10 text-sm' : 'pl-10 h-12'} bg-black/40 border-white/20 text-white placeholder:text-white/40`}
                         required
                         disabled={loading}
                       />
@@ -421,12 +428,12 @@ const Auth = () => {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/80 text-black font-['Montserrat'] h-12"
+                    className={`w-full bg-[hsl(var(--accent))] hover:bg-[hsl(var(--accent))]/80 text-black font-['Montserrat'] ${isMobile ? 'h-10 text-sm' : 'h-12'}`}
                   >
                     {loading ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Inscription en cours...
+                        <Loader2 className={`${isMobile ? 'w-3 h-3' : 'w-4 h-4'} mr-2 animate-spin`} />
+                        {isMobile ? 'Inscription...' : 'Inscription en cours...'}
                       </>
                     ) : (
                       "S'inscrire"
@@ -439,7 +446,7 @@ const Auth = () => {
           </Card>
         </motion.div>
       </div>
-    </div>
+    </MobilePageWrapper>
   );
 };
 

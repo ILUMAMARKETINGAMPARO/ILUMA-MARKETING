@@ -20,13 +20,83 @@ export interface NavigationItem {
 
 export const getNavigationItems = (t: (key: string) => string): NavigationItem[] => [
   { 
-    name: 'Méthode', 
+    name: t('nav.methode'), 
     path: ROUTES.METHODE_ILUMA, 
     icon: Lightbulb,
     priority: 'high'
   },
   { 
-    name: '🎯 Visibilité', 
+    name: '🚀 ' + t('nav.services'), 
+    path: '/services', 
+    icon: Star,
+    hasDropdown: true,
+    priority: 'high',
+    style: 'grid',
+    dropdownItems: [
+      { 
+        name: t('nav.seoAI'), 
+        path: ROUTES.SERVICES.SEO_IA, 
+        icon: Zap,
+        description: t('nav.seoAIDesc')
+      },
+      { 
+        name: t('nav.localVisibility'), 
+        path: ROUTES.SERVICES.VISIBILITE_LOCALE, 
+        icon: Target,
+        description: t('nav.localVisibilityDesc')
+      },
+      { 
+        name: t('nav.youtubeSEO'), 
+        path: ROUTES.SERVICES.YOUTUBE_SEO, 
+        icon: PenTool,
+        description: t('nav.youtubeSEODesc')
+      },
+      { 
+        name: t('nav.ecommerce'), 
+        path: ROUTES.SERVICES.ECOMMERCE, 
+        icon: Globe,
+        description: t('nav.ecommerceDesc')
+      },
+      { 
+        name: t('nav.seoGoogle'), 
+        path: '/services/seo-google', 
+        icon: Globe,
+        description: t('nav.seoGoogleDesc')
+      },
+      { 
+        name: t('nav.seoBing'), 
+        path: '/services/bing-seo', 
+        icon: Globe,
+        description: t('nav.seoBingDesc')
+      },
+      { 
+        name: t('nav.googleAds'), 
+        path: '/services/google-ads', 
+        icon: Target,
+        description: t('nav.googleAdsDesc')
+      },
+      { 
+        name: t('nav.metaAds'), 
+        path: '/services/meta-ads', 
+        icon: Target,
+        description: t('nav.metaAdsDesc')
+      },
+      { 
+        name: t('nav.contentCreation'), 
+        path: '/services/content-creation', 
+        icon: PenTool,
+        description: t('nav.contentCreationDesc')
+      },
+      { 
+        name: t('nav.partnership'), 
+        path: '/services/partnership', 
+        icon: Network,
+        description: t('nav.partnershipDesc')
+      }
+    ]
+  },
+  { 
+    name: '🎯 ' + t('nav.visibility'), 
     path: ROUTES.VISIBILITE, 
     icon: Zap,
     hasDropdown: true,
@@ -34,39 +104,21 @@ export const getNavigationItems = (t: (key: string) => string): NavigationItem[]
     style: 'grid',
     dropdownItems: [
       { 
-        name: 'Simulateur ADLUMA™', 
+        name: t('nav.adluma'), 
         path: ROUTES.ADLUMA, 
         icon: Calculator,
-        description: 'Estimation publicitaire IA'
+        description: t('nav.adlumaDesc')
       },
       { 
-        name: 'Score ILA™', 
+        name: t('nav.ila'), 
         path: ROUTES.ILA, 
         icon: Brain,
-        description: 'Analyse visibilité locale'
-      },
-      { 
-        name: 'SEO IA', 
-        path: ROUTES.SERVICES.SEO_IA, 
-        icon: Zap,
-        description: 'Référencement intelligent'
-      },
-      { 
-        name: 'Visibilité Locale', 
-        path: ROUTES.SERVICES.VISIBILITE_LOCALE, 
-        icon: Target,
-        description: 'Présence géographique'
-      },
-      { 
-        name: 'YouTube SEO', 
-        path: ROUTES.SERVICES.YOUTUBE_SEO, 
-        icon: PenTool,
-        description: 'Optimisation vidéo'
+        description: t('nav.ilaDesc')
       }
     ]
   },
   { 
-    name: '💡 Conversion', 
+    name: '💡 ' + t('nav.conversion'), 
     path: ROUTES.CONVERSION, 
     icon: Target,
     hasDropdown: true,
@@ -74,33 +126,39 @@ export const getNavigationItems = (t: (key: string) => string): NavigationItem[]
     style: 'grid',
     dropdownItems: [
       { 
-        name: 'Landing Page IA', 
+        name: t('nav.landingPage'), 
         path: ROUTES.LANDING_PAGE_INTELLIGENTE, 
         icon: Globe,
-        description: 'Pages de conversion'
+        description: t('nav.landingPageDesc')
       },
       { 
-        name: 'Fidélisation IA', 
+        name: t('nav.fidelization'), 
         path: ROUTES.PAGE_FIDELISATION_INTELLIGENTE, 
         icon: Star,
-        description: 'Rétention client'
+        description: t('nav.fidelizationDesc')
       },
       { 
-        name: 'BlogIA™', 
+        name: t('nav.blogIA'), 
         path: ROUTES.BLOGIA, 
         icon: PenTool,
-        description: 'Contenu intelligent'
+        description: t('nav.blogIADesc')
       },
       { 
-        name: 'LILO™ Assistant', 
+        name: t('nav.lilo'), 
         path: ROUTES.LILO,
         icon: Bot,
-        description: 'Chatbot conversationnel'
+        description: t('nav.liloDesc')
+      },
+      { 
+        name: t('nav.liloAdvanced'), 
+        path: '/lilo-advanced',
+        icon: Brain,
+        description: t('nav.liloAdvancedDesc')
       }
     ]
   },
   { 
-    name: '🤝 Partenariats', 
+    name: '🤝 ' + t('nav.partnerships'), 
     path: ROUTES.PARTENARIATS, 
     icon: Network,
     hasDropdown: true,
@@ -108,27 +166,27 @@ export const getNavigationItems = (t: (key: string) => string): NavigationItem[]
     style: 'vertical',
     dropdownItems: [
       { 
-        name: 'ILUMATCH™', 
+        name: t('nav.ilumatch'), 
         path: ROUTES.ILUMATCH, 
         icon: Target,
-        description: 'Mise en relation IA'
+        description: t('nav.ilumatchDesc')
       },
       { 
-        name: 'E-commerce', 
+        name: t('nav.ecommerce'), 
         path: ROUTES.SERVICES.ECOMMERCE, 
         icon: Globe,
-        description: 'Solutions boutiques'
+        description: t('nav.ecommerceDesc')
       },
       { 
-        name: 'Cas d\'études', 
+        name: t('nav.caseStudies'), 
         path: ROUTES.ETUDES_DE_CAS, 
         icon: Award,
-        description: 'Résultats clients'
+        description: t('nav.caseStudiesDesc')
       }
     ]
   },
   { 
-    name: '⚙️ Gestion', 
+    name: '⚙️ ' + t('nav.management'), 
     path: ROUTES.GESTION, 
     icon: Settings,
     hasDropdown: true,
@@ -136,53 +194,53 @@ export const getNavigationItems = (t: (key: string) => string): NavigationItem[]
     style: 'vertical',
     dropdownItems: [
       { 
-        name: 'CRM Iluma™', 
+        name: t('nav.crm'), 
         path: ROUTES.CRM_ILUMA, 
         icon: Users,
-        description: 'Gestion clients IA'
+        description: t('nav.crmDesc')
       },
       { 
-        name: 'RivalViews™', 
+        name: t('nav.rivalviews'), 
         path: ROUTES.RIVALVIEWS, 
         icon: Globe,
-        description: 'Intelligence concurrentielle',
+        description: t('nav.rivalviewsDesc'),
         isNew: true
       },
       { 
-        name: 'Analytics', 
+        name: t('nav.analytics'), 
         path: ROUTES.TABLEAU_ANALYTICS, 
         icon: BarChart3,
-        description: 'Métriques avancées'
+        description: t('nav.analyticsDesc')
       },
       { 
-        name: 'Dashboard Pro', 
+        name: t('nav.dashboard'), 
         path: ROUTES.DASHBOARD_AVANCE, 
         icon: Shield,
-        description: 'Tableau de bord'
+        description: t('nav.dashboardDesc')
       },
       { 
-        name: 'Formation', 
+        name: t('nav.formation'), 
         path: ROUTES.FORMATION_ILUMA, 
         icon: GraduationCap,
-        description: 'Apprentissage IA',
+        description: t('nav.formationDesc'),
         isNew: true
       }
     ]
   },
   { 
-    name: 'HUB 🪐', 
+    name: t('nav.hub') + ' 🪐', 
     path: ROUTES.HUB_CENTRAL, 
     icon: Rocket,
     priority: 'high'
   },
   { 
-    name: 'Blog', 
+    name: t('nav.blog'), 
     path: ROUTES.BLOG, 
     icon: PenTool,
     priority: 'medium'
   },
   { 
-    name: 'Contact', 
+    name: t('nav.contact'), 
     path: ROUTES.CONTACT, 
     icon: Phone,
     priority: 'high'

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, Mail, Brain, Database } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client.ts';
+import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
 interface Email {
@@ -51,7 +51,7 @@ const GmailExtractor = () => {
             payload: {
               headers: [
                 { name: 'From', value: 'Jean Dupont <jean@entreprise-locale.com>' },
-                { name: 'To', value: 'contact@ilumamarketing.com' },
+                { name: 'To', value: 'administracion@ilumamarketing.com' },
                 { name: 'Subject', value: 'Demande de devis pour SEO local' }
               ],
               body: { data: btoa('Bonjour, nous souhaitons améliorer notre visibilité locale...') }

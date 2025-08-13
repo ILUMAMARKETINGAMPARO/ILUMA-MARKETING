@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '@/hooks/useLanguage.ts';
+import { useLanguage } from '@/hooks/useLanguage';
 import { getMultilingualSEOData, getSGEOptimizedContent } from '@/utils/seoMultilingualEngine';
 import SGEOptimizedSEO from './SGEOptimizedSEO';
 
@@ -103,7 +103,7 @@ const DynamicSEO: React.FC<DynamicSEOProps> = ({
           name: "Iluma Marketing",
           address: "Montréal, QC, Canada",
           phone: "+15148828910",
-          email: "contact@ilumamarketing.com",
+          email: "administracion@ilumamarketing.com",
           geo: {
             latitude: 45.5017,
             longitude: -73.5673

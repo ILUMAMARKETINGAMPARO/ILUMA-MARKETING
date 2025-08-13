@@ -19,6 +19,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Sparkles, ArrowRight, Brain, Target, Rocket, Users, Star, TrendingUp, Zap, Heart, Globe, MessageSquare, CheckCircle, PlayCircle, HelpCircle, Eye, Lightbulb, Coffee, Smile, ThumbsUp, Wand2, Search, BarChart3, Award, Clock, Shield, MapPin } from 'lucide-react';
 import ClientInterface from '@/components/rivalviews/ClientInterface';
+import MobilePageWrapper from '@/components/mobile/MobilePageWrapper';
 
 // New hero components
 import ParticleSystem from '@/components/hero/ParticleSystem';
@@ -190,7 +191,11 @@ const Index = () => {
       <StructuredData type="LocalBusiness" />
       <StructuredData type="FAQPage" />
       
-      <div className="min-h-screen bg-gradient-to-br from-[#0A0A10] via-[#1a1a2e] to-[#0A0A10] overflow-hidden">
+      <MobilePageWrapper 
+        className="min-h-screen bg-gradient-to-br from-[#0A0A10] via-[#1a1a2e] to-[#0A0A10] overflow-hidden"
+        enablePadding={false}
+        fullHeight={true}
+      >
         <MPEProvider>
           <TeamProvider>
             <Navigation />
@@ -344,8 +349,8 @@ const Index = () => {
                     </div>
                   </motion.div>
 
-                  {/* Interactive Path Selection with 3D cards */}
-                  <motion.div className={`grid ${isMobile ? 'grid-cols-1 gap-6 max-w-sm' : 'md:grid-cols-3 gap-8 max-w-6xl'} mx-auto`} initial={{
+                  {/* Interactive Path Selection - Ultra Compact Mobile View */}
+                  <motion.div className={`grid ${isMobile ? 'grid-cols-1 gap-3 max-w-xs' : 'md:grid-cols-3 gap-8 max-w-6xl'} mx-auto ${isMobile ? 'px-6' : ''}`} initial={{
                   opacity: 0,
                   y: 50
                 }} animate={{
@@ -359,79 +364,78 @@ const Index = () => {
                     const IconComponent = path.icon;
                     return <motion.div key={path.id} initial={{
                       opacity: 0,
-                      rotateX: -15,
+                      rotateX: isMobile ? 0 : -15,
                       y: 50
                     }} animate={{
                       opacity: 1,
                       rotateX: 0,
                       y: 0
                     }} transition={{
-                      delay: 8 + index * 0.2,
-                      duration: 0.8
-                    }} whileHover={{
+                      delay: 8 + index * 0.1,
+                      duration: 0.6
+                    }} whileHover={isMobile ? { scale: 1.01 } : {
                       scale: 1.05,
                       rotateY: 5,
                       z: 50
                     }} whileTap={{
-                      scale: 0.95
-                    }} style={{
-                      transformStyle: 'preserve-3d'
+                      scale: 0.99
                     }}>
                           <Link to={path.path}>
-                            <motion.div className="relative h-full group cursor-pointer" whileHover="hover">
-                              {/* 3D shadow */}
-                              <motion.div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl" variants={{
+                            <motion.div className="relative group cursor-pointer" whileHover="hover">
+                              {/* Minimal shadow */}
+                              <motion.div className="absolute inset-0 bg-gradient-to-r from-primary/15 to-accent/15 rounded-xl blur-md" variants={{
                             hover: {
-                              scale: 1.1,
-                              opacity: 0.8,
-                              y: 10
+                              scale: 1.01,
+                              opacity: 0.8
                             }
                           }} transition={{
-                            duration: 0.3
+                            duration: 0.2
                           }} />
 
-                              {/* Main card */}
-                              <Card className="relative h-full bg-card/40 backdrop-blur-xl border border-primary/30 hover:border-primary/60 transition-all duration-500 overflow-hidden">
-                                {/* Animated background gradient */}
-                                <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100" initial={false} variants={{
-                              hover: {
-                                opacity: 1
-                              }
-                            }} transition={{
-                              duration: 0.3
+                              {/* Ultra-compact card */}
+                              <Card className="relative bg-card/60 backdrop-blur-md border border-primary/30 hover:border-primary/60 transition-all duration-200 overflow-hidden">
+                                <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100" transition={{
+                              duration: 0.2
                             }} />
 
-                                <CardContent className="relative p-8 text-center h-full flex flex-col">
-                                  {/* Floating icon */}
-                                  <motion.div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${path.color} flex items-center justify-center mx-auto mb-6 shadow-2xl`} variants={{
+                                <CardContent className={`relative ${isMobile ? 'p-3' : 'p-8'} text-center flex ${isMobile ? 'flex-row items-center' : 'flex-col'}`}>
+                                  {/* Compact icon */}
+                                  <motion.div className={`${isMobile ? 'w-12 h-12 mr-4 flex-shrink-0' : 'w-20 h-20 mx-auto mb-6'} rounded-lg bg-gradient-to-r ${path.color} flex items-center justify-center shadow-lg`} variants={{
                                 hover: {
-                                  rotateY: 360,
-                                  scale: 1.1
+                                  scale: isMobile ? 1.05 : 1.1
                                 }
                               }} transition={{
-                                duration: 0.6
+                                duration: 0.3
                               }}>
-                                    <IconComponent className="w-10 h-10 text-white" />
+                                    <IconComponent className={`${isMobile ? 'w-6 h-6' : 'w-10 h-10'} text-white`} />
                                   </motion.div>
 
-                                  <h3 className="text-2xl font-bold text-white mb-3 font-['Montserrat']">
-                                    {path.title}
-                                  </h3>
-                                  <p className="text-accent mb-4 font-['Montserrat'] font-semibold text-lg">
-                                    {path.subtitle}
-                                  </p>
-                                  <p className="text-white/70 font-['Montserrat'] flex-grow">
-                                    {path.description}
-                                  </p>
+                                  {/* Compact content */}
+                                  <div className={`${isMobile ? 'flex-1 text-left' : ''}`}>
+                                    <h3 className={`${isMobile ? 'text-base' : 'text-2xl'} font-bold text-white ${isMobile ? 'mb-1' : 'mb-3'} font-['Montserrat']`}>
+                                      {path.title}
+                                    </h3>
+                                    
+                                    <p className={`text-accent ${isMobile ? 'text-xs mb-1' : 'mb-4 text-lg'} font-['Montserrat'] font-medium`}>
+                                      {path.subtitle}
+                                    </p>
+                                    
+                                    {!isMobile && (
+                                      <p className="text-base text-white/80 font-['Montserrat'] flex-grow leading-relaxed">
+                                        {path.description}
+                                      </p>
+                                    )}
 
-                                  {/* Hover arrow */}
-                                  <motion.div className="mt-6" variants={{
+                                    {/* Ultra-compact action */}
+                                    <motion.div className={`${isMobile ? 'flex items-center' : 'mt-6 flex items-center justify-center'} text-accent group-hover:text-white transition-colors`} variants={{
                                 hover: {
-                                  x: 5
+                                  x: isMobile ? 2 : 5
                                 }
                               }}>
-                                    <ArrowRight className="w-6 h-6 text-accent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                  </motion.div>
+                                      <span className={`${isMobile ? 'text-xs' : 'text-base'} font-medium ${isMobile ? 'mr-1' : 'mr-2'}`}>Explorer</span>
+                                      <ArrowRight className={`${isMobile ? 'w-3 h-3' : 'w-6 h-6'} opacity-70 group-hover:opacity-100 transition-opacity`} />
+                                    </motion.div>
+                                  </div>
                                 </CardContent>
                               </Card>
                             </motion.div>
@@ -831,7 +835,7 @@ const Index = () => {
           "featureList": ["ADLUMA™ - Simulateur IA de visibilité", "ILA™ - Indice Local d'Attraction", "ILUMATCH™ - Réseau d'inter-visibilité", "LILO™ - Assistant IA galactique", "BlogIA™ - Contenu SEO automatisé", "Landing Pages intelligentes", "CRM Iluma avancé", "HUB™ centralisé", "Pages de Fidélisation Diamant"]
         })}
         </script>
-      </div>
+      </MobilePageWrapper>
     </>;
 };
 export default Index;

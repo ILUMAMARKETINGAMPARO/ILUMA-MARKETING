@@ -11,13 +11,13 @@ interface GridDropdownProps {
 const GridDropdown: React.FC<GridDropdownProps> = ({ item, onClose }) => {
   return (
     <motion.div
-      className="absolute top-full left-0 mt-2 w-96 bg-[#0B0B0E]/98 backdrop-blur-xl border border-[#8E44FF]/30 rounded-2xl shadow-2xl py-4 z-50"
+      className="absolute top-full left-0 mt-2 w-96 bg-black/95 backdrop-blur-xl border border-[#8E44FF]/40 rounded-2xl shadow-2xl py-4 z-[200]"
       initial={{ opacity: 0, y: -10, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -10, scale: 0.95 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      <div className="absolute -top-2 left-6 w-4 h-4 bg-[#0B0B0E] border-l border-t border-[#8E44FF]/30 transform rotate-45"></div>
+      <div className="absolute -top-2 left-6 w-4 h-4 bg-black border-l border-t border-[#8E44FF]/40 transform rotate-45"></div>
       
       <div className="grid grid-cols-2 gap-2 px-4">
         {item.dropdownItems?.map((dropdownItem, index) => {

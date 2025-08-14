@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useDeviceInfo } from '@/hooks/use-mobile';
 
 const IlumaHero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { isMobile, isTablet, orientation } = useDeviceInfo();
 
-  // Suivi du curseur pour effet parallax subtil
+  // Suivi du curseur pour effet parallax subtil - désactivé sur mobile pour performance
   useEffect(() => {
+    if (isMobile) return; // Pas de tracking sur mobile pour économiser la batterie
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth) * 2 - 1,
@@ -16,57 +20,59 @@ const IlumaHero = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0A0A10] via-[#1a1a2e] to-[#0A0A10]">
+    <section className={`relative ${isMobile ? 'min-h-[90vh]' : 'min-h-screen'} flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0A0A10] via-[#1a1a2e] to-[#0A0A10]`}>
       {/* Animated Galactic Background */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#9B5DE5]/20 rounded-full blur-3xl"
+          className={`absolute top-1/4 left-1/4 ${isMobile ? 'w-48 h-48' : 'w-96 h-96'} bg-[#9B5DE5]/20 rounded-full blur-3xl`}
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.2, 0.4, 0.2],
-            x: mousePosition.x * 50,
-            y: mousePosition.y * 30
+            x: isMobile ? 0 : mousePosition.x * 50,
+            y: isMobile ? 0 : mousePosition.y * 30
           }}
           transition={{
-            duration: 4,
+            duration: isMobile ? 6 : 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#FDCB6E]/20 rounded-full blur-3xl"
+          className={`absolute bottom-1/4 right-1/4 ${isMobile ? 'w-32 h-32' : 'w-64 h-64'} bg-[#FDCB6E]/20 rounded-full blur-3xl`}
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3],
-            x: mousePosition.x * -30,
-            y: mousePosition.y * -20
+            x: isMobile ? 0 : mousePosition.x * -30,
+            y: isMobile ? 0 : mousePosition.y * -20
           }}
           transition={{
-            duration: 5,
+            duration: isMobile ? 7 : 5,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
-        <motion.div 
-          className="absolute top-3/4 left-1/2 w-32 h-32 bg-[#9B5DE5]/30 rounded-full blur-2xl"
-          animate={{
-            y: [0, -20, 0],
-            scale: [1, 1.1, 1],
-            x: mousePosition.x * 20
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {!isMobile && ( // Seulment sur desktop pour éviter le surcharge
+          <motion.div 
+            className="absolute top-3/4 left-1/2 w-32 h-32 bg-[#9B5DE5]/30 rounded-full blur-2xl"
+            animate={{
+              y: [0, -20, 0],
+              scale: [1, 1.1, 1],
+              x: mousePosition.x * 20
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        )}
       </div>
 
       {/* Hero Content SEO Optimisé */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div className={`relative z-10 max-w-7xl mx-auto ${isMobile ? 'px-4' : 'px-6 lg:px-8'} text-center`}>
         <motion.div 
           className="space-y-8"
           initial={{ opacity: 0, y: 50 }}
@@ -75,7 +81,7 @@ const IlumaHero = () => {
         >
           {/* H1 SEO Optimisé */}
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-['Montserrat'] leading-tight"
+            className={`${isMobile ? 'text-4xl' : 'text-5xl md:text-7xl lg:text-8xl'} font-extrabold font-['Montserrat'] leading-tight`}
             initial={{ y: 50, opacity: 0, scale: 0.9 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -103,7 +109,7 @@ const IlumaHero = () => {
 
           {/* Description SEO */}
           <motion.p
-            className="text-xl md:text-2xl text-white/80 max-w-5xl mx-auto leading-relaxed font-['Montserrat']"
+            className={`${isMobile ? 'text-lg' : 'text-xl md:text-2xl'} text-white/80 max-w-5xl mx-auto leading-relaxed font-['Montserrat']`}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -114,7 +120,7 @@ const IlumaHero = () => {
 
           {/* Flow Guide CTA - Signal émotionnel renforcé */}
           <motion.div 
-            className="flex flex-col gap-4 justify-center items-center mt-10"
+            className={`flex flex-col gap-4 justify-center items-center ${isMobile ? 'mt-8' : 'mt-10'}`}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -126,7 +132,7 @@ const IlumaHero = () => {
               whileTap={{ scale: 0.98 }}
             >
               <motion.button 
-                className="relative px-12 py-5 bg-gradient-to-r from-[#9B5DE5] via-[#FDCB6E] to-[#9B5DE5] bg-[length:200%_100%] text-black font-black rounded-2xl text-xl transition-all duration-500 hover:shadow-2xl hover:shadow-[#9B5DE5]/30 font-['Montserrat'] flex items-center gap-3 overflow-hidden z-10"
+                className={`relative ${isMobile ? 'px-8 py-4 text-lg' : 'px-12 py-5 text-xl'} bg-gradient-to-r from-[#9B5DE5] via-[#FDCB6E] to-[#9B5DE5] bg-[length:200%_100%] text-black font-black rounded-2xl transition-all duration-500 hover:shadow-2xl hover:shadow-[#9B5DE5]/30 font-['Montserrat'] flex items-center gap-3 overflow-hidden z-10`}
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
                 }}
@@ -138,9 +144,9 @@ const IlumaHero = () => {
                 aria-label="Lancez votre diagnostic IA avec Lilo"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Sparkles className="w-6 h-6 group-hover:animate-spin" />
-                🚀 Lancez votre diagnostic avec LILO
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                <Sparkles className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'} group-hover:animate-spin`} />
+                🚀 {isMobile ? 'Diagnostic LILO' : 'Lancez votre diagnostic avec LILO'}
+                <ArrowRight className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'} group-hover:translate-x-2 transition-transform duration-300`} />
               </motion.button>
               
               {/* Glow effect */}
@@ -159,19 +165,19 @@ const IlumaHero = () => {
 
             {/* CTA Secondaire */}
             <motion.button 
-              className="px-6 py-3 border border-white/30 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/50 rounded-xl text-base transition-all duration-300 hover:scale-105 font-['Montserrat'] group"
+              className={`${isMobile ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'} border border-white/30 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/50 rounded-xl transition-all duration-300 hover:scale-105 font-['Montserrat'] group`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Explorer la méthode Iluma complète"
             >
-              <span className="group-hover:hidden">Explorer la méthode complète</span>
-              <span className="hidden group-hover:inline">🧭 Voir nos résultats clients</span>
+              <span className="group-hover:hidden">{isMobile ? 'Voir la méthode' : 'Explorer la méthode complète'}</span>
+              <span className="hidden group-hover:inline">🧭 {isMobile ? 'Résultats clients' : 'Voir nos résultats clients'}</span>
             </motion.button>
           </motion.div>
 
           {/* Indicateurs de Performance */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto"
+            className={`grid grid-cols-2 ${isMobile ? 'gap-3 mt-12' : 'md:grid-cols-4 gap-6 mt-16'} max-w-4xl mx-auto`}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -182,11 +188,11 @@ const IlumaHero = () => {
               { value: "+260", label: "clics Maps" },
               { value: "+140", label: "followers organiques" }
             ].map((stat, index) => (
-              <div key={index} className="text-center p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-[#FDCB6E] font-['Montserrat']">
+              <div key={index} className={`text-center ${isMobile ? 'p-3' : 'p-4'} rounded-xl bg-white/5 backdrop-blur border border-white/10`}>
+                <div className={`${isMobile ? 'text-xl' : 'text-2xl md:text-3xl'} font-bold text-[#FDCB6E] font-['Montserrat']`}>
                   {stat.value}
                 </div>
-                <div className="text-sm text-white/70 font-['Montserrat']">
+                <div className={`${isMobile ? 'text-xs' : 'text-sm'} text-white/70 font-['Montserrat']`}>
                   {stat.label}
                 </div>
               </div>

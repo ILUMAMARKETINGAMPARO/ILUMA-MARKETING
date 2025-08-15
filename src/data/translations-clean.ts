@@ -66,7 +66,11 @@ export const translations = {
           realTimeReporting: {
             title: "Reporting en temps réel",
             description: "Suivi continu de vos progrès et optimisations"
-          }
+          },
+          progressTracking: {
+            title: "Suivi de progression en continu",
+            description: "Surveillez l’évolution de votre score ILA™ au fil du temps grâce à des rapports détaillés et des indicateurs clairs. Identifiez rapidement vos améliorations et vos points à optimiser pour rester en tête sur votre marché local."
+          },
         },
         benefits: {
           instantDiagnosis: "Diagnostic instantané de votre visibilité locale",
@@ -84,7 +88,7 @@ export const translations = {
         cta: {
           start: "Analyser ma visibilité",
           info: "Découvrir ILA™"
-        }
+        },
       },
       contentCreation: {
         title: "Création de Contenu IA par Iluma™",
@@ -280,6 +284,39 @@ export const translations = {
       promotion: {
         title: "Offre de lancement",
         subtitle: "Premiers clients privilégiés"
+      },
+    },
+    ila: {
+      hero: {
+        title: "ILA™ – Indice Local d’Attraction",
+        subtitle: "Mesurez la puissance de votre présence locale et découvrez comment l’optimiser grâce à notre analyse IA en temps réel."
+      },
+      form: {
+        title: "Calculez votre Score ILA™",
+        subtitle: "Entrez vos informations pour obtenir une analyse instantanée et personnalisée de votre visibilité locale.",
+        businessNamePlaceholder: "Nom de votre entreprise",
+        addressPlaceholder: "Adresse complète (rue, ville, code postal)",
+        websitePlaceholder: "URL de votre site web",
+        calculateButton: "Calculer mon Score ILA™"
+      },
+      placeholder: {
+        title: "Vos résultats apparaîtront ici",
+        subtitle: "Une fois l’analyse terminée, consultez votre score et nos recommandations stratégiques pour augmenter votre visibilité."
+      }
+    },
+    pageFidelisation: {
+      hero: {
+        badge: "Fidélisation IA",
+        title: "Transformez vos clients en ambassadeurs fidèles grâce à l’IA",
+        subtitle: "Une stratégie intelligente et automatisée pour maximiser la rétention et la valeur de chaque client."
+      },
+      tabs: {
+        nurturing: "Nurturing Personnalisé",
+        segmentation: "Segmentation Avancée",
+        analytics: "Analytique & Insights",
+      },
+      cta: {
+        button: "Lancer mon plan de fidélisation IA 🚀"
       }
     },
     siteWebComplet: {
@@ -390,6 +427,12 @@ export const translations = {
       company: {
         description: "Révolutionner le marketing digital des PME avec l'intelligence artificielle la plus avancée.",
         followUs: "Suivez-nous"
+      },
+      newsletter: {
+        title: "Newsletter",
+        description: "Restez informé des dernières innovations IA",
+        placeholder: "Votre email",
+        subscribe: "S'abonner"
       }
     },
     faq: {
@@ -405,7 +448,7 @@ export const translations = {
       preview: {
         question: "Puis-je voir des résultats avant d'investir ?"
       }
-    }
+    },
   },
   en: {
     common: {
@@ -798,6 +841,12 @@ export const translations = {
       company: {
         description: "Revolutionizing SME digital marketing with the most advanced artificial intelligence.",
         followUs: "Follow us"
+      },
+      newsletter: {
+        title: "Newsletter",
+        description: "Stay informed about the latest AI innovations",
+        placeholder: "Your email",
+        subscribe: "Subscribe"
       }
     },
     faq: {
@@ -1234,6 +1283,12 @@ export const translations = {
       company: {
         description: "Revolucionando el marketing digital de las PYME con la inteligencia artificial más avanzada.",
         followUs: "Síguenos"
+      },
+      newsletter: {
+        title: "Newsletter",
+        description: "Mantente informado sobre las últimas innovaciones de IA",
+        placeholder: "Tu email",
+        subscribe: "Suscribirse"
       }
     },
     faq: {

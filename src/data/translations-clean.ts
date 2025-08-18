@@ -319,6 +319,59 @@ export const translations = {
         button: "Lancer mon plan de fidélisation IA 🚀"
       }
     },
+    landingPageIA: {
+      hero: {
+        title: "Attirez, convertissez et fidélisez avec une Landing Page propulsée par l’IA",
+        subtitle: "Design stratégique, contenu optimisé et automatisation intelligente pour maximiser vos conversions.",
+        delivery: "Livraison ultra-rapide en 48h",
+        conversion: "+350% de conversions potentielles",
+        responsive: "100% adaptable à tous les écrans",
+        support: "Support prioritaire 24/7",
+        viewWork: "Voir nos réalisations",
+        consultation: "Réserver ma consultation gratuite"
+      },
+      technologies: {
+        title: "Des technologies puissantes au service de vos résultats",
+        subtitle: "Des outils intégrés pour un impact mesurable et durable."
+      },
+      process: {
+        title: "Notre processus en 4 étapes vers une Landing Page IA performante",
+        subtitle: "Une méthodologie rapide, stratégique et orientée résultats."
+      }
+    },
+    landingPageIntelligente: {
+      ai: {
+        title: "Intelligence Artificielle au cœur de votre stratégie",
+        subtitle: "Automatisation, personnalisation et recommandations basées sur les données réelles de vos visiteurs.",
+        features: {
+          personalization: "Personnalisation dynamique du contenu selon le profil visiteur",
+          scoring: "Système de scoring intelligent pour cibler les prospects les plus qualifiés",
+          recommendations: "Recommandations stratégiques en temps réel pour améliorer vos performances"
+        }
+      },
+      process: {
+        step1: {
+          title: "Audit & Analyse Stratégique",
+          description: "Analyse de votre marché, de vos objectifs et de vos audiences pour poser les bases d’une page performante."
+        },
+        step2: {
+          title: "Conception & UX Design",
+          description: "Création d’une expérience visuelle et ergonomique adaptée à vos visiteurs cibles."
+        },
+        step3: {
+          title: "Intégration IA & Contenus Optimisés",
+          description: "Implémentation de l’IA pour personnaliser le contenu et maximiser la conversion."
+        },
+        step4: {
+          title: "Lancement & Optimisation Continue",
+          description: "Mise en ligne, tests et améliorations constantes selon les performances."
+        },
+        duration1: "24h",
+        duration2: "24h",
+        duration3: "12h",
+        duration4: "12h",
+      }
+    },
     siteWebComplet: {
       hero: {
         badge: "Site Web Complet IA",

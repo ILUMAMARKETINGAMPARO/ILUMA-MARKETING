@@ -545,6 +545,12 @@ export const translations = {
         question: "Puis-je voir des résultats avant d'investir ?"
       }
     },
+    methodeIluma: {
+      faq: {
+        title: "FAQ – Tout savoir sur la Méthode Iluma™",
+        description: "Découvrez les réponses aux questions les plus fréquentes sur notre approche stratégique, nos outils IA et la manière dont nous accompagnons nos clients vers des résultats mesurables et durables."
+      }
+    },
     faqSection: {
       title: "FAQ Iluma™",
       description: "Explorez nos réponses classées par catégories pour trouver rapidement l’information que vous cherchez.",

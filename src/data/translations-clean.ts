@@ -337,6 +337,15 @@ export const translations = {
       process: {
         title: "Notre processus en 4 étapes vers une Landing Page IA performante",
         subtitle: "Une méthodologie rapide, stratégique et orientée résultats."
+      },
+      packages: {
+        title: "Des offres flexibles pour chaque ambition",
+        subtitle: "Choisissez la formule qui correspond à vos objectifs et à votre budget."
+      },
+      cta: {
+        title: "Lancez votre Landing Page IA dès aujourd’hui 🚀",
+        subtitle: "Consultation gratuite · Design personnalisé · IA intégrée · SEO optimisé · CRM inclus",
+        startProject: "Démarrer mon projet IA maintenant"
       }
     },
     landingPageIntelligente: {
@@ -370,6 +379,38 @@ export const translations = {
         duration2: "24h",
         duration3: "12h",
         duration4: "12h",
+      },
+      packages: {
+        starter: {
+          title: "Pack Starter IA",
+          subtitle: "L’essentiel pour lancer votre Landing Page IA rapidement et efficacement.",
+          feature1: "Conception sur mesure",
+          feature2: "Contenu optimisé SEO",
+          feature3: "Design responsive",
+          feature4: "Intégration CRM basique",
+          feature5: "1 révision incluse",
+          cta: "Lancer mon pack Starter 🚀"
+        },
+        complete: {
+          title: "Pack Complet IA",
+          subtitle: "Une solution clé en main avec intégrations avancées et optimisation IA.",
+          feature1: "Tout le Pack Starter",
+          feature2: "Automatisation marketing",
+          feature3: "Intégration CRM avancée",
+          feature4: "Personnalisation IA en temps réel",
+          feature5: "3 révisions incluses",
+          cta: "Passer au Pack Complet ⚡"
+        },
+        enterprise: {
+          title: "Pack Entreprise IA",
+          subtitle: "Une approche sur-mesure pour maximiser vos performances à grande échelle.",
+          feature1: "Tout le Pack Complet",
+          feature2: "Analyse comportementale avancée",
+          feature3: "Optimisation continue IA",
+          feature4: "Support prioritaire 24/7",
+          feature5: "Formation dédiée à votre équipe",
+          cta: "Discuter de mon projet Entreprise 💼"
+        },
       }
     },
     siteWebComplet: {
@@ -489,6 +530,8 @@ export const translations = {
       }
     },
     faq: {
+      title: "Foire Aux Questions – Iluma™",
+      description: "Retrouvez ici toutes les réponses aux questions les plus fréquentes sur nos services, nos outils IA et notre méthodologie.",
       google: {
         question: "Et si votre agence savait exactement ce que pense Google ?"
       },
@@ -502,6 +545,11 @@ export const translations = {
         question: "Puis-je voir des résultats avant d'investir ?"
       }
     },
+    faqSection: {
+      title: "FAQ Iluma™",
+      description: "Explorez nos réponses classées par catégories pour trouver rapidement l’information que vous cherchez.",
+      searchPlaceholder: "Rechercher une question…"
+    }
   },
   en: {
     common: {

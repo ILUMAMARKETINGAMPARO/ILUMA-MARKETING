@@ -1109,14 +1109,14 @@ export const translations = {
     },
     methodeIluma: {
       faq: {
-        title: "FAQ – Tout savoir sur la Méthode Iluma™",
-        description: "Découvrez les réponses aux questions les plus fréquentes sur notre approche stratégique, nos outils IA et la manière dont nous accompagnons nos clients vers des résultats mesurables et durables."
+        title: "",
+        description: ""
       }
     },
     faqSection: {
-      title: "FAQ Iluma™",
-      description: "Explorez nos réponses classées par catégories pour trouver rapidement l’information que vous cherchez.",
-      searchPlaceholder: "Rechercher une question…"
+      title: "",
+      description: "",
+      searchPlaceholder: ""
     }
   },
   es: {
@@ -1430,6 +1430,136 @@ export const translations = {
         subtitle: "Primeros clientes privilegiados"
       }
     },
+    ila: {
+      hero: {
+        title: "",
+        subtitle: "",
+      },
+      form: {
+        title: "",
+        subtitle: "",
+        businessNamePlaceholder: "",
+        addressPlaceholder: "",
+        websitePlaceholder: "",
+        calculateButton: "",
+      },
+      placeholder: {
+        title: "",
+        subtitle: "",
+      }
+    },
+    pageFidelisation: {
+      hero: {
+        badge: "",
+        title: "",
+        subtitle: "",
+      },
+      tabs: {
+        nurturing: "",
+        segmentation: "",
+        analytics: "",
+      },
+      cta: {
+        button: "",
+      }
+    },
+    landingPageIA: {
+      hero: {
+        title: "",
+        subtitle: "",
+        delivery: "",
+        conversion: "",
+        responsive: "",
+        support: "",
+        viewWork: "",
+        consultation: "",
+      },
+      technologies: {
+        title: "",
+        subtitle: "",
+      },
+      process: {
+        title: "",
+        subtitle: "",
+      },
+      packages: {
+        title: "",
+        subtitle: "",
+      },
+      cta: {
+        title: "",
+        subtitle: "",
+        startProject: "",
+      }
+    },
+    landingPageIntelligente: {
+      ai: {
+        title: "",
+        subtitle: "",
+        features: {
+          personalization: "",
+          scoring: "",
+          recommendations: "",
+        }
+      },
+      process: {
+        step1: {
+          title: "",
+          description: "",
+        },
+        step2: {
+          title: "",
+          description: "",
+        },
+        step3: {
+          title: "",
+          description: "",
+        },
+        step4: {
+          title: "",
+          description: "",
+        },
+        duration1: "24h",
+        duration2: "24h",
+        duration3: "12h",
+        duration4: "12h",
+      },
+      packages: {
+        starter: {
+          title: "",
+          subtitle: "",
+          feature1: "",
+          feature2: "",
+          feature3: "",
+          feature4: "",
+          feature5: "",
+          cta: ""
+        },
+        complete: {
+          title: "",
+          subtitle: "",
+          feature1: "",
+          feature2: "",
+          feature3: "",
+          feature4: "",
+          feature5: "",
+          feature6: "",
+          feature7: "",
+          cta: ""
+        },
+        enterprise: {
+          title: "",
+          subtitle: "",
+          feature1: "",
+          feature2: "",
+          feature3: "",
+          feature4: "",
+          feature5: "",
+          feature6: "",
+          cta: ""
+        },
+      }
+    },
     siteWebComplet: {
       hero: {
         badge: "Sitio Web Completo IA",
@@ -1559,6 +1689,17 @@ export const translations = {
       preview: {
         question: "¿Puedo ver resultados antes de invertir?"
       }
+    },
+    methodeIluma: {
+      faq: {
+        title: "",
+        description: ""
+      }
+    },
+    faqSection: {
+      title: "",
+      description: "",
+      searchPlaceholder: ""
     }
   }
 };

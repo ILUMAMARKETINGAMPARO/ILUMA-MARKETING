@@ -386,11 +386,11 @@ const LandingPageIntelligentePage = () => {
                     viewport={{ once: true }}
                     className={`relative ${plan.popular ? 'scale-105' : ''}`}
                   >
-                    {plan.popular && (
+                    {/* {plan.popular && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
                         {t('landingPageIntelligente.packages.popular')}
                       </div>
-                    )}
+                    )} */}
                     
                     <Card className={`glass-effect border-violet-400/30 p-8 h-full ${plan.popular ? 'border-violet-400/50' : ''}`}>
                       <div className="text-center mb-6">
@@ -450,7 +450,7 @@ const LandingPageIntelligentePage = () => {
                   </h3>
                   
                   <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                    Consultation gratuite • Design personnalisé • IA intégrée • SEO optimisé • CRM inclus
+                    Livraison garantie 48h · Support illimité · Formation incluse · Résultats mesurables
                     <br />
                     <strong className="text-violet-300">Garantie de résultats ou remboursé.</strong>
                   </p>

@@ -344,7 +344,7 @@ export const translations = {
       },
       cta: {
         title: "Lancez votre Landing Page IA dès aujourd’hui 🚀",
-        subtitle: "Consultation gratuite · Design personnalisé · IA intégrée · SEO optimisé · CRM inclus",
+        subtitle: "Consultation gratuite • Design personnalisé • IA intégrée • SEO optimisé • CRM inclus",
         startProject: "Démarrer mon projet IA maintenant"
       }
     },
@@ -381,6 +381,7 @@ export const translations = {
         duration4: "12h",
       },
       packages: {
+        popular: "Landing Page Intelligente – Pack Complet IA",
         starter: {
           title: "Pack Starter IA",
           subtitle: "L’essentiel pour lancer votre Landing Page IA rapidement et efficacement.",
@@ -399,8 +400,8 @@ export const translations = {
           feature3: "Intégration CRM avancée",
           feature4: "Personnalisation IA en temps réel",
           feature5: "3 révisions incluses",
-          feature6: "",
-          feature7: "",
+          feature6: "Tests A/B inclus pour optimiser vos résultats",
+          feature7: "Support premium et accompagnement stratégique",
           cta: "Passer au Pack Complet ⚡"
         },
         enterprise: {
@@ -411,7 +412,7 @@ export const translations = {
           feature3: "Optimisation continue IA",
           feature4: "Support prioritaire 24/7",
           feature5: "Formation dédiée à votre équipe",
-          feature6: "",
+          feature6: "Un score qui reflète votre attractivité locale",
           cta: "Discuter de mon projet Entreprise 💼"
         },
       }
@@ -506,6 +507,7 @@ export const translations = {
       }
     },
     nav: {
+      methode: "Methode Iluma",
       home: "Accueil",
       products: "Produits",
       solutions: "Solutions",
@@ -530,6 +532,13 @@ export const translations = {
         description: "Restez informé des dernières innovations IA",
         placeholder: "Votre email",
         subscribe: "S'abonner"
+      },
+      legal: {
+        privacy: "Legal Privacy",
+        terms: "Legal Terms",
+        accessibility: "Legal Accessibility",
+        cookies: "Legal Cookies",
+        gdpr: "Legal"
       }
     },
     faq: {

@@ -63,14 +63,14 @@ const FAQ = () => {
                  <p className="text-white/70 mb-6 font-['Montserrat']">
                    {t('faq.cta.description')}
                  </p>
-                 <Button 
+                 {/* <Button 
                    size="lg"
                    className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-4 font-['Montserrat']"
                  >
                    <MessageCircle className="w-5 h-5 mr-2" />
                    {t('faq.cta.button')}
                    <ArrowRight className="w-5 h-5 ml-2" />
-                 </Button>
+                 </Button> */}
                </Card>
             </motion.div>
           </div>

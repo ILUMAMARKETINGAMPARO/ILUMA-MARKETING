@@ -94,7 +94,7 @@ const GDPRConsentManager = () => {
       description: "Nous utilisons des cookies et technologies similaires pour améliorer votre expérience, analyser notre trafic et personnaliser le contenu. Conformément au RGPD et à la Loi 25 du Québec, vous avez le contrôle total sur vos données.",
       dataController: "Responsable du traitement : Iluma Marketing LLC",
       rights: "Vos droits : accès, rectification, effacement, portabilité, opposition",
-      contact: "Contact DPO : protection@ilumamarketing.com",
+      contact: "Contact DPO : administracion@ilumamarketing.com",
       cookieTypes: {
         necessary: {
           name: "Cookies nécessaires",

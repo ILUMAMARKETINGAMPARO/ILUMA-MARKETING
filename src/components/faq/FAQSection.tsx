@@ -47,21 +47,6 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      {/* <div className="text-center">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <HelpCircle className="w-8 h-8 text-[#8E44FF]" />
-          <span className="text-[#8E44FF] font-medium text-lg font-['Montserrat']">
-            FAQ Iluma™
-          </span>
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-['Montserrat']">
-          {t('faqSection.title')}
-        </h2>
-        <p className="text-white/70 max-w-2xl mx-auto font-['Montserrat']">
-          {t('faqSection.description')}
-        </p>
-      </div> */}
 
       {/* Search and Filters */}
       {(showSearch || showFilters) && (

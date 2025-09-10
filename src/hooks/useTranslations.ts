@@ -6,8 +6,10 @@ const translations = {
   fr: {
     // Navigation
     'nav.home': 'Accueil',
-    'nav.method': 'Méthode Iluma™',
+    'nav.methode': 'Méthode Iluma™',
     'nav.products': 'Produits',
+    'nav.all': 'Tout',
+    'nav.solutions': 'Solutions',
     'nav.websiteComplete': 'Site Web Complet',
     'nav.landingPages': 'Landing Pages',
     'nav.loyaltyPage': 'Page Fidélisation',
@@ -223,8 +225,10 @@ const translations = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.method': 'Iluma™ Method',
+    'nav.methode': 'Iluma™ Method',
     'nav.products': 'Products',
+    'nav.all': 'All',
+    'nav.solutions': 'Tools',
     'nav.tools': 'AI Tools',
     'nav.services': 'Expert Services',
     'nav.howItWorks': 'How it Works',
@@ -284,8 +288,10 @@ const translations = {
   es: {
     // Navigation
     'nav.home': 'Inicio',
-    'nav.method': 'Método Iluma™',
+    'nav.methode': 'Método Iluma™',
     'nav.products': 'Productos',
+    'nav.all': 'Todo',
+    'nav.solutions': 'Soluciones',
     'nav.websiteComplete': 'Sitio Web Completo',
     'nav.landingPages': 'Landing Pages',
     'nav.loyaltyPage': 'Página Fidelización',

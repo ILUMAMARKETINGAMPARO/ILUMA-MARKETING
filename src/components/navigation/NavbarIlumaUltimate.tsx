@@ -34,7 +34,7 @@ const NavbarIlumaUltimate: React.FC = () => {
     },
     { 
       label: t('nav.products'), 
-      path: '/services',
+      path: null,
       subItems: [
         { label: t('nav.websiteComplete'), path: '/site-web-complet' },
         { label: t('nav.landingPages'), path: '/landing-page-intelligente' },
@@ -42,8 +42,12 @@ const NavbarIlumaUltimate: React.FC = () => {
       ]
     },
     { 
+      label: t('nav.all'), 
+      path: '/hub'
+    },
+    { 
       label: t('nav.solutions'), 
-      path: '/presentation-outils',
+      path: null,
       subItems: [
         { label: t('nav.ilumatch'), path: '/ilumatch' },
         { label: t('nav.adluma'), path: '/adluma' },
@@ -54,7 +58,7 @@ const NavbarIlumaUltimate: React.FC = () => {
     },
     { 
       label: t('nav.services'), 
-      path: '/services',
+      path: null,
       subItems: [
         { label: t('nav.seoGoogle'), path: '/services/seo-ia' },
         { label: t('nav.seoBing'), path: '/services/bing-seo' },
@@ -66,9 +70,9 @@ const NavbarIlumaUltimate: React.FC = () => {
     },
     { 
       label: t('nav.howItWorks'), 
-      path: '/presentation-outils',
+      path: null,
       subItems: [
-        { label: t('nav.toolsPresentation'), path: '/hub' }
+        { label: t('nav.toolsPresentation'), path: '/presentation-outils' }
       ]
     },
     { 

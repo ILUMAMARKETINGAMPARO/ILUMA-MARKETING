@@ -15,6 +15,7 @@ import FidelityAnalytics from '@/components/fidelisation/FidelityAnalytics';
 import FidelisationSEO from '@/components/seo/FidelisationSEO';
 
 const PageFidelisationIntelligente = () => {
+  
   const { t } = useTranslations();
 
   return (

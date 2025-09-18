@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const FidelityMetrics = () => {
+  const { t } = useTranslations();
+
   const trustElements = [
     { metric: "94%", label: "Taux de rétention", trend: "+27%" },
     { metric: "340%", label: "ROI moyen", trend: "+156%" },
@@ -11,6 +14,7 @@ const FidelityMetrics = () => {
   ];
 
   return (
+    
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {trustElements.map((element) => (
         <Card key={element.label} className="glass-effect border-white/20 p-6 text-center">
@@ -22,6 +26,7 @@ const FidelityMetrics = () => {
         </Card>
       ))}
     </div>
+    
   );
 };
 

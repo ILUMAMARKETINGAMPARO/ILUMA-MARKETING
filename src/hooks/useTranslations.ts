@@ -269,6 +269,83 @@ const translations = {
     'footer.newsletter.placeholder': 'Your email',
     'footer.newsletter.submit': 'Subscribe',
     
+    // Footer Tools
+    'footer.tools.adluma': 'ADLUMA™',
+    'footer.tools.ila': 'Assistant ILA™',
+    'footer.tools.seoAi': 'SEO Intelligence IA',
+    'footer.tools.localVisibility': 'Visibilité Locale',
+    'footer.tools.landingPages': 'Landing Pages IA',
+    'footer.tools.fullWebsite': 'Site Web Complet IA',
+    'footer.tools.loyaltyPages': 'Fidélisation Intelligente IA',
+    'footer.tools.blogAi': 'BlogIA™',
+    'footer.tools.lilo': 'Assistant Lilo™',
+    'footer.tools.ilumatch': 'ILUMATCH™',
+    'footer.tools.ecommerce': 'E-commerce IA',
+    'footer.tools.caseStudies': 'Études de Cas',
+    'footer.tools.crm': 'CRM Iluma™',
+    'footer.tools.analytics': 'Analyses Avancées',
+    'footer.tools.dashboard': 'Dashboard Expertise',
+    
+    // Footer Contact & Offices
+    'footer.contact.title': 'Contact',
+    'footer.contact.email': 'administracion@ilumamarketing.com',
+    'footer.contact.phone': '+1 (514) 882-8910',
+    'footer.contact.location': '12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2',
+    'footer.offices.headquarters': 'Montréal (Siège)',
+    'footer.offices.other': 'Autres Bureaux',
+    'footer.company.direction': 'Direction',
+    
+    // Hub Central
+    'hubCentral.badge': '',
+    'hubCentral.title': '',
+    'hubCentral.description': '',
+    'hubCentral.stats.products': '',
+    'hubCentral.stats.tools': '',
+    'hubCentral.stats.services': '',
+    'hubCentral.stats.support': '',
+    
+    'hubCentral.features.title': '',
+    'hubCentral.features.description': '',
+    'hubCentral.features.items': [
+      { title: 'Intelligence Unifiée', description: 'Tous vos outils IA communiquent entre eux pour des résultats optimaux' },
+      { title: 'Données Centralisées', description: 'Une vue 360° de vos performances marketing en temps réel' },
+      { title: 'Automatisation Avancée', description: 'Workflows intelligents qui s\'adaptent à votre secteur d\'activité' },
+      { title: 'Évolutivité Garantie', description: 'Votre plateforme grandit avec votre entreprise sans limite' }
+    ],
+    
+    'hubCentral.categories.products.title': '',
+    'hubCentral.categories.products.description': '',
+    'hubCentral.categories.products.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.products.button': '',
+    
+    'hubCentral.categories.solutions.title': '',
+    'hubCentral.categories.solutions.description': '',
+    'hubCentral.categories.solutions.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.solutions.button': '',
+    
+    'hubCentral.categories.services.title': '',
+    'hubCentral.categories.services.description': '',
+    'hubCentral.categories.services.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.services.button': '',
+    
+    'hubCentral.faqSection.title': '',
+    'hubCentral.faqSection.description': '',
+    
     // FAQ Questions
     'faq.google.question': 'What if your agency knew exactly what Google thinks?',
     'faq.results.question': 'How does Iluma™ guarantee measurable results?',
@@ -277,12 +354,6 @@ const translations = {
     
     // Results section
     'results.title': 'Guaranteed Results',
-    
-    // Footer Contact
-    'footer.contact.title': 'Contact',
-    'footer.contact.email': 'administracion@ilumamarketing.com',
-    'footer.contact.phone': '+1 (514) 882-8910',
-    'footer.contact.location': '12090 Bd Sainte-Gertrude, Montréal, QC H1G 5R2'
   },
   
   es: {
@@ -359,6 +430,57 @@ const translations = {
     'footer.offices.headquarters': 'Montreal (Sede)',
     'footer.offices.other': 'Otras Oficinas',
     'footer.company.direction': 'Dirección',
+
+    // Hub Central
+    'hubCentral.badge': '',
+    'hubCentral.title': '',
+    'hubCentral.description': '',
+    'hubCentral.stats.products': '',
+    'hubCentral.stats.tools': '',
+    'hubCentral.stats.services': '',
+    'hubCentral.stats.support': '',
+    
+    'hubCentral.features.title': '',
+    'hubCentral.features.description': '',
+    'hubCentral.features.items': [
+      { title: 'Intelligence Unifiée', description: 'Tous vos outils IA communiquent entre eux pour des résultats optimaux' },
+      { title: 'Données Centralisées', description: 'Une vue 360° de vos performances marketing en temps réel' },
+      { title: 'Automatisation Avancée', description: 'Workflows intelligents qui s\'adaptent à votre secteur d\'activité' },
+      { title: 'Évolutivité Garantie', description: 'Votre plateforme grandit avec votre entreprise sans limite' }
+    ],
+    
+    'hubCentral.categories.products.title': '',
+    'hubCentral.categories.products.description': '',
+    'hubCentral.categories.products.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.products.button': '',
+    
+    'hubCentral.categories.solutions.title': '',
+    'hubCentral.categories.solutions.description': '',
+    'hubCentral.categories.solutions.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.solutions.button': '',
+    
+    'hubCentral.categories.services.title': '',
+    'hubCentral.categories.services.description': '',
+    'hubCentral.categories.services.features': [
+      '',
+      '',
+      '',
+      ''
+    ],
+    'hubCentral.categories.services.button': '',
+    
+    'hubCentral.faqSection.title': '',
+    'hubCentral.faqSection.description': '',
     
     // FAQ Questions
     'faq.google.question': '¿Y si tu agencia supiera exactamente lo que piensa Google?',
@@ -368,20 +490,6 @@ const translations = {
     
     // Results section
     'results.title': 'Resultados Garantizados',
-    
-    // Hub Central
-    'hubCentral.badge': 'Plataforma Centralizada IA',
-    'hubCentral.title': 'HUB Central Iluma™',
-    'hubCentral.description': 'Tu ecosistema de marketing IA completo. {productsCount} productos, {toolsCount} herramientas IA y {servicesCount} servicios expertos conectados en una plataforma única.',
-    'hubCentral.stats.products': 'Productos',
-    'hubCentral.stats.tools': 'Herramientas IA',
-    'hubCentral.stats.services': 'Servicios',
-    'hubCentral.stats.support': 'Soporte',
-    
-    'hubCentral.features.title': 'Un ecosistema inteligente y conectado',
-    'hubCentral.features.description': 'Descubre cómo nuestras herramientas IA trabajan juntas para maximizar tu crecimiento',
-    'hubCentral.faqSection.title': 'Preguntas Frecuentes',
-    'hubCentral.faqSection.description': 'Encuentra rápidamente las respuestas a tus preguntas sobre nuestro ecosistema IA'
   }
 };
 

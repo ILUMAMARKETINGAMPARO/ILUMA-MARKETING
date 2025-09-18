@@ -311,9 +311,38 @@ export const translations = {
         subtitle: "Une stratégie intelligente et automatisée pour maximiser la rétention et la valeur de chaque client."
       },
       tabs: {
-        nurturing: "Nurturing Personnalisé",
-        segmentation: "Segmentation Avancée",
-        analytics: "Analytique & Insights",
+        nurturing: "Nurturing IA",
+        segmentation: "Segmentation IA",
+        analytics: "Analytics IA",
+      },
+      nurturingInterface: {
+        configuration: {
+          title: "Configuration Nurturing",
+          email: "Email professionnel",
+          emailPlaceholder: 'votre@entreprise.com',
+          company: "Entreprise",
+          companyPlaceholder: 'Nom de votre entreprise',
+          industry: "Secteur d’activité",
+          industryPlaceholder: 'Ex: E-commerce, Services, SaaS…',
+          loyalty: "Objectifs de fidélisation",
+          loyaltyPlaceholder: 'Décrivez vos objectifs de rétention client…',
+          cta: "Lancer l’Analyse IA",
+        },
+        predictiveJourney: {
+          title: 'Parcours Prédicatif',
+          step1: {
+            title: 'Phase 1: Découverte',
+            description: 'Contenu éducatif personnalisé selon le profil'
+          },
+          step2: {
+            title: 'Phase 2: Engagement',
+            description: 'Interactions ciblées et valeur ajoutée'
+          },
+          step3: {
+            title: 'Phase 3: Fidélisation',
+            description: 'Programme de récompenses et exclusivités'
+          }
+        }
       },
       cta: {
         button: "Lancer mon plan de fidélisation IA 🚀"
@@ -321,99 +350,131 @@ export const translations = {
     },
     landingPageIA: {
       hero: {
-        title: "Attirez, convertissez et fidélisez avec une Landing Page propulsée par l’IA",
-        subtitle: "Design stratégique, contenu optimisé et automatisation intelligente pour maximiser vos conversions.",
-        delivery: "Livraison ultra-rapide en 48h",
-        conversion: "+350% de conversions potentielles",
-        responsive: "100% adaptable à tous les écrans",
-        support: "Support prioritaire 24/7",
+        title: "Votre landing page intelligente, personnalisée & optimisée par l’IA",
+        subtitle: "Transformez vos visiteurs en clients grâce à une page conçue pour la performance, livrée en 48h.",
+        delivery: "Mise en ligne rapide et efficace",
+        conversion: "Augmentation des conversions prouvée",
+        responsive: "Design réactif et compatible mobile",
+        support: "Support et optimisation continue",
         viewWork: "Voir nos réalisations",
-        consultation: "Réserver ma consultation gratuite"
+        consultation: "Réserver une consultation gratuite"
       },
       technologies: {
-        title: "Des technologies puissantes au service de vos résultats",
-        subtitle: "Des outils intégrés pour un impact mesurable et durable."
+        title: "Technologies de Pointe pour vos Landing Pages IA",
+        subtitle: "Découvrez comment notre intelligence artificielle révolutionne la personnalisation, l’analyse et la conversion."
       },
       process: {
-        title: "Notre processus en 4 étapes vers une Landing Page IA performante",
-        subtitle: "Une méthodologie rapide, stratégique et orientée résultats."
+        title: "Notre Processus de Création de Landing Pages Intelligentes",
+        subtitle: "Un accompagnement complet, de la conception à l’optimisation finale."
       },
       packages: {
-        title: "Des offres flexibles pour chaque ambition",
-        subtitle: "Choisissez la formule qui correspond à vos objectifs et à votre budget."
+        title: "Nos Forfaits Landing Page Intelligente",
+        subtitle: "Choisissez la formule adaptée à vos besoins et à vos objectifs de croissance."
       },
       cta: {
-        title: "Lancez votre Landing Page IA dès aujourd’hui 🚀",
+        title: "Prêt à Lancer Votre Landing Page Intelligente ?",
         subtitle: "Consultation gratuite • Design personnalisé • IA intégrée • SEO optimisé • CRM inclus",
-        startProject: "Démarrer mon projet IA maintenant"
+        guarantee: 'Garantie de résultats ou remboursé.',
+        startProject: "Démarrer mon projet",
+        check1: "Consultation gratuite",
+        check2: "Livraison garantie 48h",
+        check3: "Support illimité",
+        check4: "Garantie résultats"
       }
     },
     landingPageIntelligente: {
       ai: {
-        title: "Intelligence Artificielle au cœur de votre stratégie",
-        subtitle: "Automatisation, personnalisation et recommandations basées sur les données réelles de vos visiteurs.",
+        title: "Landing Page Intelligente IA",
+        subtitle: "Créez des pages de destination dynamiques et optimisées par IA pour maximiser vos conversions.",
         features: {
-          personalization: "Personnalisation dynamique du contenu selon le profil visiteur",
-          scoring: "Système de scoring intelligent pour cibler les prospects les plus qualifiés",
-          recommendations: "Recommandations stratégiques en temps réel pour améliorer vos performances"
+          personalization: "Personnalisation avancée – Chaque visiteur voit une version adaptée à son profil",
+          scoring: "Scoring intelligent – Analyse et qualification automatique de vos prospects",
+          recommendations: "Recommandations IA – Suggestions stratégiques basées sur vos performances"
+        }
+      },
+      seo: {
+        title: "SEO Ultra-Optimisé",
+        subtitle: "Référencement naturel maximisé pour Google et Bing",
+        features: {
+          personalization: "Schema.org complet",
+          scoring: "Core Web Vitals optimisés",
+          recommendations: "Indexation accélérée",
+        }
+      },
+      crm: {
+        title: "CRM Intelligent Intégré",
+        subtitle: "Gestion automatique des prospects et nurturing",
+        features: {
+          personalization: "Segmentation automatique",
+          scoring: "Email automation",
+          recommendations: "Scoring prédictif",
+        }
+      },
+      analytics: {
+        title: "Analytics & Reporting",
+        subtitle: "Tableaux de bord en temps réel et insights avancés",
+        features: {
+          personalization: "Métriques de conversion",
+          scoring: "Heatmaps avancées",
+          recommendations: "OI tracking",
         }
       },
       process: {
         step1: {
-          title: "Audit & Analyse Stratégique",
-          description: "Analyse de votre marché, de vos objectifs et de vos audiences pour poser les bases d’une page performante."
+          title: "Analyse Stratégique Initiale",
+          description: "Étude de vos besoins, définition des objectifs et identification des opportunités de marché."
         },
         step2: {
-          title: "Conception & UX Design",
-          description: "Création d’une expérience visuelle et ergonomique adaptée à vos visiteurs cibles."
+          title: "Conception & Design Personnalisé",
+          description: "Création d’interfaces engageantes et adaptées à votre audience pour maximiser les conversions."
         },
         step3: {
-          title: "Intégration IA & Contenus Optimisés",
-          description: "Implémentation de l’IA pour personnaliser le contenu et maximiser la conversion."
+          title: "Développement & Intégration IA",
+          description: "Mise en place des fonctionnalités intelligentes : personnalisation, scoring, recommandations IA."
         },
         step4: {
           title: "Lancement & Optimisation Continue",
-          description: "Mise en ligne, tests et améliorations constantes selon les performances."
+          description: "Mise en ligne, suivi en temps réel et ajustements constants pour améliorer vos performances."
         },
-        duration1: "24h",
-        duration2: "24h",
-        duration3: "12h",
-        duration4: "12h",
+        duration1: "48h",
+        duration2: "5 jours",
+        duration3: "7 jours",
+        duration4: "30 jours",
       },
       packages: {
         popular: "Landing Page Intelligente – Pack Complet IA",
         starter: {
-          title: "Pack Starter IA",
-          subtitle: "L’essentiel pour lancer votre Landing Page IA rapidement et efficacement.",
-          feature1: "Conception sur mesure",
-          feature2: "Contenu optimisé SEO",
-          feature3: "Design responsive",
-          feature4: "Intégration CRM basique",
+          title: "Starter",
+          subtitle: "Idéal pour débuter avec une landing page performante et optimisée.",
+          feature1: "Design responsive inclus",
+          feature2: "SEO de base intégré",
+          feature3: "Analytics simplifiés",
+          feature4: "Support par email",
           feature5: "1 révision incluse",
-          cta: "Lancer mon pack Starter 🚀"
+          cta: "Choisir ce forfait"
         },
         complete: {
-          title: "Pack Complet IA",
-          subtitle: "Une solution clé en main avec intégrations avancées et optimisation IA.",
-          feature1: "Tout le Pack Starter",
-          feature2: "Automatisation marketing",
-          feature3: "Intégration CRM avancée",
-          feature4: "Personnalisation IA en temps réel",
-          feature5: "3 révisions incluses",
-          feature6: "Tests A/B inclus pour optimiser vos résultats",
-          feature7: "Support premium et accompagnement stratégique",
-          cta: "Passer au Pack Complet ⚡"
+          title: "Professional",
+          subtitle: "La solution complète pour entreprises en croissance.",
+          feature1: "Design premium et personnalisé",
+          feature2: "SEO avancé avec IA",
+          feature3: "CRM intégré et automatisation email",
+          feature4: "A/B Testing inclus",
+          feature5: "Support prioritaire",
+          feature6: "",
+          feature7: "",
+          cta: "Choisir ce forfait"
         },
         enterprise: {
-          title: "Pack Entreprise IA",
-          subtitle: "Une approche sur-mesure pour maximiser vos performances à grande échelle.",
-          feature1: "Tout le Pack Complet",
-          feature2: "Analyse comportementale avancée",
-          feature3: "Optimisation continue IA",
-          feature4: "Support prioritaire 24/7",
-          feature5: "Formation dédiée à votre équipe",
-          feature6: "Un score qui reflète votre attractivité locale",
-          cta: "Discuter de mon projet Entreprise 💼"
+          title: "Enterprise",
+          subtitle: "Une solution sur mesure pour les grandes entreprises.",
+          feature1: "Design sur mesure 100 % personnalisé",
+          feature2: "SEO international multi-langues",
+          feature3: "CRM avancé avec segmentation prédictive",
+          feature4: "Automatisation complète des workflows",
+          feature5: "Intégration API sur demande",
+          feature6: "Support dédié 24/7",
+          cta: "Choisir ce forfait"
         },
       }
     },
@@ -876,113 +937,174 @@ export const translations = {
     },
     pageFidelisation: {
       hero: {
-        badge: "",
-        title: "",
+        badge: "Smart Loyalty Page",
+        title: "Maximize retention and increase customer value with artificial intelligence.",
         subtitle: "",
       },
       tabs: {
-        nurturing: "",
-        segmentation: "",
-        analytics: "",
+        nurturing: "AI Nurturing",
+        segmentation: "AI Segmentation",
+        analytics: "AI Analytics",
+      },
+      nurturingInterface: {
+        configuration: {
+          title: "Nurturing Setup",
+          email: "Professional email",
+          emailPlaceholder: 'your@business.com',
+          company: "Company",
+          companyPlaceholder: 'Your company name',
+          industry: "Industry",
+          industryPlaceholder: 'Ex: E-commerce, Services, SaaS…',
+          loyalty: "Loyalty goals",
+          loyaltyPlaceholder: 'Describe your customer retention goals…',
+          cta: "Launch AI Analysis",
+        },
+        predictiveJourney: {
+          title: 'Predictive Journey',
+          step1: {
+            title: 'Phase 1: Discovery',
+            description: 'Educational content personalized by profile'
+          },
+          step2: {
+            title: 'Phase 2: Engagement',
+            description: 'Targeted interactions and added value'
+          },
+          step3: {
+            title: 'Phase 3: Loyalty',
+            description: 'Rewards program and exclusives'
+          }
+        }
       },
       cta: {
-        button: "",
+        button: "🚀 Launch My AI Loyalty Page",
       }
     },
     landingPageIA: {
       hero: {
-        title: "",
-        subtitle: "",
-        delivery: "",
-        conversion: "",
-        responsive: "",
-        support: "",
-        viewWork: "",
-        consultation: "",
+        title: "Your Smart Landing Page, Personalized & AI-Optimized",
+        subtitle: "Turn your visitors into customers with a page designed for performance, delivered in 48h.",
+        delivery: "Fast and efficient go-live",
+        conversion: "Proven increase in conversions",
+        responsive: "Responsive and mobile-friendly design",
+        support: "Continuous support and optimization",
+        viewWork: "View our work",
+        consultation: "Book a free consultation",
       },
       technologies: {
-        title: "",
-        subtitle: "",
+        title: "Cutting-Edge Technologies for Your AI Landing Pages",
+        subtitle: "Discover how our artificial intelligence revolutionizes personalization, analysis, and conversion.",
       },
       process: {
-        title: "",
-        subtitle: "",
+        title: "Our Smart Landing Page Creation Process",
+        subtitle: "Complete support, from design to final optimization.",
       },
       packages: {
-        title: "",
-        subtitle: "",
+        title: "Our Smart Landing Page Plans",
+        subtitle: "Choose the package that fits your needs and growth goals.",
       },
       cta: {
-        title: "",
-        subtitle: "",
-        startProject: "",
+        title: "Ready to Launch Your Smart Landing Page?",
+        subtitle: "Free consultation · Custom design · AI integrated · SEO optimized · CRM included",
+        guarantee: 'Results guaranteed or your money back.',
+        startProject: "Start my project",
+        check1: "Free consultation",
+        check2: "48h guaranteed delivery",
+        check3: "Unlimited support",
+        check4: "Results guarantee"
       }
     },
     landingPageIntelligente: {
       ai: {
-        title: "",
-        subtitle: "",
+        title: "AI Smart Landing Page",
+        subtitle: "Create dynamic landing pages optimized by AI to maximize your conversions.",
         features: {
-          personalization: "",
-          scoring: "",
-          recommendations: "",
+          personalization: "Advanced personalization – Each visitor sees a version tailored to their profile",
+          scoring: "Smart scoring – Automatic analysis and qualification of your leads",
+          recommendations: "AI recommendations – Strategic suggestions based on your performance",
+        }
+      },
+      seo: {
+        title: "Ultra-Optimized SEO",
+        subtitle: "Maximized organic ranking for Google and Bing",
+        features: {
+          personalization: "Complete Schema.org",
+          scoring: "Optimized Core Web Vitals",
+          recommendations: "Accelerated indexing",
+        }
+      },
+      crm: {
+        title: "Integrated Smart CRM",
+        subtitle: "Automatic lead management and nurturing",
+        features: {
+          personalization: "Automatic segmentation",
+          scoring: "Email automation",
+          recommendations: "Predictive scoring",
+        }
+      },
+      analytics: {
+        title: "Analytics & Reporting",
+        subtitle: "Real-time dashboards and advanced insights",
+        features: {
+          personalization: "Conversion metrics",
+          scoring: "Advanced heatmaps",
+          recommendations: "ROI tracking",
         }
       },
       process: {
         step1: {
-          title: "",
-          description: "",
+          title: "Initial Strategic Analysis",
+          description: "Study of your needs, definition of goals, and identification of market opportunities.",
         },
         step2: {
-          title: "",
-          description: "",
+          title: "Custom Design & UX/UI",
+          description: "Creation of engaging, conversion-optimized interfaces tailored to your audience.",
         },
         step3: {
-          title: "",
-          description: "",
+          title: "AI Development & Integration",
+          description: "Implementation of smart features: personalization, scoring, AI recommendations.",
         },
         step4: {
-          title: "",
-          description: "",
+          title: "Launch & Continuous Optimization",
+          description: "Go-live, real-time monitoring, and constant adjustments to improve performance.",
         },
-        duration1: "24h",
-        duration2: "24h",
-        duration3: "12h",
-        duration4: "12h",
+        duration1: "48h",
+        duration2: "5 days",
+        duration3: "7 days",
+        duration4: "30 days",
       },
       packages: {
         starter: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
-          cta: ""
+          title: "Starter",
+          subtitle: "Perfect to begin with a high-performance, optimized landing page.",
+          feature1: "Responsive design included",
+          feature2: "Basic SEO integrated",
+          feature3: "Simplified analytics",
+          feature4: "Email support",
+          feature5: "1 revision included",
+          cta: "Choose this plan"
         },
         complete: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
+          title: "Professional",
+          subtitle: "The complete solution for growing businesses.",
+          feature1: "Premium and customized design",
+          feature2: "Advanced SEO with AI",
+          feature3: "Integrated CRM and email automation",
+          feature4: "A/B Testing included",
+          feature5: "Priority support",
           feature6: "",
           feature7: "",
-          cta: ""
+          cta: "Choose this plan"
         },
         enterprise: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
-          feature6: "",
-          cta: ""
+          title: "Enterprise",
+          subtitle: "A tailor-made solution for large businesses.",
+          feature1: "100% fully customized design",
+          feature2: "International multilingual SEO",
+          feature3: "Advanced CRM with predictive segmentation",
+          feature4: "Full workflow automation",
+          feature5: "API integration on demand",
+          feature6: "24/7 dedicated support",
+          cta: "Choose this plan"
         },
       }
     },
@@ -1459,113 +1581,177 @@ export const translations = {
     },
     pageFidelisation: {
       hero: {
-        badge: "",
-        title: "",
+        badge: "Página de Fidelización Inteligente",
+        title: "Maximiza la retención y aumenta el valor del cliente gracias a la inteligencia artificial.",
         subtitle: "",
       },
       tabs: {
-        nurturing: "",
-        segmentation: "",
-        analytics: "",
+        nurturing: "Nurturing IA",
+        segmentation: "Segmentación IA",
+        analytics: "Análisis IA",
+      },
+      nurturingInterface: {
+        configuration: {
+          title: "Configuración de Nurturing",
+          email: "Correo electrónico profesional",
+          emailPlaceholder: 'tu@empresa.com',
+          company: "Empresa",
+          companyPlaceholder: 'Nombre de tu empresa',
+          industry: "Sector de actividad",
+          industryPlaceholder: 'Ej: E-commerce, Servicios, SaaS…',
+          loyalty: "Objetivos de fidelización",
+          loyaltyPlaceholder: 'Describe tus objetivos de retención de clientes…',
+          cta: "Lanzar el Análisis IA",
+        },
+        predictiveJourney: {
+          title: 'Recorrido Predictivo',
+          step1: {
+            title: 'Fase 1: Descubrimiento',
+            description: 'Contenido educativo personalizado según el perfil'
+          },
+          step2: {
+            title: 'Fase 2: Compromiso',
+            description: 'Interacciones dirigidas y valor agregado'
+          },
+          step3: {
+            title: 'Fase 3: Fidelización',
+            description: 'Programa de recompensas y exclusividades'
+          }
+        }
+      },
+      fidelityAnalytics: {
+
       },
       cta: {
-        button: "",
+        button: "🚀 Lanzar mi Página de Fidelización IA",
       }
     },
     landingPageIA: {
       hero: {
-        title: "",
-        subtitle: "",
-        delivery: "",
-        conversion: "",
-        responsive: "",
-        support: "",
-        viewWork: "",
-        consultation: "",
+        title: "Tu Landing Page Inteligente, Personalizada y Optimizada con IA",
+        subtitle: "Transforma a tus visitantes en clientes gracias a una página diseñada para el rendimiento, entregada en 48h.",
+        delivery: "Puesta en línea rápida y eficaz",
+        conversion: "Aumento comprobado de conversiones",
+        responsive: "Diseño responsivo y compatible con móviles",
+        support: "Soporte y optimización continua",
+        viewWork: "Ver nuestras realizaciones",
+        consultation: "Reservar una consulta gratuita",
       },
       technologies: {
-        title: "",
-        subtitle: "",
+        title: "Tecnologías de Punta para tus Landing Pages IA",
+        subtitle: "Descubre cómo nuestra inteligencia artificial revoluciona la personalización, el análisis y la conversión.",
       },
       process: {
-        title: "",
-        subtitle: "",
+        title: "Nuestro Proceso de Creación de Landing Pages Inteligentes",
+        subtitle: "Un acompañamiento completo, desde el diseño hasta la optimización final.",
       },
       packages: {
-        title: "",
-        subtitle: "",
+        title: "Nuestros Planes de Landing Page Inteligente",
+        subtitle: "Elige la fórmula adaptada a tus necesidades y objetivos de crecimiento.",
       },
       cta: {
-        title: "",
-        subtitle: "",
-        startProject: "",
+        title: "¿Listo para Lanzar tu Landing Page Inteligente?",
+        subtitle: "Consulta gratuita · Diseño personalizado · IA integrada · SEO optimizado · CRM incluido",
+        guarantee: "Garantía de resultados o reembolso.",
+        startProject: "Iniciar mi proyecto",
+        check1: "Consulta gratuita",
+        check2: "Entrega garantizada en 48h",
+        check3: "Soporte ilimitado",
+        check4: "Garantía de resultados"
       }
     },
     landingPageIntelligente: {
       ai: {
-        title: "",
-        subtitle: "",
+        title: "Landing Page Inteligente IA",
+        subtitle: "Crea páginas de destino dinámicas y optimizadas por IA para maximizar tus conversiones.",
         features: {
-          personalization: "",
-          scoring: "",
-          recommendations: "",
+          personalization: "Personalización avanzada – Cada visitante ve una versión adaptada a su perfil",
+          scoring: "Scoring inteligente – Análisis y calificación automática de tus prospectos",
+          recommendations: "Recomendaciones IA – Sugerencias estratégicas basadas en tu rendimiento",
+        }
+      },
+      seo: {
+        title: "SEO Ultra-Optimizado",
+        subtitle: "Posicionamiento natural maximizado para Google y Bing",
+        features: {
+          personalization: "Schema.org completo",
+          scoring: "Core Web Vitals optimizados",
+          recommendations: "Indexación acelerada",
+        }
+      },
+      crm: {
+        title: "CRM Inteligente Integrado",
+        subtitle: "Gestión automática de prospectos y nurturing",
+        features: {
+          personalization: "Segmentación automática",
+          scoring: "Automatización de emails",
+          recommendations: "Scoring predictivo",
+        }
+      },
+      analytics: {
+        title: "Analytics & Reporting",
+        subtitle: "Tableros en tiempo real e insights avanzados",
+        features: {
+          personalization: "Métricas de conversión",
+          scoring: "Heatmaps avanzados",
+          recommendations: "Seguimiento de ROI",
         }
       },
       process: {
         step1: {
-          title: "",
-          description: "",
+          title: "Análisis Estratégico Inicial",
+          description: "Estudio de tus necesidades, definición de objetivos e identificación de oportunidades de mercado.",
         },
         step2: {
-          title: "",
-          description: "",
+          title: "Diseño & UX/UI Personalizado",
+          description: "Creación de interfaces atractivas y adaptadas a tu audiencia para maximizar conversiones.",
         },
         step3: {
-          title: "",
-          description: "",
+          title: "Desarrollo & Integración IA",
+          description: "mplementación de funcionalidades inteligentes: personalización, scoring, recomendaciones IA.",
         },
         step4: {
-          title: "",
-          description: "",
+          title: "Lanzamiento & Optimización Continua",
+          description: "Puesta en línea, seguimiento en tiempo real y ajustes constantes para mejorar tu rendimiento.",
         },
-        duration1: "24h",
-        duration2: "24h",
-        duration3: "12h",
-        duration4: "12h",
+        duration1: "48h",
+        duration2: "5 días",
+        duration3: "7 días",
+        duration4: "30 días",
       },
       packages: {
         starter: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
-          cta: ""
+          title: "Starter",
+          subtitle: "Ideal para comenzar con una landing page optimizada y de alto rendimiento.",
+          feature1: "Diseño responsivo incluido",
+          feature2: "SEO básico integrado",
+          feature3: "Analytics simplificados",
+          feature4: "Soporte por email",
+          feature5: "1 revisión incluida",
+          cta: "Elegir este plan"
         },
         complete: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
+          title: "Professional",
+          subtitle: "La solución completa para empresas en crecimiento.",
+          feature1: "Diseño premium y personalizado",
+          feature2: "SEO avanzado con IA",
+          feature3: "CRM integrado y automatización de emails",
+          feature4: "A/B Testing incluido",
+          feature5: "Soporte prioritario",
           feature6: "",
           feature7: "",
-          cta: ""
+          cta: "Elegir este plan"
         },
         enterprise: {
-          title: "",
-          subtitle: "",
-          feature1: "",
-          feature2: "",
-          feature3: "",
-          feature4: "",
-          feature5: "",
-          feature6: "",
-          cta: ""
+          title: "Enterprise",
+          subtitle: "Una solución a medida para grandes empresas.",
+          feature1: "Diseño 100% personalizado",
+          feature2: "SEO internacional multilingüe",
+          feature3: "CRM avanzado con segmentación predictiva",
+          feature4: "Automatización completa de workflows",
+          feature5: "Integración API bajo demanda",
+          feature6: "Soporte dedicado 24/7",
+          cta: "Elegir este plan"
         },
       }
     },

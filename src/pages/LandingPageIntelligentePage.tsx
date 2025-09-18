@@ -45,23 +45,35 @@ const LandingPageIntelligentePage = () => {
     },
     {
       icon: Target,
-      title: "SEO Ultra-Optimisé", 
-      description: "Référencement naturel maximisé pour Google et Bing",
-      details: ["Schema.org complet", "Core Web Vitals optimisés", "Indexation accélérée"],
+      title: t('landingPageIntelligente.seo.title'), 
+      description: t('landingPageIntelligente.seo.subtitle'),
+      details: [
+        t('landingPageIntelligente.seo.features.personalization'), 
+        t('landingPageIntelligente.seo.features.scoring'), 
+        t('landingPageIntelligente.seo.features.recommendations')
+      ],
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       icon: Users,
-      title: "CRM Intelligent Intégré",
-      description: "Gestion automatique des prospects et nurturing",
-      details: ["Segmentation automatique", "Email automation", "Scoring prédictif"],
+      title: t('landingPageIntelligente.crm.title'), 
+      description: t('landingPageIntelligente.crm.subtitle'),
+      details: [
+        t('landingPageIntelligente.crm.features.personalization'), 
+        t('landingPageIntelligente.crm.features.scoring'), 
+        t('landingPageIntelligente.crm.features.recommendations')
+      ],
       gradient: "from-green-500 to-emerald-600"
     },
     {
       icon: BarChart,
-      title: "Analytics & Reporting",
-      description: "Tableaux de bord en temps réel et insights avancés",
-      details: ["Métriques de conversion", "Heatmaps avancées", "ROI tracking"],
+      title: t('landingPageIntelligente.analytics.title'), 
+      description: t('landingPageIntelligente.analytics.subtitle'),
+      details: [
+        t('landingPageIntelligente.analytics.features.personalization'), 
+        t('landingPageIntelligente.analytics.features.scoring'), 
+        t('landingPageIntelligente.analytics.features.recommendations')
+      ],
       gradient: "from-orange-500 to-red-600"
     }
   ];
@@ -452,7 +464,7 @@ const LandingPageIntelligentePage = () => {
                   <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
                     Livraison garantie 48h · Support illimité · Formation incluse · Résultats mesurables
                     <br />
-                    <strong className="text-violet-300">Garantie de résultats ou remboursé.</strong>
+                    <strong className="text-violet-300">{t('landingPageIA.cta.guarantee')}</strong>
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
@@ -469,19 +481,19 @@ const LandingPageIntelligentePage = () => {
                   <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/70">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>Consultation gratuite</span>
+                      <span>{t('landingPageIA.cta.check1')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>Livraison garantie 48h</span>
+                      <span>{t('landingPageIA.cta.check2')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>Support illimité</span>
+                      <span>{t('landingPageIA.cta.check3')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span>Garantie résultats</span>
+                      <span>{t('landingPageIA.cta.check4')}</span>
                     </div>
                   </div>
                 </div>

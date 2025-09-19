@@ -2,26 +2,29 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const FidelityAnalytics = () => {
+  const { t } = useTranslations();
+
   const segments = [
-    { segment: "Prospects Chauds", count: "1,247", engagement: "87%" },
-    { segment: "Clients Actifs", count: "892", engagement: "94%" },
-    { segment: "Champions", count: "234", engagement: "98%" }
+    { segment: t('pageFidelisation.fidelityAnalytics.segments.box1.segment'), count: "1,247", engagement: "87%" },
+    { segment: t('pageFidelisation.fidelityAnalytics.segments.box2.segment'), count: "892", engagement: "94%" },
+    { segment: t('pageFidelisation.fidelityAnalytics.segments.box3.segment'), count: "234", engagement: "98%" }
   ];
 
   const metrics = [
-    { label: "Customer Lifetime Value", value: "Contact us", trend: "+45%" },
-    { label: "Taux de Rétention", value: "89.3%", trend: "+12%" },
-    { label: "Fréquence d'Achat", value: "3.2x/mois", trend: "+67%" },
-    { label: "NPS Score", value: "73", trend: "+28%" }
+    { label: t('pageFidelisation.fidelityAnalytics.metrics.box1.label'), value: t('pageFidelisation.fidelityAnalytics.metrics.box1.velue'), trend: "+45%" },
+    { label: t('pageFidelisation.fidelityAnalytics.metrics.box2.label'), value: "89.3%", trend: "+12%" },
+    { label: t('pageFidelisation.fidelityAnalytics.metrics.box3.label'), value: "3.2x/mois", trend: "+67%" },
+    { label: t('pageFidelisation.fidelityAnalytics.metrics.box4.label'), value: "73", trend: "+28%" }
   ];
 
   const automations = [
-    { action: "Email de bienvenue personnalisé", status: "Actif" },
-    { action: "Relance abandon panier", status: "Actif" },
-    { action: "Programme de parrainage", status: "Actif" },
-    { action: "Offres anniversaire", status: "Planifié" }
+    { action: t('pageFidelisation.fidelityAnalytics.automations.box1.action'), status: t('pageFidelisation.fidelityAnalytics.automations.box1.status') },
+    { action: t('pageFidelisation.fidelityAnalytics.automations.box2.action'), status: t('pageFidelisation.fidelityAnalytics.automations.box2.status') },
+    { action: t('pageFidelisation.fidelityAnalytics.automations.box3.action'), status: t('pageFidelisation.fidelityAnalytics.automations.box3.status') },
+    { action: t('pageFidelisation.fidelityAnalytics.automations.box4.action'), status: t('pageFidelisation.fidelityAnalytics.automations.box4.status') }
   ];
 
   return (

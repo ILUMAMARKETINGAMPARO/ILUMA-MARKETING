@@ -344,6 +344,86 @@ export const translations = {
           }
         }
       },
+      fidelityMetrics: {
+        trustElements: {
+          box1: {
+            label: "Taux de rétention"
+          },
+          box2: {
+            label: "ROI moyen"
+          },
+          box3: {
+            label: "Valeur client"
+          },
+          box4: {
+            label: "Temps d'engagement"
+          }
+        }
+      },
+      fidelityFeatures: {
+        box1: {
+          title: "IA Comportementale",
+          description: "Analyse prédictive des patterns clients"
+        },
+        box2: {
+           title: "Nurturing Personnalisé",
+           description: "Parcours adaptatif selon le profil"
+        },
+        box3: {
+          title: "Segmentation Avancée",
+          description: "Micro-ciblage comportemental"
+        },
+        box4: {
+          title: "Conversion Progressive",
+          description: "Optimisation continue des taux"
+        }
+      },
+      fidelityAnalytics: {
+        segments: {
+          box1: {
+            segment: "Prospects Chauds"
+          },
+          box2: {
+            segment: "Clients Actifs"
+          },
+          box3: {
+            segment: "Champions"
+          }
+        },
+        metrics: {
+          box1: {
+            label: "Customer Lifetime Value",
+            velue: "Contact us"
+          },
+          box2: {
+            label: "Taux de Rétention"
+          },
+          box3: {
+            label: "Fréquence d'Achat"
+          },
+          box4: {
+            label: "NPS Score"
+          }
+        },
+        automations: {
+          box1: {
+            action: "Email de bienvenue personnalisé",
+            status: "Actif"
+          },
+          box2: {
+            action: "Relance abandon panier",
+            status: "Actif"
+          },
+          box3: {
+            action: "Programme de parrainage",
+            status: "Actif"
+          },
+          box4: {
+            action: "Offres anniversaire",
+            status: "Planifié"
+          }
+        }
+      },
       cta: {
         button: "Lancer mon plan de fidélisation IA 🚀"
       }
@@ -972,6 +1052,86 @@ export const translations = {
           step3: {
             title: 'Phase 3: Loyalty',
             description: 'Rewards program and exclusives'
+          }
+        }
+      },
+      fidelityMetrics: {
+          trustElements: {
+            box1: {
+              label: "Retention rate"
+          },
+          box2: {
+              label: "Average ROI"
+          },
+          box3: {
+              label: "Customer value"
+          },
+          box4: {
+              label: "Engagement time"
+          }
+        }
+      },
+      fidelityFeatures: {
+        box1: {
+          title: "Behavioral AI",
+          description: "Predictive analysis of customer patterns"
+        },
+        box2: {
+          title: "Personalized Nurturing",
+          description: "Adaptive journey based on profile"
+        },
+        box3: {
+          title: "Advanced Segmentation",
+          description: "Behavioral micro-targeting"
+        },
+        box4: {
+          title: "Progressive Conversion",
+          description: "Continuous optimization of conversion rates"
+        }
+      },
+      fidelityAnalytics: {
+        segments: {
+          box1: {
+            segment: "Hot Leads"
+          },
+          box2: {
+            segment: "Active Customers"
+          },
+          box3: {
+            segment: "Champions"
+          }
+        },
+        metrics: {
+          box1: {
+            label: "Customer Lifetime Value",
+            velue: "Contact us"
+          },
+          box2: {
+            label: "Retention Rate"
+          },
+          box3: {
+            label: "Purchase Frequency"
+          },
+          box4: {
+            label: "NPS Score"
+          }
+        },
+        automations: {
+          box1: {
+            action: "Personalized welcome email",
+            status: "Active"
+          },
+          box2: {
+            action: "Abandoned cart reminder",
+            status: "Active"
+          },
+          box3: {
+            action: "Referral program",
+            status: "Active"
+          },
+          box4: {
+            action: "Birthday offers",
+            status: "Scheduled"
           }
         }
       },
@@ -1619,8 +1779,85 @@ export const translations = {
           }
         }
       },
+      fidelityMetrics: {
+          trustElements: {
+            box1: {
+              label: "Tasa de retención"
+          },
+          box2: {
+              label: "ROI promedio"
+          },
+          box3: {
+              label: "Valor del cliente"
+          },
+          box4: {
+              label: "Tiempo de compromiso"
+          }
+        }
+      },
+      fidelityFeatures: {
+        box1: {
+          title: "IA Conductual",
+          description: "Análisis predictivo de patrones de clientes"
+        },
+        box2: {
+          title: "Nurturing Personalizado",
+          description: "Recorrido adaptativo según el perfil"
+        },
+        box3: {
+          title: "Segmentación Avanzada",
+          description: "Micro-segmentación conductual"
+        },
+        box4: {
+          title: "Conversión Progresiva",
+          description: "Optimización continua de tasas"
+        }
+      },
       fidelityAnalytics: {
-
+        segments: {
+          box1: {
+            segment: "Prospectos Calientes"
+          },
+          box2: {
+            segment: "Clientes Activos"
+          },
+          box3: {
+            segment: "Campeones"
+          }
+        },
+        metrics: {
+          box1: {
+            label: "Customer Lifetime Value",
+            velue: "Contáctanos"
+          },
+          box2: {
+            label: "Tasa de Retención"
+          },
+          box3: {
+            label: "Frecuencia de Compra"
+          },
+          box4: {
+            label: "NPS Score"
+          }
+        },
+        automations: {
+          box1: {
+            action: "Email de bienvenida personalizado",
+            status: "Activo"
+          },
+          box2: {
+            action: "Recordatorio de carrito abandonado",
+            status: "Activo"
+          },
+          box3: {
+            action: "Programa de referidos",
+            status: "Activo"
+          },
+          box4: {
+            action: "Ofertas de cumpleaños",
+            status: "Planificado"
+          }
+        }
       },
       cta: {
         button: "🚀 Lanzar mi Página de Fidelización IA",

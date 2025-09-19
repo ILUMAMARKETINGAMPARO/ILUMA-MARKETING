@@ -7,10 +7,10 @@ const FidelityMetrics = () => {
   const { t } = useTranslations();
 
   const trustElements = [
-    { metric: "94%", label: "Taux de rétention", trend: "+27%" },
-    { metric: "340%", label: "ROI moyen", trend: "+156%" },
-    { metric: "4.8x", label: "Valeur client", trend: "+89%" },
-    { metric: "12min", label: "Temps d'engagement", trend: "+234%" }
+    { metric: "94%", label: t('pageFidelisation.fidelityMetrics.trustElements.box1.label'), trend: "27%" },
+    { metric: "340%", label: t('pageFidelisation.fidelityMetrics.trustElements.box2.label'), trend: "156%" },
+    { metric: "4.8x", label: t('pageFidelisation.fidelityMetrics.trustElements.box3.label'), trend: "+89%" },
+    { metric: "12min", label: t('pageFidelisation.fidelityMetrics.trustElements.box4.label'), trend: "+234%" }
   ];
 
   return (

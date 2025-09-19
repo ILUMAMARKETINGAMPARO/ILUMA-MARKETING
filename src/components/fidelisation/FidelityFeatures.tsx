@@ -1,31 +1,34 @@
 import React from 'react';
 import { Brain, Heart, Target, TrendingUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { useTranslations } from '@/hooks/useTranslations';
 
 const FidelityFeatures = () => {
+  const { t } = useTranslations();
+
   const fidelityFeatures = [
     {
       icon: Brain,
-      title: "IA Comportementale",
-      description: "Analyse prédictive des patterns clients",
+      title: t('pageFidelisation.fidelityFeatures.box1.title'),
+      description: t('pageFidelisation.fidelityFeatures.box1.description'),
       color: "from-primary to-secondary"
     },
     {
       icon: Heart,
-      title: "Nurturing Personnalisé",
-      description: "Parcours adaptatif selon le profil",
+      title: t('pageFidelisation.fidelityFeatures.box2.title'),
+      description: t('pageFidelisation.fidelityFeatures.box2.description'),
       color: "from-accent to-secondary"
     },
     {
       icon: Target,
-      title: "Segmentation Avancée",
-      description: "Micro-ciblage comportemental",
+      title: t('pageFidelisation.fidelityFeatures.box3.title'),
+      description: t('pageFidelisation.fidelityFeatures.box3.description'),
       color: "from-primary to-accent"
     },
     {
       icon: TrendingUp,
-      title: "Conversion Progressive",
-      description: "Optimisation continue des taux",
+      title: t('pageFidelisation.fidelityFeatures.box4.title'),
+      description: t('pageFidelisation.fidelityFeatures.box4.description'),
       color: "from-secondary to-accent"
     }
   ];

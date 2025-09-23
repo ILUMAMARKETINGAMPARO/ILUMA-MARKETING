@@ -675,11 +675,11 @@ export const translations = {
         subscribe: "S'abonner"
       },
       legal: {
-        privacy: "Legal Privacy",
-        terms: "Legal Terms",
-        accessibility: "Legal Accessibility",
-        cookies: "Legal Cookies",
-        gdpr: "Legal"
+        privacy: "Confidentialité",
+        terms: "Conditions",
+        accessibility: "Accessibilité",
+        cookies: "Cookies",
+        gdpr: "RGPD"
       }
     },
     faq: {
@@ -1382,6 +1382,13 @@ export const translations = {
         description: "Stay informed about the latest AI innovations",
         placeholder: "Your email",
         subscribe: "Subscribe"
+      },
+      legal: {
+        privacy: "Privacy",
+        terms: "Terms",
+        accessibility: "Accessibility",
+        cookies: "Cookies",
+        gdpr: "GDPR"
       }
     },
     faq: {
@@ -2106,6 +2113,13 @@ export const translations = {
         description: "Mantente informado sobre las últimas innovaciones de IA",
         placeholder: "Tu email",
         subscribe: "Suscribirse"
+      },
+      legal: {
+        privacy: "Privacidad",
+        terms: "Términos",
+        accessibility: "Accesibilidad",
+        cookies: "Cookies",
+        gdpr: "RGPD"
       }
     },
     faq: {

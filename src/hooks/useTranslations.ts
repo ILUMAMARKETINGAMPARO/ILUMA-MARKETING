@@ -271,19 +271,19 @@ const translations = {
     
     // Footer Tools
     'footer.tools.adluma': 'ADLUMA™',
-    'footer.tools.ila': 'Assistant ILA™',
-    'footer.tools.seoAi': 'SEO Intelligence IA',
-    'footer.tools.localVisibility': 'Visibilité Locale',
-    'footer.tools.landingPages': 'Landing Pages IA',
-    'footer.tools.fullWebsite': 'Site Web Complet IA',
-    'footer.tools.loyaltyPages': 'Fidélisation Intelligente IA',
+    'footer.tools.ila': 'ILA™ Assistant',
+    'footer.tools.seoAi': 'AI SEO Intelligence',
+    'footer.tools.localVisibility': 'Local Visibility',
+    'footer.tools.landingPages': 'AI Landing Pages',
+    'footer.tools.fullWebsite': 'Complete AI Website',
+    'footer.tools.loyaltyPages': 'Smart Loyalty AI',
     'footer.tools.blogAi': 'BlogIA™',
-    'footer.tools.lilo': 'Assistant Lilo™',
+    'footer.tools.lilo': 'Lilo™ Assistant',
     'footer.tools.ilumatch': 'ILUMATCH™',
     'footer.tools.ecommerce': 'E-commerce IA',
-    'footer.tools.caseStudies': 'Études de Cas',
+    'footer.tools.caseStudies': 'Case Studies',
     'footer.tools.crm': 'CRM Iluma™',
-    'footer.tools.analytics': 'Analyses Avancées',
+    'footer.tools.analytics': 'Advanced Analytics',
     'footer.tools.dashboard': 'Dashboard Expertise',
     
     // Footer Contact & Offices

@@ -73,7 +73,7 @@ const PageFidelisationIntelligente = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Tabs defaultValue="nurturing" className="space-y-8">
-              <TabsList className="grid w-full grid-cols-3 bg-black/40 border border-white/20">
+              <TabsList className="grid w-full grid-cols-2 bg-black/40 border border-white/20">
                 <TabsTrigger value="nurturing" className="data-[state=active]:bg-pink-600">
                   <Heart className="w-4 h-4 mr-2" />
                   {t('pageFidelisation.tabs.nurturing')}
@@ -82,10 +82,11 @@ const PageFidelisationIntelligente = () => {
                   <Shield className="w-4 h-4 mr-2" />
                   {t('pageFidelisation.tabs.segmentation')}
                 </TabsTrigger>
-                <TabsTrigger value="analytics" className="data-[state=active]:bg-pink-600">
+                {//Analytics IA 
+                /* <TabsTrigger value="analytics" className="data-[state=active]:bg-pink-600">
                   <Zap className="w-4 h-4 mr-2" />
                   {t('pageFidelisation.tabs.analytics')}
-                </TabsTrigger>
+                </TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="nurturing">
@@ -95,10 +96,11 @@ const PageFidelisationIntelligente = () => {
               <TabsContent value="segmentation">
                 <FidelityAnalytics />
               </TabsContent>
-
-              <TabsContent value="analytics">
+              
+              {//Analytics IA 
+              /* <TabsContent value="analytics">
                 <FidelityAnalytics />
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </motion.div>
 

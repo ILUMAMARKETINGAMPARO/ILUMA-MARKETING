@@ -34,7 +34,7 @@ const LegalFooter = () => {
       coo: "Amparo Lopez",
       copyright: "All content on the Iluma™ site is the exclusive property of Iluma Marketing LLC.",
       dataProtection: "Your data, your right. Browse with confidence.",
-      compliance: "GDPR, Loi 25 & WCAG 2.1 AA Compliant"
+      compliance: "Compliant with GDPR, Law 25 & WCAG 2.1 AA"
     },
     es: {
       company: "Iluma Marketing LLC",
@@ -72,10 +72,11 @@ const LegalFooter = () => {
   const info = legalInfo[language] || legalInfo.fr; // Fallback to French if language not found
 
   return (
+    
     <div className="bg-black/40 border-t border-white/10 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"> */}
         {/* Company Info */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-white font-bold mb-4 font-['Montserrat']">{info.company}</h3>
             <div className="space-y-2 text-white/70 text-sm">
@@ -133,8 +134,8 @@ const LegalFooter = () => {
               <p><span className="text-white">COO:</span> {info.coo}</p>
             </div>
           </div>
-        </div>
-
+        </div> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Legal Links */}
         <div className="border-t border-white/10 pt-8 mb-6">
           <div className="flex flex-wrap gap-6 text-sm text-white/70">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useTranslations } from '@/hooks/useTranslations';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 interface FormData {
   nom: string;
@@ -19,6 +20,8 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
+  const { t } = useTranslations();
+ 
   const [formData, setFormData] = useState<FormData>({
     nom: '',
     email: '',
@@ -71,7 +74,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   return (
     <div className="glass-effect rounded-3xl p-8 border border-white/20">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-white">Parlons de votre projet</h2>
+        <h2 className="text-2xl font-bold text-white">{t('contact.badge')}</h2>
         <div className="flex gap-2">
           {[1, 2, 3].map(stepNum => (
             <div 
@@ -89,13 +92,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-white/80 mb-2">Nom complet *</label>
+                <label className="block text-white/80 mb-2">{t('contact.form.name')}</label>
                 <Input
                   required
                   value={formData.nom}
                   onChange={(e) => handleInputChange('nom', e.target.value)}
                   className="glass-effect border-white/20 text-white"
-                  placeholder="Votre nom complet"
+                  placeholder={t('contact.form.name.placeholder')}
                 />
               </div>
               <div>

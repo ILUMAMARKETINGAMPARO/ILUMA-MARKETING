@@ -7,6 +7,85 @@ export const translations = {
         learnMore: "En savoir plus"
       }
     },
+    contact: {
+      title: "Contactez-nous – Parlons de votre projet",
+      description: "Parlons de votre projet – Vous avez une idée ? Vous cherchez une solution AI-first ? Planifions une rencontre personnalisée pour analyser votre situation, vous présenter Iluma™ et concevoir une stratégie sur mesure.",
+      form: {
+        title: "Envoyez-nous un message",
+        description: "Nous vous répondrons dans un délai de 24h ouvrables.",
+        name: { 
+          text: "Nom complet",
+          placeholder: "Votre nom complet"
+        },
+        email: { 
+          text: "Email",
+          placeholder: "votre@email.com"
+        },
+        phone: {
+          text: "Teléphone",
+          placeholder: "(514) 123-4567"
+        },
+        entreprise: {
+          text: "Entreprise",
+          placeholder: "Nom de votre entreprise"
+        },
+        subject: {
+          text: "sujet",
+          placeholder: "Choisissez un sujet",
+          item1: "Consultation stratégique",
+          item2: "SEO et référencement",
+          item3: "Landing pages",
+          item4: "YouTube SEO",
+          item5: "Demande de devis",
+          item6: "Autre",
+        },
+        message: {
+          text: "Message",
+          placeholder: "Décrivez votre projet ou vos besoins..."
+        },
+        cta: {
+          send: "Envoyer le message",
+          reserve: "Réserver un RDV"
+        }
+      },
+      reservationIntelligence: {
+        title: "Réservation intelligente",
+        description: "LILO™ vous propose les meilleurs créneaux disponibles",
+        lilo: "LILO™ recommande ces créneaux :",
+        calendar: {
+          line1: {
+            day: "Demain",
+            type: "Consultation IA"
+          },
+          line2: {
+            day: "Vendredi",
+            type: "Démo personnalisée"
+          },
+          line3: {
+            day: "Lundi",
+            type: "Stratégie digitale"
+          }
+        },
+        cta: {
+          seeShedules: "Voir tous les créneaux disponibles",
+          personalizedSchedule: "💬 Demander un créneau personnalisé"
+        },
+        private: "🔒 Vos informations restent privées - LILO™ ne montre que la disponibilité"
+      },
+      informationContact: {
+        title: "Informations de contact",
+        schedule: "Lun-Ven 9h-18h EST"
+      },
+      team: {
+        title: "Notre équipe",
+        sergio: {
+          role: "Co-Fondateur & Directeur Général"
+        },
+        amparo: {
+          role: "Co-Fondatrice & Directrice des opérations"
+        }
+      }
+    },
     modules: {
       adluma: {
         title: "ADLUMA™ - Simulateur Publicité IA",
@@ -683,19 +762,26 @@ export const translations = {
       }
     },
     faq: {
-      title: "Foire Aux Questions – Iluma™",
-      description: "Retrouvez ici toutes les réponses aux questions les plus fréquentes sur nos services, nos outils IA et notre méthodologie.",
+      title: {
+        first: "Questions",
+        second: "Fréquentes"
+      },
+      description: "Toutes les réponses à vos questions sur Iluma™",
       google: {
-        question: "Et si votre agence savait exactement ce que pense Google ?"
+        question: "Et si votre agence savait exactement ce que pense Google ?",
+        answer: "C’est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
       },
       results: {
-        question: "Comment Iluma™ garantit-elle des résultats mesurables ?"
+        question: "Comment Iluma™ garantit-elle des résultats mesurables ?",
+        answer: "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
       },
       difference: {
-        question: "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?"
+        question: "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?",
+        answer: "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
       },
       preview: {
-        question: "Puis-je voir des résultats avant d'investir ?"
+        question: "Puis-je voir des résultats avant d'investir ?",
+        answer: "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
       }
     },
     methodeIluma: {
@@ -1392,17 +1478,26 @@ export const translations = {
       }
     },
     faq: {
+      title: {
+        first: "Frequently",
+        second: "Asked Questions"
+      },
+      description: "All the answers to your questions about Iluma™",
       google: {
-        question: "What if your agency knew exactly what Google thinks?"
+        question: "What if your agency knew exactly what Google thinks?",
+        answer: "That’s exactly what Iluma™ does. Our AI analyzes Google’s algorithms in real time and adapts your strategy to maximize your local visibility."
       },
       results: {
-        question: "How does Iluma™ guarantee measurable results?"
+        question: "How does Iluma™ guarantee measurable results?",
+        answer: "Through our ecosystem of 9 interconnected AI modules: ADLUMA™ predicts, ILA™ measures, ILUMATCH™ connects, and LILO™ continuously optimizes your performance."
       },
       difference: {
-        question: "How does Iluma™ differ from a traditional agency?"
+        question: "How does Iluma™ differ from a traditional agency?",
+        answer: "We are an agency that thinks like AI. Every decision is based on real-time data, every action is optimized by artificial intelligence."
       },
       preview: {
-        question: "Can I see results before investing?"
+        question: "Can I see results before investing?",
+        answer: "Absolutely! Our ADLUMA™ simulator shows you your projected results for free. No commitment, just transparency."
       }
     },
     methodeIluma: {
@@ -2123,17 +2218,26 @@ export const translations = {
       }
     },
     faq: {
+      title: {
+        first: "Preguntas",
+        second: "Frecuentes"
+      },
+      description: "Todas las respuestas a tus preguntas sobre Iluma™",
       google: {
-        question: "¿Qué pasaría si tu agencia supiera exactamente lo que piensa Google?"
+        question: "¿Qué pasaría si tu agencia supiera exactamente lo que piensa Google?",
+        answer: "Eso es exactamente lo que hace Iluma™. Nuestra IA analiza en tiempo real los algoritmos de Google y adapta tu estrategia para maximizar tu visibilidad local."
       },
       results: {
-        question: "¿Cómo garantiza Iluma™ resultados medibles?"
+        question: "¿Cómo garantiza Iluma™ resultados medibles?",
+        answer: "Gracias a nuestro ecosistema de 9 módulos de IA interconectados: ADLUMA™ predice, ILA™ mide, ILUMATCH™ conecta, y LILO™ optimiza continuamente tu rendimiento."
       },
       difference: {
-        question: "¿En qué se diferencia Iluma™ de una agencia tradicional?"
+        question: "¿En qué se diferencia Iluma™ de una agencia tradicional?",
+        answer: "Somos una agencia que piensa como una IA. Cada decisión está basada en datos en tiempo real, cada acción está optimizada por inteligencia artificial."
       },
       preview: {
-        question: "¿Puedo ver resultados antes de invertir?"
+        question: "¿Puedo ver resultados antes de invertir?",
+        answer: "¡Absolutamente! Nuestro simulador ADLUMA™ te muestra tus resultados proyectados de manera gratuita. Sin compromiso, solo transparencia."
       }
     },
     methodeIluma: {

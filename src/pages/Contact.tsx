@@ -129,14 +129,12 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h1 id="contact-hero" className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in-up font-['Montserrat']">
-                <span className="text-gradient">Contactez-nous – Parlons de votre projet</span>
+                <span className="text-gradient">{t('contact.title')}</span>
               </h1>
               <p className="text-xl text-white/80 max-w-3xl mx-auto animate-fade-in-up font-['Montserrat']" style={{
               animationDelay: '0.2s'
             }}>
-                Parlons de votre projet - {language === 'fr' && 'Vous avez un projet ? Vous cherchez une solution IA-first ? Planifions un rendez-vous personnalisé pour analyser votre situation, vous présenter Iluma™ et concevoir votre stratégie sur mesure.'}
-                {language === 'en' && 'Do you have a project? Looking for an AI-first solution? Let\'s schedule a personalized meeting to analyze your situation, present Iluma™ and design your custom strategy.'}
-                {language === 'es' && '¿Tiene un proyecto? ¿Busca una solución AI-first? Programemos una reunión personalizada para analizar su situación, presentar Iluma™ y diseñar su estrategia a medida.'}
+                {t('contact.description')}
               </p>
             </div>
           </div>
@@ -150,21 +148,17 @@ const Contact = () => {
               <Card className="glass-effect border-white/20">
                 <CardHeader>
                   <CardTitle id="contact-form-section" className="text-2xl text-white">
-                    {language === 'fr' && 'Envoyez-nous un message'}
-                    {language === 'en' && 'Send us a message'}
-                    {language === 'es' && 'Envíanos un mensaje'}
+                    {t('contact.form.title')}
                   </CardTitle>
                   <CardDescription className="text-white/70">
-                    {language === 'fr' && 'Nous vous répondrons sous 24h ouvrables'}
-                    {language === 'en' && 'We will respond within 24 business hours'}
-                    {language === 'es' && 'Responderemos en 24 horas hábiles'}
+                    {t('contact.form.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6" aria-label="Formulaire de contact">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="nom" className="text-white">Nom complet *</Label>
+                        <Label htmlFor="nom" className="text-white">{t('contact.form.name.text')}</Label>
                         <Input 
                           id="nom" 
                           type="text" 
@@ -172,13 +166,13 @@ const Contact = () => {
                           value={formData.nom} 
                           onChange={e => handleChange('nom', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder="Votre nom complet"
+                          placeholder={t('contact.form.name.placeholder')}
                           aria-required="true"
                           autoComplete="name"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email" className="text-white">Email *</Label>
+                        <Label htmlFor="email" className="text-white">{t('contact.form.email.text')}</Label>
                         <Input 
                           id="email" 
                           type="email" 
@@ -186,7 +180,7 @@ const Contact = () => {
                           value={formData.email} 
                           onChange={e => handleChange('email', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder="votre@email.com"
+                          placeholder={t('contact.form.email.placeholder')}
                           aria-required="true"
                           autoComplete="email"
                         />
@@ -195,50 +189,50 @@ const Contact = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="telephone" className="text-white">Téléphone</Label>
+                        <Label htmlFor="telephone" className="text-white">{t('contact.form.phone.text')}</Label>
                         <Input 
                           id="telephone" 
                           type="tel" 
                           value={formData.telephone} 
                           onChange={e => handleChange('telephone', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder="(514) 123-4567"
+                          placeholder={t('contact.form.phone.placeholder')}
                           autoComplete="tel"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="entreprise" className="text-white">Entreprise</Label>
+                        <Label htmlFor="entreprise" className="text-white">{t('contact.form.entreprise.text')}</Label>
                         <Input 
                           id="entreprise" 
                           type="text" 
                           value={formData.entreprise} 
                           onChange={e => handleChange('entreprise', e.target.value)} 
                           className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                          placeholder="Nom de votre entreprise"
+                          placeholder={t('contact.form.entreprise.placeholder')}
                           autoComplete="organization"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="objet" className="text-white">Sujet</Label>
+                      <Label htmlFor="objet" className="text-white">{t('contact.form.subject.item1')}</Label>
                       <Select value={formData.objet} onValueChange={value => handleChange('objet', value)}>
                         <SelectTrigger className="bg-white/10 border-white/20 text-white" aria-label="Sujet">
-                          <SelectValue placeholder="Choisissez un sujet" />
+                          <SelectValue placeholder={t('contact.form.subject.placeholder')} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="consultation">Consultation stratégique</SelectItem>
-                          <SelectItem value="seo">SEO et référencement</SelectItem>
-                          <SelectItem value="landing">Landing pages</SelectItem>
-                          <SelectItem value="youtube">YouTube SEO</SelectItem>
-                          <SelectItem value="devis">Demande de devis</SelectItem>
-                          <SelectItem value="autre">Autre</SelectItem>
+                          <SelectItem value="consultation">{t('contact.form.subject.item1')}</SelectItem>
+                          <SelectItem value="seo">{t('contact.form.subject.item2')}</SelectItem>
+                          <SelectItem value="landing">{t('contact.form.subject.item3')}</SelectItem>
+                          <SelectItem value="youtube">{t('contact.form.subject.item4')}</SelectItem>
+                          <SelectItem value="devis">{t('contact.form.subject.item5')}</SelectItem>
+                          <SelectItem value="autre">{t('contact.form.subject.item6')}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-white">Message *</Label>
+                      <Label htmlFor="message" className="text-white">{t('contact.form.message.text')}</Label>
                       <Textarea 
                         id="message" 
                         required 
@@ -246,7 +240,7 @@ const Contact = () => {
                         value={formData.message} 
                         onChange={e => handleChange('message', e.target.value)} 
                         className="bg-white/10 border-white/20 text-white placeholder-white/50" 
-                        placeholder="Décrivez votre projet ou vos besoins..."
+                        placeholder={t('contact.form.message.placeholder')}
                         aria-required="true"
                       />
                     </div>
@@ -259,7 +253,7 @@ const Contact = () => {
                         aria-label="Envoyer le formulaire de contact"
                       >
                         <Send className="w-5 h-5 mr-2" aria-hidden="true" />
-                        Envoyer le message
+                        {t('contact.form.cta.send')}
                       </Button>
                       
                       <Button 
@@ -270,7 +264,7 @@ const Contact = () => {
                         aria-label="Réserver un rendez-vous"
                       >
                         <Clock className="w-5 h-5 mr-2" aria-hidden="true" />
-                        Réserver un RDV
+                        {t('contact.form.cta.reserve')}
                       </Button>
                     </div>
                   </form>
@@ -284,10 +278,10 @@ const Contact = () => {
                   <CardHeader>
                     <CardTitle className="text-xl text-white flex items-center gap-2">
                       <Clock className="w-6 h-6 text-primary" />
-                      Réservation intelligente
+                      {t('contact.reservationIntelligence.title')}
                     </CardTitle>
                     <CardDescription className="text-white/70">
-                      LILO™ vous propose les meilleurs créneaux disponibles
+                      {t('contact.reservationIntelligence.description')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -299,7 +293,7 @@ const Contact = () => {
                             <span className="text-white text-xs font-bold">L</span>
                           </div>
                           <span className="text-sm text-white/90 font-medium">
-                            LILO™ recommande ces créneaux :
+                            {t('contact.reservationIntelligence.lilo')}
                           </span>
                         </div>
                         
@@ -307,7 +301,10 @@ const Contact = () => {
                           {[
                             { day: "Demain", time: "14:00-15:00", type: "Consultation IA" },
                             { day: "Vendredi", time: "10:30-11:30", type: "Démo personnalisée" },
-                            { day: "Lundi", time: "16:00-17:00", type: "Stratégie digitale" }
+                            { day: "Lundi", time: "16:00-17:00", type: "Stratégie digitale" },
+                            // { day: {t('contact.reservationIntelligence.calendar.line1.day')}, time: "14:00-15:00", type: {t('contact.reservationIntelligence.calendar.line1.type')} },
+                            // { day: {t('contact.reservationIntelligence.calendar.line2.day')}, time: "10:30-11:30", type: {t('contact.reservationIntelligence.calendar.line2.type')} },
+                            // { day: {t('contact.reservationIntelligence.calendar.line3.day')}, time: "16:00-17:00", type: {t('contact.reservationIntelligence.calendar.line3.type')} }
                           ].map((slot, index) => (
                             <Button
                               key={index}
@@ -335,19 +332,19 @@ const Contact = () => {
                           onClick={() => window.open('https://calendar.app.google/njJNK9Ua5ryMd6kF7', '_blank')}
                         >
                           <Clock className="w-4 h-4 mr-2" />
-                          Voir tous les créneaux disponibles
+                          {t('contact.reservationIntelligence.cta.seeShedules')}
                         </Button>
                         
                         <Button 
                           variant="outline"
                           className="w-full border-primary/30 text-primary hover:bg-primary/10"
                         >
-                          💬 Demander un créneau personnalisé
+                          {t('contact.reservationIntelligence.cta.personalizedSchedule')}
                         </Button>
                       </div>
 
                       <div className="text-xs text-white/60 text-center p-2 bg-black/20 rounded-lg">
-                        🔒 Vos informations restent privées - LILO™ ne montre que la disponibilité
+                        {t('contact.reservationIntelligence.private')}
                       </div>
                     </div>
                   </CardContent>
@@ -356,7 +353,7 @@ const Contact = () => {
                 {/* Quick Contact */}
                 <Card className="glass-effect border-white/20">
                   <CardHeader>
-                    <CardTitle className="text-xl text-white">Informations de contact</CardTitle>
+                    <CardTitle className="text-xl text-white">{t('contact.informationContact.title')}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-center space-x-3">
@@ -373,14 +370,14 @@ const Contact = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Clock className="w-5 h-5 text-iluma-blue-400" />
-                      <span className="text-white/80">Lun-Ven 9h-18h EST</span>
+                      <span className="text-white/80">{t('contact.informationContact.schedule')}</span>
                     </div>
                   </CardContent>
                 </Card>
 
                 {/* Team Contacts */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-white">Notre équipe</h3>
+                  <h3 className="text-xl font-bold text-white">{t('contact.team.title')}</h3>
                   {contacts.map((contact, index) => <Card key={contact.name} className="glass-effect border-white/20 hover:border-white/30 transition-all duration-300 animate-slide-up" style={{
                   animationDelay: `${index * 0.1}s`
                 }}>

@@ -73,7 +73,7 @@ const LegalFooter = () => {
 
   return (
     
-    <div className="bg-black/40 border-t border-white/10 mt-16">
+    <div className="bg-black/40 border-t border-white/10 mt-8">
       {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"> */}
         {/* Company Info */}
         {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -137,7 +137,7 @@ const LegalFooter = () => {
         </div> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Legal Links */}
-        <div className="border-t border-white/10 pt-8 mb-6">
+        {/* <div className="border-t border-white/10 pt-8 mb-6"> */}
           <div className="flex flex-wrap gap-6 text-sm text-white/70">
             <a href="/politique-confidentialite" className="hover:text-primary transition-colors">
               {t('footer.legal.privacy')}
@@ -177,7 +177,7 @@ const LegalFooter = () => {
             </p>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

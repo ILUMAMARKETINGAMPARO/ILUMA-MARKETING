@@ -174,16 +174,16 @@ const Index = () => {
   }];
   const faqData = [{
     question: t('faq.google.question') || "Et si votre agence savait exactement ce que pense Google ?",
-    answer: "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
+    answer: t('faq.google.answer') || "C'est exactement ce que fait Iluma™. Notre IA analyse en temps réel les algorithmes Google et adapte votre stratégie pour maximiser votre visibilité locale."
   }, {
     question: t('faq.results.question') || "Comment Iluma™ garantit-elle des résultats mesurables ?",
-    answer: "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
+    answer: t('faq.results.answer') || "Grâce à notre écosystème de 9 modules IA interconnectés : ADLUMA™ prédit, ILA™ mesure, ILUMATCH™ connecte, et LILO™ optimise continuellement vos performances."
   }, {
     question: t('faq.difference.question') || "En quoi Iluma™ diffère-t-elle d'une agence traditionnelle ?",
-    answer: "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
+    answer:  t('faq.difference.answer') || "Nous sommes une agence qui pense comme une IA. Chaque décision est basée sur des données en temps réel, chaque action est optimisée par l'intelligence artificielle."
   }, {
     question: t('faq.preview.question') || "Puis-je voir des résultats avant d'investir ?",
-    answer: "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
+    answer: t('faq.preview.answer') || "Absolument ! Notre simulateur ADLUMA™ vous montre vos résultats projetés gratuitement. Aucun engagement, juste de la transparence."
   }];
   return <>
       <SEOHead />
@@ -748,10 +748,10 @@ const Index = () => {
               }}>
                   <HelpCircle className="w-12 h-12 text-[#FFD56B] mx-auto mb-4" />
                   <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-['Montserrat']">
-                    Questions <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">Fréquentes</span>
+                    {t('faq.title.first')} <span className="bg-gradient-to-r from-[#8E44FF] to-[#FFD56B] bg-clip-text text-transparent">{t('faq.title.second')}</span>
                   </h2>
                   <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Montserrat']">
-                    Toutes les réponses à vos questions sur Iluma™
+                    {t('faq.description')}
                   </p>
                 </motion.div>
 

@@ -30,7 +30,7 @@ export const translations = {
           placeholder: "Nom de votre entreprise"
         },
         subject: {
-          text: "sujet",
+          text: "Sujet",
           placeholder: "Choisissez un sujet",
           item1: "Consultation stratégique",
           item2: "SEO et référencement",
@@ -785,15 +785,27 @@ export const translations = {
       }
     },
     methodeIluma: {
+      hero: {
+        title: "La Méthode Révolutionnaire ILUMA™",
+        subtitle: "Transformez votre entreprise avec l'intelligence artificielle la plus avancée du marketing digital",
+        badge: "Méthode Certifiée IA"
+      },
+      steps: {
+        title: "Les 6 Étapes de la Méthode ILUMA™",
+        subtitle: "Un processus scientifique qui garantit votre succès digital",
+        diagnostic: {
+          title: "Diagnostic ADLUMA™"
+        }
+      },
       faq: {
         title: "FAQ – Tout savoir sur la Méthode Iluma™",
         description: "Découvrez les réponses aux questions les plus fréquentes sur notre approche stratégique, nos outils IA et la manière dont nous accompagnons nos clients vers des résultats mesurables et durables."
       }
     },
     faqSection: {
-      title: "FAQ Iluma™",
-      description: "Explorez nos réponses classées par catégories pour trouver rapidement l’information que vous cherchez.",
-      searchPlaceholder: "Rechercher une question…"
+      title: "Foire Aux Questions – FAQ Iluma™",
+      description: "Trouvez des réponses claires aux questions les plus courantes sur nos services, notre technologie et notre méthodologie de travail.",
+      searchPlaceholder: "Rechercher une question..."
     }
   },
   en: {
@@ -802,6 +814,85 @@ export const translations = {
         discover: "Discover",
         contact: "Contact",
         learnMore: "Learn More"
+      }
+    },
+    contact: {
+      title: "Contact Us – Let’s Talk About Your Project",
+      description: "Let’s talk about your project – Do you have an idea? Are you looking for an AI-first solution? Let’s schedule a personalized meeting to analyze your situation, introduce you to Iluma™, and design a tailored strategy.",
+      form: {
+        title: "Send Us a Message",
+        description: "We’ll reply within 24 business hours.",
+        name: { 
+          text: "Full Name",
+          placeholder: "Your full Name"
+        },
+        email: { 
+          text: "Email",
+          placeholder: "your@email.com"
+        },
+        phone: {
+          text: "Phone",
+          placeholder: "(514) 123-4567"
+        },
+        entreprise: {
+          text: "Company",
+          placeholder: "Name of your company"
+        },
+        subject: {
+          text: "Subject",
+          placeholder: "Choose a topic",
+          item1: "Strategic Consulting",
+          item2: "SEO and referencing",
+          item3: "Landing pages",
+          item4: "YouTube SEO",
+          item5: "Quote Request",
+          item6: "Other",
+        },
+        message: {
+          text: "Message",
+          placeholder: "Describe your project or needs…"
+        },
+        cta: {
+          send: "Send Message",
+          reserve: "Book a Meeting"
+        }
+      },
+      reservationIntelligence: {
+        title: "Smart Scheduling",
+        description: "LILO™ offers you the best available slots",
+        lilo: "LILO™ suggests the best available time slots:",
+        calendar: {
+          line1: {
+            day: "Tomorrow",
+            type: "AI Consultation"
+          },
+          line2: {
+            day: "Friday",
+            type: "Personalized Demo"
+          },
+          line3: {
+            day: "Monday",
+            type: "Digital Strategy"
+          }
+        },
+        cta: {
+          seeShedules: "View All Available Slots",
+          personalizedSchedule: "💬 Request a Custom Slot"
+        },
+        private: "🔒 Your information remains private – LILO™ only shows availability."
+      },
+      informationContact: {
+        title: "Contact Information",
+        schedule: "Mon–Fri 9 AM–6 PM EST"
+      },
+      team: {
+        title: "Our team",
+        sergio: {
+          role: "Co-Fondateur & Directeur Général"
+        },
+        amparo: {
+          role: "Co-Fondatrice & Directrice des opérations"
+        }
       }
     },
     modules: {
@@ -1507,9 +1598,9 @@ export const translations = {
       }
     },
     faqSection: {
-      title: "",
-      description: "",
-      searchPlaceholder: ""
+      title: "Frequently Asked Questions – FAQ Iluma™",
+      description: "Find clear answers to the most common questions about our services, our technology, and our working methodology.",
+      searchPlaceholder: "Search a question..."
     }
   },
   es: {
@@ -1518,6 +1609,85 @@ export const translations = {
         discover: "Descubrir",
         contact: "Contacto",
         learnMore: "Saber Más"
+      }
+    },
+    contact: {
+      title: "Contáctanos – Hablemos de tu proyecto",
+      description: "Hablemos de tu proyecto – ¿Tienes una idea? ¿Buscas una solución AI-first? Agendemos una reunión personalizada para analizar tu situación, presentarte Iluma™ y diseñar una estrategia a tu medida.",
+      form: {
+        title: "Envíanos un mensaje",
+        description: "Responderemos en un plazo de 24 horas hábiles.",
+        name: { 
+          text: "Nombre completo",
+          placeholder: "Tu nombre completo"
+        },
+        email: { 
+          text: "Correo electrónico",
+          placeholder: "tucorreoo@email.com"
+        },
+        phone: {
+          text: "Teléfono",
+          placeholder: "(514) 123-4567"
+        },
+        entreprise: {
+          text: "Empresa",
+          placeholder: "Nombre de tu empresa"
+        },
+        subject: {
+          text: "Asunto",
+          placeholder: "Elige un tema",
+          item1: "Consultoría Estratégica",
+          item2: "SEO y posicionamiento",
+          item3: "Landing pages",
+          item4: "YouTube SEO",
+          item5: "Solicitud de presupuesto",
+          item6: "Otro",
+        },
+        message: {
+          text: "Mensaje",
+          placeholder: "Describe tu proyecto o tus necesidades…"
+        },
+        cta: {
+          send: "Enviar mensaje",
+          reserve: "Reservar una cita"
+        }
+      },
+      reservationIntelligence: {
+        title: "Reserva inteligente",
+        description: "LILO™ te ofrece los mejores thorarios disponibles",
+        lilo: "LILO™ te propone los mejores horarios disponibles:",
+        calendar: {
+          line1: {
+            day: "Mañana",
+            type: "Consulta IA"
+          },
+          line2: {
+            day: "Viernes",
+            type: "Demo personalizada"
+          },
+          line3: {
+            day: "Lunes",
+            type: "Estrategia digital"
+          }
+        },
+        cta: {
+          seeShedules: "Ver todos los horarios disponibles",
+          personalizedSchedule: "💬 Solicitar un horario personalizado"
+        },
+        private: "🔒 Tu información permanecerá privada – LILO™ solo muestra la disponibilidad."
+      },
+      informationContact: {
+        title: "Información de contacto",
+        schedule: "Lun-Vie 9h-18h EST"
+      },
+      team: {
+        title: "Nuestro equipo",
+        sergio: {
+          role: "Co-Fondateur & Directeur Général"
+        },
+        amparo: {
+          role: "Co-Fondatrice & Directrice des opérations"
+        }
       }
     },
     modules: {
@@ -2247,9 +2417,9 @@ export const translations = {
       }
     },
     faqSection: {
-      title: "",
-      description: "",
-      searchPlaceholder: ""
+      title: "Preguntas Frecuentes – FAQ Iluma™",
+      description: "Encuentra respuestas claras a las dudas más comunes sobre nuestros servicios, nuestra tecnología y nuestra metodología de trabajo.",
+      searchPlaceholder: "Buscar una pregunta..."
     }
   }
 };

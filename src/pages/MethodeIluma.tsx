@@ -43,107 +43,107 @@ const MethodeIluma = () => {
   const methodSteps = [
     {
       id: 'diagnostic',
-      title: t('methodeiluma.steps.diagnostic.title'),
-      fact: t('methodeiluma.steps.diagnostic.fact'),
-      action: t('methodeiluma.steps.diagnostic.action'),
-      context: t('methodeiluma.steps.diagnostic.context'),
+      title: t('methodeIluma.steps.diagnostic.title'),
+      fact: t('methodeIluma.steps.diagnostic.fact'),
+      action: t('methodeIluma.steps.diagnostic.action'),
+      context: t('methodeIluma.steps.diagnostic.context'),
       icon: Brain,
       color: 'from-purple-500 to-blue-500',
       module: 'ADLUMA™',
       path: '/adluma',
       deliverables: [
-        t('methodeiluma.steps.diagnostic.deliverables.0'),
-        t('methodeiluma.steps.diagnostic.deliverables.1'),
-        t('methodeiluma.steps.diagnostic.deliverables.2')
+        t('methodeIluma.steps.diagnostic.deliverables.0'),
+        t('methodeIluma.steps.diagnostic.deliverables.1'),
+        t('methodeIluma.steps.diagnostic.deliverables.2')
       ],
-      cta: t('methodeiluma.steps.diagnostic.cta')
+      cta: t('methodeIluma.steps.diagnostic.cta')
     },
     {
       id: 'presence',
-      title: t('methodeiluma.steps.presence.title'),
-      fact: t('methodeiluma.steps.presence.fact'),
-      action: t('methodeiluma.steps.presence.action'),
-      context: t('methodeiluma.steps.presence.context'),
+      title: t('methodeIluma.steps.presence.title'),
+      fact: t('methodeIluma.steps.presence.fact'),
+      action: t('methodeIluma.steps.presence.action'),
+      context: t('methodeIluma.steps.presence.context'),
       icon: Eye,
       color: 'from-blue-500 to-cyan-500',
       module: 'SEO SGE',
       path: '/seo-social',
       deliverables: [
-        t('methodeiluma.steps.presence.deliverables.0'),
-        t('methodeiluma.steps.presence.deliverables.1'),
-        t('methodeiluma.steps.presence.deliverables.2'),
-        t('methodeiluma.steps.presence.deliverables.3')
+        t('methodeIluma.steps.presence.deliverables.0'),
+        t('methodeIluma.steps.presence.deliverables.1'),
+        t('methodeIluma.steps.presence.deliverables.2'),
+        t('methodeIluma.steps.presence.deliverables.3')
       ],
-      cta: t('methodeiluma.steps.presence.cta')
+      cta: t('methodeIluma.steps.presence.cta')
     },
     {
       id: 'pages',
-      title: t('methodeiluma.steps.pages.title'),
-      fact: t('methodeiluma.steps.pages.fact'),
-      action: t('methodeiluma.steps.pages.action'),
-      context: t('methodeiluma.steps.pages.context'),
+      title: t('methodeIluma.steps.pages.title'),
+      fact: t('methodeIluma.steps.pages.fact'),
+      action: t('methodeIluma.steps.pages.action'),
+      context: t('methodeIluma.steps.pages.context'),
       icon: PenTool,
       color: 'from-yellow-500 to-orange-500',
       module: 'LANDING™',
       path: '/landing-page-intelligente',
       deliverables: [
-        t('methodeiluma.steps.pages.deliverables.0'),
-        t('methodeiluma.steps.pages.deliverables.1'),
-        t('methodeiluma.steps.pages.deliverables.2'),
-        t('methodeiluma.steps.pages.deliverables.3')
+        t('methodeIluma.steps.pages.deliverables.0'),
+        t('methodeIluma.steps.pages.deliverables.1'),
+        t('methodeIluma.steps.pages.deliverables.2'),
+        t('methodeIluma.steps.pages.deliverables.3')
       ],
-      cta: t('methodeiluma.steps.pages.cta')
+      cta: t('methodeIluma.steps.pages.cta')
     },
     {
       id: 'visibility',
-      title: t('methodeiluma.steps.visibility.title'),
-      fact: t('methodeiluma.steps.visibility.fact'),
-      action: t('methodeiluma.steps.visibility.action'),
-      context: t('methodeiluma.steps.visibility.context'),
+      title: t('methodeIluma.steps.visibility.title'),
+      fact: t('methodeIluma.steps.visibility.fact'),
+      action: t('methodeIluma.steps.visibility.action'),
+      context: t('methodeIluma.steps.visibility.context'),
       icon: Globe,
       color: 'from-green-500 to-teal-500',
       module: 'RivalViews™',
       path: '/rivalviews',
       deliverables: [
-        t('methodeiluma.steps.visibility.deliverables.0'),
-        t('methodeiluma.steps.visibility.deliverables.1'),
-        t('methodeiluma.steps.visibility.deliverables.2')
+        t('methodeIluma.steps.visibility.deliverables.0'),
+        t('methodeIluma.steps.visibility.deliverables.1'),
+        t('methodeIluma.steps.visibility.deliverables.2')
       ],
-      cta: t('methodeiluma.steps.visibility.cta')
+      cta: t('methodeIluma.steps.visibility.cta')
     },
     {
       id: 'intelligence',
-      title: t('methodeiluma.steps.intelligence.title'),
-      fact: t('methodeiluma.steps.intelligence.fact'),
-      action: t('methodeiluma.steps.intelligence.action'),
-      context: t('methodeiluma.steps.intelligence.context'),
+      title: t('methodeIluma.steps.intelligence.title'),
+      fact: t('methodeIluma.steps.intelligence.fact'),
+      action: t('methodeIluma.steps.intelligence.action'),
+      context: t('methodeIluma.steps.intelligence.context'),
       icon: Zap,
       color: 'from-pink-500 to-purple-500',
       module: 'IA ACTIVE',
       path: '/hub',
       deliverables: [
-        t('methodeiluma.steps.intelligence.deliverables.0'),
-        t('methodeiluma.steps.intelligence.deliverables.1'),
-        t('methodeiluma.steps.intelligence.deliverables.2')
+        t('methodeIluma.steps.intelligence.deliverables.0'),
+        t('methodeIluma.steps.intelligence.deliverables.1'),
+        t('methodeIluma.steps.intelligence.deliverables.2')
       ],
-      cta: t('methodeiluma.steps.intelligence.cta')
+      cta: t('methodeIluma.steps.intelligence.cta')
     },
     {
       id: 'scalability',
-      title: t('methodeiluma.steps.scalability.title'),
-      fact: t('methodeiluma.steps.scalability.fact'),
-      action: t('methodeiluma.steps.scalability.action'),
-      context: t('methodeiluma.steps.scalability.context'),
+      title: t('methodeIluma.steps.scalability.title'),
+      fact: t('methodeIluma.steps.scalability.fact'),
+      action: t('methodeIluma.steps.scalability.action'),
+      context: t('methodeIluma.steps.scalability.context'),
       icon: Rocket,
       color: 'from-red-500 to-pink-500',
       module: 'SCALE™',
       path: '/hub',
       deliverables: [
-        t('methodeiluma.steps.scalability.deliverables.0'),
-        t('methodeiluma.steps.scalability.deliverables.1'),
-        t('methodeiluma.steps.scalability.deliverables.2')
+        t('methodeIluma.steps.scalability.deliverables.0'),
+        t('methodeIluma.steps.scalability.deliverables.1'),
+        t('methodeIluma.steps.scalability.deliverables.2')
       ],
-      cta: t('methodeiluma.steps.scalability.cta')
+      cta: t('methodeIluma.steps.scalability.cta')
     }
   ];
 
@@ -151,29 +151,29 @@ const MethodeIluma = () => {
     {
       name: 'Ulysse Tremblay',
       company: 'Literie d\'Amitié',
-      text: t('methodeiluma.testimonials.text1') || 'En moins de deux mois, notre visibilité a explosé.',
+      text: t('methodeIluma.testimonials.text1') || 'En moins de deux mois, notre visibilité a explosé.',
       rating: 5
     },
     {
       name: 'Clara Doulis',
       company: 'Réseau Santé',
-      text: t('methodeiluma.testimonials.text2') || 'Ils ont su allier l\'humain et l\'IA dans une même méthode.',
+      text: t('methodeIluma.testimonials.text2') || 'Ils ont su allier l\'humain et l\'IA dans une même méthode.',
       rating: 5
     }
   ];
 
   const benefits = [
     {
-      title: t('methodeiluma.benefits.approach') || 'Approche IA-First',
-      description: t('methodeiluma.benefits.approachDesc') || 'Méthode propriétaire basée sur l\'intelligence artificielle'
+      title: t('methodeIluma.benefits.approach') || 'Approche IA-First',
+      description: t('methodeIluma.benefits.approachDesc') || 'Méthode propriétaire basée sur l\'intelligence artificielle'
     },
     {
-      title: t('methodeiluma.benefits.guaranteed') || 'Résultats Garantis',
-      description: t('methodeiluma.benefits.guaranteedDesc') || '+214% de trafic organique en moyenne chez nos clients'
+      title: t('methodeIluma.benefits.guaranteed') || 'Résultats Garantis',
+      description: t('methodeIluma.benefits.guaranteedDesc') || '+214% de trafic organique en moyenne chez nos clients'
     },
     {
-      title: t('methodeiluma.benefits.support') || 'Accompagnement Expert',
-      description: t('methodeiluma.benefits.supportDesc') || 'Équipe dédiée avec Lilo, votre assistant IA personnel'
+      title: t('methodeIluma.benefits.support') || 'Accompagnement Expert',
+      description: t('methodeIluma.benefits.supportDesc') || 'Équipe dédiée avec Lilo, votre assistant IA personnel'
     }
   ];
 
@@ -190,11 +190,11 @@ const MethodeIluma = () => {
             <div className="relative">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 font-['Montserrat'] leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  {t('methodeiluma.hero.title') || 'La Méthode Révolutionnaire'}
+                  {t('methodeIluma.hero.title') || 'La Méthode Révolutionnaire ILUMA™'}
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-4xl mx-auto font-['Montserrat']">
-                {t('methodeiluma.hero.subtitle')}
+                {t('methodeIluma.hero.subtitle') || 'Transformez votre entreprise avec l\intelligence artificielle la plus avancée du marketing digital' }
               </p>
               <div className="flex items-center justify-center gap-4 text-white/60 mb-8">
                 <Brain className="w-8 h-8" />
@@ -204,7 +204,7 @@ const MethodeIluma = () => {
                 <Zap className="w-8 h-8 text-yellow-400" />
               </div>
               <Badge className="bg-[#8E44FF]/20 text-[#FFD56B] text-lg px-6 py-2 font-['Montserrat']">
-                {t('methodeiluma.hero.badge')}
+                {t('methodeIluma.hero.badge')}
               </Badge>
             </div>
           </MPEContainer>
@@ -215,10 +215,10 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white font-['Montserrat']">
-            {t('methodeiluma.steps.title')}
+            {t('methodeIluma.steps.title')}
           </h2>
           <p className="text-xl text-white/70 text-center mb-16 font-['Montserrat']">
-            {t('methodeiluma.steps.subtitle')}
+            {t('methodeIluma.steps.subtitle')}
           </p>
           
           <div className="relative">
@@ -312,7 +312,7 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-white font-['Montserrat']">
-            {t('methodeiluma.testimonials.title')}
+            {t('methodeIluma.testimonials.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -344,10 +344,10 @@ const MethodeIluma = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white font-['Montserrat']">
-            {t('methodeiluma.benefits.title')}
+            {t('methodeIluma.benefits.title')}
           </h2>
           <p className="text-xl text-white/70 text-center mb-16 font-['Montserrat']">
-            {t('methodeiluma.benefits.subtitle')}
+            {t('methodeIluma.benefits.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -377,10 +377,10 @@ const MethodeIluma = () => {
         <div className="max-w-4xl mx-auto text-center">
           <MPEContainer animation="fade-in">
             <h2 className="text-4xl font-bold text-white mb-6 font-['Montserrat']">
-              {t('methodeiluma.cta.title') || 'Prêt à transformer votre entreprise ?'}
+              {t('methodeIluma.cta.title') || 'Prêt à transformer votre entreprise ?'}
             </h2>
             <p className="text-xl text-white/80 mb-12 font-['Montserrat']">
-              {t('methodeiluma.cta.subtitle') || 'Commencez votre transformation dès aujourd\'hui'}
+              {t('methodeIluma.cta.subtitle') || 'Commencez votre transformation dès aujourd\'hui'}
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -390,7 +390,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodeiluma.cta.simulate') || '🎯 Simuler votre croissance'}
+                  {t('methodeIluma.cta.simulate') || '🎯 Simuler votre croissance'}
                 </Button>
               </Link>
               
@@ -400,7 +400,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodeiluma.cta.diagnosis') || '📊 Diagnostic gratuit'}
+                  {t('methodeIluma.cta.diagnosis') || '📊 Diagnostic gratuit'}
                 </Button>
               </Link>
               
@@ -410,7 +410,7 @@ const MethodeIluma = () => {
                   className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-6 text-lg font-['Montserrat'] hover:scale-105 transition-all duration-300"
                   onClick={handleCTAHighlight}
                 >
-                  {t('methodeiluma.cta.consultation') || '📞 Consultation stratégique'}
+                  {t('methodeIluma.cta.consultation') || '📞 Consultation stratégique'}
                 </Button>
               </Link>
             </div>

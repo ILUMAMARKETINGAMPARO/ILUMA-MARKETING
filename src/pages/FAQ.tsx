@@ -32,11 +32,11 @@ const FAQ = () => {
             >
                <h1 className="text-4xl md:text-6xl font-bold mb-6 font-['Montserrat']">
                  <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                   {t('faq.title')}
+                   {t('faqSection.title')}
                  </span>
                </h1>
                <p className="text-xl text-white/80 max-w-4xl mx-auto font-['Montserrat']">
-                 {t('faq.description')}
+                 {t('faqSection.description')}
              </p>
             </motion.div>
 

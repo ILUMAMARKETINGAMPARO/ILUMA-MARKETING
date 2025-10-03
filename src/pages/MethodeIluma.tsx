@@ -45,8 +45,11 @@ const MethodeIluma = () => {
       id: 'diagnostic',
       title: t('methodeIluma.steps.diagnostic.title'),
       fact: t('methodeIluma.steps.diagnostic.fact'),
+      factDesc: t('methodeIluma.steps.diagnostic.factDesc'),
       action: t('methodeIluma.steps.diagnostic.action'),
+      actionDesc: t('methodeIluma.steps.diagnostic.actionDesc'),
       context: t('methodeIluma.steps.diagnostic.context'),
+      contextDesc: t('methodeIluma.steps.diagnostic.contextDesc'),
       icon: Brain,
       color: 'from-purple-500 to-blue-500',
       module: 'ADLUMA™',
@@ -62,8 +65,11 @@ const MethodeIluma = () => {
       id: 'presence',
       title: t('methodeIluma.steps.presence.title'),
       fact: t('methodeIluma.steps.presence.fact'),
+      factDesc: t('methodeIluma.steps.presence.factDesc'),
       action: t('methodeIluma.steps.presence.action'),
+      actionDesc: t('methodeIluma.steps.presence.actionDesc'),
       context: t('methodeIluma.steps.presence.context'),
+      contextDesc: t('methodeIluma.steps.presence.contextDesc'),
       icon: Eye,
       color: 'from-blue-500 to-cyan-500',
       module: 'SEO SGE',
@@ -80,8 +86,11 @@ const MethodeIluma = () => {
       id: 'pages',
       title: t('methodeIluma.steps.pages.title'),
       fact: t('methodeIluma.steps.pages.fact'),
+      factDesc: t('methodeIluma.steps.pages.factDesc'),
       action: t('methodeIluma.steps.pages.action'),
+      actionDesc: t('methodeIluma.steps.pages.actionDesc'),
       context: t('methodeIluma.steps.pages.context'),
+      contextDesc: t('methodeIluma.steps.pages.contextDesc'),
       icon: PenTool,
       color: 'from-yellow-500 to-orange-500',
       module: 'LANDING™',
@@ -98,8 +107,11 @@ const MethodeIluma = () => {
       id: 'visibility',
       title: t('methodeIluma.steps.visibility.title'),
       fact: t('methodeIluma.steps.visibility.fact'),
+      factDesc: t('methodeIluma.steps.visibility.factDesc'),
       action: t('methodeIluma.steps.visibility.action'),
+      actionDesc: t('methodeIluma.steps.visibility.actionDesc'),
       context: t('methodeIluma.steps.visibility.context'),
+      contextDesc: t('methodeIluma.steps.visibility.contextDesc'),
       icon: Globe,
       color: 'from-green-500 to-teal-500',
       module: 'RivalViews™',
@@ -115,8 +127,11 @@ const MethodeIluma = () => {
       id: 'intelligence',
       title: t('methodeIluma.steps.intelligence.title'),
       fact: t('methodeIluma.steps.intelligence.fact'),
+      factDesc: t('methodeIluma.steps.intelligence.factDesc'),
       action: t('methodeIluma.steps.intelligence.action'),
+      actionDesc: t('methodeIluma.steps.intelligence.actionDesc'),
       context: t('methodeIluma.steps.intelligence.context'),
+      contextDesc: t('methodeIluma.steps.intelligence.contextDesc'),
       icon: Zap,
       color: 'from-pink-500 to-purple-500',
       module: 'IA ACTIVE',
@@ -132,8 +147,11 @@ const MethodeIluma = () => {
       id: 'scalability',
       title: t('methodeIluma.steps.scalability.title'),
       fact: t('methodeIluma.steps.scalability.fact'),
+      factDesc: t('methodeIluma.steps.scalability.factDesc'),
       action: t('methodeIluma.steps.scalability.action'),
+      actionDesc: t('methodeIluma.steps.scalability.actionDesc'),
       context: t('methodeIluma.steps.scalability.context'),
+      contextDesc: t('methodeIluma.steps.scalability.contextDesc'),
       icon: Rocket,
       color: 'from-red-500 to-pink-500',
       module: 'SCALE™',
@@ -256,16 +274,16 @@ const MethodeIluma = () => {
                           {/* Structure FAC */}
                           <div className="space-y-3 mb-4">
                             <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
-                              <p className="text-sm font-semibold text-red-400 mb-1">FAIT</p>
-                              <p className="text-white/90 font-['Montserrat']">{step.fact}</p>
+                              <p className="text-sm font-semibold text-red-400 mb-1">{step.fact}</p>
+                              <p className="text-white/90 font-['Montserrat']">{step.factDesc}</p>
                             </div>
                             <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3">
-                              <p className="text-sm font-semibold text-blue-400 mb-1">ACTION</p>
-                              <p className="text-white/90 font-['Montserrat']">{step.action}</p>
+                              <p className="text-sm font-semibold text-blue-400 mb-1">{step.action}</p>
+                              <p className="text-white/90 font-['Montserrat']">{step.actionDesc}</p>
                             </div>
                             <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
-                              <p className="text-sm font-semibold text-green-400 mb-1">CONTEXTE</p>
-                              <p className="text-white/90 font-['Montserrat']">{step.context}</p>
+                              <p className="text-sm font-semibold text-green-400 mb-1">{step.context}</p>
+                              <p className="text-white/90 font-['Montserrat']">{step.contextDesc}</p>
                             </div>
                           </div>
 

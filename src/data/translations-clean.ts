@@ -794,8 +794,119 @@ export const translations = {
         title: "Les 6 Étapes de la Méthode ILUMA™",
         subtitle: "Un processus scientifique qui garantit votre succès digital",
         diagnostic: {
-          title: "Diagnostic ADLUMA™"
+          title: "Diagnostic ADLUMA™",
+          fact: "FAIT",
+          factDesc: "Analyse complète en 72h de votre position concurrentielle et opportunités de marché",
+          action: "ACTION",
+          actionDesc: "Audit 360° de votre présence digitale, analyse de la concurrence et identification des leviers de croissance",
+          context: "CONTEXTE",
+          contextDesc: "Avant toute stratégie, nous analysons votre écosystème pour identifier précisément vos avantages concurrentiels",
+          deliverables: {
+            '0': "Rapport d'audit complet (40+ pages)",
+            '1': "Cartographie concurrentielle",
+            '2': "Plan d'action stratégique"
+          },
+          cta: "Obtenir mon diagnostic gratuit"
+        },
+        presence: {
+          title: "Présence SEO Intelligente",
+          fact: "FAIT",
+          factDesc: "Positionnement #1 sur Google en moins de 90 jours avec notre IA propriétaire",
+          action: "ACTION",
+          actionDesc: "Optimisation SEO avancée, création de contenu IA et stratégie de visibilité locale",
+          context: "CONTEXTE",
+          contextDesc: "Notre technologie SEO SGE assure votre domination sur les recherches de votre secteur",
+          deliverables: {
+            '0': "Site web optimisé SEO + IA",
+            '1': "Stratégie de contenu automatisée",
+            '2': "Suivi de positionnement en temps réel",
+            '3': "Présence Google My Business optimisée"
+          },
+          cta: "Dominer Google maintenant"
+        },
+        pages: {
+          title: "Landing Pages MAGNET™",
+          fact: "FAIT",
+          factDesc: "347% d'augmentation du taux de conversion moyen avec nos pages intelligentes",
+          action: "ACTION",
+          actionDesc: "Création de pages de conversion ultra-performantes avec IA comportementale intégrée",
+          context: "CONTEXTE",
+          contextDesc: "Chaque page s'adapte en temps réel au comportement de vos visiteurs pour maximiser les conversions",
+          deliverables: {
+            '0': "Landing pages adaptatifs avec IA",
+            '1': "Système de A/B testing automatique",
+            '2': "CRM intégré pour suivi des leads",
+            '3': "Analytics avancés temps réel"
+          },
+          cta: "Créer mes pages convertissantes"
+        },
+        visibility: {
+          title: "Visibilité RivalViews™",
+          fact: "FAIT",
+          factDesc: "Surveillance concurrentielle 24/7 et anticipation des tendances de marché",
+          action: "ACTION",
+          actionDesc: "Monitoring intelligent de la concurrence et stratégies d'anticipation basées sur l'IA",
+          context: "CONTEXTE",
+          contextDesc: "Restez toujours un pas d'avance avec notre système de veille concurrentielle automatisée",
+          deliverables: {
+            '0': "Dashboard de veille concurrentielle",
+            '1': "Alertes automatiques opportunités",
+            '2': "Stratégies de contre-attaque IA"
+          },
+          cta: "Surveiller mes concurrents"
+        },
+        intelligence: {
+          title: "Intelligence Artificielle Active",
+          fact: "FAIT",
+          factDesc: "Automatisation complète de votre marketing avec prise de décision IA en temps réel",
+          action: "ACTION",
+          actionDesc: "Déploiement d'assistants IA pour automatiser vos processus marketing et ventes",
+          context: "CONTEXTE",
+          contextDesc: "L'IA prend en charge vos tâches répétitives et optimise continuellement vos performances",
+          deliverables: {
+            '0': "Assistant IA personnalisé (LILO™)",
+            '1': "Automatisation workflows marketing",
+            '2': "Prédictions et recommandations IA"
+          },
+          cta: "Activer mon IA"
+        },
+        scalability: {
+          title: "Évolutivité SCALE™",
+          fact: "FAIT",
+          factDesc: "Infrastructure qui grandit avec votre entreprise sans limite technique",
+          action: "ACTION",
+          actionDesc: "Mise en place d'une architecture évolutive pour supporter votre croissance exponentielle",
+          context: "CONTEXTE",
+          contextDesc: "L'Votre système s'adapte automatiquement à l'augmentation de votre volume d'affaires",
+          deliverables: {
+            '0': "Architecture cloud évolutive",
+            '1': "Système de backup automatique",
+            '2': "Support prioritaire 24/7"
+          },
+          cta: "Activer mon IA"
         }
+      },
+      benefits: {
+        title: "Pourquoi la Méthode ILUMA™ ?",
+        sbtitle: "Une approche scientifique qui garantit vos résultats",
+        approach: "Approche Scientifique",
+        approachDesc: "Méthodologie basée sur l'analyse de données et l'IA pour garantir vos résultats",
+        guaranteed: "Résultats Garantis",
+        guaranteedDesc: "Amélioration mesurable de vos performances ou remboursement intégral",
+        support: "Support Expert 24/7",
+        supportDesc: "Équipe dédiée d'experts IA disponible pour vous accompagner"
+      },
+      testimonials: {
+        title: "Ils ont révolutionné leur business avec ILUMA™",
+        text1: "Depuis qu'on utilise ILUMA™, nos ventes ont explosé. L'IA gère tout automatiquement et nos clients sont plus satisfaits que jamais.",
+        text2: "La méthode ILUMA™ a transformé notre approche marketing. Nous dominons maintenant notre marché local grâce à leur technologie.",
+      },
+      cta: {
+        title: "Prêt à révolutionner votre entreprise ?",
+        subtitle: "Découvrez le potentiel de votre entreprise avec un diagnostic ADLUMA™ gratuit",
+        simulate: "Simuler mon ROI",
+        diagnosis: "Diagnostic gratuit",
+        consultation: "Consultation expert"
       },
       faq: {
         title: "FAQ – Tout savoir sur la Méthode Iluma™",
@@ -1592,9 +1703,132 @@ export const translations = {
       }
     },
     methodeIluma: {
+      hero: {
+        title: "The Revolutionary ILUMA™ Method",
+        subtitle: "Transform your business with the most advanced artificial intelligence in digital marketing",
+        badge: "AI Certified Method"
+      },
+      steps: {
+        title: "The 6 Steps of the ILUMA™ Method",
+        subtitle: "A scientific process that guarantees your digital success",
+        diagnostic: {
+          title: "ADLUMA™ Diagnostic",
+          fact: "FACT",
+          factDesc: "Complete analysis in 72h of your competitive position and market opportunities",
+          action: "ACTION",
+          actionDesc: "360° audit of your digital presence, competitor analysis, and identification of growth drivers",
+          context: "CONTEXT",
+          contextDesc: "Before any strategy, we analyze your ecosystem to precisely identify your competitive advantages",
+          deliverables: {
+            '0': "Full audit report (40+ pages)",
+            '1': "Competitive mapping",
+            '2': "Strategic action plan"
+          },
+          cta: "Get my free diagnostic"
+        },
+        presence: {
+          title: "Intelligent SEO Presence",
+          fact: "FACT",
+          factDesc: "#1 ranking on Google in less than 90 days with our proprietary AI",
+          action: "ACTION",
+          actionDesc: "Advanced SEO optimization, AI content creation, and local visibility strategy",
+          context: "CONTEXT",
+          contextDesc: "Our SEO SGE technology ensures your dominance in searches within your sector",
+          deliverables: {
+            '0': "SEO + AI optimized website",
+            '1': "Automated content strategy",
+            '2': "Real-time position tracking",
+            '3': "Optimized Google My Business presence"
+          },
+          cta: "Dominate Google now"
+        },
+        pages: {
+          title: "MAGNET™ Landing Pages",
+          fact: "FACT",
+          factDesc: "347% increase in average conversion rate with our smart pages",
+          action: "ACTION",
+          actionDesc: "Creation of ultra-high-performance conversion pages with integrated behavioral AI",
+          context: "CONTEXT",
+          contextDesc: "Each page adapts in real time to your visitors’ behavior to maximize conversions",
+          deliverables: {
+            '0': "Adaptive landing pages with AI",
+            '1': "Automatic A/B testing system",
+            '2': "Integrated CRM for lead tracking",
+            '3': "Advanced real-time analytics"
+          },
+          cta: "Create my converting pages"
+        },
+        visibility: {
+          title: "RivalViews™ Visibility",
+          fact: "FACT",
+          factDesc: "24/7 competitive monitoring and market trend anticipation",
+          action: "ACTION",
+          actionDesc: "Smart competitor monitoring and AI-based anticipation strategies",
+          context: "CONTEXT",
+          contextDesc: "Always stay one step ahead with our automated competitive intelligence system",
+          deliverables: {
+            '0': "Competitive monitoring dashboard",
+            '1': "Automatic opportunity alerts",
+            '2': "AI counter-strategy plans"
+          },
+          cta: "Monitor my competitors"
+        },
+        intelligence: {
+          title: "Active Artificial Intelligence",
+          fact: "FACT",
+          factDesc: "Full automation of your marketing with real-time AI decision-making",
+          action: "ACTION",
+          actionDesc: "Deployment of AI assistants to automate your marketing and sales processes",
+          context: "CONTEXT",
+          contextDesc: "AI handles your repetitive tasks and continuously optimizes your performance",
+          deliverables: {
+            '0': "Personalized AI assistant (LILO™)",
+            '1': "Automated marketing workflows",
+            '2': "AI predictions and recommendations"
+          },
+          cta: "Activate my AI"
+        },
+        scalability: {
+          title: "SCALE™ Scalability",
+          fact: "FACT",
+          factDesc: "Infrastructure that grows with your business with no technical limits",
+          action: "ACTION",
+          actionDesc: "Implementation of a scalable architecture to support your exponential growth",
+          context: "CONTEXT",
+          contextDesc: "Your system automatically adapts to the increase in your business volume",
+          deliverables: {
+            '0': "Scalable cloud architecture",
+            '1': "Automatic backup system",
+            '2': "24/7 priority support"
+          },
+          cta: "Prepare my growth"
+        }
+      },
+      benefits: {
+        title: "Why the ILUMA™ Method?",
+        sbtitle: "A scientific approach that guarantees your results",
+        approach: "Scientific Approach",
+        approachDesc: "Methodology based on data analysis and AI to guarantee your results",
+        guaranteed: "Guaranteed Results",
+        guaranteedDesc: "Measurable performance improvement or full refund",
+        support: "Expert Support 24/7",
+        supportDesc: "Dedicated team of AI experts available to support you"
+      },
+      testimonials: {
+        title: "They revolutionized their business with ILUMA™",
+        text1: "Since we started using ILUMA™, our sales skyrocketed. The AI manages everything automatically and our customers are more satisfied than ever.",
+        text2: "The ILUMA™ method transformed our marketing approach. We now dominate our local market thanks to their technology.",
+      },
+      cta: {
+        title: "Ready to revolutionize your business?",
+        subtitle: "Discover your company’s potential with a free ADLUMA™ diagnostic",
+        simulate: "Simulate my ROI",
+        diagnosis: "Free diagnostic",
+        consultation: "Expert consultation"
+      },
       faq: {
-        title: "",
-        description: ""
+        title: "FAQ – Tout savoir sur la Méthode Iluma™",
+        description: "Découvrez les réponses aux questions les plus fréquentes sur notre approche stratégique, nos outils IA et la manière dont nous accompagnons nos clients vers des résultats mesurables et durables."
       }
     },
     faqSection: {
@@ -2422,4 +2656,4 @@ export const translations = {
       searchPlaceholder: "Buscar una pregunta..."
     }
   }
-};
+}

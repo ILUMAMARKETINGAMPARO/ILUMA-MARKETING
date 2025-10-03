@@ -289,7 +289,7 @@ const MethodeIluma = () => {
 
                           {/* Deliverables */}
                           <div className="mb-4">
-                            <p className="text-sm font-semibold text-[#FFD56B] mb-2">Livrables</p>
+                            <p className="text-sm font-semibold text-[#FFD56B] mb-2">{t('methodeIluma.steps.deliverable')}</p>
                             <div className="space-y-1">
                               {step.deliverables.map((deliverable, idx) => (
                                 <div key={idx} className="flex items-center gap-2 text-sm text-white/70">
